@@ -1,0 +1,37 @@
+# Dependencies
+**/node_modules
+**/.pnp
+.pnp.js
+
+# Enviornment variables
+**/.env
+
+# SvelteKit build files
+**/build
+**/.svelte-kit
+**/package
+
+# Sanity Studio build files
+**/dist
+**/.sanity
+
+# Vite config
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Logs
+**/logs
+*.log
+
+# Coverage directory used by testing tools
+**/coverage
+
+# Misc
+.DS_Store
+*.pem
+
+# Typescript
+*.tsbuildinfo
+
+# VS Code
+**/.vscode
