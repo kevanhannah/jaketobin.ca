@@ -1,8 +1,21 @@
 <script>
-	import Wordmark from './Wordmark.svelte';
+	import { page } from '$app/stores';
+	import { navigating } from '$app/stores';
+	import {
+		closeAllNav,
+		portfolioNavIsOpen,
+		shopNavIsOpen,
+		togglePortfolioNav,
+		toggleShopNav,
+	} from '$lib/stores';
+	import Wordmark from '$components/Wordmark.svelte';
+	import NavSection from '$components/Header/NavSection.svelte';
+	import CartToggle from '$components/Header/CartToggle.svelte';
 
-	export let portfolioIsOpen = false;
-	export let shopIsOpen = false;
+	$: if ($navigating) {
+		closeAllNav();
+	}
+	$: ({ portfolioCategories } = $page.data);
 </script>
 
 <header>
@@ -12,63 +25,36 @@
 				<div class="menu">
 					<ul>
 						<li>
-							<button
-								class="nav_button"
-								on:click={() => {
-									portfolioIsOpen = !portfolioIsOpen;
-									shopIsOpen = false;
-								}}>Portfolio</button
+							<button class="nav_button" on:click={togglePortfolioNav}
+								>Portfolio</button
 							>
 						</li>
 						<li>
-							<button
-								class="nav_button"
-								on:click={() => {
-									shopIsOpen = !shopIsOpen;
-									portfolioIsOpen = false;
-								}}>Shop</button
-							>
+							<button class="nav_button" on:click={toggleShopNav}>Shop</button>
 						</li>
 						<li><button class="nav_button">Commission</button></li>
 					</ul>
 				</div>
 				<div class="wordmark">
-					<Wordmark />
+					<a href="/">
+						<Wordmark />
+					</a>
 				</div>
-				<div class="cart">
-					<button>Cart</button>
+				<div class="cart_section">
+					<CartToggle>0</CartToggle>
 				</div>
 			</div>
 			<div class="mega_nav">
 				<div class="mega_nav--outer">
-					<div class="mega_item" class:is_active={portfolioIsOpen}>
+					<div class="mega_item" class:is_active={$portfolioNavIsOpen}>
 						<div class="mega_item--content">
-							<div>
-								<h3 class="mega_nav_menu_header">Artwork</h3>
-								<ul class="mega_nav_menu">
-									<li>People and portraits</li>
-									<li>Toronto parks</li>
-									<li>Bookstores</li>
-									<li>Cartoons</li>
-								</ul>
-							</div>
-							<div>
-								<h3 class="mega_nav_menu_header">Custom Illustrations</h3>
-								<ul class="mega_nav_menu">
-									<li>People</li>
-									<li>Places</li>
-								</ul>
-							</div>
-							<div>
-								<h3 class="mega_nav_menu_header">Publications</h3>
-								<ul class="mega_nav_menu">
-									<li>Writing and comics</li>
-								</ul>
-							</div>
+							{#each portfolioCategories as portfolioCategory}
+								<NavSection content={portfolioCategory} />
+							{/each}
 						</div>
 					</div>
 				</div>
-				<div class="mega_item" class:is_active={shopIsOpen}>
+				<div class="mega_item" class:is_active={$shopNavIsOpen}>
 					<div class="mega_item--content">
 						<div>
 							<h3 class="mega_nav_menu_header">Products</h3>
@@ -100,14 +86,6 @@
 				</div>
 			</div>
 		</div>
-		<div
-			class="nav_backdrop"
-			class:is_active={portfolioIsOpen || shopIsOpen}
-			on:click={() => {
-				portfolioIsOpen = false;
-				shopIsOpen = false;
-			}}
-		/>
 	</div>
 </header>
 
@@ -115,6 +93,7 @@
 	header {
 		border-bottom: 1px solid var(--black);
 		position: sticky;
+		top: 0;
 		z-index: 5;
 	}
 
@@ -136,8 +115,7 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		align-items: center;
-		/* display: flex;
-		justify-content: space-between; */
+		line-height: 0;
 	}
 
 	.main_navigation ul {
@@ -150,7 +128,7 @@
 		justify-content: center;
 	}
 
-	.cart {
+	.cart_section {
 		display: flex;
 		justify-content: flex-end;
 	}
@@ -174,7 +152,7 @@
 
 	.nav_button:hover {
 		text-decoration: underline;
-		text-underline-offset: 0.5em;
+		text-underline-offset: 0.25em;
 		text-decoration-thickness: 1px;
 	}
 
@@ -219,7 +197,7 @@
 
 	.mega_item--content {
 		display: flex;
-		gap: 5em;
+		gap: 3.75em;
 		/* padding-top: 2em; */
 		padding-bottom: 2.5em;
 		padding-left: 3em;
@@ -242,24 +220,5 @@
 		flex-direction: column;
 		gap: 1em;
 		margin-top: 1em;
-	}
-
-	.nav_backdrop {
-		--tw-bg-opacity: 0.4;
-		background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-		bottom: 0;
-		left: 0;
-		opacity: 0;
-		pointer-events: none;
-		position: fixed;
-		right: 0;
-		top: 0;
-		/* transition: opacity 0.15s linear; */
-	}
-
-	.nav_backdrop.is_active {
-		backdrop-filter: blur(0.5em);
-		opacity: 1;
-		pointer-events: auto;
 	}
 </style>

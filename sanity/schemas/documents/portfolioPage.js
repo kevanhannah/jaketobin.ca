@@ -1,10 +1,10 @@
 export default {
-  title: 'Page',
-  name: 'page',
+  title: 'Portfolio Page',
+  name: 'portfolioPage',
   type: 'document',
   groups: [
-    { title: 'Content', name: 'content', default: true },
-    { title: 'Settings', name: 'settings' },
+    { title: 'Page Details', name: 'details', default: true },
+    { title: 'SEO', name: 'seo' },
   ],
   fields: [
     {
@@ -12,7 +12,7 @@ export default {
       title: 'Title',
       type: 'string',
       validation: (Rule) => Rule.required(),
-      group: 'settings',
+      group: 'details',
     },
     {
       title: 'URL Slug',
@@ -24,31 +24,33 @@ export default {
         maxLength: 96,
       },
       validation: (Rule) => Rule.required(),
-      group: 'settings',
+      group: 'details',
     },
     {
-      title: 'Page Content',
-      name: 'modules',
+      title: 'Portfolio Items',
+      name: 'portfolioItems',
       type: 'array',
       of: [
-        { type: 'imageWithText' },
-        // { type: 'grid' },
-        // { type: 'hero' },
-        // { type: 'marquee' },
-        // { type: 'dividerPhoto' },
-        // {
-        //   title: 'Reusable Section',
-        //   type: 'reference',
-        //   to: [{ type: 'section' }]
-        // }
+        {
+          title: 'Portfolio item',
+          type: 'reference',
+          to: [{ type: 'portfolioItem' }],
+        },
       ],
-      group: 'content',
+      group: 'details',
+    },
+    {
+      title: 'Page Description',
+      name: 'description',
+      type: 'text',
+      rows: 5,
+      group: 'details',
     },
     {
       title: 'SEO / Share Settings',
       name: 'seo',
       type: 'seo',
-      group: 'settings',
+      group: 'seo',
     },
   ],
   preview: {

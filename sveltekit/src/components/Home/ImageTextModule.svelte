@@ -1,0 +1,34 @@
+<script>
+	import { PortableText } from '@portabletext/svelte';
+	import SanityImage from '$components/shared/SanityImage.svelte';
+	import Button from '$components/shared/Button.svelte';
+	import getImageProps from '$lib/utils/getImageProps';
+
+	export let moduleData;
+	let { content, image, link, title } = moduleData;
+
+	const imageData = getImageProps({ aspectRatio: 1.333, image: image.image });
+</script>
+
+<div class="image_text">
+	<SanityImage image={imageData} loading="eager" />
+	<div class="text_content">
+		{#if content}
+			<h2>{title}</h2>
+		{/if}
+		<PortableText value={content} />
+		{#if link && link.text}
+			<Button style="margin-top: 1em;">{link.text}</Button>
+		{/if}
+	</div>
+</div>
+
+<style>
+	.image_text {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		gap: 1.5em;
+	}
+</style>

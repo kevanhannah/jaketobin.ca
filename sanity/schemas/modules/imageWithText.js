@@ -11,7 +11,7 @@ export default {
     {
       title: 'Content',
       name: 'content',
-      type: 'text',
+      type: 'textModule',
     },
     {
       title: 'Image',

@@ -5,7 +5,7 @@ export default {
   // hidden: true,
   fields: [
     {
-      name: 'title',
+      name: 'text',
       title: 'Call to action',
       type: 'string',
     },
@@ -14,7 +14,7 @@ export default {
       title: 'Link',
       type: 'reference',
       to: [
-        { type: 'page' },
+        { type: 'portfolioPage' },
         // { type: 'product' }
       ],
     },
