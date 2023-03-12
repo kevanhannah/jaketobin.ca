@@ -18,7 +18,7 @@
 	on:keypress={closeAllNav}
 />
 
-<style>
+<style lang="postcss">
 	:global(body.no-scroll) {
 		overflow: hidden;
 	}

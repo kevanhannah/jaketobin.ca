@@ -15,7 +15,7 @@
 	on:keypress={toggleCart}
 />
 
-<style>
+<style lang="postcss">
 	:global(body.no-scroll) {
 		overflow: hidden;
 	}
