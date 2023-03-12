@@ -6,7 +6,7 @@ export default {
   fields: [
     {
       name: 'text',
-      title: 'Call to action',
+      title: 'Link Text',
       type: 'string',
     },
     {

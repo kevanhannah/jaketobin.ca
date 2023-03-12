@@ -1,21 +1,23 @@
 <script>
 	import { PortableText } from '@portabletext/svelte';
-	import SanityImage from '$components/shared/SanityImage.svelte';
-	import PortfolioItem from '$components/Portfolio/PortfolioItem.svelte';
+	import ArtworkLayout from '$components/Portfolio/ArtworkLayout.svelte';
+	import WritingLayout from '$components/Portfolio/WritingLayout.svelte';
 
 	export let data;
-	$: ({ description, portfolioItems, title } = data);
+	console.log(data);
+	$: ({ description, pageType, portfolioItems, publicationItems, title } =
+		data);
 </script>
 
 <div class="portfolio_page">
 	<h2 class="portfolio_page_header">{title}</h2>
 	{#if description}
-		<p>{description}</p>
+		<PortableText value={description} />
 	{/if}
-	{#if portfolioItems.length}
-		{#each portfolioItems as item}
-			<PortfolioItem {item} />
-		{/each}
+	{#if pageType === 'artwork' && portfolioItems.length}
+		<ArtworkLayout {portfolioItems} />
+	{:else if pageType === 'writing' && publicationItems.length}
+		<WritingLayout {publicationItems} />
 	{:else}
 		<p>No portfolio items have been added to this page. Check back soon!</p>
 	{/if}

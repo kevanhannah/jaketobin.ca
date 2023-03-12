@@ -6,6 +6,9 @@ export default {
     { title: 'Page Details', name: 'details', default: true },
     { title: 'SEO', name: 'seo' },
   ],
+  initialValue: {
+    pageType: 'artwork',
+  },
   fields: [
     {
       name: 'title',
@@ -27,6 +30,20 @@ export default {
       group: 'details',
     },
     {
+      title: 'Page Type',
+      name: 'pageType',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Illustrations and artwork', value: 'artwork' },
+          { title: 'Writing and publications', value: 'writing' },
+        ],
+        layout: 'dropdown',
+      },
+      group: 'details',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: 'Portfolio Items',
       name: 'portfolioItems',
       type: 'array',
@@ -38,12 +55,22 @@ export default {
         },
       ],
       group: 'details',
+      hidden: ({ document }) =>
+        !document?.pageType || document?.pageType === 'writing',
+    },
+    {
+      title: 'Publication Items',
+      name: 'publicationItems',
+      type: 'array',
+      of: [{ type: 'publicationModule' }],
+      group: 'details',
+      hidden: ({ document }) =>
+        !document?.pageType || document?.pageType === 'artwork',
     },
     {
       title: 'Page Description',
       name: 'description',
-      type: 'text',
-      rows: 5,
+      type: 'textModule',
       group: 'details',
     },
     {

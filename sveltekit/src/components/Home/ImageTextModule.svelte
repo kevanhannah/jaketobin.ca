@@ -5,14 +5,14 @@
 	import getImageProps from '$lib/utils/getImageProps';
 
 	export let moduleData;
-	let { content, image, link, title } = moduleData;
+	let { content, image, link, reverse, title } = moduleData;
 
 	const imageData = getImageProps({ aspectRatio: 1.333, image: image.image });
 </script>
 
 <div class="image_text">
 	<SanityImage image={imageData} loading="eager" />
-	<div class="text_content">
+	<div class="text_content" class:reverse>
 		{#if content}
 			<h2>{title}</h2>
 		{/if}
@@ -30,5 +30,9 @@
 		grid-template-columns: 1fr 1fr;
 		align-items: center;
 		gap: 1.5em;
+	}
+
+	.text_content.reverse {
+		order: -1;
 	}
 </style>

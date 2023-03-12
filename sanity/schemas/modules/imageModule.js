@@ -2,7 +2,6 @@ export default {
   title: 'Image Module',
   name: 'imageModule',
   type: 'object',
-  // hidden: true,
   fields: [
     {
       name: 'image',

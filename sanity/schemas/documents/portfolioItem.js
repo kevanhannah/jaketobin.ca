@@ -24,13 +24,6 @@ export default {
       name: 'description',
       type: 'textModule',
     },
-    // {
-    //   name: 'releaseDate',
-    //   title: 'Release date',
-    //   type: 'date',
-    //   description: 'Initial date the work was published or released.',
-    //   validation: (Rule) => Rule.required(),
-    // },
   ],
   preview: {
     select: {
