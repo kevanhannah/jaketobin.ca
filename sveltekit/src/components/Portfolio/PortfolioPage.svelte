@@ -4,12 +4,11 @@
 	import WritingLayout from '$components/Portfolio/WritingLayout.svelte';
 
 	export let data;
-	console.log(data);
 	$: ({ description, pageType, portfolioItems, publicationItems, title } =
 		data);
 </script>
 
-<div class="portfolio_page">
+<main class="portfolio_page">
 	<h2 class="portfolio_page_header">{title}</h2>
 	{#if description}
 		<PortableText value={description} />
@@ -21,7 +20,7 @@
 	{:else}
 		<p>No portfolio items have been added to this page. Check back soon!</p>
 	{/if}
-</div>
+</main>
 
 <style>
 	.portfolio_page {

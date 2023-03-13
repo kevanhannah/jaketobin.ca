@@ -1,14 +1,12 @@
 <script>
-	export let style = undefined;
-	export let type = 'button';
+	export let href = null;
 </script>
 
-<button {style} {type}>
-	<slot />
-</button>
+<a {href} class="button"><slot /></a>
 
 <style>
-	button {
+	.button {
+		display: inline-block;
 		padding-top: 1em;
 		padding-bottom: 1em;
 		padding-left: 1.25em;
@@ -16,9 +14,11 @@
 		background-color: var(--black);
 		border-radius: 0.5em;
 		color: var(--paperWhite);
+		text-align: center;
+		text-decoration: none;
 	}
 
-	button:hover {
+	.button:hover {
 		background-color: #6c6c6c;
 	}
 </style>

@@ -4,7 +4,7 @@
 	$: ({ portfolioCategories } = $page.data);
 </script>
 
-<main>
+<div class="portfolio_page">
 	<aside class="portfolio_sidebar">
 		{#each portfolioCategories as category}
 			{#if category.pages}
@@ -20,17 +20,17 @@
 		{/each}
 	</aside>
 	<slot />
-</main>
+</div>
 
 <style>
-	main {
+	.portfolio_page {
 		display: grid;
 		grid-template-columns: 1fr 3fr;
 		gap: 1.5em;
 	}
 
 	.portfolio_sidebar {
-		padding-top: 4em;
+		padding-top: 3.75em;
 		display: flex;
 		flex-direction: column;
 		gap: 3em;

@@ -2,7 +2,6 @@
 	import { PortableText } from '@portabletext/svelte';
 
 	export let publicationItems;
-	console.log(publicationItems);
 </script>
 
 <div class="publication_list">

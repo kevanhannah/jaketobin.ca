@@ -13,13 +13,13 @@
 <CartBackdrop />
 <Header />
 <NavBackdrop />
-<main>
+<div>
 	<slot />
-</main>
+</div>
 <Footer />
 
 <style>
-	main {
+	div {
 		padding-left: 3em;
 		padding-right: 3em;
 		padding-top: 3em;

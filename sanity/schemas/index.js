@@ -18,6 +18,7 @@ import textModule from './modules/textModule';
 import seo from './objects/seo';
 
 // Singletons
+import commission from './singletons/commission';
 import home from './singletons/home';
 import settings from './singletons/settings';
 
@@ -39,6 +40,7 @@ export const schemaTypes = [
   // Objects
   seo,
   // Singletons
+  commission,
   home,
   settings,
 ];

@@ -1,4 +1,5 @@
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
+import commission from './desk/commission';
 import home from './desk/home';
 import settings from './desk/settings';
 
@@ -12,6 +13,8 @@ export default (S, context) =>
       orderableDocumentListDeskItem({ type: 'portfolioCategory', S, context }),
       S.documentTypeListItem('portfolioPage').title('Portfolio Pages'),
       S.documentTypeListItem('portfolioItem').title('Portfolio Items'),
+      S.divider(),
+      commission(S),
       S.divider(),
       settings(S),
     ]);

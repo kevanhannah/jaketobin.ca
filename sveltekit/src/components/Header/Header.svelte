@@ -32,7 +32,7 @@
 						<li>
 							<button class="nav_button" on:click={toggleShopNav}>Shop</button>
 						</li>
-						<li><button class="nav_button">Commission</button></li>
+						<li><a href="/commission" class="nav_button">Commission</a></li>
 					</ul>
 				</div>
 				<div class="wordmark">

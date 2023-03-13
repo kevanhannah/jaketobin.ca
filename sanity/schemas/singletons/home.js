@@ -7,8 +7,8 @@ export default {
   __experimental_actions: ['update', 'publish' /* 'create', 'delete' */],
   fields: [
     {
-      name: 'modules',
       title: 'Modules',
+      name: 'modules',
       type: 'moduleContent',
     },
   ],
