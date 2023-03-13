@@ -3,7 +3,12 @@
 	import Cart from '$components/Cart/Cart.svelte';
 </script>
 
-<aside aria-hidden={$cartIsOpen} class="cart_drawer" class:open={$cartIsOpen}>
+<aside
+	aria-hidden={!$cartIsOpen}
+	class="cart_drawer"
+	class:open={$cartIsOpen}
+	inert={!$cartIsOpen}
+>
 	<div class="cart_drawer_header">
 		<h2>Cart</h2>
 		<button
@@ -65,5 +70,9 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+
+	.closeDrawer:hover {
+		color: #6c6c6c;
 	}
 </style>
