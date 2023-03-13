@@ -5,7 +5,7 @@
 	import Twitter from '$components/shared/Icons/Twitter.svelte';
 </script>
 
-<footer>
+<footer {...$$restProps}>
 	<div class="social_icons">
 		<a href="http://instagram.com/jaketobindraws">
 			<Instagram />

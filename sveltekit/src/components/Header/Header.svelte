@@ -18,7 +18,7 @@
 	$: ({ portfolioCategories } = $page.data);
 </script>
 
-<header>
+<header {...$$restProps}>
 	<div class="header_outer">
 		<div class="header_inner">
 			<div class="main_navigation">
