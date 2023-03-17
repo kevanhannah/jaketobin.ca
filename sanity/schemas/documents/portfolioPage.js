@@ -59,6 +59,7 @@ export default {
           to: [{ type: 'portfolioItem' }],
           options: {
             disableNew: true,
+            filter: '!(_id in path("drafts.**"))',
           },
         },
       ],
