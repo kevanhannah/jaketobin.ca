@@ -5,8 +5,8 @@ export default [
   documentListWidget({
     layout: { width: 'medium', height: 'small' },
     order: '_updatedAt desc',
-    title: 'Last edited works',
-    types: ['work'],
+    title: 'Last edited portfolio items',
+    types: ['portfolioItem'],
   }),
   netlifyWidget({
     title: 'Deploy site',
