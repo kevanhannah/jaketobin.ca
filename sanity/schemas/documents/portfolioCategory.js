@@ -25,6 +25,10 @@ export default {
         {
           type: 'reference',
           to: [{ type: 'portfolioPage' }],
+          options: {
+            disableNew: true,
+            filter: '!(_id in path("drafts.**"))',
+          },
         },
       ],
     },
