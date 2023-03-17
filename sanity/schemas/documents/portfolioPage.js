@@ -17,6 +17,7 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
+      description: '(required)',
       validation: (Rule) => Rule.required(),
       group: 'details',
     },
@@ -36,6 +37,7 @@ export default {
       title: 'Page Type',
       name: 'pageType',
       type: 'string',
+      description: '(required)',
       options: {
         list: [
           { title: 'Illustrations and artwork', value: 'artwork' },
@@ -55,6 +57,9 @@ export default {
           title: 'Portfolio item',
           type: 'reference',
           to: [{ type: 'portfolioItem' }],
+          options: {
+            disableNew: true,
+          },
         },
       ],
       group: 'details',
