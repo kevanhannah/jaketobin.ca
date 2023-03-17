@@ -1,7 +1,10 @@
+import { IoDocumentOutline } from 'react-icons/io5';
+
 export default {
   title: 'Portfolio Page',
   name: 'portfolioPage',
   type: 'document',
+  icon: IoDocumentOutline,
   groups: [
     { title: 'Page Details', name: 'details', default: true },
     { title: 'SEO', name: 'seo' },

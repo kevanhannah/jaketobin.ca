@@ -1,7 +1,9 @@
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
+import { dashboardTool } from '@sanity/dashboard';
 import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './schemas';
+import dashboardConfig from './dashboardConfig';
 import deskStructure from './deskConfig';
 
 // Define the actions that should be available for singleton documents
@@ -16,6 +18,9 @@ export default defineConfig({
   projectId: import.meta.env.SANITY_STUDIO_PROJECT_ID,
   dataset: import.meta.env.SANITY_STUDIO_DATASET,
   plugins: [
+    dashboardTool({
+      widgets: dashboardConfig,
+    }),
     deskTool({
       structure: deskStructure,
     }),

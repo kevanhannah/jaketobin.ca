@@ -1,7 +1,10 @@
+import { IoImageOutline } from 'react-icons/io5';
+
 export default {
   title: 'Portfolio Item',
   name: 'portfolioItem',
   type: 'document',
+  icon: IoImageOutline,
   // groups: [
   //   { title: 'Content', name: 'content', default: true },
   //   { title: 'Settings', name: 'settings' },
