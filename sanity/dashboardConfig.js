@@ -13,7 +13,7 @@ export default [
     layout: { width: 'medium', height: 'small' },
     sites: [
       {
-        title: 'pauldotey.ca',
+        title: 'jaketobin.ca',
         apiId: import.meta.env.SANITY_STUDIO_NETLIFY_SITE_ID,
         buildHookId: import.meta.env.SANITY_STUDIO_NETLIFY_BUILD_HOOK_ID,
         name: import.meta.env.SANITY_STUDIO_SITE_NAME,
