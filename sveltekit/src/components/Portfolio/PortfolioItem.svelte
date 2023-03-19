@@ -101,6 +101,7 @@
 		}
 
 		.portfolio_item_header {
+			font-size: 1.5em;
 			margin-bottom: 0.5em;
 		}
 	}

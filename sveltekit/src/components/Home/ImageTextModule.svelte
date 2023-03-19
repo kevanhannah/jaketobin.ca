@@ -14,7 +14,7 @@
 	<SanityImage image={imageData} loading="eager" />
 	<div class="text_content" class:reverse>
 		{#if content}
-			<h2>{title}</h2>
+			<h2 class="module_header">{title}</h2>
 		{/if}
 		<PortableText value={content} />
 		{#if link && link.text}
@@ -40,6 +40,11 @@
 		.image_text {
 			display: flex;
 			flex-direction: column;
+		}
+
+		.module_header {
+			font-size: 1.75em;
+			line-height: 1.25;
 		}
 	}
 </style>

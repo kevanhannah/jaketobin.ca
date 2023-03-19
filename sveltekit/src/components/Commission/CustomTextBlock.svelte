@@ -22,6 +22,8 @@
 	}
 
 	h2 {
+		font-size: 1.75em;
+		line-height: 1.25;
 		margin-bottom: 0.5rem;
 	}
 

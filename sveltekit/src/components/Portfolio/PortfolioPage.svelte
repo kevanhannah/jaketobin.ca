@@ -35,4 +35,12 @@
 		padding-bottom: 0.25em;
 		border-bottom: 1px solid var(--black);
 	}
+
+	@media (max-width: 768px) {
+		.portfolio_page_header {
+			font-size: 1.75em;
+			line-height: 1.25;
+			padding-bottom: 0.5em;
+		}
+	}
 </style>

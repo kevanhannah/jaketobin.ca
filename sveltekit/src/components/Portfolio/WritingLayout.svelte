@@ -61,5 +61,13 @@
 			margin-top: 0.5em;
 			row-gap: 2em;
 		}
+
+		.publication_list_item h3 {
+			font-size: 1.25em;
+		}
+
+		.publication_list_item_link {
+			text-underline-offset: 0.25em;
+		}
 	}
 </style>

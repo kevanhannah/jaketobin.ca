@@ -1,12 +1,8 @@
 <script>
-	import { page } from '$app/stores';
-	import { mobileNavIsOpen, toggleMobileNav } from '$lib/stores';
+	import { closeAllNav, mobileNavIsOpen, toggleMobileNav } from '$lib/stores';
 	import MobileNavToggle from '$components/Header/MobileNav/MobileNavToggle.svelte';
 	import CartToggle from '$components/Header/CartToggle.svelte';
 	import MobilePrimaryMenu from '$components/Header/MobileNav/MobilePrimaryMenu.svelte';
-
-	$: ({ portfolioCategories } = $page.data);
-	$: console.log(portfolioCategories);
 </script>
 
 <div class="main_navigation--mobile" id="mobile-nav">
@@ -20,8 +16,14 @@
 		<div
 			class="mobile_menu_backdrop"
 			class:is_active={$mobileNavIsOpen}
-			on:click={toggleMobileNav}
-			on:keypress={toggleMobileNav}
+			on:click={() => {
+				toggleMobileNav();
+				closeAllNav();
+			}}
+			on:keypress={() => {
+				toggleMobileNav();
+				closeAllNav();
+			}}
 		/>
 	</div>
 	<CartToggle />
@@ -69,8 +71,8 @@
 		overflow-y: scroll;
 		padding-top: 6em;
 		padding-bottom: 2em;
-		padding-left: 1em;
-		padding-right: 1em;
+		/* padding-left: 1em;
+		padding-right: 1em; */
 	}
 
 	.mobile_menu_backdrop {
