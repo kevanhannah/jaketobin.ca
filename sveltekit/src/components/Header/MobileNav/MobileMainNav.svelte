@@ -71,8 +71,6 @@
 		overflow-y: scroll;
 		padding-top: 6em;
 		padding-bottom: 2em;
-		/* padding-left: 1em;
-		padding-right: 1em; */
 	}
 
 	.mobile_menu_backdrop {
@@ -95,7 +93,7 @@
 		pointer-events: auto;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1000px) {
 		.main_navigation--mobile {
 			display: flex;
 		}

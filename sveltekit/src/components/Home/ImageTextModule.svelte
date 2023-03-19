@@ -43,7 +43,8 @@
 		}
 
 		.module_header {
-			font-size: 1.75em;
+			font-size: 2em;
+			margin-bottom: 0.75em;
 			line-height: 1.25;
 		}
 	}

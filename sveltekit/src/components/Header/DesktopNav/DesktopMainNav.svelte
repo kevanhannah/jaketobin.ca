@@ -68,7 +68,7 @@
 		gap: 2em;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1000px) {
 		.main_navigation--desktop {
 			display: none;
 		}

@@ -13,7 +13,15 @@
 		margin-bottom: 2em;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1000px) {
+		svg {
+			height: 2.25em;
+			margin-top: 1.75em;
+			margin-bottom: 1.75em;
+		}
+	}
+
+	@media (max-width: 600px) {
 		svg {
 			height: 1.5em;
 			margin-top: 1.5em;

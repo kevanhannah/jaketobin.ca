@@ -22,9 +22,9 @@
 	}
 
 	h2 {
-		font-size: 1.75em;
+		font-size: 2em;
 		line-height: 1.25;
-		margin-bottom: 0.5rem;
+		margin-bottom: 0.75em;
 	}
 
 	p {
