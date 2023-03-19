@@ -31,6 +31,7 @@ export default {
           },
         },
       ],
+      validation: (Rule) => Rule.unique(),
     },
     orderRankField({ type: 'portfolioCategory' }),
   ],

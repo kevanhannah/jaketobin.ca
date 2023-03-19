@@ -9,17 +9,23 @@ export default {
   __experimental_actions: ['update', 'publish' /* 'create', 'delete' */],
   fields: [
     {
-      name: 'categories',
-      title: 'Portfolio Page Categories',
-      type: 'array',
-      of: [
-        {
-          title: 'Portfolio Page Category',
-          type: 'reference',
-          to: [{ type: 'portfolioCategory' }],
-        },
-      ],
-      validation: (Rule) => Rule.unique(),
+      name: 'siteTitle',
+      title: 'Site Title',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
     },
+    // {
+    //   name: 'categories',
+    //   title: 'Portfolio Page Categories',
+    //   type: 'array',
+    //   of: [
+    //     {
+    //       title: 'Portfolio Page Category',
+    //       type: 'reference',
+    //       to: [{ type: 'portfolioCategory' }],
+    //     },
+    //   ],
+    //   validation: (Rule) => Rule.unique(),
+    // },
   ],
 };
