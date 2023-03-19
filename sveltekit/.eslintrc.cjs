@@ -2,7 +2,9 @@ module.exports = {
   root: true,
   extends: ['eslint:recommended', 'prettier'],
   plugins: ['svelte3'],
-  overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
+  overrides: [{
+ files: ['*.svelte'], processor: 'svelte3/svelte3',
+}],
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 2022,
@@ -19,15 +21,15 @@ module.exports = {
     'no-await-in-loop': 0,
     'no-return-assign': ['error', 'except-parens'],
     'no-restricted-syntax': [
-      2,
-      'ForInStatement',
-      'LabeledStatement',
-      'WithStatement',
+    	2,
+    	'ForInStatement',
+    	'LabeledStatement',
+    	'WithStatement',
     ],
 
     // disallow declaration of variables that are not used in the code
     'no-unused-vars': [
-      'error',
+    	'error',
       {
         args: 'after-used',
         ignoreRestSiblings: true,
@@ -38,18 +40,20 @@ module.exports = {
     ],
     // disallow use of variables before they are defined
     'no-use-before-define': [
-      'error',
-      { functions: true, classes: true, variables: true },
+    	'error',
+      {
+ functions: true, classes: true, variables: true,
+},
     ],
     'prefer-const': [
-      'error',
+    	'error',
       {
         destructuring: 'all',
       },
     ],
     'arrow-body-style': [2, 'as-needed'],
     'no-unused-expressions': [
-      'error',
+    	'error',
       {
         allowTaggedTemplates: true,
         allowShortCircuit: true,
@@ -57,7 +61,7 @@ module.exports = {
       },
     ],
     'no-param-reassign': [
-      2,
+    	2,
       {
         props: false,
       },
@@ -68,7 +72,7 @@ module.exports = {
 
     // require trailing commas in multiline object literals
     'comma-dangle': [
-      'error',
+    	'error',
       {
         arrays: 'always-multiline',
         objects: 'always-multiline',
@@ -79,12 +83,14 @@ module.exports = {
     ],
 
     // enforce spacing before and after comma
-    'comma-spacing': ['error', { before: false, after: true }],
+    'comma-spacing': ['error', {
+ before: false, after: true,
+}],
 
     // enforce one true comma style
     'comma-style': [
-      'error',
-      'last',
+    	'error',
+    	'last',
       {
         exceptions: {
           ArrayExpression: false,
@@ -107,7 +113,7 @@ module.exports = {
     'consistent-return': 0,
     radix: 0,
     'no-shadow': [
-      2,
+    	2,
       {
         hoist: 'all',
         allow: ['resolve', 'reject', 'done', 'next', 'err', 'error'],
@@ -118,7 +124,9 @@ module.exports = {
     'array-bracket-spacing': ['error', 'never'],
 
     // enforce line breaks between array elements
-    'array-element-newline': ['off', { multiline: true, minItems: 3 }],
+    'array-element-newline': ['off', {
+ multiline: true, minItems: 3,
+}],
 
     // enforce spacing inside single-line blocks
     'block-spacing': ['error', 'always'],
@@ -127,7 +135,9 @@ module.exports = {
     'brace-style': ['error', '1tbs', { allowSingleLine: true }],
 
     // require camel case names
-    camelcase: ['error', { properties: 'never', ignoreDestructuring: false }],
+    camelcase: ['error', {
+ properties: 'never', ignoreDestructuring: false,
+}],
 
     // disallow padding inside computed properties
     'computed-property-spacing': ['error', 'never'],
@@ -146,8 +156,8 @@ module.exports = {
 
     // requires function names to match the name of the variable or property to which they are assigned
     'func-name-matching': [
-      'off',
-      'always',
+    	'off',
+    	'always',
       {
         includeCommonJSModuleExports: false,
         considerPropertyDescriptor: true,
@@ -178,13 +188,12 @@ module.exports = {
 
     // specify a specific tab width for your code
     indent: [
-      'error',
-      2,
+    	'error',
+    	'tab',
       {
         SwitchCase: 1,
         VariableDeclarator: 1,
         outerIIFEBody: 1,
-        // MemberExpression: null,
         FunctionDeclaration: {
           parameters: 1,
           body: 1,
@@ -202,22 +211,23 @@ module.exports = {
         flatTernaryExpressions: false,
         // list derived from https://github.com/benjamn/ast-types/blob/HEAD/def/jsx.js
         ignoredNodes: [
-          'JSXElement',
-          'JSXElement > *',
-          'JSXAttribute',
-          'JSXIdentifier',
-          'JSXNamespacedName',
-          'JSXMemberExpression',
-          'JSXSpreadAttribute',
-          'JSXExpressionContainer',
-          'JSXOpeningElement',
-          'JSXClosingElement',
-          'JSXFragment',
-          'JSXOpeningFragment',
-          'JSXClosingFragment',
-          'JSXText',
-          'JSXEmptyExpression',
-          'JSXSpreadChild',
+        	'JSXElement',
+        	'JSXElement > *',
+        	'JSXAttribute',
+        	'JSXIdentifier',
+        	'JSXNamespacedName',
+        	'JSXMemberExpression',
+        	'JSXSpreadAttribute',
+        	'JSXExpressionContainer',
+        	'JSXOpeningElement',
+        	'JSXClosingElement',
+        	'JSXFragment',
+        	'JSXOpeningFragment',
+        	'JSXClosingFragment',
+        	'JSXText',
+        	'JSXEmptyExpression',
+        	'JSXSpreadChild',
+        	'ObjectExpression',
         ],
         ignoreComments: false,
       },
@@ -240,33 +250,35 @@ module.exports = {
 
     // disallow un-paren'd mixes of different operators
     'no-mixed-operators': [
-      'error',
+    	'error',
       {
         // the list of arithmetic groups disallows mixing `%` and `**`
         // with other arithmetic operators.
         groups: [
-          ['%', '**'],
-          ['%', '+'],
-          ['%', '-'],
-          ['%', '*'],
-          ['%', '/'],
-          ['/', '*'],
-          ['&', '|', '<<', '>>', '>>>'],
-          ['==', '!=', '===', '!=='],
-          ['&&', '||'],
+        	['%', '**'],
+        	['%', '+'],
+        	['%', '-'],
+        	['%', '*'],
+        	['%', '/'],
+        	['/', '*'],
+        	['&', '|', '<<', '>>', '>>>'],
+        	['==', '!=', '===', '!=='],
+        	['&&', '||'],
         ],
         allowSamePrecedence: false,
       },
     ],
 
     // disallow mixed spaces and tabs for indentation
-    'no-mixed-spaces-and-tabs': 'error',
+    'no-mixed-spaces-and-tabs': ['error'],
 
     // disallow use of chained assignment expressions
     'no-multi-assign': ['error'],
 
     // disallow multiple empty lines, only one newline at the end, and no new lines at the beginning
-    'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0, maxEOF: 0 }],
+    'no-multiple-empty-lines': ['error', {
+ max: 1, maxBOF: 0, maxEOF: 0,
+}],
 
     // disallow negated conditions
     'no-negated-condition': 'off',
@@ -284,18 +296,15 @@ module.exports = {
     'multiline-ternary': ['off', 'never'],
 
     // disallow tab characters entirely
-    'no-tabs': 'error',
+    'no-tabs': ['error', { allowIndentationTabs: true }],
 
     // disallow the use of ternary operators
     'no-ternary': 'off',
 
     // disallow trailing whitespace at the end of lines
-    'no-trailing-spaces': [
-      'error',
-      {
-        skipBlankLines: false,
-        ignoreComments: false,
-      },
+    'no-trailing-spaces': ['error', {
+ skipBlankLines: false, ignoreComments: false,
+},
     ],
 
     // disallow the use of Boolean literals in conditional expressions
@@ -307,14 +316,16 @@ module.exports = {
 
     // enforce line breaks between braces
     'object-curly-newline': [
-      'error',
+    	'error',
       {
         ObjectExpression: {
           minProperties: 4,
           multiline: true,
           consistent: true,
         },
-        ObjectPattern: { minProperties: 4, multiline: true, consistent: true },
+        ObjectPattern: {
+ minProperties: 4, multiline: true, consistent: true,
+},
         ImportDeclaration: {
           minProperties: 4,
           multiline: true,
@@ -330,7 +341,7 @@ module.exports = {
 
     // enforce "same line" or "multiple line" on object properties.
     'object-property-newline': [
-      'error',
+    	'error',
       {
         allowAllPropertiesOnSameLine: true,
       },
@@ -341,29 +352,37 @@ module.exports = {
 
     // require quotes around object literal property names
     'quote-props': [
-      'error',
-      'as-needed',
-      { keywords: false, unnecessary: true, numbers: false },
+    	'error',
+    	'as-needed',
+      {
+ keywords: false, unnecessary: true, numbers: false,
+},
     ],
 
     // specify whether double or single quotes should be used
     quotes: [
-      'error',
-      'single',
-      { avoidEscape: true, allowTemplateLiterals: true },
+    	'error',
+    	'single',
+      {
+ avoidEscape: true, allowTemplateLiterals: true,
+},
     ],
 
     // require or disallow use of semicolons instead of ASI
     semi: ['error', 'always'],
 
     // enforce spacing before and after semicolons
-    'semi-spacing': ['error', { before: false, after: true }],
+    'semi-spacing': ['error', {
+ before: false, after: true,
+}],
 
     // Enforce location of semicolons
     'semi-style': ['error', 'last'],
 
     // requires object keys to be sorted
-    'sort-keys': ['off', 'asc', { caseSensitive: false, natural: true }],
+    'sort-keys': ['off', 'asc', {
+ caseSensitive: false, natural: true,
+}],
 
     // sort variables within the same declaration block
     'sort-vars': 'off',
@@ -373,7 +392,7 @@ module.exports = {
 
     // require or disallow space before function opening parenthesis
     'space-before-function-paren': [
-      'error',
+    	'error',
       {
         anonymous: 'always',
         named: 'never',
@@ -389,7 +408,7 @@ module.exports = {
 
     // Require or disallow spaces before/after unary operators
     'space-unary-ops': [
-      'error',
+    	'error',
       {
         words: true,
         nonwords: false,
@@ -399,8 +418,8 @@ module.exports = {
 
     // require or disallow a space immediately following the // or /* in a comment
     'spaced-comment': [
-      'error',
-      'always',
+    	'error',
+    	'always',
       {
         line: {
           exceptions: ['-', '+'],
@@ -416,7 +435,9 @@ module.exports = {
 
     // Enforce spacing around colons of switch statements
     // https://eslint.org/docs/rules/switch-colon-spacing
-    'switch-colon-spacing': ['error', { after: true, before: false }],
+    'switch-colon-spacing': ['error', {
+ after: true, before: false,
+}],
 
     // Require or disallow spacing between template tags and their literals
     // https://eslint.org/docs/rules/template-tag-spacing
@@ -431,7 +452,7 @@ module.exports = {
     eqeqeq: 'error',
     'object-shorthand': 'error',
     'prefer-destructuring': [
-      'error',
+    	'error',
       {
         array: true,
         object: true,

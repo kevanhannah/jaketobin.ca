@@ -31,7 +31,7 @@
 		right: 0;
 		top: 0;
 		z-index: 8;
-		/* transition: opacity 0.15s linear; */
+		transition: opacity 0.15s linear;
 	}
 
 	.cart_backdrop.is_active {

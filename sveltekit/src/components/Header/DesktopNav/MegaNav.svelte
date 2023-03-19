@@ -1,0 +1,101 @@
+<script>
+	import { page } from '$app/stores';
+	import { portfolioNavIsOpen, shopNavIsOpen } from '$lib/stores';
+	import NavSection from '$components/Header/NavSection.svelte';
+
+	$: ({ portfolioCategories } = $page.data);
+</script>
+
+<div class="mega_nav">
+	<div class="mega_item" class:is_active={$portfolioNavIsOpen}>
+		<div class="mega_item_outer">
+			<div class="mega_item_inner">
+				<div class="mega_item_content">
+					{#each portfolioCategories as portfolioCategory}
+						<NavSection content={portfolioCategory} />
+					{/each}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mega_item" class:is_active={$shopNavIsOpen}>
+		<div class="mega_item_outer">
+			<div class="mega_item_inner">
+				<div class="mega_item_content">
+					<div>
+						<h3 class="mega_nav_menu_header">Products</h3>
+						<ul class="mega_nav_menu">
+							<li>Prints</li>
+							<li>Greeting cards</li>
+							<li>Postcards</li>
+							<li>Stickers</li>
+							<li>Magnets</li>
+						</ul>
+					</div>
+					<div>
+						<h3 class="mega_nav_menu_header">Spaces</h3>
+						<ul class="mega_nav_menu">
+							<li>Bookstores</li>
+							<li>Queer spaces</li>
+							<li>Signs</li>
+							<li>Parks</li>
+						</ul>
+					</div>
+					<div>
+						<h3 class="mega_nav_menu_header">Cities</h3>
+						<ul class="mega_nav_menu">
+							<li>Toronto</li>
+							<li>Vancouver</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	.mega_nav {
+		background-color: var(--paperWhite);
+		left: 0;
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 100%;
+		z-index: 3;
+	}
+
+	.mega_item {
+		left: 0;
+		margin-top: -0.1rem;
+		overflow: hidden;
+		pointer-events: none;
+		position: absolute;
+		right: 0;
+		top: 0;
+		visibility: hidden;
+		z-index: 1;
+	}
+
+	.is_active {
+		pointer-events: auto;
+		visibility: visible;
+	}
+
+	.mega_item_content {
+		display: flex;
+		gap: 3.75em;
+		padding-bottom: 2.5em;
+		padding-left: 3em;
+		padding-right: 3em;
+		background: var(--paperWhite);
+		border-bottom: 1px solid var(--black);
+		position: relative;
+	}
+
+	@media (max-width: 768px) {
+		.mega_nav {
+			display: none;
+		}
+	}
+</style>

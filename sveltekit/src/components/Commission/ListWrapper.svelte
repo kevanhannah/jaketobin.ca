@@ -27,4 +27,11 @@
 	ol {
 		list-style-type: number;
 	}
+
+	@media (max-width: 768px) {
+		ol,
+		ul {
+			max-width: 100%;
+		}
+	}
 </style>

@@ -86,4 +86,14 @@
 		display: flex;
 		gap: 1.5em;
 	}
+
+	@media (max-width: 768px) {
+		.commission_form_section {
+			width: 100%;
+		}
+
+		.form_row {
+			flex-direction: column;
+		}
+	}
 </style>

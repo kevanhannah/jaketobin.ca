@@ -87,4 +87,21 @@
 		cursor: pointer;
 		opacity: 0.8;
 	}
+
+	@media (max-width: 768px) {
+		.portfolio_item {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.portfolio_item_info {
+			flex-direction: column-reverse;
+			justify-content: flex-start;
+			gap: 1.5em;
+		}
+
+		.portfolio_item_header {
+			margin-bottom: 0.5em;
+		}
+	}
 </style>

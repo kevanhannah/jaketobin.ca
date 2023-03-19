@@ -1,7 +1,6 @@
 <script>
 	import getImageProps from '$lib/utils/getImageProps';
 	import SanityImage from '$components/shared/SanityImage.svelte';
-	import Button from '$components/shared/Button.svelte';
 	import LinkButton from '../shared/LinkButton.svelte';
 
 	export let portableText;
@@ -47,6 +46,7 @@
 
 	.portfolio_images {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 1.5em;
 		justify-content: center;
 		align-items: center;
@@ -54,5 +54,32 @@
 
 	.image_wrapper {
 		max-width: calc((100% / 3) - 1em);
+	}
+
+	.image_wrapper:last-of-type {
+		display: none;
+	}
+
+	@media (max-width: 768px) {
+		.portfolio_preview_section {
+			padding-top: 2em;
+			padding-bottom: 1.5em;
+			margin-top: 2em;
+			margin-bottom: 2em;
+		}
+
+		.portfolio_images {
+			gap: 1em;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.image_wrapper {
+			max-width: calc((100% / 2) - 0.5em);
+		}
+
+		.image_wrapper:last-of-type {
+			display: block;
+		}
 	}
 </style>

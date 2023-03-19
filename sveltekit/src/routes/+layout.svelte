@@ -21,8 +21,16 @@
 
 <style>
 	div {
+		padding-top: 3em;
 		padding-left: 3em;
 		padding-right: 3em;
-		padding-top: 3em;
+	}
+
+	@media (max-width: 768px) {
+		div {
+			padding-top: 1em;
+			padding-left: 1em;
+			padding-right: 1em;
+		}
 	}
 </style>

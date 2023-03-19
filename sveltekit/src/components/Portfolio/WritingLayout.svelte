@@ -53,4 +53,13 @@
 		font-weight: 400;
 		line-height: 1.5;
 	}
+
+	@media (max-width: 768px) {
+		.publication_list {
+			display: flex;
+			flex-direction: column;
+			margin-top: 0.5em;
+			row-gap: 2em;
+		}
+	}
 </style>

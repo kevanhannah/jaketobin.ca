@@ -1,11 +1,16 @@
 <script>
 	import { browser } from '$app/environment';
-	import { closeAllNav, portfolioNavIsOpen, shopNavIsOpen } from '$lib/stores';
+	import {
+		closeAllNav,
+		mobileNavIsOpen,
+		portfolioNavIsOpen,
+		shopNavIsOpen,
+	} from '$lib/stores';
 
 	$: if (browser) {
 		document.body.classList.toggle(
 			'no-scroll',
-			$portfolioNavIsOpen || $shopNavIsOpen
+			$portfolioNavIsOpen || $shopNavIsOpen || $mobileNavIsOpen
 		);
 	}
 </script>
@@ -33,10 +38,10 @@
 		position: fixed;
 		right: 0;
 		top: 0;
-		/* transition: opacity 0.15s linear; */
+		transition: opacity 0.15s linear;
 	}
 
-	.nav_backdrop.is_active {
+	.is_active {
 		backdrop-filter: blur(0.5em);
 		opacity: 1;
 		pointer-events: auto;

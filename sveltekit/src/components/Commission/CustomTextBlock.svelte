@@ -36,4 +36,12 @@
 		font-size: 1.75em;
 		margin-bottom: 0.5em;
 	}
+
+	@media (max-width: 768px) {
+		h2,
+		h3,
+		p {
+			max-width: 100%;
+		}
+	}
 </style>

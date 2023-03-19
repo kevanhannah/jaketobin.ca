@@ -62,4 +62,15 @@
 		text-underline-offset: 0.25em;
 		text-decoration-thickness: 1px;
 	}
+
+	@media (max-width: 768px) {
+		.portfolio_page {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.portfolio_sidebar {
+			display: none;
+		}
+	}
 </style>

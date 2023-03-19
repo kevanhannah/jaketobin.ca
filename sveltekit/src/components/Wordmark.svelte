@@ -7,6 +7,17 @@
 
 <style>
 	svg {
+		display: block;
 		height: 3em;
+		margin-top: 2em;
+		margin-bottom: 2em;
+	}
+
+	@media (max-width: 768px) {
+		svg {
+			height: 1.5em;
+			margin-top: 1.5em;
+			margin-bottom: 1.5em;
+		}
 	}
 </style>

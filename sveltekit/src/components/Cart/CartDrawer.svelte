@@ -15,19 +15,22 @@
 			aria-label="Close cart"
 			class="closeDrawer"
 			on:click={toggleCart}
-			type="button">&times;</button
+			type="button"
 		>
+			<span class="hamburger_icon" />
+		</button>
 	</div>
 	<Cart />
 </aside>
 
 <style>
 	.cart_drawer {
-		width: 35em;
+		--drawer-width: 35em;
+		width: var(--drawer-width);
 		position: fixed;
 		top: 0;
 		bottom: 0;
-		right: -35em;
+		right: calc(-1 * var(--drawer-width));
 		z-index: 9;
 		transform: none;
 		transition-duration: 0.35s;
@@ -40,7 +43,7 @@
 	}
 
 	.cart_drawer.open {
-		transform: translate(-35em);
+		transform: translate(calc(-1 * var(--drawer-width)));
 	}
 
 	.cart_drawer_header {
@@ -64,7 +67,7 @@
 	.closeDrawer {
 		background: none;
 		border: none;
-		font-size: 1.5em;
+		font-size: 1em;
 		font-weight: 500;
 		color: var(--black);
 		display: flex;
@@ -74,5 +77,59 @@
 
 	.closeDrawer:hover {
 		color: #6c6c6c;
+	}
+
+	.hamburger_icon {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		width: 1.5em;
+	}
+
+	.hamburger_icon:after,
+	.hamburger_icon:before {
+		border-top-width: 1.5px;
+		content: '';
+		display: block;
+		height: 0;
+		position: absolute;
+		top: calc(50% - 0.5px);
+		transition: opacity 0s 0.15s, transform 0.15s ease-out;
+		width: 100%;
+	}
+
+	.hamburger_icon:before {
+		transform: rotate(45deg);
+	}
+
+	.hamburger_icon:after {
+		transform: rotate(-45deg);
+	}
+
+	@media (max-width: 768px) {
+		.cart_drawer {
+			--drawer-width: 22.5em;
+		}
+
+		.cart_drawer_header {
+			padding-top: 1.5em;
+			padding-bottom: 1.5em;
+			padding-left: 0.75em;
+			padding-right: 0.75em;
+		}
+
+		.cart_drawer_header h2 {
+			font-size: 1.55em;
+			margin-bottom: 0;
+			line-height: 1;
+		}
+
+		.hamburger_icon {
+			width: 2em;
+		}
 	}
 </style>

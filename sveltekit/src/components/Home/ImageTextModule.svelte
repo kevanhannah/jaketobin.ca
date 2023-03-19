@@ -5,7 +5,7 @@
 	import getImageProps from '$lib/utils/getImageProps';
 
 	export let moduleData;
-	let { content, image, link, reverse, title } = moduleData;
+	const { content, image, link, reverse, title } = moduleData;
 
 	const imageData = getImageProps({ aspectRatio: 1.333, image: image.image });
 </script>
@@ -34,5 +34,12 @@
 
 	.text_content.reverse {
 		order: -1;
+	}
+
+	@media (max-width: 768px) {
+		.image_text {
+			display: flex;
+			flex-direction: column;
+		}
 	}
 </style>

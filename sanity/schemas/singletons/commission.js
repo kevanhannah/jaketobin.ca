@@ -69,7 +69,7 @@ export default {
                   to: [{ type: 'portfolioItem' }],
                 },
               ],
-              validation: (Rule) => Rule.max(3),
+              validation: (Rule) => Rule.max(4),
             },
             {
               title: 'Link',

@@ -42,4 +42,26 @@
 		text-underline-offset: 0.25em;
 		text-decoration-thickness: 1px;
 	}
+
+	@media (max-width: 768px) {
+		section {
+			border-bottom: 1px solid var(--black);
+			padding-top: 1.75em;
+			padding-bottom: 1.75em;
+		}
+
+		section:last-of-type {
+			border-bottom: none;
+		}
+
+		.section_header {
+			margin-bottom: 1.5em;
+			line-height: 1.5;
+		}
+
+		.section_menu li {
+			line-height: 1.5;
+			margin-bottom: 0.75em;
+		}
+	}
 </style>
