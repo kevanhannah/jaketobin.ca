@@ -83,9 +83,11 @@
 		user-select: none;
 	}
 
-	.imageSelectWrapper:hover {
-		cursor: pointer;
-		opacity: 0.8;
+	@media (hover: hover) {
+		.imageSelectWrapper:hover {
+			cursor: pointer;
+			opacity: 0.8;
+		}
 	}
 
 	@media (max-width: 768px) {

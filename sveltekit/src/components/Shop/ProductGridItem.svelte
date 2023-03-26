@@ -20,13 +20,15 @@
 		text-decoration: none;
 	}
 
-	a:hover {
-		text-decoration: underline;
-	}
-
 	img {
 		width: 100%;
 		aspect-ratio: 1;
 		object-fit: cover;
+	}
+
+	@media (hover: hover) {
+		a:hover {
+			text-decoration: underline;
+		}
 	}
 </style>

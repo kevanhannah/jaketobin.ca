@@ -75,10 +75,6 @@
 		align-items: center;
 	}
 
-	.closeDrawer:hover {
-		color: #6c6c6c;
-	}
-
 	.hamburger_icon {
 		display: flex;
 		flex-direction: column;
@@ -108,6 +104,12 @@
 
 	.hamburger_icon:after {
 		transform: rotate(-45deg);
+	}
+
+	@media (hover: hover) {
+		.closeDrawer:hover {
+			color: #6c6c6c;
+		}
 	}
 
 	@media (max-width: 768px) {

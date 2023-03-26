@@ -37,10 +37,12 @@
 		text-decoration: none;
 	}
 
-	.section_menu li a:hover {
-		text-decoration: underline;
-		text-underline-offset: 0.25em;
-		text-decoration-thickness: 1px;
+	@media (hover: hover) {
+		.section_menu li a:hover {
+			text-decoration: underline;
+			text-underline-offset: 0.25em;
+			text-decoration-thickness: 1px;
+		}
 	}
 
 	@media (max-width: 1150px) {

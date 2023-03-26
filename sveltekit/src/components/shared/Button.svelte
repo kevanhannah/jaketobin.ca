@@ -18,8 +18,10 @@
 		color: var(--paperWhite);
 	}
 
-	button:hover {
-		background-color: #6c6c6c;
+	@media (hover: hover) {
+		button:hover {
+			background-color: #6c6c6c;
+		}
 	}
 
 	@media (max-width: 768px) {

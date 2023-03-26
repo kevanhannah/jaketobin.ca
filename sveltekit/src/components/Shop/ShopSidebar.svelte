@@ -42,9 +42,11 @@
 		text-decoration: none;
 	}
 
-	.sidebar_section_list li a:hover {
-		text-decoration: underline;
-		text-underline-offset: 0.25em;
-		text-decoration-thickness: 1px;
+	@media (hover: hover) {
+		.sidebar_section_list li a:hover {
+			text-decoration: underline;
+			text-underline-offset: 0.25em;
+			text-decoration-thickness: 1px;
+		}
 	}
 </style>

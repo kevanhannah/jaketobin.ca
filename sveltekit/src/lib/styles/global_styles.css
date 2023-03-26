@@ -10,6 +10,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -50,11 +51,6 @@ a {
   text-underline-offset: 0.25em;
 }
 
-a:hover {
-  text-decoration: none;
-  opacity: 0.75;
-}
-
 button,
 input,
 select,
@@ -67,4 +63,11 @@ button {
   appearance: none;
   cursor: pointer;
   font-family: inherit;
+}
+
+@media (hover: hover) {
+  a:hover {
+    text-decoration: none;
+    opacity: 0.75;
+  }
 }
