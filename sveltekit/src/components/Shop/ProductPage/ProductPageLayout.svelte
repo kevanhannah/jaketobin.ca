@@ -4,7 +4,6 @@
 	export let product;
 	$: ({ title, media } = product);
 	$: images = media.nodes.map((item) => item.image);
-	$: console.log(images);
 </script>
 
 <main>
@@ -19,5 +18,12 @@
 		display: grid;
 		grid-template-columns: 5fr 3fr;
 		gap: 1.25em;
+	}
+
+	@media (max-width: 768px) {
+		main {
+			display: flex;
+			flex-direction: column;
+		}
 	}
 </style>

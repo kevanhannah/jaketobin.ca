@@ -51,4 +51,20 @@
 	.gallery_image:hover {
 		opacity: 0.8;
 	}
+
+	@media (max-width: 768px) {
+		div {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+
+		.gallery {
+			flex-direction: row;
+			justify-content: center;
+		}
+
+		.gallery_image {
+			width: calc((100% / 4) - 0.75em);
+		}
+	}
 </style>
