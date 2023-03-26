@@ -4,7 +4,6 @@
 
 	export let data;
 	$: ({ products } = data);
-	$: console.log(products);
 </script>
 
 <main>

@@ -9,7 +9,7 @@
 	<ul class="section_menu">
 		{#each content.pages as page}
 			<li>
-				<a href={page.slug.current}>{page.title}</a>
+				<a href={`/${page.slug.current}`}>{page.title}</a>
 			</li>
 		{/each}
 	</ul>
