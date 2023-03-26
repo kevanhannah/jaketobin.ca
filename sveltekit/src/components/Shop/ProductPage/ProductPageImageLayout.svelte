@@ -10,15 +10,17 @@
 <div>
 	<div class="gallery">
 		{#each images as image}
-			<img
-				alt={image.altText}
-				class="gallery_image"
-				on:click={changeImage(image)}
-				on:keypress={changeImage(image)}
-				role="button"
-				src={image.src}
-				tabindex="0"
-			/>
+			<picture>
+				<img
+					alt={image.altText}
+					class="gallery_image"
+					on:click={changeImage(image)}
+					on:keypress={changeImage(image)}
+					role="button"
+					src={image.src}
+					tabindex="0"
+				/>
+			</picture>
 		{/each}
 	</div>
 	<img alt={mainImage.altText} class="main_image" src={mainImage.src} />
@@ -33,6 +35,8 @@
 
 	.main_image {
 		width: 100%;
+		aspect-ratio: 1;
+		object-fit: cover;
 	}
 
 	.gallery {
@@ -46,6 +50,8 @@
 		aspect-ratio: 1;
 		object-fit: cover;
 		cursor: pointer;
+		image-rendering: -webkit-optimize-contrast;
+		image-rendering: crisp-edges;
 	}
 
 	.gallery_image:hover {
