@@ -43,7 +43,7 @@
 		text-decoration-thickness: 1px;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1150px) {
 		section {
 			border-bottom: 1px solid var(--black);
 			padding-top: 1.75em;

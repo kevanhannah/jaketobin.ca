@@ -1,6 +1,6 @@
 <script>
 	import { navigating } from '$app/stores';
-	import { closeAllNav } from '$lib/stores';
+	import { closeAllNav } from '$lib/stores/navContexts';
 	import Wordmark from '$components/Wordmark.svelte';
 	import DesktopMainNav from '$components/Header/DesktopNav/DesktopMainNav.svelte';
 	import MobileMainNav from '$components/Header/MobileNav/MobileMainNav.svelte';

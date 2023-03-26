@@ -1,9 +1,14 @@
 import { writable } from 'svelte/store';
 
-export const mobileNavIsOpen = writable(false);
 export const cartIsOpen = writable(false);
+export const desktopNavIsOpen = writable(false);
+export const mobileNavIsOpen = writable(false);
 export const portfolioNavIsOpen = writable(false);
 export const shopNavIsOpen = writable(false);
+
+export function toggleDesktopNav() {
+  desktopNavIsOpen.update((data) => !data);
+}
 
 export function toggleMobileNav() {
 	mobileNavIsOpen.update((data) => !data);
@@ -30,7 +35,8 @@ export function toggleShopNav() {
 }
 
 export function closeAllNav() {
-	portfolioNavIsOpen.update(() => false);
-	shopNavIsOpen.update(() => false);
-	mobileNavIsOpen.update(() => false);
+  desktopNavIsOpen.update(() => false)
+  mobileNavIsOpen.update(() => false);
+  portfolioNavIsOpen.update(() => false);
+  shopNavIsOpen.update(() => false);
 }

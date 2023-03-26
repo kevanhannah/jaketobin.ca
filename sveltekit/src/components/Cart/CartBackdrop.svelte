@@ -1,18 +1,18 @@
 <script>
 	import { browser } from '$app/environment';
-	import { cartIsOpen, toggleCart } from '$lib/stores';
+	import { cartOpen, handleCartClick } from '$lib/stores/navContexts';
 
 	$: if (browser) {
-		document.body.classList.toggle('no-scroll', $cartIsOpen);
+		document.body.classList.toggle('no-scroll', $cartOpen);
 	}
 </script>
 
 <div
 	aria-hidden={true}
 	class="cart_backdrop"
-	class:is_active={$cartIsOpen}
-	on:click={toggleCart}
-	on:keypress={toggleCart}
+	class:is_active={$cartOpen}
+	on:click={handleCartClick}
+	on:keypress={handleCartClick}
 />
 
 <style lang="postcss">

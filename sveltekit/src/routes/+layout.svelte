@@ -1,23 +1,34 @@
 <script>
+	import { browser } from '$app/environment';
 	import '$lib/styles/fonts.css';
 	import '$lib/styles/typography.css';
 	import '$lib/styles/global_styles.css';
-	import { cartIsOpen, portfolioNavIsOpen, shopNavIsOpen } from '$lib/stores';
+	import {
+		cartOpen,
+		mobileNavOpen,
+		portfolioOpen,
+		shopOpen,
+	} from '$lib/stores/navContexts';
 	import Header from '$components/Header/Header.svelte';
 	import Footer from '$components/Footer.svelte';
 	import CartDrawer from '$components/Cart/CartDrawer.svelte';
 	import CartBackdrop from '$components/Cart/CartBackdrop.svelte';
-	import NavBackdrop from '$components/Header/NavBackdrop.svelte';
+
+	$: if (browser) {
+		document.body.classList.toggle(
+			'no-scroll',
+			$cartOpen || $mobileNavOpen || $portfolioOpen || $shopOpen
+		);
+	}
 </script>
 
 <CartDrawer />
 <CartBackdrop />
-<Header inert={$cartIsOpen} />
-<NavBackdrop />
-<div inert={$cartIsOpen || $portfolioNavIsOpen || $shopNavIsOpen}>
+<Header inert={$cartOpen} />
+<div inert={$cartOpen || $mobileNavOpen || $portfolioOpen || $shopOpen}>
 	<slot />
 </div>
-<Footer inert={$cartIsOpen || $portfolioNavIsOpen || $shopNavIsOpen} />
+<Footer inert={$cartOpen || $mobileNavOpen || $portfolioOpen || $shopOpen} />
 
 <style>
 	div {

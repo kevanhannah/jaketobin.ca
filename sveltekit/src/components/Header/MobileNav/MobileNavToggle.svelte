@@ -1,23 +1,14 @@
 <script>
-	import {
-		mobileNavIsOpen,
-		portfolioNavIsOpen,
-		shopNavIsOpen,
-		toggleMobileNav,
-	} from '$lib/stores';
+	import { handleMobileNavClick, mobileNavOpen } from '$lib/stores/navContexts';
 </script>
 
 <button
-	aria-expanded={$mobileNavIsOpen}
+	aria-expanded={$mobileNavOpen}
 	aria-controls="mobile-nav"
 	aria-label="Toggle Menu"
 	class="menu_toggle"
-	class:is_open={$mobileNavIsOpen}
-	on:click={() => {
-		toggleMobileNav();
-		portfolioNavIsOpen.update(() => false);
-		shopNavIsOpen.update(() => false);
-	}}
+	class:is_open={$mobileNavOpen}
+	on:click={handleMobileNavClick}
 >
 	<span class="hamburger">
 		<span class="hamburger_icon" />

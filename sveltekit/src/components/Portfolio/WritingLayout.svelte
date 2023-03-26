@@ -49,7 +49,7 @@
 	}
 
 	.publication_list_item h3 {
-		font-size: 1.75em;
+		font-size: 1.25em;
 		font-weight: 400;
 		line-height: 1.5;
 	}
@@ -60,10 +60,6 @@
 			flex-direction: column;
 			margin-top: 0.5em;
 			row-gap: 2em;
-		}
-
-		.publication_list_item h3 {
-			font-size: 1.25em;
 		}
 
 		.publication_list_item_link {

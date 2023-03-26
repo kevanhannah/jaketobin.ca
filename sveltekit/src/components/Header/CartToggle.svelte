@@ -1,8 +1,8 @@
 <script>
-	import { toggleCart } from '$lib/stores';
+	import { handleCartClick } from '$lib/stores/navContexts';
 </script>
 
-<button class="cart_toggle" on:click={toggleCart}
+<button class="cart_toggle" on:click={handleCartClick}
 	>Cart <span class="cart_toggle_counter">0</span></button
 >
 

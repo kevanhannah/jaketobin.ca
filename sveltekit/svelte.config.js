@@ -1,20 +1,18 @@
 import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
-import autoprefixer from 'autoprefixer';
 
-/** @type {import('@sveltejs/kit').Config} */
 const config = {
-  kit: {
-    adapter: adapter(),
-    alias: {
-      $components: './src/components',
-    },
-  },
-  preprocess: [preprocess({
-    postcss: {
-      plugins: [autoprefixer()],
-    },
-  })],
+	kit: {
+		adapter: adapter(),
+		alias: {
+			$components: './src/components',
+		},
+	},
+	preprocess: [
+		preprocess({
+			postcss: true,
+		}),
+	],
 };
 
 export default config;

@@ -1,13 +1,14 @@
 <script>
 	import { page } from '$app/stores';
-	import { portfolioNavIsOpen, shopNavIsOpen } from '$lib/stores';
+	import { portfolioOpen, shopOpen } from '$lib/stores/navContexts';
 	import NavSection from '$components/Header/NavSection.svelte';
+	import MegaNavBackdrop from '$components/Header/DesktopNav/MegaNavBackdrop.svelte';
 
 	$: ({ portfolioCategories } = $page.data);
 </script>
 
 <div class="mega_nav">
-	<div class="mega_item" class:is_active={$portfolioNavIsOpen}>
+	<div class="mega_item" class:is_active={$portfolioOpen}>
 		<div class="mega_item_outer">
 			<div class="mega_item_inner">
 				<div class="mega_item_content">
@@ -18,7 +19,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="mega_item" class:is_active={$shopNavIsOpen}>
+	<div class="mega_item" class:is_active={$shopOpen}>
 		<div class="mega_item_outer">
 			<div class="mega_item_inner">
 				<div class="mega_item_content">
@@ -53,6 +54,7 @@
 		</div>
 	</div>
 </div>
+<MegaNavBackdrop />
 
 <style>
 	.mega_nav {
@@ -93,7 +95,7 @@
 		position: relative;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1150px) {
 		.mega_nav {
 			display: none;
 		}

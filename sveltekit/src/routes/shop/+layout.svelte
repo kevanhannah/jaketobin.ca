@@ -1,9 +1,9 @@
 <script>
 	import PageWithSidebarLayout from '$components/shared/PageWithSidebarLayout.svelte';
-	import PortfolioSidebar from '$components/Portfolio/PortfolioSidebar.svelte';
+	import ShopSidebar from '$components/Shop/ShopSidebar.svelte';
 </script>
 
 <PageWithSidebarLayout>
-	<PortfolioSidebar />
+	<ShopSidebar />
 	<slot />
 </PageWithSidebarLayout>

@@ -1,20 +1,20 @@
 <script>
-	import { cartIsOpen, toggleCart } from '$lib/stores';
+	import { cartOpen, handleCartClick } from '$lib/stores/navContexts';
 	import Cart from '$components/Cart/Cart.svelte';
 </script>
 
 <aside
-	aria-hidden={!$cartIsOpen}
+	aria-hidden={!$cartOpen}
 	class="cart_drawer"
-	class:open={$cartIsOpen}
-	inert={!$cartIsOpen}
+	class:open={$cartOpen}
+	inert={!$cartOpen}
 >
 	<div class="cart_drawer_header">
 		<h2>Cart</h2>
 		<button
 			aria-label="Close cart"
 			class="closeDrawer"
-			on:click={toggleCart}
+			on:click={handleCartClick}
 			type="button"
 		>
 			<span class="hamburger_icon" />

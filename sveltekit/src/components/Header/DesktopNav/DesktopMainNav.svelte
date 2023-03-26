@@ -1,5 +1,8 @@
 <script>
-	import { togglePortfolioNav, toggleShopNav } from '$lib/stores';
+	import {
+		handlePortfolioClick,
+		handleShopClick,
+	} from '$lib/stores/navContexts';
 	import CartToggle from '$components/Header/CartToggle.svelte';
 </script>
 
@@ -7,12 +10,12 @@
 	<div class="menu_left">
 		<ul>
 			<li>
-				<button class="nav_button" on:click={togglePortfolioNav}
+				<button class="nav_button" on:click={handlePortfolioClick}
 					>Portfolio</button
 				>
 			</li>
 			<li>
-				<button class="nav_button" on:click={toggleShopNav}>Shop</button>
+				<button class="nav_button" on:click={handleShopClick}>Shop</button>
 			</li>
 			<li><a href="/commission" class="nav_button">Commission</a></li>
 		</ul>
@@ -68,7 +71,7 @@
 		gap: 2em;
 	}
 
-	@media (max-width: 1000px) {
+	@media (max-width: 1150px) {
 		.main_navigation--desktop {
 			display: none;
 		}

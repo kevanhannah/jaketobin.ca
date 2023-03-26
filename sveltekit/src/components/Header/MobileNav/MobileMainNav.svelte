@@ -1,5 +1,5 @@
 <script>
-	import { closeAllNav, mobileNavIsOpen, toggleMobileNav } from '$lib/stores';
+	import { closeAllNav, mobileNavOpen } from '$lib/stores/navContexts';
 	import MobileNavToggle from '$components/Header/MobileNav/MobileNavToggle.svelte';
 	import CartToggle from '$components/Header/CartToggle.svelte';
 	import MobilePrimaryMenu from '$components/Header/MobileNav/MobilePrimaryMenu.svelte';
@@ -8,22 +8,16 @@
 <div class="main_navigation--mobile" id="mobile-nav">
 	<div>
 		<MobileNavToggle />
-		<div class="mobile_menu" class:is_open={$mobileNavIsOpen}>
+		<div class="mobile_menu" class:is_open={$mobileNavOpen}>
 			<div class="mobile_menu_inner">
 				<MobilePrimaryMenu />
 			</div>
 		</div>
 		<div
 			class="mobile_menu_backdrop"
-			class:is_active={$mobileNavIsOpen}
-			on:click={() => {
-				toggleMobileNav();
-				closeAllNav();
-			}}
-			on:keypress={() => {
-				toggleMobileNav();
-				closeAllNav();
-			}}
+			class:is_active={$mobileNavOpen}
+			on:click={closeAllNav}
+			on:keypress={closeAllNav}
 		/>
 	</div>
 	<CartToggle />
@@ -93,7 +87,7 @@
 		pointer-events: auto;
 	}
 
-	@media (max-width: 1000px) {
+	@media (max-width: 1150px) {
 		.main_navigation--mobile {
 			display: flex;
 		}

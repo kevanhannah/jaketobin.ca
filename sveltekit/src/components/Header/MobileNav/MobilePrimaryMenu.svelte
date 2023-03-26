@@ -1,11 +1,11 @@
 <script>
 	import { page } from '$app/stores';
 	import {
-		portfolioNavIsOpen,
-		shopNavIsOpen,
-		togglePortfolioNav,
-		toggleShopNav,
-	} from '$lib/stores';
+		handlePortfolioClick,
+		handleShopClick,
+		portfolioOpen,
+		shopOpen,
+	} from '$lib/stores/navContexts';
 	import NavSection from '$components/Header/NavSection.svelte';
 
 	$: ({ portfolioCategories } = $page.data);
@@ -17,15 +17,15 @@
 			<div class="dropdown">
 				<button
 					class="menu_button"
-					class:active={$portfolioNavIsOpen}
-					on:click={togglePortfolioNav}
+					class:active={$portfolioOpen}
+					on:click={handlePortfolioClick}
 					>Portfolio
 					<span class="dropdown_icon" />
 				</button>
 				<div
 					aria-controls="portfolio_dropdown"
 					class="dropdown_content"
-					class:is_open={$portfolioNavIsOpen}
+					class:is_open={$portfolioOpen}
 					id="portfolio_dropdown"
 				>
 					{#each portfolioCategories as portfolioCategory}
@@ -38,13 +38,13 @@
 			<div class="dropdown">
 				<button
 					class="menu_button"
-					class:active={$shopNavIsOpen}
-					on:click={toggleShopNav}>Shop<span class="dropdown_icon" /></button
+					class:active={$shopOpen}
+					on:click={handleShopClick}>Shop<span class="dropdown_icon" /></button
 				>
 				<div
 					aria-controls="shop_dropdown"
 					class="dropdown_content"
-					class:is_open={$shopNavIsOpen}
+					class:is_open={$shopOpen}
 					id="shop_dropdown"
 				/>
 			</div>
@@ -109,7 +109,6 @@
 		height: 0.5em;
 		border-right-width: 1.5px;
 		border-bottom-width: 1.5px;
-		transition: transform 0.15s ease-out 0.15s;
 	}
 
 	button.menu_button.active .dropdown_icon:after {
