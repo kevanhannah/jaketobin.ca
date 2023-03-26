@@ -10,17 +10,15 @@
 <div>
 	<div class="gallery">
 		{#each images as image}
-			<picture>
-				<img
-					alt={image.altText}
-					class="gallery_image"
-					on:click={changeImage(image)}
-					on:keypress={changeImage(image)}
-					role="button"
-					src={image.src}
-					tabindex="0"
-				/>
-			</picture>
+			<img
+				alt={image.altText}
+				class="gallery_image"
+				on:click={changeImage(image)}
+				on:keypress={changeImage(image)}
+				role="button"
+				src={image.src}
+				tabindex="0"
+			/>
 		{/each}
 	</div>
 	<img alt={mainImage.altText} class="main_image" src={mainImage.src} />
