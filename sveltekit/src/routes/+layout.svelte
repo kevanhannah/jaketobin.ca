@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 	import '$lib/styles/fonts.css';
 	import '$lib/styles/typography.css';
@@ -9,10 +10,54 @@
 		portfolioOpen,
 		shopOpen,
 	} from '$lib/stores/navContexts';
+	import {
+		cartId,
+		getCartItems,
+		useCreateCart,
+	} from '$lib/stores/storeContext';
 	import Header from '$components/Header/Header.svelte';
 	import Footer from '$components/Footer.svelte';
 	import CartDrawer from '$components/Cart/CartDrawer.svelte';
 	import CartBackdrop from '$components/Cart/CartBackdrop.svelte';
+
+	let cartCreatedAt;
+
+	onMount(async () => {
+		if (browser) {
+			cartId.set(JSON.parse(localStorage.getItem('cartId')));
+			cartCreatedAt = JSON.parse(localStorage.getItem('cartCreatedAt'));
+
+			let currentDate = Date.now();
+			let difference = currentDate - cartCreatedAt;
+			let totalDays = Math.ceil(difference / (1000 * 3600 * 24));
+			let cartIdExpired = totalDays > 6;
+			if (cartId === 'undefined' || cartId === 'null' || cartIdExpired) {
+				await useCreateCart();
+			}
+			await getCartItems();
+
+			document.addEventListener('keydown', (e) => {
+				let keyCode = e.keyCode;
+				if (keyCode === 27) {
+					showCart = false;
+				}
+			});
+		}
+	});
+
+	async function removeProduct(event) {
+		await fetch('./cart.json', {
+			method: 'PUT',
+			body: JSON.stringify({
+				cartId,
+				lineId: event.detail.body.lineId,
+				quantity: event.detail.body.quantity,
+				variantId: event.detail.body.variantId,
+			}),
+		});
+		await loadCart();
+		loading = false;
+	}
 
 	$: if (browser) {
 		document.body.classList.toggle(

@@ -1,9 +1,10 @@
 <script>
 	import { handleCartClick } from '$lib/stores/navContexts';
+	import { cartQuantity } from '$lib/stores/storeContext';
 </script>
 
 <button class="cart_toggle" on:click={handleCartClick}
-	>Cart <span class="cart_toggle_counter">0</span></button
+	>Cart <span class="cart_toggle_counter">{$cartQuantity || 0}</span></button
 >
 
 <style>

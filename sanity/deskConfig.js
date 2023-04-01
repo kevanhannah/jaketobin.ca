@@ -10,12 +10,20 @@ export default (S, context) =>
     .items([
       home(S),
       S.divider(),
-      // S.documentTypeListItem('portfolioCategory').title('Portfolio Categories'),
-      orderableDocumentListDeskItem({ icon: IoDocumentsOutline, title: 'Portfolio Categories', type: 'portfolioCategory', S, context }),
+      orderableDocumentListDeskItem({
+        icon: IoDocumentsOutline,
+        title: 'Portfolio Categories',
+        type: 'portfolioCategory',
+        S,
+        context,
+      }),
       S.documentTypeListItem('portfolioPage').title('Portfolio Pages'),
       S.documentTypeListItem('portfolioItem').title('Portfolio Items'),
       S.divider(),
       commission(S),
+      S.divider(),
+      S.documentTypeListItem('collection').title('Collections'),
+      S.documentTypeListItem('product').title('Products'),
       S.divider(),
       settings(S),
     ]);

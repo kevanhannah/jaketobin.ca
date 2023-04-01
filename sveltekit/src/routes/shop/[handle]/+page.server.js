@@ -3,6 +3,7 @@ import { error } from '@sveltejs/kit';
 
 const query = `query getProduct($handle: String!) {
   productByHandle(handle: $handle) {
+    descriptionHtml
     media(first: 4) {
       nodes {
         ... on MediaImage {
@@ -15,6 +16,17 @@ const query = `query getProduct($handle: String!) {
       }
     }
     title
+    variants(first: 10) {
+      nodes {
+        availableForSale
+        id
+        price {
+          amount
+          currencyCode
+        }
+        title
+      }
+    }
   }
 }`
 

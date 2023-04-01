@@ -3,7 +3,7 @@ import getImageProps from '$lib/utils/getImageProps';
 
 export async function load({ params }) {
   const {
-    description, pageType, portfolioItems, publicationItems, title,
+    description = null, pageType, portfolioItems, publicationItems, title,
   } = await client.fetch(
     `*[_type == "portfolioPage" && slug.current == "${params.portfolioPage}"] | order(releaseDate desc)[0]{ description, pageType, portfolioItems[]->, publicationItems, title}`,
   );

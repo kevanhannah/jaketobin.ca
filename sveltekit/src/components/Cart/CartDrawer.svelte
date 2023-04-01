@@ -65,6 +65,7 @@
 	}
 
 	.closeDrawer {
+		height: 100%;
 		background: none;
 		border: none;
 		font-size: 1em;

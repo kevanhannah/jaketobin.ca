@@ -1,8 +1,8 @@
-import { SHOPIFY_API_ENDPOINT, SHOPIFY_STOREFRONT_API_TOKEN } from '$env/static/private';
+import { PUBLIC_SHOPIFY_API_ENDPOINT, PUBLIC_SHOPIFY_STOREFRONT_API_TOKEN } from '$env/static/public';
 
 export async function shopifyFetch({ query, variables }) {
-  const endpoint = SHOPIFY_API_ENDPOINT;
-  const key = SHOPIFY_STOREFRONT_API_TOKEN;
+  const endpoint = PUBLIC_SHOPIFY_API_ENDPOINT;
+  const key = PUBLIC_SHOPIFY_STOREFRONT_API_TOKEN;
 
   try {
     const result = await fetch(endpoint, {
@@ -31,71 +31,71 @@ export async function getAllProducts() {
   return shopifyFetch({
     query: `{
       products(sortKey: TITLE, first: 250) {
-          edges{
-            node {
-                id
-                handle
-                availableForSale
-                title
-                description
-                descriptionHtml
-                options {
-                    id
-                    name
-                    values
-                }
-                priceRange {
-                    maxVariantPrice {
-                        amount
-                        currencyCode
-                    }
-                    minVariantPrice {
-                        amount
-                        currencyCode
-                    }
-                }
-                variants(first: 250) {
-                    pageInfo {
-                        hasNextPage
-                        hasPreviousPage
-                    }
-                    edges {
-                        node {
-                            id
-                            title
-                            sku
-                            availableForSale
-                            requiresShipping
-                            selectedOptions {
-                                name
-                                value
-                            }
-                            priceV2 {
-                                amount
-                                currencyCode
-                            }
-                            compareAtPriceV2 {
-                                amount
-                                currencyCode
-                            }
-                        }
-                    }
-                }
-                images(first: 20) {
-                    pageInfo {
-                        hasNextPage
-                        hasPreviousPage
-                    }
-                    edges {
-                        node {
-                        originalSrc
-                        altText
-                        width
-                        height
-                        }
-                    }
-                }
+        edges {
+          node {
+            id
+            handle
+            availableForSale
+            title
+            description
+            descriptionHtml
+            options {
+              id
+              name
+              values
             }
+            priceRange {
+              maxVariantPrice {
+                amount
+                currencyCode
+              }
+              minVariantPrice {
+                amount
+                currencyCode
+              }
+            }
+            variants(first: 250) {
+              pageInfo {
+                hasNextPage
+                hasPreviousPage
+              }
+              edges {
+                node {
+                  id
+                  title
+                  sku
+                  availableForSale
+                  requiresShipping
+                  selectedOptions {
+                    name
+                    value
+                  }
+                  priceV2 {
+                    amount
+                    currencyCode
+                  }
+                  compareAtPriceV2 {
+                    amount
+                    currencyCode
+                  }
+                }
+              }
+            }
+            images(first: 20) {
+              pageInfo {
+                hasNextPage
+                hasPreviousPage
+              }
+              edges {
+                node {
+                  originalSrc
+                  altText
+                  width
+                  height
+                }
+              }
+            }
+          }
         }
       }
     }`
@@ -195,46 +195,46 @@ export async function loadCart(cartId) {
           cart(id: $cartId) {
             checkoutUrl
               estimatedCost {
-                  totalAmount {
+                totalAmount {
                   amount
-                  }
+                }
               }
               lines(first: 100) {
-                  edges {
+                edges {
                   node {
-                      id
-                      quantity
-                      estimatedCost {
+                    id
+                    quantity
+                    estimatedCost {
                       subtotalAmount {
-                          amount
-                          currencyCode
+                        amount
+                        currencyCode
                       }
                       totalAmount {
-                          amount
-                          currencyCode
+                        amount
+                        currencyCode
                       }
-                      }
-                      merchandise {
+                    }
+                    merchandise {
                       ... on ProductVariant {
                           id
                           title
                           product {
-                              images(first: 1) {
-                                  edges {
-                                    node {
-                                      originalSrc
-                                      altText
-                                      width
-                                      height
-                                    }
-                                  }
+                            images(first: 1) {
+                              edges {
+                                node {
+                                  originalSrc
+                                  altText
+                                  width
+                                  height
                                 }
-                              title
-                          }
+                              }
+                            }
+                          title
+                        }
                       }
-                      }
+                    }
                   }
-                  }
+                }
               }
             }
         }
@@ -282,18 +282,18 @@ export async function getProduct(handle) {
                     availableForSale
                     requiresShipping
                     selectedOptions {
-                        name
-                        value
+                      name
+                      value
                     }
                     priceV2 {
-                        amount
-                        currencyCode
+                      amount
+                      currencyCode
                     }
                     compareAtPriceV2 {
-                        amount
-                        currencyCode
+                      amount
+                      currencyCode
                     }
-                    }
+                  }
                 }
                 }
                 images(first: 20) {
