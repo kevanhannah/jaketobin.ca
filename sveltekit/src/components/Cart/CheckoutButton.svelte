@@ -1,4 +1,5 @@
 <script>
+	import { isLoading } from '$lib/stores/storeContext';
 	export let checkoutUrl;
 
 	function openCheckout() {
@@ -6,10 +7,12 @@
 	}
 </script>
 
-<button on:click={openCheckout}>Checkout</button>
+<button class="checkoutButton" disabled={$isLoading} on:click={openCheckout}
+	>{$isLoading ? 'Processing...' : 'Checkout'}</button
+>
 
 <style lang="postcss">
-	button {
+	.checkoutButton {
 		padding: 0.75em 1.25em;
 		color: var(--paperWhite);
 		background: var(--black);
@@ -22,7 +25,13 @@
 		transition-timing-function: ease;
 	}
 
-	button:hover {
+	.checkoutButton:disabled {
+		background: var(--mediumGray);
+		border: 1px solid var(--black);
+		cursor: default;
+	}
+
+	.checkoutButton:hover {
 		color: var(--black);
 		background: var(--paperWhite);
 	}

@@ -1,8 +1,10 @@
 <script>
+	import { removeItemFromCart } from '$lib/stores/storeContext';
 	import CartItemImage from '$components/Cart/CartItemImage.svelte';
+	import QuantityWidget from '$components/Cart/QuantityWidget.svelte';
 
 	export let item;
-	$: ({ estimatedCost, merchandise, quantity } = item);
+	$: ({ estimatedCost, id, merchandise, quantity } = item);
 </script>
 
 <li>
@@ -10,23 +12,36 @@
 		<CartItemImage image={merchandise.product?.images?.edges[0].node} />
 	</div>
 	<div class="itemInfo">
-		<h3>{merchandise.product.title}</h3>
-		{#if merchandise.title !== 'Default Title'}
-			<span>{merchandise.title}</span>
-		{/if}
-		<span>
-			{`${estimatedCost.totalAmount.currencyCode} ${new Intl.NumberFormat(
-				'en-CA',
-				{
-					style: 'currency',
-					currency: estimatedCost.totalAmount.currencyCode,
-				}
-			).format(estimatedCost.totalAmount.amount)}`}</span
-		>
+		<div class="itemInfo_groupText">
+			<h3>{merchandise.product.title}</h3>
+			{#if merchandise.title !== 'Default Title'}
+				<span class="variantTitle">{merchandise.title}</span>
+			{/if}
+			<span class="itemPrice">
+				{`${estimatedCost.totalAmount.currencyCode} ${new Intl.NumberFormat(
+					'en-CA',
+					{
+						style: 'currency',
+						currency: estimatedCost.totalAmount.currencyCode,
+					}
+				).format(estimatedCost.totalAmount.amount)}`}</span
+			>
+		</div>
+		<div class="quantityRow">
+			<QuantityWidget lineId={id} {quantity} variantId={merchandise.id} />
+			<button
+				class="removeButton"
+				on:click={removeItemFromCart({
+					lineId: id,
+					quantity: 0,
+					variantId: merchandise.id,
+				})}>Remove</button
+			>
+		</div>
 	</div>
 </li>
 
-<style>
+<style lang="postcss">
 	li {
 		display: grid;
 		grid-template-columns: 1fr 3fr;
@@ -50,5 +65,31 @@
 	.itemInfo {
 		display: flex;
 		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.itemInfo_groupText {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+	}
+
+	.itemPrice,
+	.variantTitle {
+		font-size: 0.75em;
+		font-weight: 400;
+	}
+
+	.quantityRow {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.removeButton {
+		font-size: 0.75em;
+		font-weight: 400;
+		background: transparent;
+		margin-right: 0.5em;
 	}
 </style>

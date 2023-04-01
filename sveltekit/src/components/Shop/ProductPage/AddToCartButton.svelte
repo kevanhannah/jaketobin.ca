@@ -8,7 +8,7 @@
 <button
 	class:disabled={!availableForSale}
 	disabled={!availableForSale}
-	on:click={addItemToCart(id)}
+	on:click={addItemToCart({ variantId: id })}
 	>{availableForSale ? 'Add to cart' : 'Out of stock'}</button
 >
 

@@ -4,9 +4,10 @@
 
 <img alt={image?.altText} src={image?.originalSrc} />
 
-<style>
+<style lang="postcss">
 	img {
 		width: 100%;
+		display: block;
 		aspect-ratio: 1;
 		object-fit: cover;
 	}
