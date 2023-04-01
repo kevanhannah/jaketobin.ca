@@ -3,9 +3,8 @@
 	import ProductPageImageLayout from '$components/Shop/ProductPage/ProductPageImageLayout.svelte';
 
 	export let product;
-	$: ({ descriptionHtml, media, title, variants } = product);
-	$: activeVariant = variants?.nodes[0];
-	$: images = media?.nodes.map((item) => item.image);
+	$: ({ descriptionHtml, images, title, variants } = product);
+	$: activeVariant = variants.edges[0].node;
 
 	function setActiveVariant(variant) {
 		activeVariant = variant;
@@ -18,20 +17,21 @@
 		<div class="variantInfo">
 			<h2 class="productHeader">{title}</h2>
 			<div class="priceSection">
-				<span class="priceCurrency">{activeVariant.price.currencyCode}</span>
+				<span class="priceCurrency">{activeVariant.priceV2.currencyCode}</span>
 				<span class="priceText"
-					>{`$${parseInt(activeVariant.price.amount)}`}</span
+					>{`$${parseInt(activeVariant.priceV2.amount)}`}</span
 				>
 			</div>
-			{#if variants.nodes.length > 1}
+			{#if variants.edges.length > 1}
 				<div class="variantsSection">
 					<ul class="variantsList">
-						{#each variants.nodes as variant}
+						{#each variants.edges as variant}
 							<li>
 								<button
 									class="variantButton"
-									class:selected={variant.id === activeVariant.id}
-									on:click={setActiveVariant(variant)}>{variant.title}</button
+									class:selected={variant.node.id === activeVariant.id}
+									on:click={setActiveVariant(variant.node)}
+									>{variant.node.title}</button
 								>
 							</li>
 						{/each}

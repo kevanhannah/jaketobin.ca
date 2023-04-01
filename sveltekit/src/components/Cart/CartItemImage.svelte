@@ -10,5 +10,6 @@
 		display: block;
 		aspect-ratio: 1;
 		object-fit: cover;
+		user-select: none;
 	}
 </style>

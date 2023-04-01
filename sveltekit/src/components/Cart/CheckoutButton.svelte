@@ -23,6 +23,7 @@
 		transition-property: border-color, background, color, transform, box-shadow;
 		transition-duration: 0.15s;
 		transition-timing-function: ease;
+		user-select: none;
 	}
 
 	.checkoutButton:disabled {

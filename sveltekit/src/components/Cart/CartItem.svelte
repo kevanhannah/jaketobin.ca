@@ -91,5 +91,10 @@
 		font-weight: 400;
 		background: transparent;
 		margin-right: 0.5em;
+		user-select: none;
+	}
+
+	.removeButton:hover {
+		color: var(--mediumGray);
 	}
 </style>

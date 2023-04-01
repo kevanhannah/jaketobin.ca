@@ -10,7 +10,7 @@
 	<h2>Shop</h2>
 	<ProductGridLayout>
 		{#each products as product}
-			<ProductGridItem {product} />
+			<ProductGridItem product={product.node} />
 		{/each}
 	</ProductGridLayout>
 </main>

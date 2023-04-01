@@ -102,92 +102,6 @@ export async function getAllProducts() {
   });
 }
 
-export async function getAllCollections() {
-  return shopifyFetch({
-    query: `{
-        collections(first: 100) {
-             edges {
-                node {
-                    handle
-                    products(
-                        first: 100,
-                        sortKey: TITLE
-
-                    ) {
-                        edges{
-                            node {
-                                id
-                                handle
-                                availableForSale
-                                title
-                                description
-                                descriptionHtml
-                                options {
-                                    id
-                                    name
-                                    values
-                                }
-                                priceRange {
-                                    maxVariantPrice {
-                                        amount
-                                        currencyCode
-                                    }
-                                    minVariantPrice {
-                                        amount
-                                        currencyCode
-                                    }
-                                }
-                                variants(first: 250) {
-                                    pageInfo {
-                                        hasNextPage
-                                        hasPreviousPage
-                                    }
-                                    edges {
-                                        node {
-                                            id
-                                            title
-                                            sku
-                                            availableForSale
-                                            requiresShipping
-                                            selectedOptions {
-                                                name
-                                                value
-                                            }
-                                            priceV2 {
-                                                amount
-                                                currencyCode
-                                            }
-                                            compareAtPriceV2 {
-                                                amount
-                                                currencyCode
-                                            }
-                                        }
-                                    }
-                                }
-                                images(first: 20) {
-                                    pageInfo {
-                                        hasNextPage
-                                        hasPreviousPage
-                                    }
-                                    edges {
-                                        node {
-                                            originalSrc
-                                            altText
-                                            width
-                                            height
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }`
-  });
-}
-
 export async function loadCart(cartId) {
   return shopifyFetch({
     query: `
@@ -246,72 +160,72 @@ export async function loadCart(cartId) {
 export async function getProduct(handle) {
   return shopifyFetch({
     query: `
-        query getProduct($handle: String!) {
-            productByHandle(handle: $handle) {
-                id
-                handle
-                availableForSale
-                title
-                description
-                descriptionHtml
-                options {
-                id
-                name
-                values
-                }
-                priceRange {
-                maxVariantPrice {
-                    amount
-                    currencyCode
-                }
-                minVariantPrice {
-                    amount
-                    currencyCode
-                }
-                }
-                variants(first: 250) {
-                pageInfo {
-                    hasNextPage
-                    hasPreviousPage
-                }
-                edges {
-                    node {
-                    id
-                    title
-                    sku
-                    availableForSale
-                    requiresShipping
-                    selectedOptions {
-                      name
-                      value
-                    }
-                    priceV2 {
-                      amount
-                      currencyCode
-                    }
-                    compareAtPriceV2 {
-                      amount
-                      currencyCode
-                    }
-                  }
-                }
-                }
-                images(first: 20) {
-                pageInfo {
-                    hasNextPage
-                    hasPreviousPage
-                }
-                edges {
-                    node {
-                    originalSrc
-                    altText
-                    width
-                    height
-                    }
-                }
-                }
-            }
+      query getProduct($handle: String!) {
+        productByHandle(handle: $handle) {
+          id
+          handle
+          availableForSale
+          title
+          description
+          descriptionHtml
+          options {
+            id
+            name
+            values
+          }
+          priceRange {
+          maxVariantPrice {
+            amount
+            currencyCode
+          }
+          minVariantPrice {
+            amount
+            currencyCode
+          }
         }
+        variants(first: 250) {
+          pageInfo {
+              hasNextPage
+              hasPreviousPage
+          }
+          edges {
+            node {
+              id
+              title
+              sku
+              availableForSale
+              requiresShipping
+              selectedOptions {
+                name
+                value
+              }
+              priceV2 {
+                amount
+                currencyCode
+              }
+              compareAtPriceV2 {
+                amount
+                currencyCode
+              }
+            }
+          }
+        }
+        images(first: 20) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        edges {
+          node {
+            originalSrc
+            altText
+            width
+            height
+          }
+        }
+        }
+        }
+      }
     `,
     variables: {
       handle

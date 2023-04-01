@@ -1,13 +1,13 @@
 <script>
 	export let product;
 
-	$: ({ handle, media, title } = product.node);
-	$: ({ image } = media.nodes[0]);
+	$: ({ handle, images, title } = product);
+	$: image = images.edges[0].node;
 </script>
 
 <a href={`/shop/${handle}`}>
-	<img alt={image.altText} src={image.src} />
-	<p>{title}</p>
+	<img class="productImage" alt={image.altText} src={image.originalSrc} />
+	<p class="productTitle">{title}</p>
 </a>
 
 <style lang="postcss">
@@ -22,8 +22,14 @@
 
 	img {
 		width: 100%;
+		display: block;
 		aspect-ratio: 1;
 		object-fit: cover;
+	}
+
+	.productTitle {
+		font-size: 1em;
+		font-weight: 400;
 	}
 
 	@media (hover: hover) {

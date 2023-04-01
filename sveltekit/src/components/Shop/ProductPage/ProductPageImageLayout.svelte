@@ -1,27 +1,31 @@
 <script>
 	export let images;
-	$: mainImage = images[0];
+	$: featuredImage = images.edges[0].node;
 
 	function changeImage(image) {
-		mainImage = image;
+		featuredImage = image;
 	}
 </script>
 
 <div>
 	<div class="gallery">
-		{#each images as image}
+		{#each images.edges as image}
 			<img
-				alt={image.altText}
+				alt={image.node.altText}
 				class="gallery_image"
-				on:click={changeImage(image)}
-				on:keypress={changeImage(image)}
+				on:click={changeImage(image.node)}
+				on:keypress={changeImage(image.node)}
 				role="button"
-				src={image.src}
+				src={image.node.originalSrc}
 				tabindex="0"
 			/>
 		{/each}
 	</div>
-	<img alt={mainImage.altText} class="main_image" src={mainImage.src} />
+	<img
+		alt={featuredImage.altText}
+		class="main_image"
+		src={featuredImage.originalSrc}
+	/>
 </div>
 
 <style>

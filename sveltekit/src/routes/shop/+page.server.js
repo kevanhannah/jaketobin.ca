@@ -1,34 +1,8 @@
-import { shopifyFetch } from '$lib/utils/shopify';
+import { getAllProducts } from '$lib/utils/shopify';
 import { error } from '@sveltejs/kit';
 
-const query = `query {
-  products(first: 30) {
-    edges {
-      cursor
-      node {
-        handle
-        media(first: 1) {
-          nodes {
-            ... on MediaImage {
-              image {
-                src
-                width
-                altText
-              }
-            }
-          }
-        }
-        title
-      }
-    }
-    pageInfo {
-      hasNextPage
-    }
-  }
-}`
-
 export async function load() {
-  const res = await shopifyFetch({ query });
+  const res = await getAllProducts();
   if (res.status === 200) {
     const products = res.body?.data?.products?.edges;
 
