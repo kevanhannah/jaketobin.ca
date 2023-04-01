@@ -45,20 +45,6 @@
 		}
 	});
 
-	async function removeProduct(event) {
-		await fetch('./cart.json', {
-			method: 'PUT',
-			body: JSON.stringify({
-				cartId,
-				lineId: event.detail.body.lineId,
-				quantity: event.detail.body.quantity,
-				variantId: event.detail.body.variantId,
-			}),
-		});
-		await loadCart();
-		loading = false;
-	}
-
 	$: if (browser) {
 		document.body.classList.toggle(
 			'no-scroll',

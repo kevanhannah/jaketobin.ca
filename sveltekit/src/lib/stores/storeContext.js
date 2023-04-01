@@ -15,8 +15,8 @@ export const isLoading = writable(false);
 export async function useCreateCart() {
   const cartRes = await createCart();
   const shopifyCart = cartRes.body?.data?.cartCreate?.cart;
-
   cart.set(shopifyCart);
+  cartId.set(shopifyCart.id);
 
   if (browser) {
     localStorage.setItem('cartCreatedAt', Date.now());
