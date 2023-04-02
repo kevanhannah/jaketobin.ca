@@ -1,12 +1,21 @@
 <script>
+	import getShopifyImageProps from '$lib/utils/getShopifyImageProps';
+	export let loading = 'lazy';
 	export let product;
 
 	$: ({ handle, images, title } = product);
-	$: image = images.edges[0].node;
+	$: image = getShopifyImageProps(images.edges[0].node);
 </script>
 
 <a href={`/shop/${handle}`}>
-	<img class="productImage" alt={image.altText} src={image.originalSrc} />
+	<img
+		class="productImage"
+		alt={image.alt}
+		{loading}
+		sizes="(max-width: 800px) 50vw, 25vw"
+		src={image.src}
+		srcset={image.srcset}
+	/>
 	<p class="productTitle">{title}</p>
 </a>
 

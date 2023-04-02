@@ -1,6 +1,11 @@
 <script>
+	import getShopifyImageProps from '$lib/utils/getShopifyImageProps';
 	export let images;
-	$: featuredImage = images.edges[0].node;
+
+	$: responsiveImages = images.edges.map((image) =>
+		getShopifyImageProps(image.node)
+	);
+	$: featuredImage = responsiveImages[0];
 
 	function changeImage(image) {
 		featuredImage = image;
@@ -9,22 +14,27 @@
 
 <div>
 	<div class="gallery">
-		{#each images.edges as image}
+		{#each responsiveImages as image}
 			<img
-				alt={image.node.altText}
+				alt={image.alt}
 				class="gallery_image"
-				on:click={changeImage(image.node)}
-				on:keypress={changeImage(image.node)}
+				on:click={changeImage(image)}
+				on:keypress={changeImage(image)}
 				role="button"
-				src={image.node.originalSrc}
+				src={image.src}
+				srcset={image.srcset}
+				sizes="15vw"
 				tabindex="0"
 			/>
 		{/each}
 	</div>
 	<img
-		alt={featuredImage.altText}
+		alt={featuredImage.alt}
 		class="main_image"
-		src={featuredImage.originalSrc}
+		loading="eager"
+		sizes="(max-width: 800px) 100vw, 60vw"
+		src={featuredImage.src}
+		srcset={featuredImage.srcset}
 	/>
 </div>
 

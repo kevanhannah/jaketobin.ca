@@ -9,8 +9,11 @@
 <main>
 	<h2>Shop</h2>
 	<ProductGridLayout>
-		{#each products as product}
-			<ProductGridItem product={product.node} />
+		{#each products as product, index}
+			<ProductGridItem
+				loading={index <= 7 ? 'eager' : 'lazy'}
+				product={product.node}
+			/>
 		{/each}
 	</ProductGridLayout>
 </main>

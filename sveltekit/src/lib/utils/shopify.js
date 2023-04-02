@@ -81,17 +81,39 @@ export async function getAllProducts() {
                 }
               }
             }
-            images(first: 20) {
+            images(first: 1) {
               pageInfo {
                 hasNextPage
                 hasPreviousPage
               }
               edges {
                 node {
-                  originalSrc
                   altText
-                  width
-                  height
+                  orignal: url
+                  vw200: url(transform: {
+                    preferredContentType: WEBP,
+                    maxWidth: 200
+                  })
+                  vw400: url(transform: {
+                    preferredContentType: WEBP,
+                    maxWidth: 400
+                  })
+                  vw600: url(transform: {
+                    preferredContentType: WEBP,
+                    maxWidth: 600
+                  })
+                  vw800: url(transform: {
+                    preferredContentType: WEBP,
+                    maxWidth: 800
+                  })
+                  vw1200: url(transform: {
+                    preferredContentType: WEBP,
+                    maxWidth: 1200
+                  })
+                  vw2000: url(transform: {
+                    preferredContentType: WEBP,
+                    maxWidth: 2000
+                  })
                 }
               }
             }
@@ -211,22 +233,44 @@ export async function getProduct(handle) {
           }
         }
         images(first: 20) {
-        pageInfo {
-          hasNextPage
-          hasPreviousPage
-        }
-        edges {
-          node {
-            originalSrc
-            altText
-            width
-            height
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          edges {
+            node {
+              altText
+              original: url
+              vw200: url(transform: {
+                preferredContentType: WEBP,
+                maxWidth: 200
+              })
+              vw400: url(transform: {
+                preferredContentType: WEBP,
+                maxWidth: 400
+              })
+              vw600: url(transform: {
+                preferredContentType: WEBP,
+                maxWidth: 600
+              })
+              vw800: url(transform: {
+                preferredContentType: WEBP,
+                maxWidth: 800
+              })
+              vw1200: url(transform: {
+                preferredContentType: WEBP,
+                maxWidth: 1200
+              })
+              vw2000: url(transform: {
+                preferredContentType: WEBP,
+                maxWidth: 2000
+              })
+            }
           }
         }
-        }
-        }
       }
-    `,
+    }
+  `,
     variables: {
       handle
     }
