@@ -97,4 +97,10 @@
 	.removeButton:hover {
 		color: var(--mediumGray);
 	}
+
+	@media (max-width: 768px) {
+		li {
+			grid-template-columns: 4fr 5fr;
+		}
+	}
 </style>

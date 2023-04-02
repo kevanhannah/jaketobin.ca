@@ -1,16 +1,22 @@
 <script>
-	import { addItemToCart } from '$lib/stores/storeContext.js';
+	import { addItemToCart, cart, isLoading } from '$lib/stores/storeContext.js';
+	$: console.log($cart);
 
 	export let variant;
+
 	$: ({ availableForSale, id } = variant);
 </script>
 
-<button
-	class:disabled={!availableForSale}
-	disabled={!availableForSale}
-	on:click={addItemToCart({ variantId: id })}
-	>{availableForSale ? 'Add to cart' : 'Out of stock'}</button
->
+{#if availableForSale}
+	<button
+		class:adding={$isLoading}
+		disabled={$isLoading}
+		on:click={addItemToCart({ variantId: id })}
+		>{$isLoading ? 'Processing...' : 'Add to cart'}</button
+	>
+{:else}
+	<button class="disabled" disabled>Out of stock</button>
+{/if}
 
 <style lang="postcss">
 	button {
@@ -25,9 +31,15 @@
 		transition-timing-function: ease;
 	}
 
-	button:hover {
+	button:not(.adding):hover {
 		color: var(--black);
 		background: var(--paperWhite);
+	}
+
+	.adding {
+		background: var(--mediumGray);
+		border: 1px solid var(--mediumGray);
+		cursor: default;
 	}
 
 	.disabled {

@@ -38,7 +38,7 @@
 	/>
 </div>
 
-<style>
+<style lang="postcss">
 	div {
 		display: grid;
 		grid-template-columns: 1fr 4fr;
@@ -70,7 +70,7 @@
 		opacity: 0.8;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1150px) {
 		div {
 			display: flex;
 			flex-direction: column-reverse;

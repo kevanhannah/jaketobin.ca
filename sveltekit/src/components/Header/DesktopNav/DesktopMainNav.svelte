@@ -2,6 +2,8 @@
 	import {
 		handlePortfolioClick,
 		handleShopClick,
+		portfolioOpen,
+		shopOpen,
 	} from '$lib/stores/navContexts';
 	import CartToggle from '$components/Header/CartToggle.svelte';
 </script>
@@ -10,12 +12,18 @@
 	<div class="menu_left">
 		<ul>
 			<li>
-				<button class="nav_button" on:click={handlePortfolioClick}
-					>Portfolio</button
+				<button
+					class="nav_button"
+					class:active={$portfolioOpen}
+					on:click={handlePortfolioClick}>Portfolio</button
 				>
 			</li>
 			<li>
-				<button class="nav_button" on:click={handleShopClick}>Shop</button>
+				<button
+					class="nav_button"
+					class:active={$shopOpen}
+					on:click={handleShopClick}>Shop</button
+				>
 			</li>
 			<li><a href="/commission" class="nav_button">Commission</a></li>
 		</ul>
@@ -46,6 +54,12 @@
 		cursor: pointer;
 		font-family: inherit;
 		text-decoration-line: none;
+	}
+
+	.active:not(:hover) {
+		text-decoration: underline;
+		text-underline-offset: 0.25em;
+		text-decoration-thickness: 1px;
 	}
 
 	.nav_button:hover {

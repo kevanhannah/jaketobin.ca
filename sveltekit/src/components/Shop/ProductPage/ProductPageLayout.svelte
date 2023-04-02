@@ -18,9 +18,12 @@
 			<h2 class="productHeader">{title}</h2>
 			<div class="priceSection">
 				<span class="priceCurrency">{activeVariant.priceV2.currencyCode}</span>
-				<span class="priceText"
-					>{`$${parseInt(activeVariant.priceV2.amount)}`}</span
-				>
+				<span class="priceText">
+					{new Intl.NumberFormat('en-CA', {
+						style: 'currency',
+						currency: 'CAD',
+					}).format(activeVariant.priceV2.amount)}
+				</span>
 			</div>
 			{#if variants.edges.length > 1}
 				<div class="variantsSection">
@@ -66,7 +69,7 @@
 	.variantInfo {
 		display: flex;
 		flex-direction: column;
-		gap: 1em;
+		gap: 1.5em;
 	}
 
 	.priceSection {
@@ -121,6 +124,12 @@
 		color: var(--paperWhite);
 		background: var(--black);
 		cursor: default;
+	}
+
+	@media (max-width: 1150px) {
+		main {
+			grid-template-columns: 5fr 4fr;
+		}
 	}
 
 	@media (max-width: 768px) {
