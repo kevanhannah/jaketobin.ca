@@ -27,7 +27,7 @@
 <style>
 	.section_header {
 		font-size: 1em;
-		font-weight: 300;
+		font-weight: 400;
 		line-height: 1.6;
 		color: #6c6c6c;
 		margin-bottom: 0.75em;

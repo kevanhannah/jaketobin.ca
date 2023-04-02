@@ -50,7 +50,7 @@
 					id="portfolio_dropdown"
 				>
 					{#each shopCategories as shopCategory}
-						<NavSection content={shopCategory} />
+						<NavSection content={shopCategory} slugPrefix="shop/collections" />
 					{/each}
 				</div>
 			</div>

@@ -26,32 +26,6 @@
 					{#each shopCategories as shopCategory}
 						<NavSection content={shopCategory} slugPrefix="shop/collections" />
 					{/each}
-					<!-- <div>
-						<h3 class="mega_nav_menu_header">Products</h3>
-						<ul class="mega_nav_menu">
-							<li>Prints</li>
-							<li>Greeting cards</li>
-							<li>Postcards</li>
-							<li>Stickers</li>
-							<li>Magnets</li>
-						</ul>
-					</div>
-					<div>
-						<h3 class="mega_nav_menu_header">Spaces</h3>
-						<ul class="mega_nav_menu">
-							<li>Bookstores</li>
-							<li>Queer spaces</li>
-							<li>Signs</li>
-							<li>Parks</li>
-						</ul>
-					</div>
-					<div>
-						<h3 class="mega_nav_menu_header">Cities</h3>
-						<ul class="mega_nav_menu">
-							<li>Toronto</li>
-							<li>Vancouver</li>
-						</ul>
-					</div> -->
 				</div>
 			</div>
 		</div>
