@@ -1,9 +1,10 @@
 <script>
 	import getShopifyImageProps from '$lib/utils/getShopifyImageProps';
+	import OutOfStockBadge from '$components/Shop/OutOfStockBadge.svelte';
 	export let loading = 'lazy';
 	export let product;
 
-	$: ({ handle, images, title } = product);
+	$: ({ availableForSale, handle, images, title } = product);
 	$: image = getShopifyImageProps(images.edges[0].node);
 </script>
 
@@ -16,7 +17,12 @@
 		src={image.src}
 		srcset={image.srcset}
 	/>
-	<p class="productTitle">{title}</p>
+	<div class="productTitleRow">
+		{#if !availableForSale}
+			<OutOfStockBadge />
+		{/if}
+		<p class="productTitle">{title}</p>
+	</div>
 </a>
 
 <style lang="postcss">
@@ -36,6 +42,13 @@
 		object-fit: cover;
 	}
 
+	.productTitleRow {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.25em;
+	}
+
 	.productTitle {
 		font-size: 1em;
 		font-weight: 400;
@@ -43,7 +56,11 @@
 
 	@media (hover: hover) {
 		a:hover {
-			text-decoration: underline;
+			opacity: 1;
+		}
+
+		a:hover > img {
+			opacity: 0.8;
 		}
 	}
 </style>
