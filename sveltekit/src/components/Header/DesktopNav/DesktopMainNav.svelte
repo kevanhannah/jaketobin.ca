@@ -38,14 +38,13 @@
 	}
 
 	.nav_button {
-		font-size: 1rem;
-		font-weight: 600;
+		font-size: 1em;
+		font-weight: 400;
 		text-transform: uppercase;
 		appearance: none;
 		background-color: transparent;
 		cursor: pointer;
 		font-family: inherit;
-		font: inherit;
 		text-decoration-line: none;
 	}
 

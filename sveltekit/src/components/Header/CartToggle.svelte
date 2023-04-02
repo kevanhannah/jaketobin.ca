@@ -21,7 +21,7 @@
 		appearance: none;
 		cursor: pointer;
 		text-transform: uppercase;
-		font-weight: 300;
+		font-weight: 400;
 	}
 
 	.cart_toggle_counter {

@@ -8,7 +8,7 @@
 	} from '$lib/stores/navContexts';
 	import NavSection from '$components/Header/NavSection.svelte';
 
-	$: ({ portfolioCategories } = $page.data);
+	$: ({ portfolioCategories, shopCategories } = $page.data);
 </script>
 
 <div class="primary_menu">
@@ -39,14 +39,20 @@
 				<button
 					class="menu_button"
 					class:active={$shopOpen}
-					on:click={handleShopClick}>Shop<span class="dropdown_icon" /></button
-				>
+					on:click={handleShopClick}
+					>Shop
+					<span class="dropdown_icon" />
+				</button>
 				<div
-					aria-controls="shop_dropdown"
+					aria-controls="portfolio_dropdown"
 					class="dropdown_content"
 					class:is_open={$shopOpen}
-					id="shop_dropdown"
-				/>
+					id="portfolio_dropdown"
+				>
+					{#each shopCategories as shopCategory}
+						<NavSection content={shopCategory} />
+					{/each}
+				</div>
 			</div>
 		</li>
 		<li>
@@ -78,8 +84,12 @@
 		appearance: none;
 		background-color: transparent;
 		cursor: pointer;
-		font-size: 2em;
+		font-family: Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+			Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		font-size: 1.5em;
+		font-weight: 800;
 		text-decoration-line: none;
+		user-select: none;
 	}
 
 	button.menu_button {
