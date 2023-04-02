@@ -8,7 +8,7 @@ export default async function getCollection(handle) {
           handle
           id
           title
-          products(first: 250) {
+          products(first: 250, sortKey: COLLECTION_DEFAULT) {
             edges {
               node {
                 availableForSale

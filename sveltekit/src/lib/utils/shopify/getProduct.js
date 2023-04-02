@@ -26,7 +26,7 @@ export default async function getProduct(handle) {
             currencyCode
           }
         }
-        variants(first: 250) {
+        variants(first: 250, sortKey: POSITION) {
           pageInfo {
               hasNextPage
               hasPreviousPage
