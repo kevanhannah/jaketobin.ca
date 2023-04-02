@@ -1,5 +1,6 @@
 // Documents
 import collection from './documents/collection';
+import collectionCategory from './documents/collectionCategory';
 import portfolioCategory from './documents/portfolioCategory';
 import portfolioItem from './documents/portfolioItem';
 import portfolioPage from './documents/portfolioPage';
@@ -36,6 +37,7 @@ import settings from './singletons/settings';
 export const schemaTypes = [
   // Documents
   collection,
+  collectionCategory,
   portfolioCategory,
   portfolioItem,
   portfolioPage,

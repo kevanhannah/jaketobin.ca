@@ -22,6 +22,13 @@ export default (S, context) =>
       S.divider(),
       commission(S),
       S.divider(),
+      orderableDocumentListDeskItem({
+        icon: IoDocumentsOutline,
+        title: 'Collection Categories',
+        type: 'collectionCategory',
+        S,
+        context,
+      }),
       S.documentTypeListItem('collection').title('Collections'),
       S.documentTypeListItem('product').title('Products'),
       S.divider(),

@@ -78,7 +78,6 @@
 
 		.gallery {
 			flex-direction: row;
-			justify-content: center;
 		}
 
 		.gallery_image {

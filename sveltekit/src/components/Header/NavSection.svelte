@@ -1,5 +1,8 @@
 <script>
+	import { PUBLIC_SVELTEKIT_SITE_URL } from '$env/static/public';
+
 	export let content;
+	export let slugPrefix = null;
 </script>
 
 <section>
@@ -9,7 +12,13 @@
 	<ul class="section_menu">
 		{#each content.pages as page}
 			<li>
-				<a href={`/${page.slug.current}`}>{page.title}</a>
+				<a
+					href={`${PUBLIC_SVELTEKIT_SITE_URL}/${
+						slugPrefix
+							? slugPrefix + '/' + page.slug.current
+							: page.slug.current
+					}`}>{page.title}</a
+				>
 			</li>
 		{/each}
 	</ul>

@@ -2,11 +2,11 @@
 	import { page } from '$app/stores';
 	import SidebarLayout from '$components/shared/SidebarLayout.svelte';
 
-	$: ({ portfolioCategories } = $page.data);
+	$: ({ shopCategories } = $page.data);
 </script>
 
 <SidebarLayout>
-	{#each portfolioCategories as category}
+	{#each shopCategories as category}
 		{#if category.pages}
 			<section>
 				<h2 class="sidebar_section_header">{category.name}</h2>

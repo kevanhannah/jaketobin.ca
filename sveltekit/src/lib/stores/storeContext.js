@@ -2,7 +2,7 @@ import { get, writable } from 'svelte/store';
 import { browser } from '$app/environment';
 import { PUBLIC_SVELTEKIT_SITE_URL } from '$env/static/public';
 import { cartOpen } from '$lib/stores/navContexts';
-import { createCart, loadCart } from '$lib/utils/shopify';
+import { createCart, loadCart } from '$lib/utils/shopify/index.js';
 
 const cartEndpoint = `${PUBLIC_SVELTEKIT_SITE_URL}/shop/cart.json`;
 
