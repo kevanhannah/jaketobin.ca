@@ -29,7 +29,7 @@
 					id="portfolio_dropdown"
 				>
 					{#each portfolioCategories as portfolioCategory}
-						<NavSection content={portfolioCategory} />
+						<NavSection content={portfolioCategory} slugPrefix="portfolio" />
 					{/each}
 				</div>
 			</div>

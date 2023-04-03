@@ -13,7 +13,7 @@
 			<div class="mega_item_inner">
 				<div class="mega_item_content">
 					{#each portfolioCategories as portfolioCategory}
-						<NavSection content={portfolioCategory} />
+						<NavSection content={portfolioCategory} slugPrefix="portfolio" />
 					{/each}
 				</div>
 			</div>
