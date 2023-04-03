@@ -55,10 +55,6 @@ export default async function getAllProducts() {
               }
             }
             images(first: 1) {
-              pageInfo {
-                hasNextPage
-                hasPreviousPage
-              }
               edges {
                 node {
                   altText

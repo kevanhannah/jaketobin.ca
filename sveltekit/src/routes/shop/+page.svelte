@@ -1,19 +1,20 @@
 <script>
-	import ProductGridLayout from '$components/Shop/ProductGridLayout.svelte';
-	import ProductGridItem from '$components/Shop/ProductGridItem.svelte';
+	import CollectionGridLayout from '$components/Shop/CollectionGridLayout.svelte';
 
 	export let data;
-	$: ({ products } = data);
+	$: ({ collections } = data);
 </script>
 
 <main>
-	<h2>Shop</h2>
-	<ProductGridLayout>
-		{#each products as product, index}
-			<ProductGridItem
-				loading={index <= 7 ? 'eager' : 'lazy'}
-				product={product.node}
-			/>
-		{/each}
-	</ProductGridLayout>
+	{#each collections as collection, index}
+		<CollectionGridLayout collection={collection.node} {index} />
+	{/each}
 </main>
+
+<style>
+	main {
+		display: flex;
+		flex-direction: column;
+		gap: 5em;
+	}
+</style>

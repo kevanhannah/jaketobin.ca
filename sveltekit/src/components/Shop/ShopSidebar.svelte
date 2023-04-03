@@ -1,4 +1,5 @@
 <script>
+	import { PUBLIC_SVELTEKIT_SITE_URL } from '$env/static/public';
 	import { page } from '$app/stores';
 	import SidebarLayout from '$components/shared/SidebarLayout.svelte';
 
@@ -12,7 +13,12 @@
 				<h2 class="sidebar_section_header">{category.name}</h2>
 				<ul class="sidebar_section_list">
 					{#each category.pages as page}
-						<li><a href={page.slug.current}>{page.title}</a></li>
+						<li>
+							<a
+								href={`${PUBLIC_SVELTEKIT_SITE_URL}/shop/collections/${page.slug.current}`}
+								>{page.title}</a
+							>
+						</li>
 					{/each}
 				</ul>
 			</section>
