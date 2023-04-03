@@ -8,7 +8,7 @@
 	$: image = getShopifyImageProps(images.edges[0].node);
 </script>
 
-<a href={`/shop/${handle}`}>
+<a href={`/shop/products/${handle}`}>
 	<img
 		class="productImage"
 		alt={image.alt}
