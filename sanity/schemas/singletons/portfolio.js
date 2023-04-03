@@ -1,6 +1,6 @@
 export default {
-  name: 'commission',
-  title: 'Commission Landing Page',
+  name: 'portfolio',
+  title: 'Portfolio Landing Page',
   type: 'document',
   liveEdit: false,
   __experimental_actions: ['update', 'publish'],
@@ -28,8 +28,8 @@ export default {
   preview: {
     prepare() {
       return {
-        title: 'Commission Page',
-        subtitle: '/commission',
+        title: 'Portfolio Landing Page',
+        subtitle: '/portfolio',
       };
     },
   },

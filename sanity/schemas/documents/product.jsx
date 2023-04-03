@@ -1,6 +1,5 @@
 import { TagIcon } from '@sanity/icons';
 import pluralize from 'pluralize-esm';
-import { defineField, defineType } from 'sanity';
 import ShopifyIcon from '../../components/icons/Shopify';
 import ProductHiddenInput from '../../components/inputs/ProductHidden';
 import ShopifyDocumentStatus from '../../components/media/ShopifyDocumentStatus';
@@ -22,14 +21,14 @@ const GROUPS = [
   },
 ];
 
-export default defineType({
+export default {
   name: 'product',
   title: 'Product',
   type: 'document',
   icon: TagIcon,
   groups: GROUPS,
   fields: [
-    defineField({
+    {
       name: 'hidden',
       type: 'string',
       components: {
@@ -41,7 +40,7 @@ export default defineType({
         const isDeleted = parent?.store?.isDeleted;
         return !parent?.store || (isActive && !isDeleted);
       },
-    }),
+    },
     // Title (proxy)
     {
       name: 'titleProxy',
@@ -151,4 +150,4 @@ export default defineType({
       };
     },
   },
-});
+};

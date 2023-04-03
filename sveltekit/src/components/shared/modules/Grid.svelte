@@ -1,41 +1,45 @@
 <script>
 	import getImageProps from '$lib/utils/getImageProps';
 	import SanityImage from '$components/shared/SanityImage.svelte';
-	import LinkButton from '../shared/LinkButton.svelte';
+	import LinkButton from '$components/shared/LinkButton.svelte';
+	import setSlugPrefix from '$lib/utils/setSlugPrefix';
 
 	export let portableText;
 	$: ({ value } = portableText);
 	$: ({ items, link } = value);
-	$: portfolioImages = items?.map((item) =>
-		getImageProps({
-			aspectRatio: 1,
-			image: item.images[0].image,
-			maxWidth: 800,
-		})
-	);
 </script>
 
-<div class="portfolio_preview_section">
+<div class="grid">
 	{#if value.items.length}
-		<div class="portfolio_images">
-			{#each portfolioImages as image}
-				<div class="image_wrapper">
-					<SanityImage {image} />
+		<div class="gridImages">
+			{#each items as item}
+				<div class="imageWrapper">
+					<SanityImage
+						image={getImageProps({
+							aspectRatio: 1,
+							image: item.images.image,
+							maxWidth: 800,
+						})}
+					/>
 				</div>
 			{/each}
 		</div>
 	{/if}
 	{#if link}
-		<LinkButton href={link.link.slug.current}>{link.text}</LinkButton>
+		<LinkButton
+			href={`${setSlugPrefix(link.reference._type)}${
+				link.reference.slug.current
+			}`}>{link.title}</LinkButton
+		>
 	{/if}
 </div>
 
-<style>
-	.portfolio_preview_section {
+<style lang="postcss">
+	.grid {
 		padding-top: 3em;
 		padding-bottom: 1.5em;
-		margin-top: 3em;
-		margin-bottom: 3em;
+		margin-top: 2em;
+		margin-bottom: 2em;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -44,41 +48,37 @@
 		border-bottom: 1px solid var(--black);
 	}
 
-	.portfolio_images {
+	.gridImages {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 1.5em;
+		gap: 1em;
 		justify-content: center;
 		align-items: center;
 	}
 
-	.image_wrapper {
-		max-width: calc((100% / 3) - 1em);
-	}
-
-	.image_wrapper:last-of-type {
-		display: none;
+	.imageWrapper {
+		max-width: calc((100% / 4) - 0.75em);
 	}
 
 	@media (max-width: 768px) {
-		.portfolio_preview_section {
+		.grid {
 			padding-top: 2em;
 			padding-bottom: 1.5em;
 			margin-top: 2em;
 			margin-bottom: 2em;
 		}
 
-		.portfolio_images {
+		.gridImages {
 			gap: 1em;
 			justify-content: center;
 			align-items: center;
 		}
 
-		.image_wrapper {
+		.imageWrapper {
 			max-width: calc((100% / 2) - 0.5em);
 		}
 
-		.image_wrapper:last-of-type {
+		.imageWrapper:last-of-type {
 			display: block;
 		}
 	}

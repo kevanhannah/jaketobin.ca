@@ -14,11 +14,12 @@ export default {
       type: 'moduleContent',
     },
   ],
-  // preview: {
-  //   select: {
-  //     title: 'content.main.title',
-  //     subtitle: 'heroText',
-  //     media: 'mainImage'
-  //   }
-  // }
+  preview: {
+    prepare() {
+      return {
+        title: 'Home Page',
+        subtitle: '/',
+      };
+    },
+  },
 };

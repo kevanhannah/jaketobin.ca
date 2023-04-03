@@ -14,8 +14,6 @@
 <style>
 	ol,
 	ul {
-		max-width: 75%;
-		margin: 0 auto;
 		padding-left: 1em;
 		margin-bottom: 1em;
 	}

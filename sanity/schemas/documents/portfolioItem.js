@@ -30,10 +30,12 @@ export default {
   ],
   preview: {
     select: {
+      images: 'images',
       title: 'title',
     },
-    prepare({ title = 'Untitled' }) {
+    prepare({ images, title = 'Untitled' }) {
       return {
+        media: images ? images[0].image : null,
         title,
       };
     },

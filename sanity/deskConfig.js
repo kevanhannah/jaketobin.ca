@@ -3,12 +3,14 @@ import { IoDocumentsOutline } from 'react-icons/io5';
 import commission from './desk/commission';
 import home from './desk/home';
 import settings from './desk/settings';
+import portfolio from './desk/portfolio';
 
 export default (S, context) =>
   S.list()
     .title('Site Content')
     .items([
       home(S),
+      portfolio(S),
       S.divider(),
       orderableDocumentListDeskItem({
         icon: IoDocumentsOutline,

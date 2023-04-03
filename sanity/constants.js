@@ -6,3 +6,12 @@ export const DEFAULT_CURRENCY_CODE = 'CAD';
 // This is your unique store URL (e.g. 'my-store-name.myshopify.com').
 // Set this to enable helper links in document status banners and shortcut links on products and collections.
 export const SHOPIFY_STORE_ID = 'jake-tobin-garrett.myshopify.com';
+
+export const PAGE_REFERENCES = [
+  { type: 'collection' },
+  { type: 'commission' },
+  { type: 'home' },
+  { type: 'portfolio' },
+  { type: 'portfolioPage' },
+  { type: 'product' },
+];
