@@ -30,7 +30,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{ type: 'collection' }, { type: 'shop' }],
+          to: [{ type: 'collection' }],
           options: {
             disableNew: true,
             filter: '!(_id in path("drafts.**"))',

@@ -31,9 +31,8 @@
 					{#each portfolioNavItems as portfolioNavItem}
 						<NavSection
 							content={portfolioNavItem}
-							slugPrefix={portfolioNavItem._type === 'portfolioPage'
-								? 'portfolio'
-								: ''}
+							showHeader={portfolioNavItem.showTitle}
+							slugPrefix="portfolio"
 						/>
 					{/each}
 				</div>
@@ -57,9 +56,8 @@
 					{#each shopNavItems as shopNavItem}
 						<NavSection
 							content={shopNavItem}
-							slugPrefix={shopNavItem._type === 'collection'
-								? 'shop/collections'
-								: ''}
+							showHeader={shopNavItem.showTitle}
+							slugPrefix="shop/collections"
 						/>
 					{/each}
 				</div>

@@ -10,7 +10,13 @@ export function handleCartClick() {
 }
 
 export function handleMobileNavClick() {
-  mobileNavOpen.update((data) => !data);
+  // mobileNavOpen.update((data) => !data);
+  mobileNavOpen.update((data) => {
+    if (!data) return true;
+    portfolioOpen.update(() => false);
+    shopOpen.update(() => false);
+    return false;
+  });
 }
 
 export function handlePortfolioClick() {
