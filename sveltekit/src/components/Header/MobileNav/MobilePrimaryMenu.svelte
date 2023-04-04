@@ -29,7 +29,12 @@
 					id="portfolio_dropdown"
 				>
 					{#each portfolioNavItems as portfolioNavItem}
-						<NavSection content={portfolioNavItem} slugPrefix="portfolio" />
+						<NavSection
+							content={portfolioNavItem}
+							slugPrefix={portfolioNavItem._type === 'portfolioPage'
+								? 'portfolio'
+								: ''}
+						/>
 					{/each}
 				</div>
 			</div>
@@ -50,7 +55,12 @@
 					id="portfolio_dropdown"
 				>
 					{#each shopNavItems as shopNavItem}
-						<NavSection content={shopNavItem} slugPrefix="shop/collections" />
+						<NavSection
+							content={shopNavItem}
+							slugPrefix={shopNavItem._type === 'collection'
+								? 'shop/collections'
+								: ''}
+						/>
 					{/each}
 				</div>
 			</div>

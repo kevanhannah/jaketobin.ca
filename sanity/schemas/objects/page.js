@@ -17,27 +17,6 @@ export default {
     },
   ],
   fields: [
-    // Show Hero
-    {
-      name: 'showHero',
-      title: 'Show hero',
-      type: 'boolean',
-      description: 'If disabled, page will not have a hero image',
-      initialValue: false,
-      group: 'editorial',
-    },
-    // Page Hero Image
-    {
-      title: 'Hero',
-      name: 'image',
-      type: 'image',
-      description: 'Large image that is displayed at the top of the page',
-      hidden: ({ parent }) => !parent?.showHero,
-      group: 'editorial',
-      options: {
-        hotspot: true,
-      },
-    },
     // Body
     {
       name: 'body',

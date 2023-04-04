@@ -4,23 +4,53 @@ export async function load() {
   const { portfolioNavItems, portfolioSidebarItems, seo, shopNavItems, shopSidebarItems } = await client.fetch(`
     *[_type == "settings"][0] {
       portfolioNavItems[] {
-        pages[]-> { slug { current }, title },
+        pages[]-> {
+          _type,
+          slug { current },
+          title
+        },
         showTitle,
         title
       },
       portfolioSidebarItems[] {
-        pages[]-> { slug { current }, title },
+        pages[]-> {
+          _type,
+          slug { current },
+          title
+        },
         showTitle,
         title
       },
       seo,
       shopNavItems[] {
-        pages[]-> { "slug": store.slug, "title": store.title },
+        pages[]-> {
+          _type != "collection" => @ {
+            _type,
+            slug,
+            title
+          },
+          _type == "collection" => @ {
+            _type,
+            "slug": store.slug,
+            "title": store.title
+          }
+        },
         showTitle,
         title
       },
       shopSidebarItems[] {
-        pages[]-> { "slug": store.slug, "title": store.title },
+        pages[]-> {
+          _type != "collection" => @ {
+            _type,
+            slug,
+            title
+          },
+          _type == "collection" => @ {
+            _type,
+            "slug": store.slug,
+            "title": store.title
+          }
+        },
         showTitle,
         title
       },

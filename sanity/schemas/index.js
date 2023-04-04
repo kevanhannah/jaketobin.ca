@@ -39,8 +39,9 @@ import shopifyProductVariant from './objects/shopifyProductVariant';
 // Singletons
 import commission from './singletons/commission';
 import home from './singletons/home';
-import settings from './singletons/settings';
 import portfolio from './singletons/portfolio';
+import settings from './singletons/settings';
+import shop from './singletons/shop';
 
 export const schemaTypes = [
   // Annotations
@@ -82,4 +83,5 @@ export const schemaTypes = [
   home,
   portfolio,
   settings,
+  shop,
 ];

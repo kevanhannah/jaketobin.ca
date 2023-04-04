@@ -22,6 +22,7 @@ export default {
       description: 'If disabled, group will not display a title',
       initialValue: true,
     },
+    // Pages
     {
       name: 'pages',
       title: 'Collections in group',
@@ -29,7 +30,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{ type: 'collection' }],
+          to: [{ type: 'collection' }, { type: 'shop' }],
           options: {
             disableNew: true,
             filter: '!(_id in path("drafts.**"))',

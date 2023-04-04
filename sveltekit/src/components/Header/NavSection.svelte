@@ -2,13 +2,14 @@
 	import { PUBLIC_SVELTEKIT_SITE_URL } from '$env/static/public';
 
 	export let content;
+	export let showHeader;
 	export let slugPrefix = null;
 </script>
 
 <section>
-	<h2 class="section_header">
-		{content.title}
-	</h2>
+	{#if showHeader}
+		<h2 class="section_header">{content.title}</h2>
+	{/if}
 	<ul class="section_menu">
 		{#each content.pages as page}
 			<li>

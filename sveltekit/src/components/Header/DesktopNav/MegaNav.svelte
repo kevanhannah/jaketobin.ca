@@ -13,7 +13,11 @@
 			<div class="mega_item_inner">
 				<div class="mega_item_content">
 					{#each portfolioNavItems as portfolioNavItem}
-						<NavSection content={portfolioNavItem} slugPrefix="portfolio" />
+						<NavSection
+							content={portfolioNavItem}
+							showHeader={portfolioNavItem.showTitle}
+							slugPrefix="portfolio"
+						/>
 					{/each}
 				</div>
 			</div>
@@ -24,8 +28,18 @@
 			<div class="mega_item_inner">
 				<div class="mega_item_content">
 					{#each shopNavItems as shopNavItem}
-						<NavSection content={shopNavItem} slugPrefix="shop/collections" />
+						<NavSection
+							content={shopNavItem}
+							showHeader={shopNavItem.showTitle}
+							slugPrefix="shop/collections"
+						/>
 					{/each}
+					<NavSection
+						content={{
+							pages: [{ title: 'Shop all', slug: { current: 'shop' } }],
+						}}
+						showHeader={false}
+					/>
 				</div>
 			</div>
 		</div>
