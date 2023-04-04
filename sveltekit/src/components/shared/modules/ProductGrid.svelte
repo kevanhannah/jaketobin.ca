@@ -56,15 +56,9 @@
     grid-template-columns: repeat(4, 1fr);
     column-gap: 1.25em;
     row-gap: 1.75em;
-		/* display: flex;
-		flex-wrap: wrap;
-		gap: 1em;
-		justify-content: center;
-		align-items: center; */
 	}
 
 	.imageWrapper {
-		/* max-width: calc((100% / 4) - 0.75em); */
 		display: flex;
 		flex-direction: column;
 		gap: 0.75em;
