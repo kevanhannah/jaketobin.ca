@@ -1,5 +1,6 @@
 <script>
 	import { isLoading } from '$lib/stores/storeContext';
+  import Button from '$components/shared/Button.svelte';
 	export let checkoutUrl;
 
 	function openCheckout() {
@@ -7,11 +8,13 @@
 	}
 </script>
 
-<button class="checkoutButton" disabled={$isLoading} on:click={openCheckout}
-	>{$isLoading ? 'Processing...' : 'Checkout'}</button
->
+<Button disabled={$isLoading} on:click={openCheckout}>{$isLoading ? 'Processing...' : 'Checkout'}</Button>
 
-<style lang="postcss">
+<!-- <button class="checkoutButton" disabled={$isLoading} on:click={openCheckout}
+	>{$isLoading ? 'Processing...' : 'Checkout'}</button
+> -->
+
+<!-- <style lang="postcss">
 	.checkoutButton {
 		padding: 0.75em 1.25em;
 		color: var(--paperWhite);
@@ -36,4 +39,4 @@
 		color: var(--black);
 		background: var(--paperWhite);
 	}
-</style>
+</style> -->

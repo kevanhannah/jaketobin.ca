@@ -34,25 +34,13 @@
 		border: 1px solid var(--mediumGray);
 		cursor: default;
   }
-	/* button {
-		padding-top: 1em;
-		padding-bottom: 1em;
-		padding-left: 1.25em;
-		padding-right: 1.25em;
-		background-color: var(--black);
-		border-radius: 0.5em;
-		color: var(--paperWhite);
-	} */
 
 	@media (hover: hover) {
     button:not(:disabled)[loading="false"]:hover {
-		color: var(--black);
-		background: var(--paperWhite);
-    cursor: pointer;
-	}
-		/* button:hover {
-			background-color: #6c6c6c;
-		} */
+      color: var(--black);
+      background: var(--paperWhite);
+      cursor: pointer;
+    }
 	}
 
 	@media (max-width: 768px) {
