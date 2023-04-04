@@ -27,8 +27,11 @@ export default function singletonQuery(singletonId) {
             title
           },
         },
+        seo {
+          title
+        },
         showHero
-      }
+      },
     }
   `
 }

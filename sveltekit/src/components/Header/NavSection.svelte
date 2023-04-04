@@ -7,7 +7,7 @@
 
 <section>
 	<h2 class="section_header">
-		{content.name}
+		{content.title}
 	</h2>
 	<ul class="section_menu">
 		{#each content.pages as page}

@@ -11,12 +11,14 @@ export default {
   icon: IoDocumentsOutline,
   orderings: [orderRankOrdering],
   fields: [
+    // Name
     {
       name: 'name',
       title: 'Category name',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
+    // Pages
     {
       name: 'pages',
       title: 'Pages in Category',

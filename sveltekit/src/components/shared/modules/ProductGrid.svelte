@@ -1,6 +1,5 @@
 <script>
 	import { PUBLIC_SVELTEKIT_SITE_URL } from '$env/static/public';
-	import getShopifyImageProps from '$lib/utils/getShopifyImageProps';
 
 	export let portableText;
 	$: ({ value } = portableText);
@@ -24,7 +23,6 @@
 						loading="lazy"
 						sizes="(max-width: 800px) 50vw, 25vw"
 						src={item.store.previewImageUrl}
-						srcset={getShopifyImageProps(item.store.previewImageUrl)}
 					/>
 					<p class="productTitle">{item.store.title}</p>
 				</a>

@@ -4,7 +4,7 @@
 	import NavSection from '$components/Header/NavSection.svelte';
 	import MegaNavBackdrop from '$components/Header/DesktopNav/MegaNavBackdrop.svelte';
 
-	$: ({ portfolioCategories, shopCategories } = $page.data);
+	$: ({ portfolioNavItems, shopNavItems } = $page.data);
 </script>
 
 <div class="mega_nav">
@@ -12,8 +12,8 @@
 		<div class="mega_item_outer">
 			<div class="mega_item_inner">
 				<div class="mega_item_content">
-					{#each portfolioCategories as portfolioCategory}
-						<NavSection content={portfolioCategory} slugPrefix="portfolio" />
+					{#each portfolioNavItems as portfolioNavItem}
+						<NavSection content={portfolioNavItem} slugPrefix="portfolio" />
 					{/each}
 				</div>
 			</div>
@@ -23,8 +23,8 @@
 		<div class="mega_item_outer">
 			<div class="mega_item_inner">
 				<div class="mega_item_content">
-					{#each shopCategories as shopCategory}
-						<NavSection content={shopCategory} slugPrefix="shop/collections" />
+					{#each shopNavItems as shopNavItem}
+						<NavSection content={shopNavItem} slugPrefix="shop/collections" />
 					{/each}
 				</div>
 			</div>

@@ -16,6 +16,7 @@ import product from './documents/product';
 import productVariant from './documents/productVariant';
 
 // Objects
+import collectionPageGroup from './objects/collectionPageGroup';
 import linkExternal from './objects/linkExternal';
 import linkInternal from './objects/linkInternal';
 import moduleAccordion from './objects/module/accordion';
@@ -26,6 +27,7 @@ import moduleImage from './objects/module/image';
 import moduleImageWithText from './objects/module/imageWithText';
 import page from './objects/page';
 import placeholderString from './objects/placeholderString';
+import portfolioPageGroup from './objects/portfolioPageGroup';
 import productOption from './objects/productOption';
 import proxyString from './objects/proxyString';
 import seo from './objects/seo';
@@ -58,6 +60,7 @@ export const schemaTypes = [
   product,
   productVariant,
   // Objects
+  collectionPageGroup,
   linkExternal,
   linkInternal,
   moduleAccordion,
@@ -68,6 +71,7 @@ export const schemaTypes = [
   modulePublication,
   page,
   placeholderString,
+  portfolioPageGroup,
   productOption,
   proxyString,
   seo,
