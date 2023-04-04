@@ -6,6 +6,7 @@
 	import CustomTextBlock from '$components/shared/blocks/CustomTextBlock.svelte';
 	import ListWrapper from '$components/shared/blocks/ListWrapper.svelte';
 	import ListItem from '$components/shared/blocks/ListItem.svelte';
+	import ProductGrid from '$components/shared/modules/ProductGrid.svelte';
 
 	export let data;
 	$: ({ pageContent } = data);
@@ -25,6 +26,7 @@
 				types: {
 					blockImageWithText: ImageWithText,
 					blockPortfolioGrid: Grid,
+					blockProductGrid: ProductGrid,
 				},
 				list: {
 					bullet: ListWrapper,

@@ -45,6 +45,10 @@ export default {
       name: 'blockPortfolioGrid',
       type: 'module.portfolioGrid',
     },
+    {
+      name: 'blockProductGrid',
+      type: 'module.productGrid',
+    },
     // {
     //   name: 'blockImages',
     //   type: 'module.images',

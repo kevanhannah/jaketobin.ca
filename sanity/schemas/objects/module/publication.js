@@ -1,14 +1,16 @@
 export default {
   title: 'Publication Module',
-  name: 'publicationModule',
+  name: 'module.publication',
   type: 'object',
   fields: [
+    // Title
     {
       name: 'title',
       title: 'Title',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
+    // Title Link
     {
       name: 'titleLink',
       title: 'Title Link',
@@ -16,6 +18,7 @@ export default {
       description:
         'Add a link to the title of this publication (optional; please type complete URLs with https://, etc.)',
     },
+    // Description
     {
       title: 'Description',
       name: 'description',

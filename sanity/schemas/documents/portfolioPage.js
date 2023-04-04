@@ -71,7 +71,7 @@ export default {
       title: 'Publication Items',
       name: 'publicationItems',
       type: 'array',
-      of: [{ type: 'publicationModule' }],
+      of: [{ type: 'module.publication' }],
       group: 'details',
       hidden: ({ document }) =>
         !document?.pageType || document?.pageType === 'artwork',

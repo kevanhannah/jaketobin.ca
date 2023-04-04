@@ -20,7 +20,12 @@ export default function singletonQuery(singletonId) {
             _type,
             items[]-> { images[0] },
             link[0] { reference -> { slug { current }, _type }, title }
-          }
+          },
+          _type == 'blockProductGrid' => @{
+            _type,
+            items[]-> { store },
+            title
+          },
         },
         showHero
       }

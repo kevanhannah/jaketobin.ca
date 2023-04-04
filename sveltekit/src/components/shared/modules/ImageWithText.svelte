@@ -7,8 +7,7 @@
 
 	export let portableText;
 	$: ({ value } = portableText);
-	$: ({ _type, aspectRatio = 1, body, content, layout, link, title } = value);
-	$: console.log(content);
+	$: ({ aspectRatio = 1, body, content, layout, link, title } = value);
 </script>
 
 <div class="imageWithText">
@@ -58,10 +57,6 @@
 	.reverse {
 		order: -1;
 	}
-
-	/* .body {
-		margin-bottom: 0;
-	} */
 
 	.title {
 		font-family: Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,

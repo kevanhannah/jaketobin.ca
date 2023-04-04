@@ -15,22 +15,18 @@ import portfolioPage from './documents/portfolioPage';
 import product from './documents/product';
 import productVariant from './documents/productVariant';
 
-// Modules
-import externalLink from './modules/externalLink';
-import imageModule from './modules/imageModule';
-import imageWithTextNew from './objects/module/imageWithText';
-import internalLink from './modules/internalLink';
-import publicationModule from './modules/publicationModule';
-import placeholderString from './objects/placeholderString';
-import productOption from './objects/productOption';
-
 // Objects
 import linkExternal from './objects/linkExternal';
 import linkInternal from './objects/linkInternal';
 import moduleAccordion from './objects/module/accordion';
 import modulePortfolioGrid from './objects/module/portfolioGrid';
+import moduleProductGrid from './objects/module/productGrid';
+import modulePublication from './objects/module/publication';
 import moduleImage from './objects/module/image';
+import moduleImageWithText from './objects/module/imageWithText';
 import page from './objects/page';
+import placeholderString from './objects/placeholderString';
+import productOption from './objects/productOption';
 import proxyString from './objects/proxyString';
 import seo from './objects/seo';
 import seoPage from './objects/seo/page';
@@ -61,18 +57,15 @@ export const schemaTypes = [
   portfolioPage,
   product,
   productVariant,
-  // Modules
-  externalLink,
-  imageModule,
-  imageWithTextNew,
-  internalLink,
-  publicationModule,
   // Objects
   linkExternal,
   linkInternal,
   moduleAccordion,
   moduleImage,
+  moduleImageWithText,
   modulePortfolioGrid,
+  moduleProductGrid,
+  modulePublication,
   page,
   placeholderString,
   productOption,
