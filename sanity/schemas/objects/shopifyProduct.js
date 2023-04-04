@@ -75,7 +75,7 @@ export default {
       type: 'number',
       description: 'Shopify Product ID',
     },
-    // Product ID
+    // Product GID
     {
       name: 'gid',
       title: 'GID',

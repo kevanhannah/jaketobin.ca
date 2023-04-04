@@ -7,12 +7,12 @@
 	$: ({ items, title } = value);
 </script>
 
-<div class="grid">
+<div class="productGrid">
 	{#if title}
 		<h2 class="gridTitle">{title}</h2>
 	{/if}
 	{#if items.length}
-		<div class="gridImages">
+		<div class="gridItems">
 			{#each items as item}
 				<a
 					class="imageWrapper"
@@ -34,7 +34,7 @@
 </div>
 
 <style lang="postcss">
-	.grid {
+	.productGrid {
 		padding-top: 3em;
 		padding-bottom: 1.5em;
 		margin-top: 2em;
@@ -51,16 +51,20 @@
 		margin-bottom: 0;
 	}
 
-	.gridImages {
-		display: flex;
+	.gridItems {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1.25em;
+    row-gap: 1.75em;
+		/* display: flex;
 		flex-wrap: wrap;
 		gap: 1em;
 		justify-content: center;
-		align-items: center;
+		align-items: center; */
 	}
 
 	.imageWrapper {
-		max-width: calc((100% / 4) - 0.75em);
+		/* max-width: calc((100% / 4) - 0.75em); */
 		display: flex;
 		flex-direction: column;
 		gap: 0.75em;
@@ -82,7 +86,7 @@
 	}
 
 	@media (max-width: 768px) {
-		.grid {
+		.productGrid {
 			padding-top: 2em;
 			padding-bottom: 1.5em;
 			margin-top: 2em;
@@ -93,18 +97,10 @@
 			font-size: 1.75em;
 		}
 
-		.gridImages {
-			gap: 1em;
-			justify-content: center;
-			align-items: center;
-		}
-
-		.imageWrapper {
-			max-width: calc((100% / 2) - 0.5em);
-		}
-
-		.imageWrapper:last-of-type {
-			display: block;
+		.gridItems {
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 1em;
+      row-gap: 1.5em;
 		}
 	}
 
