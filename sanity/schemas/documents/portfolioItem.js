@@ -10,22 +10,45 @@ export default {
   //   { title: 'Settings', name: 'settings' },
   // ],
   fields: [
+    // Title
     {
       name: 'title',
       title: 'Title',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
+    // Images
     {
       title: 'Images',
       name: 'images',
       type: 'array',
-      of: [{ type: 'imageModule' }],
+      of: [{ type: 'module.image' }],
+      validation: (Rule) => Rule.min(1),
     },
+    // Description
     {
       title: 'Description',
       name: 'description',
-      type: 'textModule',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          styles: [{ title: 'Paragraph', value: 'normal' }],
+          lists: [
+            { title: 'Numbered', value: 'number' },
+            {
+              title: 'Bullet',
+              value: 'bullet',
+            },
+          ],
+          marks: {
+            decorators: [
+              { title: 'Strong', value: 'strong' },
+              { title: 'Emphasis', value: 'em' },
+            ],
+          },
+        },
+      ],
     },
   ],
   preview: {

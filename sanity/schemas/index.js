@@ -21,15 +21,14 @@ import imageModule from './modules/imageModule';
 import imageWithTextNew from './objects/module/imageWithText';
 import internalLink from './modules/internalLink';
 import publicationModule from './modules/publicationModule';
-import textModule from './modules/textModule';
 import placeholderString from './objects/placeholderString';
 import productOption from './objects/productOption';
 
 // Objects
-import accordion from './objects/module/accordion';
-import portfolioGrid from './objects/module/portfolioGrid';
 import linkExternal from './objects/linkExternal';
 import linkInternal from './objects/linkInternal';
+import moduleAccordion from './objects/module/accordion';
+import modulePortfolioGrid from './objects/module/portfolioGrid';
 import moduleImage from './objects/module/image';
 import page from './objects/page';
 import proxyString from './objects/proxyString';
@@ -68,13 +67,12 @@ export const schemaTypes = [
   imageWithTextNew,
   internalLink,
   publicationModule,
-  textModule,
   // Objects
-  accordion,
-  portfolioGrid,
   linkExternal,
   linkInternal,
+  moduleAccordion,
   moduleImage,
+  modulePortfolioGrid,
   page,
   placeholderString,
   productOption,
