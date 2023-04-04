@@ -8,8 +8,6 @@ import body from './blocks/body';
 
 // Documents
 import collection from './documents/collection';
-import collectionCategory from './documents/collectionCategory';
-import portfolioCategory from './documents/portfolioCategory';
 import portfolioItem from './documents/portfolioItem';
 import portfolioPage from './documents/portfolioPage';
 import product from './documents/product';
@@ -53,8 +51,6 @@ export const schemaTypes = [
   body,
   // Documents
   collection,
-  collectionCategory,
-  portfolioCategory,
   portfolioItem,
   portfolioPage,
   product,

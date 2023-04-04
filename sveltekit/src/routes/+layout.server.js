@@ -1,13 +1,14 @@
 import { client } from '$lib/utils/sanityClient';
 
 export async function load() {
-  // const { portfolioCategories, shopCategories } = await client.fetch(`{
-  //   "portfolioCategories": *[_type == "portfolioCategory"] | order(orderRank) { name, pages[] -> { title, slug }},
-  //   "shopCategories": *[_type == "collectionCategory"] | order(orderRank) { name, pages[] -> { "title": store.title, "slug": store.slug }}
-  // }`);
-  const { portfolioNavItems, seo, shopNavItems } = await client.fetch(`
+  const { portfolioNavItems, portfolioSidebarItems, seo, shopNavItems, shopSidebarItems } = await client.fetch(`
     *[_type == "settings"][0] {
       portfolioNavItems[] {
+        pages[]-> { slug { current }, title },
+        showTitle,
+        title
+      },
+      portfolioSidebarItems[] {
         pages[]-> { slug { current }, title },
         showTitle,
         title
@@ -18,14 +19,19 @@ export async function load() {
         showTitle,
         title
       },
+      shopSidebarItems[] {
+        pages[]-> { "slug": store.slug, "title": store.title },
+        showTitle,
+        title
+      },
     }
   `)
 
   return {
-    // portfolioCategories,
-    // shopCategories,
     portfolioNavItems,
+    portfolioSidebarItems,
     seo,
     shopNavItems,
+  shopSidebarItems,
   };
 }

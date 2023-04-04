@@ -1,17 +1,13 @@
 <script>
+	import { page } from '$app/stores';
 	import PageWithSidebarLayout from '$components/shared/PageWithSidebarLayout.svelte';
-	import PortfolioSidebar from '$components/Portfolio/PortfolioSidebar.svelte';
+
+	import SidebarLayout from '$components/shared/SidebarLayout.svelte';
+
+	$: ({ portfolioSidebarItems } = $page.data);
 </script>
 
 <PageWithSidebarLayout>
-	<PortfolioSidebar />
+	<SidebarLayout items={portfolioSidebarItems} slugPrefix="portfolio/" />
 	<slot />
 </PageWithSidebarLayout>
-
-<!-- <script>
-	import PageLayout from '$components/shared/PageLayout.svelte';
-</script>
-
-<PageLayout>
-	<slot />
-</PageLayout> -->
