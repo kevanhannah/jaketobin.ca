@@ -6,12 +6,13 @@ export default {
   type: 'document',
   icon: IoHomeOutline,
   liveEdit: false,
-  __experimental_actions: ['update', 'publish' /* 'create', 'delete' */],
+  __experimental_actions: ['update', 'publish'],
   fields: [
+    // Page Content
     {
-      title: 'Modules',
-      name: 'modules',
-      type: 'moduleContent',
+      name: 'pageContent',
+      title: 'Page content',
+      type: 'page',
     },
   ],
   preview: {

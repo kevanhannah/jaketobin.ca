@@ -1,4 +1,5 @@
 <script>
+	import { PortableText } from '@portabletext/svelte';
 	import getImageProps from '$lib/utils/getImageProps';
 	import SanityImage from '$components/shared/SanityImage.svelte';
 	import LinkButton from '$components/shared/LinkButton.svelte';
@@ -6,19 +7,27 @@
 
 	export let portableText;
 	$: ({ value } = portableText);
-	$: ({ body, content, layout, link, title } = value);
+	$: ({ _type, aspectRatio = 1, body, content, layout, link, title } = value);
+	$: console.log(content);
 </script>
 
 <div class="imageWithText">
 	<SanityImage
-		image={getImageProps({ image: content.images[0].image, maxWidth: 600 })}
+		image={getImageProps({
+			aspectRatio,
+			image:
+				content[0]._type === 'module.image'
+					? content[0].image
+					: content[0].images[0].image,
+			maxWidth: 600,
+		})}
 	/>
 	<div class="textSection" class:reverse={layout === 'right'}>
 		{#if title}
 			<h3 class="title">{title}</h3>
 		{/if}
 		{#if body}
-			<p class="body">{body}</p>
+			<PortableText value={body} />
 		{/if}
 		{#if link}
 			<LinkButton
@@ -50,9 +59,9 @@
 		order: -1;
 	}
 
-	.body {
+	/* .body {
 		margin-bottom: 0;
-	}
+	} */
 
 	.title {
 		font-family: Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -61,20 +70,14 @@
 		font-size: 1.75em;
 	}
 
-	.text_content.reverse {
-		order: -1;
-	}
-
 	@media (max-width: 768px) {
 		.imageWithText {
 			display: flex;
 			flex-direction: column;
 		}
 
-		.module_header {
-			font-size: 2em;
-			margin-bottom: 0.75em;
-			line-height: 1.25;
+		.reverse {
+			order: 1;
 		}
 	}
 </style>

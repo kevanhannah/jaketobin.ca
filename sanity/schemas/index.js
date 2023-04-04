@@ -18,12 +18,8 @@ import productVariant from './documents/productVariant';
 // Modules
 import externalLink from './modules/externalLink';
 import imageModule from './modules/imageModule';
-import imageWithText from './modules/imageWithText';
 import imageWithTextNew from './objects/module/imageWithText';
 import internalLink from './modules/internalLink';
-import moduleContent from './modules/moduleContent';
-import pageContent from './modules/pageContent';
-import pageModule from './modules/pageModule';
 import publicationModule from './modules/publicationModule';
 import textModule from './modules/textModule';
 import placeholderString from './objects/placeholderString';
@@ -34,6 +30,7 @@ import accordion from './objects/module/accordion';
 import portfolioGrid from './objects/module/portfolioGrid';
 import linkExternal from './objects/linkExternal';
 import linkInternal from './objects/linkInternal';
+import moduleImage from './objects/module/image';
 import page from './objects/page';
 import proxyString from './objects/proxyString';
 import seo from './objects/seo';
@@ -68,12 +65,8 @@ export const schemaTypes = [
   // Modules
   externalLink,
   imageModule,
-  imageWithText,
   imageWithTextNew,
   internalLink,
-  moduleContent,
-  pageContent,
-  pageModule,
   publicationModule,
   textModule,
   // Objects
@@ -81,6 +74,7 @@ export const schemaTypes = [
   portfolioGrid,
   linkExternal,
   linkInternal,
+  moduleImage,
   page,
   placeholderString,
   productOption,

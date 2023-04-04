@@ -6,8 +6,12 @@ export default function singletonQuery(singletonId) {
           _type == 'block' => @,
           _type == 'blockImageWithText' => @{
             _type,
+            aspectRatio,
             body,
-            content[0]->,
+            content[]{
+              _type == 'portfolioItem' => @->,
+              _type == 'module.image' => @,
+            },
             layout,
             link[0] { reference -> { slug { current }, _type }, title },
             title

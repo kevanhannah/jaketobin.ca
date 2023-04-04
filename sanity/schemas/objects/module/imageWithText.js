@@ -10,6 +10,10 @@ export default {
       name: 'copy',
       title: 'Copy',
     },
+    {
+      name: 'content',
+      title: 'Content',
+    },
   ],
   fields: [
     // Layout
@@ -45,8 +49,21 @@ export default {
     {
       name: 'body',
       title: 'Body',
-      type: 'text',
-      rows: 2,
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          styles: [{ title: 'Paragraph', value: 'normal' }],
+          lists: [],
+          marks: {
+            annotations: [],
+            decorators: [
+              { title: 'Strong', value: 'strong' },
+              { title: 'Emphasis', value: 'em' },
+            ],
+          },
+        },
+      ],
       fieldset: 'copy',
     },
     // Link
@@ -61,23 +78,33 @@ export default {
     // Content
     {
       name: 'content',
-      title: 'Content',
+      title: 'Content item',
       type: 'array',
       validation: (Rule) => Rule.required().max(1),
       of: [
         {
+          title: 'Image',
           icon: ImageIcon,
-          type: 'image',
-          options: { hotspot: true },
+          type: 'module.image',
         },
         {
           name: 'portfolioItem',
+          title: 'Portfolio item',
           type: 'reference',
           to: [{ type: 'portfolioItem' }],
           weak: true,
           validation: (Rule) => Rule.required(),
         },
       ],
+      fieldset: 'content',
+    },
+    {
+      name: 'aspectRatio',
+      title: 'Aspect ratio',
+      type: 'number',
+      initialValue: 1,
+      validation: (Rule) => Rule.required().positive().precision(3),
+      fieldset: 'content',
     },
   ],
   preview: {
