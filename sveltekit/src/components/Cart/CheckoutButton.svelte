@@ -8,7 +8,7 @@
 	}
 </script>
 
-<Button disabled={$isLoading} on:click={openCheckout}>{$isLoading ? 'Processing...' : 'Checkout'}</Button>
+<Button loading={$isLoading} on:click={openCheckout}>{$isLoading ? 'Processing...' : 'Checkout'}</Button>
 
 <!-- <button class="checkoutButton" disabled={$isLoading} on:click={openCheckout}
 	>{$isLoading ? 'Processing...' : 'Checkout'}</button
