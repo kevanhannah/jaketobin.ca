@@ -1,10 +1,20 @@
 <script>
+  import { PortableText, DefaultListItem } from '@portabletext/svelte';
+	import Grid from '$components/shared/modules/Grid.svelte';
+	import ImageWithText from '$components/shared/modules/ImageWithText.svelte';
+	import CustomTextBlock from '$components/shared/blocks/CustomTextBlock.svelte';
+	import ListWrapper from '$components/shared/blocks/ListWrapper.svelte';
+	import ListItem from '$components/shared/blocks/ListItem.svelte';
+
 	import AddToCartButton from '$components/Shop/ProductPage/AddToCartButton.svelte';
 	import ProductPageImageLayout from '$components/Shop/ProductPage/ProductPageImageLayout.svelte';
 
-	export let product;
-	$: ({ descriptionHtml, images, title, variants } = product);
-	$: activeVariant = variants.edges[0].node;
+	export let body;
+  export let images;
+  export let store;
+
+	$: ({ descriptionHtml, title, variants } = store);
+	$: activeVariant = store.variants[0];
 
 	function setActiveVariant(variant) {
 		activeVariant = variant;
@@ -17,24 +27,24 @@
 		<div class="variantInfo">
 			<h2 class="productHeader">{title}</h2>
 			<div class="priceSection">
-				<span class="priceCurrency">{activeVariant.priceV2.currencyCode}</span>
+				<span class="priceCurrency">CA</span>
 				<span class="priceText">
 					{new Intl.NumberFormat('en-CA', {
 						style: 'currency',
 						currency: 'CAD',
-					}).format(activeVariant.priceV2.amount)}
+					}).format(activeVariant.store.price)}
 				</span>
 			</div>
-			{#if variants.edges.length > 1}
+			{#if variants.length > 1}
 				<div class="variantsSection">
 					<ul class="variantsList">
-						{#each variants.edges as variant}
+						{#each variants as variant}
 							<li>
 								<button
 									class="variantButton"
-									class:selected={variant.node.id === activeVariant.id}
-									on:click={setActiveVariant(variant.node)}
-									>{variant.node.title}</button
+									class:selected={variant.store.gid === activeVariant.store.gid}
+									on:click={setActiveVariant(variant)}
+									>{variant.store.title}</button
 								>
 							</li>
 						{/each}
@@ -44,7 +54,34 @@
 			<AddToCartButton variant={activeVariant} />
 		</div>
 		<div class="productDescription">
-			{@html descriptionHtml}
+			{#if body}
+        <PortableText
+          components={{
+            block: {
+              h2: CustomTextBlock,
+              h3: CustomTextBlock,
+              h4: CustomTextBlock,
+              normal: CustomTextBlock,
+            },
+            types: {
+              blockImageWithText: ImageWithText,
+              blockPortfolioGrid: Grid,
+            },
+            list: {
+              bullet: ListWrapper,
+              number: ListWrapper,
+            },
+            listItem: {
+              normal: ListItem,
+              bullet: ListItem,
+              number: ListItem,
+            },
+          }}
+          value={body}
+        />
+      {:else}
+        {@html descriptionHtml}
+      {/if}
 		</div>
 	</div>
 </main>

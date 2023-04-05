@@ -9,8 +9,8 @@ export default (S) =>
     .title('Site Content')
     .items([
       home(S),
-      portfolio(S),
       S.divider(),
+      portfolio(S),
       S.documentTypeListItem('portfolioPage').title('Portfolio Pages'),
       S.documentTypeListItem('portfolioItem').title('Portfolio Items'),
       S.divider(),

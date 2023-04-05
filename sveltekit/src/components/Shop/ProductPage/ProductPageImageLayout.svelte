@@ -1,54 +1,39 @@
 <script>
-	import getShopifyImageProps from '$lib/utils/getShopifyImageProps';
+  import SanityImage from '$components/shared/SanityImage.svelte';
+
 	export let images;
 
-	$: responsiveImages = images.edges.map((image) =>
-		getShopifyImageProps(image.node)
-	);
-	$: featuredImage = responsiveImages[0];
+	$: featuredImage = images[0];
 
 	function changeImage(image) {
 		featuredImage = image;
 	}
 </script>
 
-<div>
+<div class="productPageImageLayout">
 	<div class="gallery">
-		{#each responsiveImages as image}
-			<img
-				alt={image.alt}
-				class="gallery_image"
-				on:click={changeImage(image)}
-				on:keypress={changeImage(image)}
-				role="button"
-				src={image.src}
-				srcset={image.srcset}
-				sizes="15vw"
-				tabindex="0"
-			/>
+		{#each images as image}
+      <div
+        class="imageWrapper"
+        on:click={changeImage(image)}
+        on:keypress={changeImage(image)}
+        tabindex="0">
+        <SanityImage {image} style={`aspect-ratio: 1; object-fit: cover; display: block`} />
+      </div>
 		{/each}
 	</div>
-	<img
-		alt={featuredImage.alt}
-		class="main_image"
-		loading="eager"
-		sizes="(max-width: 800px) 100vw, 60vw"
-		src={featuredImage.src}
-		srcset={featuredImage.srcset}
-	/>
+  <SanityImage image={featuredImage} loading="eager" style="aspect-ratio: 1;
+		object-fit: cover;
+		cursor: pointer;
+		image-rendering: -webkit-optimize-contrast;
+		image-rendering: crisp-edges;" />
 </div>
 
 <style lang="postcss">
-	div {
+	.productPageImageLayout {
 		display: grid;
 		grid-template-columns: 1fr 4fr;
 		gap: 1.25em;
-	}
-
-	.main_image {
-		width: 100%;
-		aspect-ratio: 1;
-		object-fit: cover;
 	}
 
 	.gallery {
@@ -57,21 +42,17 @@
 		gap: 1.25em;
 	}
 
-	.gallery_image {
+	.imageWrapper {
 		width: 100%;
-		aspect-ratio: 1;
-		object-fit: cover;
-		cursor: pointer;
-		image-rendering: -webkit-optimize-contrast;
-		image-rendering: crisp-edges;
+    cursor: pointer;
 	}
 
-	.gallery_image:hover {
+	.imageWrapper:hover {
 		opacity: 0.8;
 	}
 
 	@media (max-width: 1150px) {
-		div {
+		.productPageImageLayout {
 			display: flex;
 			flex-direction: column-reverse;
 		}
@@ -80,7 +61,7 @@
 			flex-direction: row;
 		}
 
-		.gallery_image {
+		.imageWrapper {
 			width: calc((100% / 4) - 0.75em);
 		}
 	}

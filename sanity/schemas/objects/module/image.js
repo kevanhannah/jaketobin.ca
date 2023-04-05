@@ -1,6 +1,8 @@
+import { ImageIcon } from '@sanity/icons';
+
 export default {
   name: 'module.image',
-  title: 'Image Module',
+  title: 'Image',
   type: 'object',
   fields: [
     // Image
@@ -13,11 +15,21 @@ export default {
       },
       validation: (Rule) => Rule.required(),
     },
-    // Alt Text
-    {
-      name: 'alt',
-      title: 'Alt text',
-      type: 'string',
-    },
   ],
+  preview: {
+    select: {
+      fileName: 'image.asset.originalFilename',
+      image: 'image',
+      variant: 'variant',
+    },
+    prepare(selection) {
+      const { fileName, image } = selection;
+
+      return {
+        media: image,
+        subtitle: 'Image',
+        title: fileName,
+      };
+    },
+  },
 };

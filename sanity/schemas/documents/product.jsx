@@ -7,6 +7,7 @@ import { getPriceRange } from '../../utils/getPriceRange';
 
 const GROUPS = [
   {
+    default: true,
     name: 'editorial',
     title: 'Editorial',
   },
@@ -55,31 +56,22 @@ export default {
       type: 'proxyString',
       options: { field: 'store.slug.current' },
     },
+    // Images
+    {
+      name: 'images',
+      title: 'Images',
+      type: 'array',
+      of: [{ type: 'module.image' }],
+      group: 'editorial',
+    },
+    // Body
     {
       name: 'body',
       title: 'Body',
-      type: 'array',
-      of: [
-        {
-          type: 'block',
-          styles: [{ title: 'Paragraph', value: 'normal' }],
-          lists: [
-            { title: 'Numbered', value: 'number' },
-            {
-              title: 'Bullet',
-              value: 'bullet',
-            },
-          ],
-          marks: {
-            decorators: [
-              { title: 'Strong', value: 'strong' },
-              { title: 'Emphasis', value: 'em' },
-            ],
-          },
-        },
-      ],
+      type: 'body',
       group: 'editorial',
     },
+    // Store
     {
       name: 'store',
       title: 'Shopify',
@@ -87,6 +79,7 @@ export default {
       description: 'Product data from Shopify (read-only)',
       group: 'shopifySync',
     },
+    // SEO
     {
       name: 'seo',
       title: 'SEO',

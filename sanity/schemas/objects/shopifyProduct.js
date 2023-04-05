@@ -6,7 +6,6 @@ export default {
     collapsed: false,
     collapsible: true,
   },
-  readOnly: true,
   fieldsets: [
     {
       name: 'status',
@@ -35,6 +34,7 @@ export default {
       name: 'createdAt',
       title: 'Created at',
       type: 'string',
+      readOnly: true,
     },
     // Updated at
     {
@@ -42,6 +42,7 @@ export default {
       name: 'updatedAt',
       title: 'Updated at',
       type: 'string',
+      readOnly: true,
     },
     // Product status
     {
@@ -49,6 +50,7 @@ export default {
       name: 'status',
       title: 'Product status',
       type: 'string',
+      readOnly: true,
       options: {
         layout: 'dropdown',
         list: ['active', 'archived', 'draft'],
@@ -60,6 +62,7 @@ export default {
       name: 'isDeleted',
       title: 'Deleted from Shopify?',
       type: 'boolean',
+      readOnly: true,
     },
     // Title
     {
@@ -67,6 +70,7 @@ export default {
       title: 'Title',
       type: 'string',
       description: 'Title displayed in both cart and checkout',
+      readOnly: true,
     },
     // Product ID
     {
@@ -74,6 +78,7 @@ export default {
       title: 'ID',
       type: 'number',
       description: 'Shopify Product ID',
+      readOnly: true,
     },
     // Product GID
     {
@@ -81,6 +86,7 @@ export default {
       title: 'GID',
       type: 'string',
       description: 'Shopify Product GID',
+      readOnly: true,
     },
     // Slug
     {
@@ -88,6 +94,7 @@ export default {
       title: 'Slug',
       type: 'slug',
       description: 'Shopify Product handle',
+      readOnly: true,
     },
     // Description
     {
@@ -95,6 +102,7 @@ export default {
       title: 'HTML Description',
       type: 'text',
       rows: 5,
+      readOnly: true,
     },
     // Product Type
     {
@@ -102,6 +110,7 @@ export default {
       name: 'productType',
       title: 'Product type',
       type: 'string',
+      readOnly: true,
     },
     // Vendor
     {
@@ -109,6 +118,7 @@ export default {
       name: 'vendor',
       title: 'Vendor',
       type: 'string',
+      readOnly: true,
     },
     // Tags
     {
@@ -116,12 +126,14 @@ export default {
       name: 'tags',
       title: 'Tags',
       type: 'string',
+      readOnly: true,
     },
     // Price range
     {
       name: 'priceRange',
       title: 'Price range',
       type: 'object',
+      readOnly: true,
       options: {
         columns: 2,
       },
@@ -144,6 +156,7 @@ export default {
       title: 'Preview Image URL',
       type: 'string',
       description: 'Image displayed in both cart and checkout',
+      readOnly: true,
     },
     // Options
     {
@@ -157,6 +170,7 @@ export default {
           type: 'productOption',
         },
       ],
+      readOnly: true,
     },
     // Variants
     {

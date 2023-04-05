@@ -2,7 +2,7 @@
 	import ProductPageLayout from '$components/Shop/ProductPage/ProductPageLayout.svelte';
 
 	export let data;
-	$: ({ product } = data);
+  $: ({ body, images, store } = data);
 </script>
 
-<ProductPageLayout {product} />
+<ProductPageLayout {body} {images} {store} />

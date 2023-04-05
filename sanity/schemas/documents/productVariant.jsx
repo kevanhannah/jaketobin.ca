@@ -10,6 +10,7 @@ export default {
   icon: CopyIcon,
   groups: [
     {
+      default: true,
       name: 'shopifySync',
       title: 'Shopify sync',
       icon: ShopifyIcon,
