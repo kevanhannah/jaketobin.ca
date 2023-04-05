@@ -52,7 +52,7 @@ export default function getImageProps({
 
 	// Width sizes the image could assume
 	const baseSizes = [
-		{ width: maxWidth, height: maxWidth / parseInt(aspectRatio) },
+		{ width: maxWidth, height: parseInt(maxWidth / aspectRatio) },
 		...(
 			customWidthSteps ||
 			(typeof userMaxWidth === 'number'
@@ -102,7 +102,7 @@ export default function getImageProps({
 	return {
 		alt: image.alt || '',
 		// Use the original image as the `src` for the <img>
-		src: builder.size(maxWidth, maxWidth / aspectRatio).url(),
+		src: builder.size(maxWidth, parseInt(maxWidth / aspectRatio)).url(),
 		// Build a `{URL} {SIZE}w, ...` string for the srcset
 		srcset: retinaSizes
 			.map(

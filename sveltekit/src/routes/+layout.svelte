@@ -15,7 +15,7 @@
 		getCartItems,
 		useCreateCart,
 	} from '$lib/stores/storeContext';
-  import SEO from '$components/SEO.svelte';
+	import SEO from '$components/SEO.svelte';
 	import Header from '$components/Header/Header.svelte';
 	import Footer from '$components/Footer.svelte';
 	import CartDrawer from '$components/Cart/CartDrawer.svelte';
@@ -52,9 +52,11 @@
 			$cartOpen || $mobileNavOpen || $portfolioOpen || $shopOpen
 		);
 	}
+
+	export let data;
 </script>
 
-<SEO />
+<SEO defaultMetadata={data.seo} />
 <CartDrawer />
 <CartBackdrop />
 <Header inert={$cartOpen} />

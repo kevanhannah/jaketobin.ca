@@ -62,6 +62,6 @@ export async function load() {
     portfolioSidebarItems,
     seo,
     shopNavItems,
-  shopSidebarItems,
+    shopSidebarItems,
   };
 }
