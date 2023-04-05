@@ -3,14 +3,11 @@
 	import getImageProps from '$lib/utils/getImageProps';
 
 	export let defaultMetadata;
-
-	$: seo = $page.data.pageContent;
+  $: seo = $page.data?.pageContent?.seo ?? defaultMetadata;
 	$: ({ origin, pathname } = $page.url);
-	$: title = seo?.title ?? defaultMetadata.title;
-	$: description = seo?.description ?? defaultMetadata.description;
-	$: image =
-		(seo?.image && getImageProps({ aspectRatio: 1.78, image: seo.image })) ??
-		getImageProps({ aspectRatio: 1.78, image: defaultMetadata.image });
+	$: title = $page.data?.pageContent?.seo?.title ? `${$page.data?.pageContent?.seo.title} | ${defaultMetadata.title}` : seo.title;
+	$: description = seo.description;
+	$: image = getImageProps({ aspectRatio: 1.78, image: seo.image });
 </script>
 
 <svelte:head>
