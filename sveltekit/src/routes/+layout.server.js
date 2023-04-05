@@ -21,7 +21,11 @@ export async function load() {
         showTitle,
         title
       },
-      seo,
+      seo {
+        description,
+        image,
+        title
+      },
       shopNavItems[] {
         pages[]-> {
           _type != "collection" => @ {
@@ -58,9 +62,9 @@ export async function load() {
   `)
 
   return {
+    defaultMetadata: seo,
     portfolioNavItems,
     portfolioSidebarItems,
-    seo,
     shopNavItems,
     shopSidebarItems,
   };

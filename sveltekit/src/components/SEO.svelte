@@ -4,16 +4,13 @@
 
 	export let defaultMetadata;
 
-	$: ({ seo } = $page.data.pageContent);
+	$: seo = $page.data.pageContent;
 	$: ({ origin, pathname } = $page.url);
-	$: title = seo?.title
-		? `${seo.title} | ${defaultMetadata.title}`
-		: defaultMetadata.title;
-	$: description = seo.description || defaultMetadata.description;
-	$: image = seo.image
-		? getImageProps({ aspectRatio: 1.78, image: seo.image })
-		: getImageProps({ aspectRatio: 1.78, image: defaultMetadata.image });
-	$: console.log($page.data);
+	$: title = seo?.title ?? defaultMetadata.title;
+	$: description = seo?.description ?? defaultMetadata.description;
+	$: image =
+		(seo?.image && getImageProps({ aspectRatio: 1.78, image: seo.image })) ??
+		getImageProps({ aspectRatio: 1.78, image: defaultMetadata.image });
 </script>
 
 <svelte:head>

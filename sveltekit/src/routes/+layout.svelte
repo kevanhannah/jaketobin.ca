@@ -56,7 +56,7 @@
 	export let data;
 </script>
 
-<SEO defaultMetadata={data.seo} />
+<SEO defaultMetadata={data.defaultMetadata} />
 <CartDrawer />
 <CartBackdrop />
 <Header inert={$cartOpen} />
