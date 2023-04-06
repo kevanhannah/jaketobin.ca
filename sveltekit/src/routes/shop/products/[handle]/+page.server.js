@@ -21,7 +21,7 @@ export async function load({ params }) {
     }
   `);
 
-  if (body && images && store) {
+  if (images && store) {
     return { body, images: images.map(image => getImageProps({ image: image.image })), store  };
   } else {
     throw error(404);

@@ -2,7 +2,7 @@
 	export let image;
 </script>
 
-<img alt={image?.altText} src={image?.originalSrc} />
+<img alt={image?.altText} src={image?.url} />
 
 <style lang="postcss">
 	img {

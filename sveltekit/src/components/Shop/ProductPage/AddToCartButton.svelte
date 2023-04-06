@@ -1,18 +1,16 @@
 <script>
 	import { addItemToCart, isLoading } from '$lib/stores/storeContext.js';
-  import Button from '$components/shared/Button.svelte';
+	import Button from '$components/shared/Button.svelte';
 
 	export let variant;
 
-	$: ({ availableForSale, id } = variant);
+	$: ({ inventory, gid } = variant.store);
 </script>
 
-{#if availableForSale}
-	<Button
-		loading={$isLoading}
-		on:click={addItemToCart({ variantId: id })}
+{#if inventory.isAvailable}
+	<Button loading={$isLoading} on:click={addItemToCart({ variantId: gid })}
 		>{$isLoading ? 'Processing...' : 'Add to cart'}</Button
 	>
 {:else}
-  <Button disabled>Out of stock</Button>
+	<Button disabled>Sold out</Button>
 {/if}

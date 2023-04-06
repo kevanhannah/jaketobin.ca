@@ -34,10 +34,8 @@ export default async function loadCart(cartId) {
                             images(first: 1) {
                               edges {
                                 node {
-                                  originalSrc
                                   altText
-                                  width
-                                  height
+                                  url(transform: {maxWidth: 600})
                                 }
                               }
                             }

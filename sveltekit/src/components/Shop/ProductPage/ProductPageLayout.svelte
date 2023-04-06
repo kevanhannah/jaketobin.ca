@@ -1,5 +1,5 @@
 <script>
-  import { PortableText, DefaultListItem } from '@portabletext/svelte';
+	import { PortableText, DefaultListItem } from '@portabletext/svelte';
 	import Grid from '$components/shared/modules/Grid.svelte';
 	import ImageWithText from '$components/shared/modules/ImageWithText.svelte';
 	import CustomTextBlock from '$components/shared/blocks/CustomTextBlock.svelte';
@@ -8,13 +8,16 @@
 
 	import AddToCartButton from '$components/Shop/ProductPage/AddToCartButton.svelte';
 	import ProductPageImageLayout from '$components/Shop/ProductPage/ProductPageImageLayout.svelte';
+	import Accordion from '$components/shared/modules/Accordion.svelte';
 
 	export let body;
-  export let images;
-  export let store;
+	export let images;
+	export let store;
 
 	$: ({ descriptionHtml, title, variants } = store);
-	$: activeVariant = store.variants[0];
+	$: activeVariant =
+		store.variants.find((variant) => variant.store.inventory.isAvailable) ??
+		store.variants[0];
 
 	function setActiveVariant(variant) {
 		activeVariant = variant;
@@ -35,7 +38,7 @@
 					}).format(activeVariant.store.price)}
 				</span>
 			</div>
-			{#if variants.length > 1}
+			{#if variants[0].store.title !== 'Default Title'}
 				<div class="variantsSection">
 					<ul class="variantsList">
 						{#each variants as variant}
@@ -43,6 +46,7 @@
 								<button
 									class="variantButton"
 									class:selected={variant.store.gid === activeVariant.store.gid}
+									class:disabled={!variant.store.inventory.isAvailable}
 									on:click={setActiveVariant(variant)}
 									>{variant.store.title}</button
 								>
@@ -55,33 +59,34 @@
 		</div>
 		<div class="productDescription">
 			{#if body}
-        <PortableText
-          components={{
-            block: {
-              h2: CustomTextBlock,
-              h3: CustomTextBlock,
-              h4: CustomTextBlock,
-              normal: CustomTextBlock,
-            },
-            types: {
-              blockImageWithText: ImageWithText,
-              blockPortfolioGrid: Grid,
-            },
-            list: {
-              bullet: ListWrapper,
-              number: ListWrapper,
-            },
-            listItem: {
-              normal: ListItem,
-              bullet: ListItem,
-              number: ListItem,
-            },
-          }}
-          value={body}
-        />
-      {:else}
-        {@html descriptionHtml}
-      {/if}
+				<PortableText
+					components={{
+						block: {
+							h2: CustomTextBlock,
+							h3: CustomTextBlock,
+							h4: CustomTextBlock,
+							normal: CustomTextBlock,
+						},
+						types: {
+							blockAccordion: Accordion,
+							blockImageWithText: ImageWithText,
+							blockPortfolioGrid: Grid,
+						},
+						list: {
+							bullet: ListWrapper,
+							number: ListWrapper,
+						},
+						listItem: {
+							normal: ListItem,
+							bullet: ListItem,
+							number: ListItem,
+						},
+					}}
+					value={body}
+				/>
+			{:else}
+				{@html descriptionHtml}
+			{/if}
 		</div>
 	</div>
 </main>
@@ -89,7 +94,7 @@
 <style lang="postcss">
 	main {
 		display: grid;
-		grid-template-columns: 3fr 2fr;
+		grid-template-columns: 1fr 5fr 4fr;
 		gap: 1.25em;
 	}
 
@@ -152,14 +157,19 @@
 		transition-timing-function: ease;
 	}
 
-	.variantButton:not(.selected):hover {
-		color: var(--black);
-		border: 1px solid var(--black);
+	.variantButton.disabled {
+		color: var(--lightGray);
 	}
 
-	.selected {
+	.variantButton:not(.disabled).selected {
 		color: var(--paperWhite);
 		background: var(--black);
+		cursor: default;
+	}
+
+	.variantButton:is(.disabled).selected {
+		color: var(--paperWhite);
+		background: var(--lightGray);
 		cursor: default;
 	}
 
@@ -173,6 +183,18 @@
 		main {
 			display: flex;
 			flex-direction: column;
+		}
+	}
+
+	@media (hover: hover) {
+		.variantButton:not(.selected):not(.disabled):hover {
+			color: var(--black);
+			border: 1px solid var(--black);
+		}
+
+		.variantButton:not(.selected):is(.disabled):hover {
+			color: var(--mediumGray);
+			border: 1px solid var(--mediumGray);
 		}
 	}
 </style>
