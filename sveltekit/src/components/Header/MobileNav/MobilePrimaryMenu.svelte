@@ -122,6 +122,8 @@
 
 	.dropdown {
 		height: 100%;
+		display: flex;
+    flex-direction: column;
 	}
 
 	.dropdown_icon {
@@ -153,14 +155,20 @@
 	.dropdown_content {
 		overflow-y: hidden;
 		position: relative;
-		max-height: 0px;
+		height: 0;
 		opacity: 0;
-		transition: opacity 250ms linear, max-height 250ms ease-out;
+		transition: opacity 250ms linear;
 	}
 
 	.dropdown_content:is(.is_open) {
 		opacity: 1;
-		max-height: 500px;
 		overflow-y: scroll;
+		flex: 1 0 auto;
+		padding-bottom: 2em;
+		mask-image: linear-gradient(to top, rgba(139,167,32,0) 0%, rgba(255,255,255,1) 15%);
 	}
+
+	/* .dropdown_content:is(.is_open):after {
+		background: linear-gradient(180deg, rgba(139,167,32,0) 0%, rgba(255,255,255,1) 100%);
+	} */
 </style>
