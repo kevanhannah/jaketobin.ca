@@ -1,14 +1,8 @@
 <script>
-	import { PortableText, DefaultListItem } from '@portabletext/svelte';
-	import Grid from '$components/shared/modules/Grid.svelte';
-	import ImageWithText from '$components/shared/modules/ImageWithText.svelte';
-	import CustomTextBlock from '$components/shared/blocks/CustomTextBlock.svelte';
-	import ListWrapper from '$components/shared/blocks/ListWrapper.svelte';
-	import ListItem from '$components/shared/blocks/ListItem.svelte';
-
 	import AddToCartButton from '$components/Shop/ProductPage/AddToCartButton.svelte';
 	import ProductPageImageLayout from '$components/Shop/ProductPage/ProductPageImageLayout.svelte';
 	import Accordion from '$components/shared/modules/Accordion.svelte';
+	import Body from '$components/shared/blocks/Body.svelte';
 
 	export let body;
 	export let faqs;
@@ -66,6 +60,13 @@
 		{/if}
 	</div>
 </main>
+{#if body}
+	<section class="editorial">
+		<div class="editorialContent">
+			<Body value={body} />
+		</div>
+	</section>
+{/if}
 
 <style lang="postcss">
 	main {
@@ -153,6 +154,20 @@
 		margin-bottom: 0;
 	}
 
+	.editorial {
+		grid-column-start: 1;
+		grid-column-end: 3;
+		display: grid;
+		grid-template-columns: repeat(8, 1fr);
+		column-gap: 1.25em;
+		margin-top: 1.5em;
+	}
+
+	.editorialContent {
+		grid-column-start: 2;
+		grid-column-end: 7;
+	}
+
 	@media (max-width: 1150px) {
 		main {
 			grid-template-columns: 5fr 4fr;
@@ -161,6 +176,11 @@
 
 	@media (max-width: 768px) {
 		main {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.editorial {
 			display: flex;
 			flex-direction: column;
 		}

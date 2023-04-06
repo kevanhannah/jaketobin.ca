@@ -70,6 +70,9 @@
 		padding-top: 3em;
 		padding-left: 3em;
 		padding-right: 3em;
+		max-width: 1600px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	@media (max-width: 768px) {

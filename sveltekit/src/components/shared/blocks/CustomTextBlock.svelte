@@ -15,9 +15,9 @@
 
 <style>
 	h2 {
-		font-size: 2em;
+		font-size: 2.5em;
 		line-height: 1.25;
-		margin-bottom: 0.75em;
+		margin-bottom: 0.5em;
 	}
 
 	p {
