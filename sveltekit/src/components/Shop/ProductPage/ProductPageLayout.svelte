@@ -94,7 +94,7 @@
 <style lang="postcss">
 	main {
 		display: grid;
-		grid-template-columns: 1fr 5fr 4fr;
+		grid-template-columns: 3fr 2fr;
 		gap: 1.25em;
 	}
 

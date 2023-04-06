@@ -10,29 +10,29 @@
 	}
 </script>
 
-<!-- <div class="productPageImageLayout"> -->
-<div class="gallery">
-	{#each images as image}
-		<div
-			class="imageWrapper"
-			on:click={changeImage(image)}
-			on:keypress={changeImage(image)}
-			tabindex="0"
-		>
-			<SanityImage
-				{image}
-				style={`aspect-ratio: 1; object-fit: cover; display: block`}
-			/>
-		</div>
-	{/each}
+<div class="productPageImageLayout">
+	<div class="gallery">
+		{#each images as image}
+			<div
+				class="imageWrapper"
+				on:click={changeImage(image)}
+				on:keypress={changeImage(image)}
+				tabindex="0"
+			>
+				<SanityImage
+					{image}
+					style={`aspect-ratio: 1; object-fit: cover; display: block`}
+				/>
+			</div>
+		{/each}
+	</div>
+	<SanityImage
+		image={featuredImage}
+		loading="eager"
+		style="aspect-ratio: 1; object-fit: cover; cursor: pointer; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; cursor: default;"
+	/>
 </div>
-<SanityImage
-	image={featuredImage}
-	loading="eager"
-	style="aspect-ratio: 1; object-fit: cover; cursor: pointer; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; cursor: default;"
-/>
 
-<!-- </div> -->
 <style lang="postcss">
 	.productPageImageLayout {
 		display: grid;

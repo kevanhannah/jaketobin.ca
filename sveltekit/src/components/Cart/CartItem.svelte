@@ -46,8 +46,8 @@
 		display: grid;
 		grid-template-columns: 1fr 3fr;
 		gap: 1em;
-		margin-left: 1em;
-		margin-right: 1em;
+		margin-left: 1.5em;
+		margin-right: 2.5em;
 		margin-bottom: 1em;
 		padding-bottom: 1em;
 		border-bottom: 1px solid var(--black);
@@ -101,6 +101,8 @@
 	@media (max-width: 768px) {
 		li {
 			grid-template-columns: 4fr 5fr;
+			margin-left: 0.75em;
+			margin-right: 0.75em;
 		}
 	}
 </style>
