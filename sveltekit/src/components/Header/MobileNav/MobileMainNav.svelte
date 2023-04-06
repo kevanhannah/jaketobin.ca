@@ -60,8 +60,8 @@
 
 	.mobile_menu_inner {
 		height: 100%;
-		padding-top: 6em;
-		padding-bottom: 6em;
+		padding-top: 5em;
+		padding-bottom: 5em;
 	}
 
 	.mobile_menu_backdrop {

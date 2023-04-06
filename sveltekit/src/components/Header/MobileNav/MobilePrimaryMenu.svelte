@@ -69,7 +69,7 @@
 	</ul>
 </div>
 
-<style>
+<style lang="postcss">
 	.primary_menu {
 		height: 100%;
 		overflow: hidden;
@@ -164,7 +164,8 @@
 		opacity: 1;
 		overflow-y: scroll;
 		flex: 1 0 auto;
+		padding-top: 0.5em;
 		padding-bottom: 2em;
-		mask-image: linear-gradient(to top, rgba(139,167,32,0) 0%, rgba(255,255,255,1) 15%);
+		mask-image: linear-gradient(to top, rgba(0,0,0,0), rgba(255,255,255,1) 15%, rgba(255,255,255,1) 85%, rgba(0,0,0,0) 100%);
 	}
 </style>
