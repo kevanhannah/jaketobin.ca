@@ -1,8 +1,8 @@
 import shopifyFetch from './shopifyFetch';
 
 export default async function getAllProducts() {
-  return shopifyFetch({
-    query: `{
+	return shopifyFetch({
+		query: `{
       products(sortKey: TITLE, first: 250) {
         edges {
           node {
@@ -89,6 +89,6 @@ export default async function getAllProducts() {
           }
         }
       }
-    }`
-  });
+    }`,
+	});
 }

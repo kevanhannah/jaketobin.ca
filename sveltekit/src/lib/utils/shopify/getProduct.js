@@ -1,8 +1,8 @@
 import shopifyFetch from './shopifyFetch';
 
 export default async function getProduct(handle) {
-  return shopifyFetch({
-    query: `
+	return shopifyFetch({
+		query: `
       query getProduct($handle: String!) {
         productByHandle(handle: $handle) {
           id
@@ -92,8 +92,8 @@ export default async function getProduct(handle) {
       }
     }
   `,
-    variables: {
-      handle
-    }
-  });
+		variables: {
+			handle,
+		},
+	});
 }

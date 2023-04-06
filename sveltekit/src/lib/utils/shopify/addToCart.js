@@ -1,8 +1,8 @@
 import shopifyFetch from './shopifyFetch';
 
 export default async function addToCart({ cartId, variantId }) {
-  return shopifyFetch({
-    query: `
+	return shopifyFetch({
+		query: `
       mutation addToCart($cartId: ID!, $lines: [CartLineInput!]!) {
         cartLinesAdd(cartId: $cartId, lines: $lines) {
           cart {
@@ -26,14 +26,14 @@ export default async function addToCart({ cartId, variantId }) {
       }
     `,
 
-    variables: {
-      cartId: cartId,
-      lines: [
-        {
-          merchandiseId: variantId,
-          quantity: 1
-        }
-      ]
-    }
-  });
+		variables: {
+			cartId: cartId,
+			lines: [
+				{
+					merchandiseId: variantId,
+					quantity: 1,
+				},
+			],
+		},
+	});
 }

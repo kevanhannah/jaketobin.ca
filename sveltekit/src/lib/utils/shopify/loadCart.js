@@ -1,8 +1,8 @@
 import shopifyFetch from './shopifyFetch';
 
 export default async function loadCart(cartId) {
-  return shopifyFetch({
-    query: `
+	return shopifyFetch({
+		query: `
         query GetCart($cartId: ID!) {
           cart(id: $cartId) {
             checkoutUrl
@@ -49,6 +49,6 @@ export default async function loadCart(cartId) {
             }
         }
       `,
-    variables: { cartId }
-  });
+		variables: { cartId },
+	});
 }

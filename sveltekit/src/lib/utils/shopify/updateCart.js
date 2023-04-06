@@ -1,8 +1,13 @@
 import shopifyFetch from './shopifyFetch';
 
-export default async function updateCart({ cartId, lineId, variantId, quantity }) {
-  return shopifyFetch({
-    query: `
+export default async function updateCart({
+	cartId,
+	lineId,
+	variantId,
+	quantity,
+}) {
+	return shopifyFetch({
+		query: `
       mutation cartLinesUpdate($cartId: ID!, $lines: [CartLineUpdateInput!]!) {
         cartLinesUpdate(cartId: $cartId, lines: $lines) {
           userErrors {
@@ -12,15 +17,15 @@ export default async function updateCart({ cartId, lineId, variantId, quantity }
         }
       }
     `,
-    variables: {
-      cartId: cartId,
-      lines: [
-        {
-          id: lineId,
-          merchandiseId: variantId,
-          quantity: quantity
-        }
-      ]
-    }
-  });
+		variables: {
+			cartId: cartId,
+			lines: [
+				{
+					id: lineId,
+					merchandiseId: variantId,
+					quantity: quantity,
+				},
+			],
+		},
+	});
 }

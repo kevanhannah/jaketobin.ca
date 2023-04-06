@@ -1,8 +1,8 @@
 import shopifyFetch from './shopifyFetch';
 
 export default async function createCart() {
-  return shopifyFetch({
-    query: `
+	return shopifyFetch({
+		query: `
       mutation calculateCart($lineItems: [CartLineInput!]) {
         cartCreate(input: { lines: $lineItems }) {
           cart {
@@ -12,6 +12,6 @@ export default async function createCart() {
         }
       }
     `,
-    variables: {}
-  });
+		variables: {},
+	});
 }

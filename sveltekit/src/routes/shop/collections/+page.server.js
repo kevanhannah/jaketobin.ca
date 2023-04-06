@@ -2,15 +2,15 @@ import { getAllCollections } from '$lib/utils/shopify';
 import { error } from '@sveltejs/kit';
 
 export async function load() {
-  const res = await getAllCollections();
-  if (res.status === 200) {
-    const collections = res.body?.data?.collections?.edges;
+	const res = await getAllCollections();
+	if (res.status === 200) {
+		const collections = res.body?.data?.collections?.edges;
 
-    if (collections) {
-      return { collections };
-    }
-    throw error(404);
-  } else {
-    throw error(res.status);
-  }
+		if (collections) {
+			return { collections };
+		}
+		throw error(404);
+	} else {
+		throw error(res.status);
+	}
 }

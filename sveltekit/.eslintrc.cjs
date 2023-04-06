@@ -1,17 +1,24 @@
 module.exports = {
-	parserOptions: {
-		ecmaVersion: 2022,
-		sourceType: 'module',
-	},
 	env: {
-		es6: true,
 		browser: true,
+		es2021: true,
+		node: true,
 	},
-	plugins: ['svelte3'],
+	extends: ['eslint:recommended', 'plugin:prettier/recommended'],
 	overrides: [
 		{
 			files: ['*.svelte'],
 			processor: 'svelte3/svelte3',
 		},
 	],
+	plugins: ['svelte3', 'prettier'],
+	parserOptions: {
+		ecmaVersion: 'latest',
+		sourceType: 'module',
+	},
+	root: true,
+	rules: {
+		indent: ['error', 'tab', { SwitchCase: 'warn' }],
+		'no-tabs': ['error', { allowIndentationTabs: true }],
+	},
 };

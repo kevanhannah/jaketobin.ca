@@ -1,8 +1,8 @@
 import shopifyFetch from './shopifyFetch';
 
 export default async function getCollection(handle) {
-  return shopifyFetch({
-    query: `
+	return shopifyFetch({
+		query: `
       query getCollection($handle: String!) {
         collectionByHandle(handle: $handle) {
           handle
@@ -54,8 +54,8 @@ export default async function getCollection(handle) {
         }
       }
     `,
-    variables: {
-      handle
-    }
-  });
+		variables: {
+			handle,
+		},
+	});
 }

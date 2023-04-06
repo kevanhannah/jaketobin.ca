@@ -1,7 +1,13 @@
 import { client } from '$lib/utils/sanityClient';
 
 export async function load() {
-  const { portfolioNavItems, portfolioSidebarItems, seo, shopNavItems, shopSidebarItems } = await client.fetch(`
+	const {
+		portfolioNavItems,
+		portfolioSidebarItems,
+		seo,
+		shopNavItems,
+		shopSidebarItems,
+	} = await client.fetch(`
     *[_type == "settings"][0] {
       portfolioNavItems[] {
         pages[]-> {
@@ -59,13 +65,13 @@ export async function load() {
         title
       },
     }
-  `)
+  `);
 
-  return {
-    defaultMetadata: seo,
-    portfolioNavItems,
-    portfolioSidebarItems,
-    shopNavItems,
-    shopSidebarItems,
-  };
+	return {
+		defaultMetadata: seo,
+		portfolioNavItems,
+		portfolioSidebarItems,
+		shopNavItems,
+		shopSidebarItems,
+	};
 }

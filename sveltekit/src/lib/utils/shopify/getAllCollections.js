@@ -1,8 +1,8 @@
 import shopifyFetch from './shopifyFetch';
 
 export default async function getAllCollections() {
-  return shopifyFetch({
-    query: `{
+	return shopifyFetch({
+		query: `{
       collections(first: 100) {
         edges {
           node {
@@ -59,6 +59,6 @@ export default async function getAllCollections() {
           }
         }
       }
-    }`
-  });
+    }`,
+	});
 }

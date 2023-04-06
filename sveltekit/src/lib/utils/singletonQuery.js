@@ -1,5 +1,5 @@
 export default function singletonQuery(singletonId) {
-  return `
+	return `
     *[_type == "${singletonId}"][0]{
       pageContent {
         body[]{
@@ -33,5 +33,5 @@ export default function singletonQuery(singletonId) {
         showHero
       },
     }
-  `
+  `;
 }

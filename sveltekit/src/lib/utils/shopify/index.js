@@ -9,13 +9,13 @@ import shopifyFetch from './shopifyFetch';
 import updateCart from './updateCart';
 
 export {
-  addToCart,
-  createCart,
-  getAllCollections,
-  getAllProducts,
-  getCollection,
-  getProduct,
-  loadCart,
-  shopifyFetch,
-  updateCart,
-}
+	addToCart,
+	createCart,
+	getAllCollections,
+	getAllProducts,
+	getCollection,
+	getProduct,
+	loadCart,
+	shopifyFetch,
+	updateCart,
+};
