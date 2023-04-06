@@ -13,7 +13,7 @@
 
 <div class="primary_menu">
 	<ul>
-		<li>
+		<li class:is_open={$portfolioOpen}>
 			<div class="dropdown">
 				<button
 					class="menu_button"
@@ -38,7 +38,7 @@
 				</div>
 			</div>
 		</li>
-		<li>
+		<li class:is_open={$shopOpen}>
 			<div class="dropdown">
 				<button
 					class="menu_button"
@@ -70,12 +70,20 @@
 </div>
 
 <style>
+	.primary_menu {
+		height: 100%;
+		overflow: hidden;
+	}
+
 	.primary_menu ul {
 		display: flex;
 		flex-direction: column;
+		justify-content: flex-start;
+		height: 100%;
 	}
 
 	.primary_menu ul li {
+		flex: 0 0 auto;
 		padding-top: 1.25em;
 		padding-bottom: 1.25em;
 		padding-left: 1em;
@@ -85,6 +93,11 @@
 
 	.primary_menu ul li:last-of-type {
 		border-bottom: none;
+	}
+
+	.primary_menu ul li:is(.is_open) {
+		flex: 1 0 auto;
+		overflow: hidden;
 	}
 
 	.menu_button {
@@ -105,6 +118,10 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+	}
+
+	.dropdown {
+		height: 100%;
 	}
 
 	.dropdown_icon {
@@ -141,8 +158,9 @@
 		transition: opacity 250ms linear, max-height 250ms ease-out;
 	}
 
-	.is_open {
+	.dropdown_content:is(.is_open) {
 		opacity: 1;
 		max-height: 500px;
+		overflow-y: scroll;
 	}
 </style>

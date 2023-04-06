@@ -11,6 +11,7 @@
 	import Accordion from '$components/shared/modules/Accordion.svelte';
 
 	export let body;
+	export let faqs;
 	export let images;
 	export let store;
 
@@ -58,36 +59,11 @@
 			<AddToCartButton variant={activeVariant} />
 		</div>
 		<div class="productDescription">
-			{#if body}
-				<PortableText
-					components={{
-						block: {
-							h2: CustomTextBlock,
-							h3: CustomTextBlock,
-							h4: CustomTextBlock,
-							normal: CustomTextBlock,
-						},
-						types: {
-							blockAccordion: Accordion,
-							blockImageWithText: ImageWithText,
-							blockPortfolioGrid: Grid,
-						},
-						list: {
-							bullet: ListWrapper,
-							number: ListWrapper,
-						},
-						listItem: {
-							normal: ListItem,
-							bullet: ListItem,
-							number: ListItem,
-						},
-					}}
-					value={body}
-				/>
-			{:else}
-				{@html descriptionHtml}
-			{/if}
+			{@html descriptionHtml}
 		</div>
+		{#if faqs}
+			<Accordion portableText={{ value: faqs.items }} />
+		{/if}
 	</div>
 </main>
 
@@ -171,6 +147,10 @@
 		color: var(--paperWhite);
 		background: var(--lightGray);
 		cursor: default;
+	}
+
+	.productDescription :global(p:last-of-type), .productDescription :global(li:last-of-type) {
+		margin-bottom: 0;
 	}
 
 	@media (max-width: 1150px) {
