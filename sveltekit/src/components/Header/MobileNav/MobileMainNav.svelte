@@ -9,7 +9,6 @@
 	<div>
 		<MobileNavToggle />
 		<div class="mobile_menu" class:is_open={$mobileNavOpen}>
-			<!-- <div class="mobileMenuHeader" /> -->
 			<div class="mobile_menu_inner">
 				<MobilePrimaryMenu />
 			</div>
@@ -61,17 +60,9 @@
 
 	.mobile_menu_inner {
 		height: 100%;
-		/* display: flex; */
-		/* flex: 1 1 0%; */
-		/* flex-direction: column; */
-		/* overflow-y: scroll; */
-		padding-top: 4em;
+		padding-top: 6em;
 		padding-bottom: 2em;
 	}
-
-	/* .mobileMenuHeader {
-		height: 4em;
-	} */
 
 	.mobile_menu_backdrop {
 		--tw-bg-opacity: 0.4;

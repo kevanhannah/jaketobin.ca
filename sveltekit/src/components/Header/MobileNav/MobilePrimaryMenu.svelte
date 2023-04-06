@@ -167,8 +167,4 @@
 		padding-bottom: 2em;
 		mask-image: linear-gradient(to top, rgba(139,167,32,0) 0%, rgba(255,255,255,1) 15%);
 	}
-
-	/* .dropdown_content:is(.is_open):after {
-		background: linear-gradient(180deg, rgba(139,167,32,0) 0%, rgba(255,255,255,1) 100%);
-	} */
 </style>
