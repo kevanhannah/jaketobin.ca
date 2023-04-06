@@ -61,7 +61,7 @@
 	.mobile_menu_inner {
 		height: 100%;
 		padding-top: 6em;
-		padding-bottom: 2em;
+		padding-bottom: 6em;
 	}
 
 	.mobile_menu_backdrop {
