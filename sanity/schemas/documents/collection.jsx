@@ -1,9 +1,9 @@
 import React from 'react';
-import { PackageIcon } from '@sanity/icons';
 import pluralize from 'pluralize-esm';
-import CollectionHiddenInput from '../../components/inputs/CollectionHidden';
+import { PackageIcon } from '@sanity/icons';
+import { CollectionHiddenInput } from '../../components/inputs/CollectionHidden';
 import { ShopifyIcon } from '../../components/icons/Shopify';
-import ShopifyDocumentStatus from '../../components/media/ShopifyDocumentStatus';
+import { ShopifyDocumentStatus } from '../../components/media/ShopifyDocumentStatus';
 
 const GROUPS = [
 	{

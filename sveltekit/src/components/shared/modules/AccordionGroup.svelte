@@ -56,6 +56,7 @@
 
 	.accordionText:is(.visible) {
 		display: block;
+		padding-bottom: 0.5em;
 	}
 
 	@media (hover: hover) {

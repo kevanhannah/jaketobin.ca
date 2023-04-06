@@ -1,9 +1,9 @@
 import React from 'react';
-import { TagIcon } from '@sanity/icons';
 import pluralize from 'pluralize-esm';
+import { TagIcon } from '@sanity/icons';
 import { ShopifyIcon } from '../../components/icons/Shopify';
 import { ProductHiddenInput } from '../../components/inputs/ProductHidden';
-import ShopifyDocumentStatus from '../../components/media/ShopifyDocumentStatus';
+import { ShopifyDocumentStatus } from '../../components/media/ShopifyDocumentStatus';
 import { getPriceRange } from '../../utils/getPriceRange';
 
 const GROUPS = [
@@ -84,12 +84,13 @@ export const product = {
 			},
 		},
 		// Body
-		// {
-		// 	name: 'body',
-		// 	title: 'Body',
-		// 	type: 'body',
-		// 	group: 'editorial',
-		// },
+		{
+			name: 'body',
+			title: 'Editorial content',
+			description: 'Additional content related to the product',
+			type: 'body',
+			group: 'editorial',
+		},
 		// Store
 		{
 			name: 'store',
