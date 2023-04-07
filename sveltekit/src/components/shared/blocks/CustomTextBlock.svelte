@@ -14,6 +14,14 @@
 {/if}
 
 <style>
+	h2,
+	h3,
+	p {
+		/* margin-left: auto;
+		margin-right: auto; */
+		max-width: 48em;
+	}
+
 	h2 {
 		font-size: 2.5em;
 		line-height: 1.25;

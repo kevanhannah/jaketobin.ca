@@ -2,9 +2,7 @@
 	import AddToCartButton from '$components/Shop/ProductPage/AddToCartButton.svelte';
 	import ProductPageImageLayout from '$components/Shop/ProductPage/ProductPageImageLayout.svelte';
 	import Accordion from '$components/shared/modules/Accordion.svelte';
-	import Body from '$components/shared/blocks/Body.svelte';
 
-	export let body;
 	export let faqs;
 	export let images;
 	export let store;
@@ -60,13 +58,6 @@
 		{/if}
 	</div>
 </main>
-{#if body}
-	<section class="editorial">
-		<div class="editorialContent">
-			<Body value={body} />
-		</div>
-	</section>
-{/if}
 
 <style lang="postcss">
 	main {
@@ -152,20 +143,6 @@
 
 	.productDescription :global(p:last-of-type), .productDescription :global(li:last-of-type) {
 		margin-bottom: 0;
-	}
-
-	.editorial {
-		grid-column-start: 1;
-		grid-column-end: 3;
-		display: grid;
-		grid-template-columns: repeat(8, 1fr);
-		column-gap: 1.25em;
-		margin-top: 1.5em;
-	}
-
-	.editorialContent {
-		grid-column-start: 2;
-		grid-column-end: 7;
 	}
 
 	@media (max-width: 1150px) {

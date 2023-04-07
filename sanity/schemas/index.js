@@ -19,6 +19,7 @@ import { collectionPageGroup } from './objects/collectionPageGroup';
 import { linkExternal } from './objects/linkExternal';
 import { linkInternal } from './objects/linkInternal';
 import { moduleAccordion } from './objects/module/accordion';
+import { moduleCallToAction } from './objects/module/callToAction';
 import { moduleImage } from './objects/module/image';
 import { moduleImageWithText } from './objects/module/imageWithText';
 import { modulePortfolioGrid } from './objects/module/portfolioGrid';
@@ -28,6 +29,7 @@ import { page } from './objects/page';
 import { placeholderString } from './objects/placeholderString';
 import { portfolioPageGroup } from './objects/portfolioPageGroup';
 import { productOption } from './objects/productOption';
+import { productWithVariant } from './objects/productWithVariant';
 import { proxyString } from './objects/proxyString';
 import { seo } from './objects/seo';
 import { seoPage } from './objects/seo/page';
@@ -59,6 +61,7 @@ export const schemaTypes = [
 	product,
 	productVariant,
 	// Objects
+	moduleCallToAction,
 	collectionPageGroup,
 	linkExternal,
 	linkInternal,
@@ -72,6 +75,7 @@ export const schemaTypes = [
 	placeholderString,
 	portfolioPageGroup,
 	productOption,
+	productWithVariant,
 	proxyString,
 	seo,
 	seoPage,

@@ -37,10 +37,10 @@ export const body = {
 			name: 'blockImageWithText',
 			type: 'module.imageWithText',
 		},
-		// {
-		//   name: 'blockCallout',
-		//   type: 'module.callout',
-		// },
+		{
+			name: 'blockCallToAction',
+			type: 'module.callToAction',
+		},
 		{
 			name: 'blockPortfolioGrid',
 			type: 'module.portfolioGrid',

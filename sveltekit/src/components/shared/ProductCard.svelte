@@ -1,21 +1,24 @@
 <script>
 	import getShopifyImageProps from '$lib/utils/getShopifyImageProps';
 	import OutOfStockBadge from '$components/Shop/OutOfStockBadge.svelte';
+	
+	export let availableForSale;
+	export let image;
+	export let handle;
 	export let loading = 'lazy';
-	export let product;
+	export let title;
 
-	$: ({ availableForSale = false, handle, images, title } = product);
-	$: image = getShopifyImageProps(images.edges[0].node);
+	$: shopifyImage = getShopifyImageProps(image);
 </script>
 
 <a href={`/shop/products/${handle}`}>
 	<img
 		class="productImage"
-		alt={image.alt}
+		alt={image.altText || image.title}
 		{loading}
 		sizes="(max-width: 800px) 50vw, 25vw"
-		src={image.src}
-		srcset={image.srcset}
+		src={shopifyImage.src}
+		srcset={shopifyImage.srcset}
 	/>
 	<div class="productTitleRow">
 		{#if !availableForSale}

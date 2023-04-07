@@ -1,6 +1,7 @@
 <script>
 	import { PortableText, DefaultListItem } from '@portabletext/svelte';
 	import Grid from '$components/shared/modules/Grid.svelte';
+	import CallToAction from '$components/shared/modules/CallToAction.svelte';
 	import ImageWithText from '$components/shared/modules/ImageWithText.svelte';
 	import CustomTextBlock from '$components/shared/blocks/CustomTextBlock.svelte';
 	import ListWrapper from '$components/shared/blocks/ListWrapper.svelte';
@@ -19,6 +20,7 @@
 			normal: CustomTextBlock,
 		},
 		types: {
+			blockCallToAction: CallToAction,
 			blockImageWithText: ImageWithText,
 			blockPortfolioGrid: Grid,
 			blockProductGrid: ProductGrid,
