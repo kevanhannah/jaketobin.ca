@@ -20,7 +20,7 @@
 			href={`${PUBLIC_SVELTEKIT_SITE_URL}/shop/products/${content.product.store.slug.current}`}>
 			<SanityImage
 				image={getImageProps({
-					aspectRatio: 1.333,
+					aspectRatio: 1,
 					image: content.product.images.image,
 				})}
 				style="object-fit: cover;" />
