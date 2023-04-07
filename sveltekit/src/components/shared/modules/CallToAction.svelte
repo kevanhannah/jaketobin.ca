@@ -13,7 +13,8 @@
 
 <div
 	class="callToAction module"
-	class:typeIsProduct={content._type === 'productWithVariant'}>
+	class:typeIsProduct={content._type === 'productWithVariant'}
+	class:reverse={layout === 'right'}>
 	{#if content._type === 'productWithVariant'}
 		<a
 			href={`${PUBLIC_SVELTEKIT_SITE_URL}/shop/products/${content.product.store.slug.current}`}>
@@ -32,7 +33,7 @@
 			})}
 			style="object-fit: cover;" />
 	{/if}
-	<div class="textSection" class:reverse={layout === 'right'}>
+	<div class="textSection">
 		{#if title}
 			<h2 class="title">{title}</h2>
 		{/if}
@@ -66,7 +67,11 @@
 		gap: 1em;
 	}
 
-	.reverse {
+	.textSection p {
+		margin-bottom: 0;
+	}
+
+	.reverse .textSection {
 		order: -1;
 		align-items: flex-end;
 	}
@@ -89,8 +94,27 @@
 			flex-direction: column;
 		}
 
-		.reverse {
-			order: 1;
+		.callToAction:is(.typeIsProduct) {
+			grid-template-columns: 2fr 3fr;
+			gap: 2em;
+		}
+
+		.callToAction:is(.typeIsProduct):is(.reverse) {
+			grid-template-columns: 3fr 2fr;
+		}
+
+		.callToAction:is(.typeIsProduct):is(.reverse) .textSection {
+			text-align: left;
+			align-items: flex-start;
+		}
+
+		.callToAction:is(.typeIsProduct):not(.reverse) .textSection {
+			text-align: right;
+			align-items: flex-end;
+		}
+
+		.typeIsProduct .title {
+			font-size: 1.5em;
 		}
 	}
 </style>
