@@ -1,6 +1,7 @@
 <script>
+	import getShopifyImageProps from '$lib/utils/getShopifyImageProps';
 	import ProductGridLayout from '$components/Shop/ProductGridLayout.svelte';
-	import ProductCard from '../../shared/ProductCard.svelte';
+	import ProductCard from '$components/shared/ProductCard.svelte';
 
 	export let recommendations;
 </script>
@@ -11,8 +12,9 @@
 		{#each recommendations.slice(0, 4) as recommendation}
 			<ProductCard
 				availableForSale={recommendation.availableForSale}
-				image={recommendation.featuredImage}
 				handle={recommendation.handle}
+				src={getShopifyImageProps(recommendation.featuredImage)['src']}
+				srcset={getShopifyImageProps(recommendation.featuredImage)['srcset']}
 				title={recommendation.title} />
 		{/each}
 	</ProductGridLayout>
@@ -30,7 +32,6 @@
 		margin-bottom: 2em;
 		margin-left: auto;
 		margin-right: auto;
-		/* border-top: 1px solid var(--black); */
 		justify-content: center;
 	}
 

@@ -16,6 +16,14 @@ export const moduleImage = {
 			},
 			validation: (Rule) => Rule.required(),
 		},
+		// Aspect Ratio
+		{
+			name: 'aspectRatio',
+			title: 'Aspect ratio',
+			type: 'number',
+			initialValue: 1,
+			valiation: (Rule) => Rule.required().integer(),
+		},
 	],
 	preview: {
 		select: {

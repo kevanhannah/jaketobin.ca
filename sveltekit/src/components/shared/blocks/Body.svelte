@@ -38,11 +38,20 @@
 	{value} />
 
 <style>
-	:global(div:is(.module):not(:last-of-type)) {
+	:global(div.module) {
+		padding-top: 2em;
+		padding-bottom: 2em;
+	}
+
+	:global(div.module:first-of-type) {
+		padding-top: 0;
+	}
+
+	:global(div.module:not(:last-of-type)) {
 		border-bottom: 1px solid var(--black);
 	}
 
-	:global(div:is(.module):first-of-type) {
-		padding-top: 0;
+	:global(div.module:last-of-type) {
+		padding-bottom: 0;
 	}
 </style>

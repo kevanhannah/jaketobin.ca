@@ -1,24 +1,23 @@
 <script>
-	import getShopifyImageProps from '$lib/utils/getShopifyImageProps';
+	import { PUBLIC_SVELTEKIT_SITE_URL } from '$env/static/public';
 	import OutOfStockBadge from '$components/Shop/OutOfStockBadge.svelte';
 
-	export let availableForSale;
-	export let image;
+	export let availableForSale = true;
 	export let handle;
 	export let loading = 'lazy';
+	export let src;
+	export let srcset;
 	export let title;
-
-	$: shopifyImage = getShopifyImageProps(image);
 </script>
 
-<a href={`/shop/products/${handle}`}>
+<a href={`${PUBLIC_SVELTEKIT_SITE_URL}/shop/products/${handle}`}>
 	<img
 		class="productImage"
-		alt={image.altText || image.title}
+		alt={title}
 		{loading}
 		sizes="(max-width: 800px) 50vw, 25vw"
-		src={shopifyImage.src}
-		srcset={shopifyImage.srcset} />
+		{src}
+		{srcset} />
 	<div class="productTitleRow">
 		{#if !availableForSale}
 			<OutOfStockBadge />
@@ -54,6 +53,7 @@
 	.productTitle {
 		font-size: 1em;
 		font-weight: 400;
+		margin-bottom: 0;
 	}
 
 	@media (hover: hover) {

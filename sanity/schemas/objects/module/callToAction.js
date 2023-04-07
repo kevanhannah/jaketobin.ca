@@ -67,8 +67,9 @@ export const moduleCallToAction = {
 			validation: (Rule) => Rule.required().max(1),
 			of: [
 				{
+					type: 'module.image',
+					title: 'Image',
 					icon: ImageIcon,
-					type: 'image',
 					options: { hotspot: true },
 				},
 				{

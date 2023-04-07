@@ -21,7 +21,6 @@ import { linkInternal } from './objects/linkInternal';
 import { moduleAccordion } from './objects/module/accordion';
 import { moduleCallToAction } from './objects/module/callToAction';
 import { moduleImage } from './objects/module/image';
-import { moduleImageWithText } from './objects/module/imageWithText';
 import { modulePortfolioGrid } from './objects/module/portfolioGrid';
 import { moduleProductGrid } from './objects/module/productGrid';
 import { modulePublication } from './objects/module/publication';
@@ -67,7 +66,6 @@ export const schemaTypes = [
 	linkInternal,
 	moduleAccordion,
 	moduleImage,
-	moduleImageWithText,
 	modulePortfolioGrid,
 	moduleProductGrid,
 	modulePublication,

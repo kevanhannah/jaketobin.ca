@@ -56,6 +56,11 @@
 							showHeader={shopNavItem.showTitle}
 							slugPrefix="shop/collections" />
 					{/each}
+					<NavSection
+						content={{
+							pages: [{ title: 'Shop all', slug: { current: 'shop' } }],
+						}}
+						showHeader={false} />
 				</div>
 			</div>
 		</li>

@@ -1,16 +1,10 @@
-import { getAllCollections } from '$lib/utils/shopify';
-import { error } from '@sveltejs/kit';
+import { client } from '$lib/utils/sanityClient';
+import singletonQuery from '$lib/utils/singletonQuery';
 
 export async function load() {
-	const res = await getAllCollections();
-	if (res.status === 200) {
-		const collections = res.body?.data?.collections?.edges;
+	const { pageContent } = await client.fetch(singletonQuery('shop'));
 
-		if (collections) {
-			return { collections };
-		}
-		throw error(404);
-	} else {
-		throw error(res.status);
-	}
+	return {
+		pageContent,
+	};
 }

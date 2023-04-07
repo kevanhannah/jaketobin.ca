@@ -15,6 +15,9 @@ export const productWithVariant = {
 			name: 'product',
 			type: 'reference',
 			to: [{ type: 'product' }],
+			options: {
+				disableNew: true,
+			},
 			weak: true,
 		},
 		{
@@ -24,6 +27,7 @@ export const productWithVariant = {
 			weak: true,
 			description: 'First variant will be selected if left empty',
 			options: {
+				disableNew: true,
 				filter: ({ parent }) => {
 					// @ts-ignore
 					const productId = parent?.product?._ref;

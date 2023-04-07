@@ -11,12 +11,15 @@
 
 <style lang="postcss">
 	button {
-		padding: 0.75em 1.25em;
 		color: var(--paperWhite);
 		background: var(--black);
 		border: 1px solid var(--black);
 		border-radius: 0.5em;
 		font-weight: 600;
+		padding-top: 0.75em;
+		padding-bottom: 0.75em;
+		padding-left: 1.25em;
+		padding-right: 1.25em;
 		transition-property: border-color, background, color, transform, box-shadow;
 		transition-duration: 0.15s;
 		transition-timing-function: ease;

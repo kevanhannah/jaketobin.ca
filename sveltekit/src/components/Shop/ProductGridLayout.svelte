@@ -5,12 +5,12 @@
 <style lang="postcss">
 	div {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 		column-gap: 1.25em;
 		row-gap: 1.75em;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1000px) {
 		div {
 			grid-template-columns: repeat(2, 1fr);
 			column-gap: 1em;

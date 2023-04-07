@@ -4,22 +4,29 @@
 
 <a {href} class="button"><slot /></a>
 
-<style>
+<style lang="postcss">
 	.button {
 		display: inline-block;
-		padding-top: 1em;
-		padding-bottom: 1em;
+		color: var(--paperWhite);
+		background: var(--black);
+		border: 1px solid var(--black);
+		border-radius: 0.5em;
+		font-weight: 600;
+		padding-top: 0.75em;
+		padding-bottom: 0.75em;
 		padding-left: 1.25em;
 		padding-right: 1.25em;
-		background-color: var(--black);
-		border-radius: 0.5em;
-		color: var(--paperWhite);
 		text-align: center;
 		text-decoration: none;
 	}
 
-	.button:hover {
-		background-color: #6c6c6c;
+	@media (hover: hover) {
+		.button:hover {
+			opacity: 1;
+			color: var(--black);
+			background: var(--paperWhite);
+			cursor: pointer;
+		}
 	}
 
 	@media (max-width: 768px) {

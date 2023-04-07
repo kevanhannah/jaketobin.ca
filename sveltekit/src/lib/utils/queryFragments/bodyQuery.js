@@ -4,17 +4,32 @@ export const bodyQuery = `
 		_type,
 		body,
 		content[0] {
+			_type == "collectionWithImage" => {
+				_type,
+				collection-> { _type, store { slug { current } } },
+				image
+			},
+			_type == "module.image" => {
+				aspectRatio,
+				image
+			},
 			_type == "productWithVariant" => {
 				_type,
-				product-> { _type, images[0], store { slug { current }} }
+				product-> { _type, images[0], store { slug { current } } },
+				variant-> { store }
 			},
-			_type == "image" => @,
 		},
 		layout,
 		links[] {
 			_type == "linkInternal" => @ {
 				reference-> {
-					_type == "product" => @{
+					_type == "collection" => @ {
+						_type,
+						store {
+							slug
+						}
+					},
+					_type == "product" => @ {
 						_type,
 						store {
 							slug
@@ -45,7 +60,7 @@ export const bodyQuery = `
 		},
 		_type == 'blockProductGrid' => @{
 			_type,
-			items[]-> { store },
+			items[]-> { images[0], store },
 			title
 		},
 	`;

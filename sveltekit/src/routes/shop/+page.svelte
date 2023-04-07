@@ -1,20 +1,11 @@
 <script>
-	import CollectionGridLayout from '$components/Shop/CollectionGridLayout.svelte';
+	import Body from '$components/shared/blocks/Body.svelte';
 
 	export let data;
-	$: ({ collections } = data);
+	$: ({ pageContent } = data);
+	$: ({ body } = pageContent);
 </script>
 
 <main>
-	{#each collections as collection, index}
-		<CollectionGridLayout collection={collection.node} {index} />
-	{/each}
+	<Body value={body} />
 </main>
-
-<style>
-	main {
-		display: flex;
-		flex-direction: column;
-		gap: 5em;
-	}
-</style>

@@ -7,7 +7,6 @@
 	export let portableText;
 
 	$: ({ value } = portableText);
-	$: console.log(value);
 	$: ({ body, content, layout, links, title } = value);
 </script>
 
@@ -28,8 +27,8 @@
 	{:else}
 		<SanityImage
 			image={getImageProps({
-				aspectRatio: 1.333,
-				image: content,
+				aspectRatio: content.aspectRatio ?? 1,
+				image: content.image,
 			})}
 			style="object-fit: cover;" />
 	{/if}
@@ -44,6 +43,10 @@
 			<LinkButton
 				href={`${PUBLIC_SVELTEKIT_SITE_URL}/shop/products/${links[0].reference?.store?.slug?.current}`}
 				>{links[0].title}</LinkButton>
+		{:else if links && links[0].reference._type === 'collection'}
+			<LinkButton
+				href={`${PUBLIC_SVELTEKIT_SITE_URL}/shop/collections/${links[0].reference?.store?.slug?.current}`}
+				>{links[0].title}</LinkButton>
 		{/if}
 	</div>
 </div>
@@ -54,8 +57,6 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		align-items: center;
-		padding-top: 2em;
-		padding-bottom: 2em;
 		gap: 1.5em;
 	}
 
@@ -80,7 +81,6 @@
 		font-family: Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 			Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		font-weight: 900;
-		font-size: 1.75em;
 		margin-bottom: 0;
 	}
 
@@ -92,6 +92,10 @@
 		.callToAction:not(.typeIsProduct) {
 			display: flex;
 			flex-direction: column;
+		}
+
+		.callToAction:not(.typeIsProduct) .title {
+			font-size: 1.75em;
 		}
 
 		.callToAction:is(.typeIsProduct) {
@@ -111,10 +115,6 @@
 		.callToAction:is(.typeIsProduct):not(.reverse) .textSection {
 			text-align: right;
 			align-items: flex-end;
-		}
-
-		.typeIsProduct .title {
-			font-size: 1.5em;
 		}
 	}
 </style>

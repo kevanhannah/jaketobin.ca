@@ -8,7 +8,7 @@
 </script>
 
 <main>
-	<h2>{collection.title}</h2>
+	<h1 class="title">{collection.title}</h1>
 	{#if body}
 		<div class="editorial">
 			<Body value={body} />
@@ -28,11 +28,21 @@
 </main>
 
 <style>
+	.title {
+		border-bottom: 1px solid var(--black);
+		padding-bottom: 0.25em;
+	}
+
 	main :global(p:last-of-type) {
 		margin-bottom: 0;
 	}
 
 	.editorial {
 		margin-bottom: 1.5em;
+	}
+
+	.editorial :global(div.module) {
+		padding-top: 2em;
+		padding-bottom: 2em;
 	}
 </style>

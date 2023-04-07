@@ -10,7 +10,7 @@
 
 <style>
 	.editorial {
-		max-width: 72em;
+		max-width: 60em;
 		display: flex;
 		flex-direction: column;
 		margin-top: 2em;
@@ -19,10 +19,18 @@
 		margin-right: auto;
 	}
 
+	.editorial :global(div.callToAction) {
+		max-width: 48em;
+	}
+
 	@media (max-width: 768px) {
 		.editorial {
 			display: flex;
 			flex-direction: column;
+		}
+
+		.editorial :global(div.callToAction) {
+			max-width: 100%;
 		}
 	}
 </style>

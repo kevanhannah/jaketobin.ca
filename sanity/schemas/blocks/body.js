@@ -34,10 +34,6 @@ export const body = {
 			type: 'module.accordion',
 		},
 		{
-			name: 'blockImageWithText',
-			type: 'module.imageWithText',
-		},
-		{
 			name: 'blockCallToAction',
 			type: 'module.callToAction',
 		},
