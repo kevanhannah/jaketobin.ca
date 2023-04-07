@@ -18,8 +18,7 @@
 						slugPrefix
 							? slugPrefix + '/' + page.slug.current
 							: page.slug.current
-					}`}>{page.title}</a
-				>
+					}`}>{page.title}</a>
 			</li>
 		{/each}
 	</ul>

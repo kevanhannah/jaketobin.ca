@@ -17,20 +17,17 @@
 				class="imageWrapper"
 				on:click={changeImage(image)}
 				on:keypress={changeImage(image)}
-				tabindex="0"
-			>
+				tabindex="0">
 				<SanityImage
 					{image}
-					style={`aspect-ratio: 1; object-fit: cover; display: block`}
-				/>
+					style={`aspect-ratio: 1; object-fit: contain; display: block`} />
 			</div>
 		{/each}
 	</div>
 	<SanityImage
 		image={featuredImage}
 		loading="eager"
-		style="aspect-ratio: 1; object-fit: cover; cursor: pointer; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; cursor: default;"
-	/>
+		style="aspect-ratio: 1; object-fit: cover; cursor: pointer; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; cursor: default;" />
 </div>
 
 <style lang="postcss">

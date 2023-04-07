@@ -28,13 +28,11 @@
 						on:click={changeImage(image)}
 						on:keypress={changeImage(image)}
 						role="button"
-						tabindex="0"
-					>
+						tabindex="0">
 						<SanityImage
 							{image}
 							loading="eager"
-							style="aspect-ratio:1; object-fit: cover;"
-						/>
+							style="aspect-ratio:1; object-fit: cover;" />
 					</div>
 				{/each}
 			</div>

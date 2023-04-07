@@ -9,8 +9,7 @@
 
 {#if inventory.isAvailable}
 	<Button loading={$isLoading} on:click={addItemToCart({ variantId: gid })}
-		>{$isLoading ? 'Processing...' : 'Add to cart'}</Button
-	>
+		>{$isLoading ? 'Processing...' : 'Add to cart'}</Button>
 {:else}
 	<Button disabled>Sold out</Button>
 {/if}

@@ -1,16 +1,24 @@
-import { getCollection } from '$lib/utils/shopify';
 import { error } from '@sveltejs/kit';
+import { client } from '$lib/utils/sanityClient';
+import { getCollection } from '$lib/utils/shopify';
+import { bodyQuery } from '../../../../lib/utils/queryFragments/bodyQuery.js';
 
 export async function load({ params }) {
-	const res = await getCollection(params.handle);
-	if (res.status === 200) {
-		const collection = res.body?.data?.collectionByHandle;
+	const shopifyRes = await getCollection(params.handle);
+	const { body, store } = await client.fetch(
+		`*[_type == "collection" && store.gid == "${shopifyRes.body?.data?.collectionByHandle.id}"][0] {
+			body[] {
+				${bodyQuery}
+				},
+			store
+		}`
+	);
 
-		if (collection) {
-			return { collection };
-		}
-		throw error(404);
+	if (store && shopifyRes.status === 200) {
+		const collection = shopifyRes.body?.data?.collectionByHandle;
+
+		return { collection, body: body ?? [] };
 	} else {
-		throw error(res.status);
+		throw error(404);
 	}
 }

@@ -24,8 +24,7 @@
 		on:mouseleave={() => (minusHovering = false)}
 		><Minus
 			hovering={minusHovering}
-			style="width: 0.5em; height: 0.5em; stroke-width: 2px;"
-		/></button
+			style="width: 0.5em; height: 0.5em; stroke-width: 2px;" /></button
 	><span class="quantityCount">{quantity}</span><button
 		class="incrementButton"
 		disabled={$isLoading}
@@ -35,9 +34,7 @@
 		on:mouseleave={() => (plusHovering = false)}
 		><Plus
 			hovering={plusHovering}
-			style="width: 0.5em; height: 0.5em; stroke-width: 2px;"
-		/></button
-	>
+			style="width: 0.5em; height: 0.5em; stroke-width: 2px;" /></button>
 </div>
 
 <style lang="postcss">

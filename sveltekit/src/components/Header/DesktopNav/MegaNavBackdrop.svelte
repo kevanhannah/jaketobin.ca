@@ -12,8 +12,7 @@
 	class="mega_nav_backdrop"
 	class:is_active={($portfolioOpen || $shopOpen) && $mobileNavOpen === false}
 	on:click={closeAllNav}
-	on:keypress={closeAllNav}
-/>
+	on:keypress={closeAllNav} />
 
 <style lang="postcss">
 	.mega_nav_backdrop {

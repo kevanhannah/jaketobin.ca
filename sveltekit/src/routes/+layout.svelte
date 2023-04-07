@@ -36,13 +36,6 @@
 				await useCreateCart();
 			}
 			await getCartItems();
-
-			document.addEventListener('keydown', (e) => {
-				let keyCode = e.keyCode;
-				if (keyCode === 27) {
-					showCart = false;
-				}
-			});
 		}
 	});
 

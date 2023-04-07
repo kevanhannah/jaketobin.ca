@@ -17,8 +17,7 @@
 						<li>
 							<a
 								href={`${PUBLIC_SVELTEKIT_SITE_URL}/${slugPrefix}${page.slug.current}`}
-								>{page.title}</a
-							>
+								>{page.title}</a>
 						</li>
 					{/each}
 				</ul>

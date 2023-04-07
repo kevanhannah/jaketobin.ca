@@ -6,7 +6,7 @@
 	$: ({ items, title } = value);
 </script>
 
-<div class="productGrid">
+<div class="module productGrid">
 	{#if title}
 		<h2 class="gridTitle">{title}</h2>
 	{/if}
@@ -15,15 +15,13 @@
 			{#each items as item}
 				<a
 					class="imageWrapper"
-					href={`${PUBLIC_SVELTEKIT_SITE_URL}/shop/products/${item.store.slug.current}`}
-				>
+					href={`${PUBLIC_SVELTEKIT_SITE_URL}/shop/products/${item.store.slug.current}`}>
 					<img
 						class="productImage"
 						alt={item.store.title}
 						loading="lazy"
 						sizes="(max-width: 800px) 50vw, 25vw"
-						src={item.store.previewImageUrl}
-					/>
+						src={item.store.previewImageUrl} />
 					<p class="productTitle">{item.store.title}</p>
 				</a>
 			{/each}
@@ -33,16 +31,12 @@
 
 <style lang="postcss">
 	.productGrid {
-		padding-top: 3em;
-		padding-bottom: 1.5em;
-		margin-top: 2em;
-		margin-bottom: 2em;
+		padding-top: 2em;
+		padding-bottom: 2em;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		gap: 1.5em;
-		border-top: 1px solid var(--black);
-		border-bottom: 1px solid var(--black);
 	}
 
 	.gridTitle {
@@ -50,10 +44,10 @@
 	}
 
 	.gridItems {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 1.25em;
-    row-gap: 1.75em;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		column-gap: 1.25em;
+		row-gap: 1.75em;
 	}
 
 	.imageWrapper {
@@ -78,13 +72,6 @@
 	}
 
 	@media (max-width: 768px) {
-		.productGrid {
-			padding-top: 2em;
-			padding-bottom: 1.5em;
-			margin-top: 2em;
-			margin-bottom: 2em;
-		}
-
 		.gridTitle {
 			font-size: 1.75em;
 		}
@@ -92,7 +79,7 @@
 		.gridItems {
 			grid-template-columns: repeat(2, 1fr);
 			column-gap: 1em;
-      row-gap: 1.5em;
+			row-gap: 1.5em;
 		}
 	}
 

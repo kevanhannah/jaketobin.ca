@@ -7,16 +7,14 @@
 	aria-hidden={!$cartOpen}
 	class="cart_drawer"
 	class:open={$cartOpen}
-	inert={!$cartOpen}
->
+	inert={!$cartOpen}>
 	<div class="cart_drawer_header">
 		<h2>Cart</h2>
 		<button
 			aria-label="Close cart"
 			class="closeDrawer"
 			on:click={handleCartClick}
-			type="button"
-		>
+			type="button">
 			<span class="hamburger_icon" />
 		</button>
 	</div>

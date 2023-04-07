@@ -18,23 +18,20 @@
 	<form
 		class="commission_form"
 		on:submit|preventDefault={handleForm}
-		action="/contact?/email"
-	>
+		action="/contact?/email">
 		<div class="form_row">
 			<TextInput
 				id="firstName"
 				label="First name"
 				name="firstName"
 				required
-				type="text"
-			/>
+				type="text" />
 			<TextInput
 				id="lastName"
 				label="Last name"
 				name="lastName"
 				required
-				type="text"
-			/>
+				type="text" />
 		</div>
 		<TextInput id="email" label="Email" name="email" required type="email" />
 		<div class="form_row">
@@ -43,16 +40,14 @@
 				label="When do you need it?"
 				name="dueDate"
 				required
-				type="text"
-			/>
+				type="text" />
 		</div>
 		<TextInput
 			id="description"
 			label="Briefly describe your illustration subject or idea"
 			name="description"
 			required
-			type="text"
-		/>
+			type="text" />
 		<div style="display: flex; justify-content: flex-start">
 			<Button type="submit">Submit</Button>
 		</div>

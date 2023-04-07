@@ -19,8 +19,7 @@
 							aspectRatio: 1,
 							image: item.images.image,
 							maxWidth: 800,
-						})}
-					/>
+						})} />
 				</div>
 			{/each}
 		</div>
@@ -29,8 +28,7 @@
 		<LinkButton
 			href={`${setSlugPrefix(link.reference._type)}${
 				link.reference.slug.current
-			}`}>{link.title}</LinkButton
-		>
+			}`}>{link.title}</LinkButton>
 	{/if}
 </div>
 

@@ -4,8 +4,7 @@
 </script>
 
 <button class="cart_toggle" on:click={handleCartClick}
-	>Cart <span class="cart_toggle_counter">{$cartQuantity || 0}</span></button
->
+	>Cart <span class="cart_toggle_counter">{$cartQuantity || 0}</span></button>
 
 <style>
 	.cart_toggle,

@@ -5,7 +5,7 @@
 </script>
 
 <section class="editorial">
-		<Body value={body} />
+	<Body value={body} />
 </section>
 
 <style>

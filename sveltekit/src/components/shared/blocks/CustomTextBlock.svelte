@@ -17,8 +17,6 @@
 	h2,
 	h3,
 	p {
-		/* margin-left: auto;
-		margin-right: auto; */
 		max-width: 48em;
 	}
 

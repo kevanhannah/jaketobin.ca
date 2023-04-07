@@ -1,29 +1,29 @@
 :root {
-  --black: #000000;
-  --paperWhite: #FFFFFF;
-  --lightGray: #EAEAEA;
-  --mediumGray: #666666;
+	--black: #000000;
+	--paperWhite: #ffffff;
+	--lightGray: #eaeaea;
+	--mediumGray: #666666;
 }
 
 *,
 *:after,
 *:before {
-  border: 0 solid;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-font-smoothing: antialiased;
+	border: 0 solid;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-font-smoothing: antialiased;
 }
 
 body {
-  font-size: 62.5%;
-  background: var(--paperWhite);
+	font-size: 62.5%;
+	background: var(--paperWhite);
 }
 
 body,
 html {
-  text-rendering: optimizeLegibility;
+	text-rendering: optimizeLegibility;
 }
 
 hr,
@@ -31,46 +31,46 @@ ol,
 p,
 pre,
 ul {
-  margin-bottom: 16px;
-  line-height: 1.6;
+	margin-bottom: 16px;
+	line-height: 1.6;
 }
 
 ol,
 ul {
-  margin-left: 1.5em;
+	margin-left: 1.5em;
 }
 
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
 
 a {
-  font-size: 1em;
-  font-weight: 300;
-  color: var(--black);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.25em;
+	font-size: 1em;
+	font-weight: 300;
+	color: var(--black);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.25em;
 }
 
 button,
 input,
 select,
 textarea {
-  color: inherit;
-  font: inherit;
+	color: inherit;
+	font: inherit;
 }
 
 button {
-  appearance: none;
-  cursor: pointer;
-  font-family: inherit;
+	appearance: none;
+	cursor: pointer;
+	font-family: inherit;
 }
 
 @media (hover: hover) {
-  a:hover {
-    text-decoration: none;
-    opacity: 0.75;
-  }
+	a:hover {
+		text-decoration: none;
+		opacity: 0.75;
+	}
 }

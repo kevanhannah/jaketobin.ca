@@ -17,8 +17,7 @@
 			class="mobile_menu_backdrop"
 			class:is_active={$mobileNavOpen}
 			on:click={closeAllNav}
-			on:keypress={closeAllNav}
-		/>
+			on:keypress={closeAllNav} />
 	</div>
 	<CartToggle />
 </div>

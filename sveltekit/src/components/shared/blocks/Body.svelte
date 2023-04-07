@@ -35,5 +35,14 @@
 			number: ListItem,
 		},
 	}}
-	{value}
-/>
+	{value} />
+
+<style>
+	:global(div:is(.module):not(:last-of-type)) {
+		border-bottom: 1px solid var(--black);
+	}
+
+	:global(div:is(.module):first-of-type) {
+		padding-top: 0;
+	}
+</style>

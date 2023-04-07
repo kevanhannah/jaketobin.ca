@@ -1,6 +1,6 @@
 <script>
-  export let disabled = false;
-  export let loading = false;
+	export let disabled = false;
+	export let loading = false;
 	export let style = undefined;
 	export let type = 'button';
 </script>
@@ -10,7 +10,7 @@
 </button>
 
 <style lang="postcss">
-  button {
+	button {
 		padding: 0.75em 1.25em;
 		color: var(--paperWhite);
 		background: var(--black);
@@ -22,25 +22,25 @@
 		transition-timing-function: ease;
 	}
 
-  button:disabled {
+	button:disabled {
 		background: var(--paperWhite);
 		color: var(--black);
 		border: 1px solid var(--black);
 		cursor: default;
 	}
 
-  button:not(:disabled)[loading="true"] {
-    background: var(--mediumGray);
+	button:not(:disabled)[loading='true'] {
+		background: var(--mediumGray);
 		border: 1px solid var(--mediumGray);
 		cursor: default;
-  }
+	}
 
 	@media (hover: hover) {
-    button:not(:disabled)[loading="false"]:hover {
-      color: var(--black);
-      background: var(--paperWhite);
-      cursor: pointer;
-    }
+		button:not(:disabled)[loading='false']:hover {
+			color: var(--black);
+			background: var(--paperWhite);
+			cursor: pointer;
+		}
 	}
 
 	@media (max-width: 768px) {

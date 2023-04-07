@@ -14,8 +14,7 @@
 		class="accordionButton"
 		on:click={() => (isOpen = !isOpen)}
 		on:mouseenter={() => (hovering = true)}
-		on:mouseleave={() => (hovering = false)}
-	>
+		on:mouseleave={() => (hovering = false)}>
 		{title}
 		{#if isOpen}
 			<Minus {hovering} style="width: 1em; height: 1em; stroke-width: 1.5px;" />
@@ -28,7 +27,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="postcss">
 	.group {
 		display: flex;
 		flex-direction: column;

@@ -55,6 +55,14 @@ export const collection = {
 			type: 'proxyString',
 			options: { field: 'store.slug.current' },
 		},
+		// Body
+		{
+			name: 'body',
+			title: 'Editorial content',
+			description: 'Additional content to associate with this collection',
+			type: 'body',
+			group: 'editorial',
+		},
 		// Shopify collection
 		{
 			name: 'store',

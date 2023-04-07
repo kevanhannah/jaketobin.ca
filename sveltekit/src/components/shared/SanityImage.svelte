@@ -14,8 +14,7 @@
 		{...image}
 		{loading}
 		on:load={() => (loaded = true)}
-		{style}
-	/>
+		{style} />
 {/if}
 
 <style>

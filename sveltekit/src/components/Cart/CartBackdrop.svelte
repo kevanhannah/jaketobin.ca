@@ -12,8 +12,7 @@
 	class="cart_backdrop"
 	class:is_active={$cartOpen}
 	on:click={handleCartClick}
-	on:keypress={handleCartClick}
-/>
+	on:keypress={handleCartClick} />
 
 <style lang="postcss">
 	:global(body.no-scroll) {

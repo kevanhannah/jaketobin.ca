@@ -18,7 +18,7 @@ module.exports = {
 	},
 	root: true,
 	rules: {
-		indent: ['error', 'tab', { SwitchCase: 'warn' }],
+		indent: ['error', 'tab', { SwitchCase: 1 }],
 		'no-tabs': ['error', { allowIndentationTabs: true }],
 		semi: 'error',
 	},

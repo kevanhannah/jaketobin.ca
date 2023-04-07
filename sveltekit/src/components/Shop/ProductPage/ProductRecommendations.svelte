@@ -1,6 +1,6 @@
 <script>
-	import ProductGridLayout from "$components/Shop/ProductGridLayout.svelte";
-	import ProductCard from "../../shared/ProductCard.svelte";
+	import ProductGridLayout from '$components/Shop/ProductGridLayout.svelte';
+	import ProductCard from '../../shared/ProductCard.svelte';
 
 	export let recommendations;
 </script>
@@ -8,13 +8,12 @@
 <section class="productRecommendations">
 	<h2>Related Products</h2>
 	<ProductGridLayout>
-		{#each recommendations.slice(0,3) as recommendation}
+		{#each recommendations.slice(0, 4) as recommendation}
 			<ProductCard
 				availableForSale={recommendation.availableForSale}
 				image={recommendation.featuredImage}
 				handle={recommendation.handle}
-				title={recommendation.title}
-			/>
+				title={recommendation.title} />
 		{/each}
 	</ProductGridLayout>
 </section>
@@ -31,7 +30,7 @@
 		margin-bottom: 2em;
 		margin-left: auto;
 		margin-right: auto;
-		border-top: 1px solid var(--black);
+		/* border-top: 1px solid var(--black); */
 		justify-content: center;
 	}
 

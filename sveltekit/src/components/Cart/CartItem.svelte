@@ -24,8 +24,7 @@
 						style: 'currency',
 						currency: estimatedCost.totalAmount.currencyCode,
 					}
-				).format(estimatedCost.totalAmount.amount)}`}</span
-			>
+				).format(estimatedCost.totalAmount.amount)}`}</span>
 		</div>
 		<div class="quantityRow">
 			<QuantityWidget lineId={id} {quantity} variantId={merchandise.id} />
@@ -35,8 +34,7 @@
 					lineId: id,
 					quantity: 0,
 					variantId: merchandise.id,
-				})}>Remove</button
-			>
+				})}>Remove</button>
 		</div>
 	</div>
 </li>

@@ -19,8 +19,7 @@
 					? content[0].image
 					: content[0].images[0].image,
 			maxWidth: 600,
-		})}
-	/>
+		})} />
 	<div class="textSection" class:reverse={layout === 'right'}>
 		{#if title}
 			<h3 class="title">{title}</h3>
@@ -32,8 +31,7 @@
 			<LinkButton
 				href={`${setSlugPrefix(link.reference._type)}${
 					link.reference.slug.current
-				}`}>{link.title}</LinkButton
-			>
+				}`}>{link.title}</LinkButton>
 		{/if}
 	</div>
 </div>

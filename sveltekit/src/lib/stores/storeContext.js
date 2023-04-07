@@ -13,76 +13,76 @@ export const checkoutUrl = writable('');
 export const isLoading = writable(false);
 
 export async function useCreateCart() {
-  const cartRes = await createCart();
-  const shopifyCart = cartRes.body?.data?.cartCreate?.cart;
-  cart.set(shopifyCart);
-  cartId.set(shopifyCart.id);
+	const cartRes = await createCart();
+	const shopifyCart = cartRes.body?.data?.cartCreate?.cart;
+	cart.set(shopifyCart);
+	cartId.set(shopifyCart.id);
 
-  if (browser) {
-    localStorage.setItem('cartCreatedAt', Date.now());
-    localStorage.setItem('cartId', JSON.stringify(shopifyCart.id));
-  }
+	if (browser) {
+		localStorage.setItem('cartCreatedAt', Date.now());
+		localStorage.setItem('cartId', JSON.stringify(shopifyCart.id));
+	}
 }
 
 export async function getCartItems() {
-  try {
-    const shopifyResponse = await loadCart(get(cartId));
+	try {
+		const shopifyResponse = await loadCart(get(cartId));
 
-    let sum = 0;
-    shopifyResponse.body?.data?.cart?.lines?.edges?.forEach((d) => {
-      sum += d.node.quantity;
-    });
+		let sum = 0;
+		shopifyResponse.body?.data?.cart?.lines?.edges?.forEach((d) => {
+			sum += d.node.quantity;
+		});
 
-    cartQuantity.set(sum);
-    cart.set(shopifyResponse.body?.data?.cart);
+		cartQuantity.set(sum);
+		cart.set(shopifyResponse.body?.data?.cart);
 
-    return shopifyResponse;
-  } catch (error) {
-    console.log(error);
-  }
+		return shopifyResponse;
+	} catch (error) {
+		console.log(error);
+	}
 }
 
 export async function addItemToCart({ variantId }) {
-  isLoading.set(true);
+	isLoading.set(true);
 
-  await fetch(cartEndpoint, {
-    method: 'PATCH',
-    body: JSON.stringify({ cartId: get(cartId), variantId }),
-  });
+	await fetch(cartEndpoint, {
+		method: 'PATCH',
+		body: JSON.stringify({ cartId: get(cartId), variantId }),
+	});
 
-  // Wait for the API to finish before updating cart items
-  await getCartItems();
-  isLoading.set(false);
-  cartOpen.set(true);
+	// Wait for the API to finish before updating cart items
+	await getCartItems();
+	isLoading.set(false);
+	cartOpen.set(true);
 }
 
 export async function updateItemInCart({ lineId, quantity, variantId }) {
-  isLoading.set(true);
+	isLoading.set(true);
 
-  await fetch(cartEndpoint, {
-    method: 'PATCH',
-    body: JSON.stringify({ cartId: get(cartId), lineId, quantity, variantId }),
-  });
+	await fetch(cartEndpoint, {
+		method: 'PATCH',
+		body: JSON.stringify({ cartId: get(cartId), lineId, quantity, variantId }),
+	});
 
-  // Wait for the API to finish before updating cart items
-  await getCartItems();
-  isLoading.set(false);
+	// Wait for the API to finish before updating cart items
+	await getCartItems();
+	isLoading.set(false);
 }
 
-export async function removeItemFromCart({lineId, quantity = 1, variantId}) {
-  isLoading.set(true);
+export async function removeItemFromCart({ lineId, quantity = 1, variantId }) {
+	isLoading.set(true);
 
-  await fetch(cartEndpoint, {
-    method: 'PUT',
-    body: JSON.stringify({
-      cartId: get(cartId),
-      lineId,
-      quantity,
-      variantId,
-    }),
-  });
+	await fetch(cartEndpoint, {
+		method: 'PUT',
+		body: JSON.stringify({
+			cartId: get(cartId),
+			lineId,
+			quantity,
+			variantId,
+		}),
+	});
 
-  // Wait for the API to finish before updating cart items
-  await getCartItems();
-  isLoading.set(false);
+	// Wait for the API to finish before updating cart items
+	await getCartItems();
+	isLoading.set(false);
 }

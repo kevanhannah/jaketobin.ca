@@ -15,8 +15,7 @@
 		{loading}
 		sizes="(max-width: 800px) 50vw, 25vw"
 		src={image.src}
-		srcset={image.srcset}
-	/>
+		srcset={image.srcset} />
 	<div class="productTitleRow">
 		{#if !availableForSale}
 			<OutOfStockBadge />

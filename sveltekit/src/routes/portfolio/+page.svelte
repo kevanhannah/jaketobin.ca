@@ -34,6 +34,5 @@
 				number: ListItem,
 			},
 		}}
-		value={body}
-	/>
+		value={body} />
 </div>

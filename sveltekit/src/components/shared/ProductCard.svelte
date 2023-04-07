@@ -1,7 +1,7 @@
 <script>
 	import getShopifyImageProps from '$lib/utils/getShopifyImageProps';
 	import OutOfStockBadge from '$components/Shop/OutOfStockBadge.svelte';
-	
+
 	export let availableForSale;
 	export let image;
 	export let handle;
@@ -18,8 +18,7 @@
 		{loading}
 		sizes="(max-width: 800px) 50vw, 25vw"
 		src={shopifyImage.src}
-		srcset={shopifyImage.srcset}
-	/>
+		srcset={shopifyImage.srcset} />
 	<div class="productTitleRow">
 		{#if !availableForSale}
 			<OutOfStockBadge />

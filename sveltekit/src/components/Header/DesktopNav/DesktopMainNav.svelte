@@ -15,15 +15,13 @@
 				<button
 					class="nav_button"
 					class:active={$portfolioOpen}
-					on:click={handlePortfolioClick}>Portfolio</button
-				>
+					on:click={handlePortfolioClick}>Portfolio</button>
 			</li>
 			<li>
 				<button
 					class="nav_button"
 					class:active={$shopOpen}
-					on:click={handleShopClick}>Shop</button
-				>
+					on:click={handleShopClick}>Shop</button>
 			</li>
 			<li><a href="/commission" class="nav_button">Commission</a></li>
 		</ul>

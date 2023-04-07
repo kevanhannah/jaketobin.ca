@@ -8,8 +8,7 @@
 	aria-label="Toggle Menu"
 	class="menu_toggle"
 	class:is_open={$mobileNavOpen}
-	on:click={handleMobileNavClick}
->
+	on:click={handleMobileNavClick}>
 	<span class="hamburger">
 		<span class="hamburger_icon" />
 	</span>

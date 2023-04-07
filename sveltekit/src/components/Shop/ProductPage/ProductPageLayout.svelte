@@ -41,8 +41,7 @@
 									class:selected={variant.store.gid === activeVariant.store.gid}
 									class:disabled={!variant.store.inventory.isAvailable}
 									on:click={setActiveVariant(variant)}
-									>{variant.store.title}</button
-								>
+									>{variant.store.title}</button>
 							</li>
 						{/each}
 					</ul>
@@ -141,7 +140,8 @@
 		cursor: default;
 	}
 
-	.productDescription :global(p:last-of-type), .productDescription :global(li:last-of-type) {
+	.productDescription :global(p:last-of-type),
+	.productDescription :global(li:last-of-type) {
 		margin-bottom: 0;
 	}
 
@@ -153,11 +153,6 @@
 
 	@media (max-width: 768px) {
 		main {
-			display: flex;
-			flex-direction: column;
-		}
-
-		.editorial {
 			display: flex;
 			flex-direction: column;
 		}

@@ -4,7 +4,7 @@
 	import ProductRecommendations from '$components/Shop/ProductPage/ProductRecommendations.svelte';
 
 	export let data;
-  $: ({ body, faqs, images, recommendations, store } = data);
+	$: ({ body, faqs, images, recommendations, store } = data);
 </script>
 
 <ProductPageLayout {faqs} {images} {store} />

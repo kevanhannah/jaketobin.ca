@@ -26,14 +26,12 @@
 					aria-controls="portfolio_dropdown"
 					class="dropdown_content"
 					class:is_open={$portfolioOpen}
-					id="portfolio_dropdown"
-				>
+					id="portfolio_dropdown">
 					{#each portfolioNavItems as portfolioNavItem}
 						<NavSection
 							content={portfolioNavItem}
 							showHeader={portfolioNavItem.showTitle}
-							slugPrefix="portfolio"
-						/>
+							slugPrefix="portfolio" />
 					{/each}
 				</div>
 			</div>
@@ -51,14 +49,12 @@
 					aria-controls="portfolio_dropdown"
 					class="dropdown_content"
 					class:is_open={$shopOpen}
-					id="portfolio_dropdown"
-				>
+					id="portfolio_dropdown">
 					{#each shopNavItems as shopNavItem}
 						<NavSection
 							content={shopNavItem}
 							showHeader={shopNavItem.showTitle}
-							slugPrefix="shop/collections"
-						/>
+							slugPrefix="shop/collections" />
 					{/each}
 				</div>
 			</div>
@@ -123,7 +119,7 @@
 	.dropdown {
 		height: 100%;
 		display: flex;
-    flex-direction: column;
+		flex-direction: column;
 	}
 
 	.dropdown_icon {
@@ -166,6 +162,12 @@
 		flex: 1 0 auto;
 		padding-top: 0.5em;
 		padding-bottom: 2em;
-		mask-image: linear-gradient(to top, rgba(0,0,0,0), rgba(255,255,255,1) 15%, rgba(255,255,255,1) 85%, rgba(0,0,0,0) 100%);
+		mask-image: linear-gradient(
+			to top,
+			rgba(0, 0, 0, 0),
+			rgba(255, 255, 255, 1) 15%,
+			rgba(255, 255, 255, 1) 85%,
+			rgba(0, 0, 0, 0) 100%
+		);
 	}
 </style>

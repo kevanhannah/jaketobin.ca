@@ -16,8 +16,7 @@
 						<NavSection
 							content={portfolioNavItem}
 							showHeader={portfolioNavItem.showTitle}
-							slugPrefix="portfolio"
-						/>
+							slugPrefix="portfolio" />
 					{/each}
 				</div>
 			</div>
@@ -31,15 +30,13 @@
 						<NavSection
 							content={shopNavItem}
 							showHeader={shopNavItem.showTitle}
-							slugPrefix="shop/collections"
-						/>
+							slugPrefix="shop/collections" />
 					{/each}
 					<NavSection
 						content={{
 							pages: [{ title: 'Shop all', slug: { current: 'shop' } }],
 						}}
-						showHeader={false}
-					/>
+						showHeader={false} />
 				</div>
 			</div>
 		</div>

@@ -3,9 +3,11 @@
 	import getImageProps from '$lib/utils/getImageProps';
 
 	export let defaultMetadata;
-  $: seo = $page.data?.pageContent?.seo ?? defaultMetadata;
+	$: seo = $page.data?.pageContent?.seo ?? defaultMetadata;
 	$: ({ origin, pathname } = $page.url);
-	$: title = $page.data?.pageContent?.seo?.title ? `${$page.data?.pageContent?.seo.title} | ${defaultMetadata.title}` : seo.title;
+	$: title = $page.data?.pageContent?.seo?.title
+		? `${$page.data?.pageContent?.seo.title} | ${defaultMetadata.title}`
+		: seo.title;
 	$: description = seo.description;
 	$: image = getImageProps({ aspectRatio: 1.78, image: seo.image });
 </script>
