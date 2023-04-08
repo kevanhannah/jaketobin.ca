@@ -7,7 +7,6 @@
 	import ListWrapper from '$components/shared/blocks/ListWrapper.svelte';
 	import ListItem from '$components/shared/blocks/ListItem.svelte';
 	import PortfolioArtwork from '$components/shared/modules/PortfolioArtwork.svelte';
-	import ProductGrid from '$components/shared/modules/ProductGrid.svelte';
 	import Publications from '$components/shared/modules/Publications.svelte';
 	import InternalLink from '$components/shared/blocks/InternalLink.svelte';
 
@@ -21,8 +20,8 @@
 				blockCallToAction: CallToAction,
 				blockImageWithText: ImageWithText,
 				blockPortfolioArtwork: PortfolioArtwork,
+				blockGrid: Grid,
 				blockPortfolioGrid: Grid,
-				blockProductGrid: ProductGrid,
 				blockPortfolioPublications: Publications,
 			},
 			block: {
@@ -52,7 +51,6 @@
 	.body :global(.module:has(+ p)),
 	.body :global(.module:has(+ h2)),
 	.body :global(.module:has(+ h3)) {
-		border-bottom: 1px solid var(--black);
 		padding-bottom: 2em;
 	}
 
@@ -60,11 +58,14 @@
 		padding-top: 2em;
 	}
 
-	.body :global(.module:has(+ *:not(.module))) {
-		margin-bottom: 2em;
+	.body :global(.module:not(:last-of-type)) {
+		border-bottom: 1px solid var(--black);
 	}
 
-	.body :global(p:has(+ .module)) {
+	/* .body :global(.module:has(+ *:not(.module))) {
 		margin-bottom: 2em;
 	}
+	.body :global(p:has(+ .module)) {
+		margin-bottom: 2em;
+	} */
 </style>

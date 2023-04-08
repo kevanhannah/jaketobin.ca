@@ -22,7 +22,7 @@
 			},
 			types: {
 				blockImageWithText: ImageWithText,
-				blockPortfolioGrid: Grid,
+				blockGrid: Grid,
 			},
 			list: {
 				bullet: ListWrapper,

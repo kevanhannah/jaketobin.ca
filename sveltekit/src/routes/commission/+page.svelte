@@ -16,4 +16,9 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
+
+	.commissionPageContent :global(.module) {
+		padding-top: 2em;
+		padding-bottom: 2em;
+	}
 </style>

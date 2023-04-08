@@ -3,24 +3,43 @@
 	import SanityImage from '$components/shared/SanityImage.svelte';
 	import LinkButton from '$components/shared/LinkButton.svelte';
 	import setSlugPrefix from '$lib/utils/setSlugPrefix';
+	import ProductCard from '../ProductCard.svelte';
 
 	export let portableText;
 	$: ({ value } = portableText);
-	$: ({ items, link } = value);
+	$: ({ items, title, link } = value);
 </script>
 
-<div class="grid">
+<div class="grid module">
+	{#if title}
+		<h2 class="gridTitle">{title}</h2>
+	{/if}
 	{#if value.items.length}
 		<div class="gridImages">
 			{#each items as item}
-				<div class="imageWrapper">
-					<SanityImage
-						image={getImageProps({
-							aspectRatio: 1,
-							image: item.images.image,
-							maxWidth: 800,
-						})} />
-				</div>
+				{#if item._type === 'product'}
+					<div class="imageWrapper">
+						<ProductCard
+							handle={item.store.slug.current}
+							src={getImageProps({ aspectRatio: 1, image: item.images.image })[
+								'src'
+							]}
+							srcset={getImageProps({
+								aspectRatio: 1,
+								image: item.images.image,
+							})['srcset']}
+							title={item.store.title} />
+					</div>
+				{:else}
+					<div class="imageWrapper">
+						<SanityImage
+							image={getImageProps({
+								aspectRatio: 1,
+								image: item.images.image,
+								maxWidth: 800,
+							})} />
+					</div>
+				{/if}
 			{/each}
 		</div>
 	{/if}
@@ -34,16 +53,14 @@
 
 <style lang="postcss">
 	.grid {
-		padding-top: 3em;
-		padding-bottom: 1.5em;
-		margin-top: 2em;
-		margin-bottom: 2em;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		gap: 1.5em;
-		border-top: 1px solid var(--black);
-		border-bottom: 1px solid var(--black);
+	}
+
+	.gridTitle {
+		margin-bottom: 0;
 	}
 
 	.gridImages {
@@ -64,6 +81,10 @@
 			padding-bottom: 1.5em;
 			margin-top: 2em;
 			margin-bottom: 2em;
+		}
+
+		.gridTitle {
+			font-size: 1.75em;
 		}
 
 		.gridImages {

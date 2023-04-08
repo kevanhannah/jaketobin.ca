@@ -23,6 +23,10 @@
 		max-width: 48em;
 	}
 
+	.editorial :global(p:has(+ .module)) {
+		margin-bottom: 2em;
+	}
+
 	@media (max-width: 768px) {
 		.editorial {
 			display: flex;

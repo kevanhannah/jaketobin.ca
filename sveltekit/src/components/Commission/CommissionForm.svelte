@@ -60,7 +60,9 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1.25em;
-		margin: 0 auto;
+		margin-top: 2em;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.commission_form_section h3 {

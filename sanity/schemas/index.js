@@ -21,10 +21,9 @@ import { linkExternal } from './objects/linkExternal';
 import { linkInternal } from './objects/linkInternal';
 import { moduleAccordion } from './objects/module/accordion';
 import { moduleCallToAction } from './objects/module/callToAction';
+import { moduleGrid } from './objects/module/grid';
 import { moduleImage } from './objects/module/image';
-import { modulePortfolioGrid } from './objects/module/portfolioGrid';
 import { modulePortfolioArtwork } from './objects/module/portfolioArtwork';
-import { moduleProductGrid } from './objects/module/productGrid';
 import { page } from './objects/page';
 import { placeholderString } from './objects/placeholderString';
 import { portfolioPageGroup } from './objects/portfolioPageGroup';
@@ -69,10 +68,9 @@ export const schemaTypes = [
 	linkInternal,
 	moduleAccordion,
 	moduleCallToAction,
+	moduleGrid,
 	moduleImage,
-	modulePortfolioGrid,
 	modulePortfolioArtwork,
-	moduleProductGrid,
 	page,
 	placeholderString,
 	portfolioPageGroup,

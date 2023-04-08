@@ -74,10 +74,14 @@ export const bodyQuery = `
 				title
 			}
 		},
-		_type == 'blockPortfolioGrid' => {
+		_type == 'blockGrid' => {
 			_type,
-			items[]-> { images[0] },
-			link[0] { reference -> { slug { current }, _type }, title }
+			items[]-> {
+				_type == "portfolioItem" => { _type, images[0] },
+				_type == "product" => { _type, images[0], store }
+			},
+			link[0] { reference -> { slug { current }, _type }, title },
+			title
 		},
 		_type == 'blockProductGrid' => {
 			_type,

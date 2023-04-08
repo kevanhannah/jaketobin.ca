@@ -55,28 +55,16 @@ export const body = {
 			type: 'module.callToAction',
 		},
 		{
-			name: 'blockPortfolioGrid',
-			type: 'module.portfolioGrid',
+			name: 'blockGrid',
+			type: 'module.grid',
 		},
 		{
 			name: 'blockPortfolioArtwork',
 			type: 'module.portfolioArtwork',
 		},
 		{
-			name: 'blockProductGrid',
-			type: 'module.productGrid',
-		},
-		{
 			name: 'blockPortfolioPublications',
 			type: 'module.publications',
 		},
-		// {
-		//   name: 'blockInstagram',
-		//   type: 'module.instagram',
-		// },
-		// {
-		//   name: 'blockProducts',
-		//   type: 'module.products',
-		// },
 	],
 };
