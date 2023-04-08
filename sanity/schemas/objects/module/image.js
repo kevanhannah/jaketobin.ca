@@ -22,7 +22,8 @@ export const moduleImage = {
 			title: 'Aspect ratio',
 			type: 'number',
 			initialValue: 1,
-			valiation: (Rule) => Rule.required().integer(),
+			valiation: (Rule) =>
+				Rule.required().precision(3).positive().greaterThan(0.1),
 		},
 	],
 	preview: {

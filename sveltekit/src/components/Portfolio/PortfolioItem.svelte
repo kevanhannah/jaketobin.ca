@@ -11,17 +11,17 @@
 	}
 </script>
 
-<div class="portfolio_item">
+<div class="portfolioItem">
 	<SanityImage image={displayImage} />
-	<div class="portfolio_item_info">
+	<div class="portfolioItem_info">
 		<div>
-			<h3 class="portfolio_item_header">{title}</h3>
+			<h3 class="portfolioItem_header">{title}</h3>
 			{#if description}
 				<PortableText value={description} />
 			{/if}
 		</div>
 		{#if images.length > 1}
-			<div class="portfolio_item_images_list">
+			<div class="portfolioItem_images_list">
 				{#each images as image}
 					<div
 						class="imageSelectWrapper"
@@ -40,8 +40,8 @@
 	</div>
 </div>
 
-<style>
-	.portfolio_item {
+<style lang="postcss">
+	.portfolioItem {
 		width: 100%;
 		padding-top: 3em;
 		padding-bottom: 1.5em;
@@ -51,11 +51,11 @@
 		border-top: 1px solid var(--black);
 	}
 
-	.portfolio_item:first-of-type {
+	.portfolioItem:first-of-type {
 		border-top: none;
 	}
 
-	.portfolio_item_info {
+	.portfolioItem_info {
 		padding-top: 0.5em;
 		padding-bottom: 0.5em;
 		display: flex;
@@ -63,13 +63,14 @@
 		justify-content: space-between;
 	}
 
-	.portfolio_item_header {
+	.portfolioItem_header {
+		font-family: var(--poppins);
 		font-size: 1.75em;
-		font-weight: 400;
+		font-weight: 900;
 		margin-bottom: 1em;
 	}
 
-	.portfolio_item_images_list {
+	.portfolioItem_images_list {
 		width: 100%;
 		display: flex;
 		gap: 1em;
@@ -89,18 +90,18 @@
 	}
 
 	@media (max-width: 768px) {
-		.portfolio_item {
+		.portfolioItem {
 			display: flex;
 			flex-direction: column;
 		}
 
-		.portfolio_item_info {
+		.portfolioItem_info {
 			flex-direction: column-reverse;
 			justify-content: flex-start;
 			gap: 1.5em;
 		}
 
-		.portfolio_item_header {
+		.portfolioItem_header {
 			font-size: 1.5em;
 			margin-bottom: 0.5em;
 		}

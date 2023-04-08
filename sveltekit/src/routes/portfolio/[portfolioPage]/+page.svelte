@@ -1,7 +1,9 @@
 <script>
-	import PortfolioPage from '$components/Portfolio/PortfolioPage.svelte';
+	import PortfolioPageLayout from '$components/Portfolio/PortfolioPageLayout.svelte';
 
 	export let data;
+	$: ({ pageContent, title } = data);
+	$: ({ body } = pageContent);
 </script>
 
-<PortfolioPage {data} />
+<PortfolioPageLayout {body} {title} />

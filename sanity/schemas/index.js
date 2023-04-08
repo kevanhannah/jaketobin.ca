@@ -22,6 +22,7 @@ import { moduleAccordion } from './objects/module/accordion';
 import { moduleCallToAction } from './objects/module/callToAction';
 import { moduleImage } from './objects/module/image';
 import { modulePortfolioGrid } from './objects/module/portfolioGrid';
+import { modulePortfolioArtwork } from './objects/module/portfolioArtwork';
 import { moduleProductGrid } from './objects/module/productGrid';
 import { modulePublication } from './objects/module/publication';
 import { page } from './objects/page';
@@ -60,13 +61,14 @@ export const schemaTypes = [
 	product,
 	productVariant,
 	// Objects
-	moduleCallToAction,
 	collectionPageGroup,
 	linkExternal,
 	linkInternal,
 	moduleAccordion,
+	moduleCallToAction,
 	moduleImage,
 	modulePortfolioGrid,
+	modulePortfolioArtwork,
 	moduleProductGrid,
 	modulePublication,
 	page,

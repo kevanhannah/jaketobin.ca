@@ -42,6 +42,10 @@ export const body = {
 			type: 'module.portfolioGrid',
 		},
 		{
+			name: 'blockPortfolioArtwork',
+			type: 'module.portfolioArtwork',
+		},
+		{
 			name: 'blockProductGrid',
 			type: 'module.productGrid',
 		},

@@ -17,7 +17,7 @@
 		{style} />
 {/if}
 
-<style>
+<style lang="postcss">
 	img {
 		width: 100%;
 		height: auto;

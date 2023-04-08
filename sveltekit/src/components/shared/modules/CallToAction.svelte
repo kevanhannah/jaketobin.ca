@@ -15,15 +15,12 @@
 	class:typeIsProduct={content._type === 'productWithVariant'}
 	class:reverse={layout === 'right'}>
 	{#if content._type === 'productWithVariant'}
-		<a
-			href={`${PUBLIC_SVELTEKIT_SITE_URL}/shop/products/${content.product.store.slug.current}`}>
-			<SanityImage
-				image={getImageProps({
-					aspectRatio: 1,
-					image: content.product.images.image,
-				})}
-				style="object-fit: cover;" />
-		</a>
+		<SanityImage
+			image={getImageProps({
+				aspectRatio: content.aspectRatio ?? 1,
+				image: content.product.images.image,
+			})}
+			style="object-fit: cover;" />
 	{:else}
 		<SanityImage
 			image={getImageProps({
@@ -68,6 +65,10 @@
 		gap: 1em;
 	}
 
+	.textSection .title {
+		font-size: 1.75em;
+	}
+
 	.textSection p {
 		margin-bottom: 0;
 	}
@@ -78,43 +79,24 @@
 	}
 
 	.title {
-		font-family: Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-			Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-		font-weight: 900;
 		margin-bottom: 0;
 	}
 
 	@media (max-width: 768px) {
 		.callToAction {
 			max-width: 100%;
-		}
-
-		.callToAction:not(.typeIsProduct) {
 			display: flex;
 			flex-direction: column;
+			gap: 0.75em;
 		}
 
-		.callToAction:not(.typeIsProduct) .title {
-			font-size: 1.75em;
+		.textSection {
+			gap: 0.75em;
 		}
 
-		.callToAction:is(.typeIsProduct) {
-			grid-template-columns: 2fr 3fr;
-			gap: 2em;
-		}
-
-		.callToAction:is(.typeIsProduct):is(.reverse) {
-			grid-template-columns: 3fr 2fr;
-		}
-
-		.callToAction:is(.typeIsProduct):is(.reverse) .textSection {
-			text-align: left;
+		.reverse .textSection {
+			order: 0;
 			align-items: flex-start;
-		}
-
-		.callToAction:is(.typeIsProduct):not(.reverse) .textSection {
-			text-align: right;
-			align-items: flex-end;
 		}
 	}
 </style>

@@ -5,10 +5,6 @@ export const portfolioItem = {
 	name: 'portfolioItem',
 	type: 'document',
 	icon: IoImageOutline,
-	// groups: [
-	//   { title: 'Content', name: 'content', default: true },
-	//   { title: 'Settings', name: 'settings' },
-	// ],
 	fields: [
 		// Title
 		{
@@ -27,28 +23,10 @@ export const portfolioItem = {
 		},
 		// Description
 		{
+			name: 'body',
 			title: 'Description',
-			name: 'description',
-			type: 'array',
-			of: [
-				{
-					type: 'block',
-					styles: [{ title: 'Paragraph', value: 'normal' }],
-					lists: [
-						{ title: 'Numbered', value: 'number' },
-						{
-							title: 'Bullet',
-							value: 'bullet',
-						},
-					],
-					marks: {
-						decorators: [
-							{ title: 'Strong', value: 'strong' },
-							{ title: 'Emphasis', value: 'em' },
-						],
-					},
-				},
-			],
+			type: 'text',
+			rows: 2,
 		},
 	],
 	preview: {
@@ -60,6 +38,7 @@ export const portfolioItem = {
 			return {
 				media: images ? images[0].image : null,
 				title,
+				subtitle: 'Portfolio item',
 			};
 		},
 	},

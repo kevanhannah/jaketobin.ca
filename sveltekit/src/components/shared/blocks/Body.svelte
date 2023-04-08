@@ -6,6 +6,7 @@
 	import CustomTextBlock from '$components/shared/blocks/CustomTextBlock.svelte';
 	import ListWrapper from '$components/shared/blocks/ListWrapper.svelte';
 	import ListItem from '$components/shared/blocks/ListItem.svelte';
+	import PortfolioArtwork from '$components/shared/modules/PortfolioArtwork.svelte';
 	import ProductGrid from '$components/shared/modules/ProductGrid.svelte';
 
 	export let value;
@@ -22,6 +23,7 @@
 		types: {
 			blockCallToAction: CallToAction,
 			blockImageWithText: ImageWithText,
+			blockPortfolioArtwork: PortfolioArtwork,
 			blockPortfolioGrid: Grid,
 			blockProductGrid: ProductGrid,
 		},

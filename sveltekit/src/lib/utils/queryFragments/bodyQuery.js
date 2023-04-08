@@ -1,6 +1,6 @@
 export const bodyQuery = `
 	_type == 'block' => @,
-	_type == 'blockCallToAction' => @{
+	_type == 'blockCallToAction' => {
 		_type,
 		body,
 		content[0] {
@@ -21,15 +21,15 @@ export const bodyQuery = `
 		},
 		layout,
 		links[] {
-			_type == "linkInternal" => @ {
+			_type == "linkInternal" => {
 				reference-> {
-					_type == "collection" => @ {
+					_type == "collection" => {
 						_type,
 						store {
 							slug
 						}
 					},
-					_type == "product" => @ {
+					_type == "product" => {
 						_type,
 						store {
 							slug
@@ -41,7 +41,7 @@ export const bodyQuery = `
 		},
 		title
 		},
-		_type == 'blockImageWithText' => @{
+		_type == 'blockImageWithText' => {
 			_type,
 			aspectRatio,
 			body,
@@ -53,12 +53,20 @@ export const bodyQuery = `
 			link[0] { reference -> { slug { current }, _type }, title },
 			title
 		},
-		_type == 'blockPortfolioGrid' => @{
+		_type == "blockPortfolioArtwork" => {
+			_type,
+			portfolioArtwork-> {
+				description,
+				images,
+				title
+			}
+		},
+		_type == 'blockPortfolioGrid' => {
 			_type,
 			items[]-> { images[0] },
 			link[0] { reference -> { slug { current }, _type }, title }
 		},
-		_type == 'blockProductGrid' => @{
+		_type == 'blockProductGrid' => {
 			_type,
 			items[]-> { images[0], store },
 			title

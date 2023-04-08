@@ -6,7 +6,8 @@ export const portfolioPage = {
 	type: 'document',
 	icon: IoDocumentOutline,
 	groups: [
-		{ title: 'Page Details', name: 'details', default: true },
+		{ title: 'Editorial', name: 'editorial', default: true },
+		{ title: 'Page Settings', name: 'settings' },
 		{ title: 'SEO', name: 'seo' },
 	],
 	initialValue: {
@@ -19,7 +20,7 @@ export const portfolioPage = {
 			type: 'string',
 			description: '(required)',
 			validation: (Rule) => Rule.required(),
-			group: 'details',
+			group: 'settings',
 		},
 		{
 			title: 'URL Slug',
@@ -31,7 +32,14 @@ export const portfolioPage = {
 				maxLength: 96,
 			},
 			validation: (Rule) => Rule.required(),
-			group: 'details',
+			group: 'settings',
+		},
+		// Page Content
+		{
+			name: 'pageContent',
+			title: 'Page content',
+			type: 'page',
+			group: 'editorial',
 		},
 		{
 			title: 'Page Type',
@@ -45,7 +53,7 @@ export const portfolioPage = {
 				],
 				layout: 'dropdown',
 			},
-			group: 'details',
+			group: 'editorial',
 			validation: (Rule) => Rule.required(),
 		},
 		{
@@ -63,7 +71,7 @@ export const portfolioPage = {
 					},
 				},
 			],
-			group: 'details',
+			group: 'editorial',
 			hidden: ({ document }) =>
 				!document?.pageType || document?.pageType === 'writing',
 		},
@@ -72,7 +80,7 @@ export const portfolioPage = {
 			name: 'publicationItems',
 			type: 'array',
 			of: [{ type: 'module.publication' }],
-			group: 'details',
+			group: 'editorial',
 			hidden: ({ document }) =>
 				!document?.pageType || document?.pageType === 'artwork',
 		},
@@ -99,7 +107,7 @@ export const portfolioPage = {
 					},
 				},
 			],
-			group: 'details',
+			group: 'editorial',
 		},
 		{
 			title: 'SEO / Share Settings',
