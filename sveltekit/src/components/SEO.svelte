@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores';
+	import { PUBLIC_SVELTEKIT_SITE_URL } from '$env/static/public';
 	import getImageProps from '$lib/utils/getImageProps';
 
 	export let defaultMetadata;
@@ -14,6 +15,7 @@
 
 <svelte:head>
 	<title>{title}</title>
+	<base href={PUBLIC_SVELTEKIT_SITE_URL} />
 	<link rel="canonical" href={`${origin}${pathname}`} />
 	<meta name="description" content={description} />
 	<meta name="image" content={image.src} />

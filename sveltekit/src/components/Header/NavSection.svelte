@@ -1,6 +1,4 @@
 <script>
-	import { PUBLIC_SVELTEKIT_SITE_URL } from '$env/static/public';
-
 	export let content;
 	export let showHeader;
 	export let slugPrefix = null;
@@ -14,7 +12,7 @@
 		{#each content.pages as page}
 			<li>
 				<a
-					href={`${PUBLIC_SVELTEKIT_SITE_URL}/${
+					href={`${
 						slugPrefix
 							? slugPrefix + '/' + page.slug.current
 							: page.slug.current

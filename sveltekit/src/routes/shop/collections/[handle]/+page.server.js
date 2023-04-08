@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 import { client } from '$lib/utils/sanityClient';
 import { getCollection } from '$lib/utils/shopify';
-import { bodyQuery } from '../../../../lib/utils/queryFragments/bodyQuery.js';
+import { bodyQuery } from '$lib/utils/queryFragments/bodyQuery.js';
 
 export async function load({ params }) {
 	const shopifyRes = await getCollection(params.handle);
