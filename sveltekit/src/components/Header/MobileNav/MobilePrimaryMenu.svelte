@@ -67,6 +67,9 @@
 		<li>
 			<a class="menu_button" href="/commission">Commission</a>
 		</li>
+		<li>
+			<a class="menu_button" href="/about">About</a>
+		</li>
 	</ul>
 </div>
 

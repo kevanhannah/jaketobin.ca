@@ -24,6 +24,7 @@
 					on:click={handleShopClick}>Shop</button>
 			</li>
 			<li><a href="/commission" class="nav_button">Commission</a></li>
+			<li><a href="/about" class="nav_button">About</a></li>
 		</ul>
 	</div>
 	<div class="menu_right">
@@ -82,7 +83,7 @@
 		gap: 2em;
 	}
 
-	@media (max-width: 1150px) {
+	@media (max-width: 1280px) {
 		.main_navigation--desktop {
 			display: none;
 		}

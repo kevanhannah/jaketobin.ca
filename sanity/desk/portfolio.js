@@ -1,4 +1,4 @@
-export default function portfolio(S) {
+export function portfolio(S) {
 	return S.listItem()
 		.title('Portfolio Landing Page')
 		.id('portfolio')

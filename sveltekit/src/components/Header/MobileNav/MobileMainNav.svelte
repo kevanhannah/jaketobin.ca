@@ -60,7 +60,7 @@
 	.mobile_menu_inner {
 		height: 100%;
 		padding-top: 5em;
-		padding-bottom: 5em;
+		padding-bottom: 3em;
 	}
 
 	.mobile_menu_backdrop {
@@ -83,7 +83,7 @@
 		pointer-events: auto;
 	}
 
-	@media (max-width: 1150px) {
+	@media (max-width: 1280px) {
 		.main_navigation--mobile {
 			display: flex;
 		}

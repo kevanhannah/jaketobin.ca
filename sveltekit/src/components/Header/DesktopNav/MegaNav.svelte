@@ -83,7 +83,7 @@
 		position: relative;
 	}
 
-	@media (max-width: 1150px) {
+	@media (max-width: 1280px) {
 		.mega_nav {
 			display: none;
 		}

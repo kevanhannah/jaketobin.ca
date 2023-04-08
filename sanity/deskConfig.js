@@ -1,8 +1,9 @@
-import commission from './desk/commission';
-import home from './desk/home';
-import portfolio from './desk/portfolio';
-import settings from './desk/settings';
-import shop from './desk/shop';
+import { about } from './desk/about';
+import { commission } from './desk/commission';
+import { home } from './desk/home';
+import { portfolio } from './desk/portfolio';
+import { settings } from './desk/settings';
+import { shop } from './desk/shop';
 
 export const deskConfig = (S) =>
 	S.list()
@@ -23,5 +24,6 @@ export const deskConfig = (S) =>
 			S.divider(),
 			S.documentTypeListItem('faq').title('Product FAQs'),
 			S.divider(),
+			about(S),
 			settings(S),
 		]);

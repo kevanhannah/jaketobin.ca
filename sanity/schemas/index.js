@@ -41,6 +41,7 @@ import { shopifyProduct } from './objects/shopifyProduct';
 import { shopifyProductVariant } from './objects/shopifyProductVariant';
 
 // Singletons
+import { about } from './singletons/about';
 import { commission } from './singletons/commission';
 import { home } from './singletons/home';
 import { portfolio } from './singletons/portfolio';
@@ -87,6 +88,7 @@ export const schemaTypes = [
 	shopifyProduct,
 	shopifyProductVariant,
 	// Singletons
+	about,
 	commission,
 	home,
 	portfolio,
