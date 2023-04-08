@@ -11,6 +11,7 @@ import { collection } from './documents/collection';
 import { faq } from './documents/faq';
 import { portfolioItem } from './documents/portfolioItem';
 import { portfolioPage } from './documents/portfolioPage';
+import { portfolioPublication } from './documents/portfolioPublication';
 import { product } from './documents/product';
 import { productVariant } from './documents/productVariant';
 
@@ -24,13 +25,13 @@ import { moduleImage } from './objects/module/image';
 import { modulePortfolioGrid } from './objects/module/portfolioGrid';
 import { modulePortfolioArtwork } from './objects/module/portfolioArtwork';
 import { moduleProductGrid } from './objects/module/productGrid';
-import { modulePublication } from './objects/module/publication';
 import { page } from './objects/page';
 import { placeholderString } from './objects/placeholderString';
 import { portfolioPageGroup } from './objects/portfolioPageGroup';
 import { productOption } from './objects/productOption';
 import { productWithVariant } from './objects/productWithVariant';
 import { proxyString } from './objects/proxyString';
+import { modulePublications } from './objects/module/publications';
 import { seo } from './objects/seo';
 import { seoPage } from './objects/seo/page';
 import { seoShopify } from './objects/seo/shopify';
@@ -57,6 +58,7 @@ export const schemaTypes = [
 	collection,
 	faq,
 	portfolioItem,
+	portfolioPublication,
 	portfolioPage,
 	product,
 	productVariant,
@@ -70,13 +72,13 @@ export const schemaTypes = [
 	modulePortfolioGrid,
 	modulePortfolioArtwork,
 	moduleProductGrid,
-	modulePublication,
 	page,
 	placeholderString,
 	portfolioPageGroup,
 	productOption,
 	productWithVariant,
 	proxyString,
+	modulePublications,
 	seo,
 	seoPage,
 	seoShopify,

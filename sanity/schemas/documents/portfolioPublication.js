@@ -1,7 +1,7 @@
-export const modulePublication = {
-	title: 'Publication',
-	name: 'module.publication',
-	type: 'object',
+export const portfolioPublication = {
+	title: 'Portfolio Item (Writing)',
+	name: 'portfolioPublication',
+	type: 'document',
 	fields: [
 		// Title
 		{
@@ -44,4 +44,15 @@ export const modulePublication = {
 			],
 		},
 	],
+	preview: {
+		select: {
+			title: 'title',
+		},
+		prepare({ title = 'Untitled' }) {
+			return {
+				title,
+				subtitle: 'Publication item',
+			};
+		},
+	},
 };

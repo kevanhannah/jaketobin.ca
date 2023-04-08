@@ -84,4 +84,12 @@ export const bodyQuery = `
 			items[]-> { images[0], store },
 			title
 		},
+		_type == "blockPortfolioPublications" => {
+			_type,
+			publications[]-> {
+				description,
+				title,
+				titleLink
+			}
+		}
 	`;

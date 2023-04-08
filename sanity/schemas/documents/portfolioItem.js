@@ -1,7 +1,7 @@
 import { IoImageOutline } from 'react-icons/io5';
 
 export const portfolioItem = {
-	title: 'Portfolio Item',
+	title: 'Portfolio Item (Artwork)',
 	name: 'portfolioItem',
 	type: 'document',
 	icon: IoImageOutline,
@@ -38,7 +38,7 @@ export const portfolioItem = {
 			return {
 				media: images ? images[0].image : null,
 				title,
-				subtitle: 'Portfolio item',
+				subtitle: 'Artwork item',
 			};
 		},
 	},

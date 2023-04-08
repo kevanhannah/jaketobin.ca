@@ -66,10 +66,10 @@ export const body = {
 			name: 'blockProductGrid',
 			type: 'module.productGrid',
 		},
-		// {
-		//   name: 'blockImages',
-		//   type: 'module.images',
-		// },
+		{
+			name: 'blockPortfolioPublications',
+			type: 'module.publications',
+		},
 		// {
 		//   name: 'blockInstagram',
 		//   type: 'module.instagram',

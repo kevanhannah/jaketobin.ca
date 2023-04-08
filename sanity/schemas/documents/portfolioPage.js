@@ -10,9 +10,6 @@ export const portfolioPage = {
 		{ title: 'Page Settings', name: 'settings' },
 		{ title: 'SEO', name: 'seo' },
 	],
-	initialValue: {
-		pageType: 'artwork',
-	},
 	fields: [
 		{
 			name: 'title',
@@ -39,74 +36,6 @@ export const portfolioPage = {
 			name: 'pageContent',
 			title: 'Page content',
 			type: 'page',
-			group: 'editorial',
-		},
-		{
-			title: 'Page Type',
-			name: 'pageType',
-			type: 'string',
-			description: '(required)',
-			options: {
-				list: [
-					{ title: 'Illustrations and artwork', value: 'artwork' },
-					{ title: 'Writing and publications', value: 'writing' },
-				],
-				layout: 'dropdown',
-			},
-			group: 'editorial',
-			validation: (Rule) => Rule.required(),
-		},
-		{
-			title: 'Portfolio Items',
-			name: 'portfolioItems',
-			type: 'array',
-			of: [
-				{
-					title: 'Portfolio item',
-					type: 'reference',
-					to: [{ type: 'portfolioItem' }],
-					options: {
-						disableNew: true,
-						filter: '!(_id in path("drafts.**"))',
-					},
-				},
-			],
-			group: 'editorial',
-			hidden: ({ document }) =>
-				!document?.pageType || document?.pageType === 'writing',
-		},
-		{
-			title: 'Publication Items',
-			name: 'publicationItems',
-			type: 'array',
-			of: [{ type: 'module.publication' }],
-			group: 'editorial',
-			hidden: ({ document }) =>
-				!document?.pageType || document?.pageType === 'artwork',
-		},
-		{
-			title: 'Page Description',
-			name: 'description',
-			type: 'array',
-			of: [
-				{
-					type: 'block',
-					styles: [{ title: 'Paragraph', value: 'normal' }],
-					lists: [
-						{ title: 'Numbered', value: 'number' },
-						{
-							title: 'Bullet',
-							value: 'bullet',
-						},
-					],
-					marks: {
-						decorators: [
-							{ title: 'Strong', value: 'strong' },
-							{ title: 'Emphasis', value: 'em' },
-						],
-					},
-				},
-			],
 			group: 'editorial',
 		},
 		{

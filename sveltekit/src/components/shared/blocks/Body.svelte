@@ -8,6 +8,7 @@
 	import ListItem from '$components/shared/blocks/ListItem.svelte';
 	import PortfolioArtwork from '$components/shared/modules/PortfolioArtwork.svelte';
 	import ProductGrid from '$components/shared/modules/ProductGrid.svelte';
+	import Publications from '$components/shared/modules/Publications.svelte';
 	import InternalLink from '$components/shared/blocks/InternalLink.svelte';
 
 	export let value;
@@ -22,6 +23,7 @@
 				blockPortfolioArtwork: PortfolioArtwork,
 				blockPortfolioGrid: Grid,
 				blockProductGrid: ProductGrid,
+				blockPortfolioPublications: Publications,
 			},
 			block: {
 				h2: CustomTextBlock,
