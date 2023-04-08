@@ -15,12 +15,16 @@
 	class:typeIsProduct={content._type === 'productWithVariant'}
 	class:reverse={layout === 'right'}>
 	{#if content._type === 'productWithVariant'}
-		<SanityImage
-			image={getImageProps({
-				aspectRatio: content.aspectRatio ?? 1,
-				image: content.product.images.image,
-			})}
-			style="object-fit: cover;" />
+		<a
+			class="productImageLink"
+			href={`${PUBLIC_SVELTEKIT_SITE_URL}/shop/products/${content.product.store.slug.current}`}>
+			<SanityImage
+				image={getImageProps({
+					aspectRatio: content.aspectRatio ?? 1,
+					image: content.product.images.image,
+				})}
+				style="object-fit: cover;" />
+		</a>
 	{:else}
 		<SanityImage
 			image={getImageProps({
@@ -31,7 +35,15 @@
 	{/if}
 	<div class="textSection">
 		{#if title}
-			<h2 class="title">{title}</h2>
+			{#if content._type === 'productWithVariant'}
+				<a
+					class="productTitleLink"
+					href={`${PUBLIC_SVELTEKIT_SITE_URL}/shop/products/${content.product.store.slug.current}`}>
+					<h2 class="title">{title}</h2>
+				</a>
+			{:else}
+				<h2 class="title">{title}</h2>
+			{/if}
 		{/if}
 		{#if body}
 			<p>{body}</p>
@@ -78,6 +90,10 @@
 		align-items: flex-end;
 	}
 
+	.productTitleLink {
+		text-decoration: none;
+	}
+
 	.title {
 		margin-bottom: 0;
 	}
@@ -101,6 +117,12 @@
 		.reverse .textSection {
 			order: 0;
 			align-items: flex-start;
+		}
+	}
+
+	@media (hover: hover) {
+		.productImageLink:hover {
+			opacity: 0.8;
 		}
 	}
 </style>
