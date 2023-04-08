@@ -3,4 +3,4 @@
 	$: ({ value } = portableText);
 </script>
 
-<a href={`../../${value.reference.slug.current}`}><slot /></a>
+<a href={`/${value.reference.slug.current}`}><slot /></a>

@@ -7,7 +7,7 @@
 
 <footer {...$$restProps}>
 	<div class="social_icons">
-		<a href="http://instagram.com/jaketobindraws">
+		<a href="https://instagram.com/jaketobindraws">
 			<Instagram />
 		</a>
 		<a href="https://twitter.com/jaketobin">
