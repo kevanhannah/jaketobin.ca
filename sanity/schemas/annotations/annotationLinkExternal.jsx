@@ -5,6 +5,7 @@ export const annotationLinkExternal = {
 	title: 'External Link',
 	name: 'annotationLinkExternal',
 	type: 'object',
+	icon: EarthGlobeIcon,
 	// @ts-ignore
 	blockEditor: {
 		icon: () => <EarthGlobeIcon />,

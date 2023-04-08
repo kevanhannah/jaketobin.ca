@@ -4,6 +4,8 @@ export const body = {
 	type: 'array',
 	of: [
 		{
+			// Paragraphs
+			type: 'block',
 			styles: [
 				{ title: 'Title', value: 'h2' },
 				{ title: 'Heading', value: 'h3' },
@@ -14,6 +16,23 @@ export const body = {
 				{ title: 'Numbered', value: 'number' },
 			],
 			marks: {
+				annotations: [
+					// Internal Link
+					{
+						name: 'annotationLinkInternal',
+						type: 'annotationLinkInternal',
+					},
+					// External Link
+					{
+						name: 'annotationLinkExternal',
+						type: 'annotationLinkExternal',
+					},
+					// Email
+					{
+						name: 'annotationLinkEmail',
+						type: 'annotationLinkEmail',
+					},
+				],
 				decorators: [
 					{
 						title: 'Italic',
@@ -25,8 +44,6 @@ export const body = {
 					},
 				],
 			},
-			// Paragraphs
-			type: 'block',
 		},
 		// Custom blocks
 		{

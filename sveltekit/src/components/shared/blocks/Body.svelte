@@ -8,52 +8,61 @@
 	import ListItem from '$components/shared/blocks/ListItem.svelte';
 	import PortfolioArtwork from '$components/shared/modules/PortfolioArtwork.svelte';
 	import ProductGrid from '$components/shared/modules/ProductGrid.svelte';
+	import InternalLink from '$components/shared/blocks/InternalLink.svelte';
 
 	export let value;
 </script>
 
-<PortableText
-	components={{
-		block: {
-			h2: CustomTextBlock,
-			h3: CustomTextBlock,
-			h4: CustomTextBlock,
-			normal: CustomTextBlock,
-		},
-		types: {
-			blockCallToAction: CallToAction,
-			blockImageWithText: ImageWithText,
-			blockPortfolioArtwork: PortfolioArtwork,
-			blockPortfolioGrid: Grid,
-			blockProductGrid: ProductGrid,
-		},
-		list: {
-			bullet: ListWrapper,
-			number: ListWrapper,
-		},
-		listItem: {
-			normal: ListItem,
-			bullet: ListItem,
-			number: ListItem,
-		},
-	}}
-	{value} />
+<div class="body">
+	<PortableText
+		components={{
+			types: {
+				blockCallToAction: CallToAction,
+				blockImageWithText: ImageWithText,
+				blockPortfolioArtwork: PortfolioArtwork,
+				blockPortfolioGrid: Grid,
+				blockProductGrid: ProductGrid,
+			},
+			block: {
+				h2: CustomTextBlock,
+				h3: CustomTextBlock,
+				h4: CustomTextBlock,
+				normal: CustomTextBlock,
+			},
+			marks: {
+				annotationLinkInternal: InternalLink,
+			},
+			list: {
+				bullet: ListWrapper,
+				number: ListWrapper,
+			},
+			listItem: {
+				normal: ListItem,
+				bullet: ListItem,
+				number: ListItem,
+			},
+		}}
+		{value} />
+</div>
 
-<style>
-	:global(div.module) {
-		padding-top: 2em;
+<style lang="postcss">
+	.body :global(.module:has(+ .module)),
+	.body :global(.module:has(+ p)),
+	.body :global(.module:has(+ h2)),
+	.body :global(.module:has(+ h3)) {
+		border-bottom: 1px solid var(--black);
 		padding-bottom: 2em;
 	}
 
-	:global(div.module:first-of-type) {
-		padding-top: 0;
+	.body :global(.module:not(:first-of-type)) {
+		padding-top: 2em;
 	}
 
-	:global(div.module:not(:last-of-type)) {
-		border-bottom: 1px solid var(--black);
+	.body :global(.module:has(+ *:not(.module))) {
+		margin-bottom: 2em;
 	}
 
-	:global(div.module:last-of-type) {
-		padding-bottom: 0;
+	.body :global(p:has(+ .module)) {
+		margin-bottom: 2em;
 	}
 </style>

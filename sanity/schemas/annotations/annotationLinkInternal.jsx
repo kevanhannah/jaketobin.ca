@@ -6,6 +6,7 @@ export const annotationLinkInternal = {
 	title: 'Internal Link',
 	name: 'annotationLinkInternal',
 	type: 'object',
+	icon: LinkIcon,
 	// @ts-ignore
 	blockEditor: {
 		icon: () => <LinkIcon />,

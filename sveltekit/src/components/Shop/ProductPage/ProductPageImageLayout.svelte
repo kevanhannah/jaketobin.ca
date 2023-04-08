@@ -17,6 +17,7 @@
 				class="imageWrapper"
 				on:click={changeImage(image)}
 				on:keypress={changeImage(image)}
+				role="button"
 				tabindex="0">
 				<SanityImage
 					{image}

@@ -27,22 +27,15 @@
 	</ProductGridLayout>
 </main>
 
-<style>
+<style lang="postcss">
+	main {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5em;
+	}
+
 	.title {
 		border-bottom: 1px solid var(--black);
 		padding-bottom: 0.25em;
-	}
-
-	main :global(p:last-of-type) {
-		margin-bottom: 0;
-	}
-
-	.editorial {
-		margin-bottom: 1.5em;
-	}
-
-	.editorial :global(div.module) {
-		padding-top: 2em;
-		padding-bottom: 2em;
 	}
 </style>

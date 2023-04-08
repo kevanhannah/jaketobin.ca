@@ -65,8 +65,8 @@
 		gap: 1em;
 	}
 
-	.textSection .title {
-		font-size: 1.75em;
+	.title {
+		font-size: 2.25em;
 	}
 
 	.textSection p {
@@ -92,6 +92,10 @@
 
 		.textSection {
 			gap: 0.75em;
+		}
+
+		.title {
+			font-size: 1.75em;
 		}
 
 		.reverse .textSection {

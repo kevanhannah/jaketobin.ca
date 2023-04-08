@@ -75,6 +75,6 @@ button {
 @media (hover: hover) {
 	a:hover {
 		text-decoration: none;
-		opacity: 0.75;
+		color: var(--mediumGray);
 	}
 }

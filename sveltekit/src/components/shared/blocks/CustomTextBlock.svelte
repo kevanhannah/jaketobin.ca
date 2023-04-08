@@ -9,7 +9,7 @@
 	<h2><slot /></h2>
 {:else if style === 'h3'}
 	<h3><slot /></h3>
-{:else if style === 'normal'}
+{:else}
 	<p><slot /></p>
 {/if}
 

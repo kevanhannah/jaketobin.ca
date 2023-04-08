@@ -19,12 +19,14 @@ export const modulePortfolioArtwork = {
 	],
 	preview: {
 		select: {
+			image: 'portfolioArtwork.images',
 			title: 'portfolioArtwork.title',
 		},
 		prepare(selection) {
-			const { title } = selection;
+			const { image, title } = selection;
 
 			return {
+				media: image[0].image,
 				title,
 				subtitle: 'Portfolio item (Artwork)',
 			};

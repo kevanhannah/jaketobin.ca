@@ -1,5 +1,18 @@
 export const bodyQuery = `
-	_type == 'block' => @,
+	_type == 'block' => {
+		_key,
+		_type,
+		children,
+		markDefs[] {
+			_type == "annotationLinkInternal" => {
+				_key,
+				_type,
+				reference->
+			},
+			_type != "annotationLinkInternal" => @
+		},
+		style
+	},
 	_type == 'blockCallToAction' => {
 		_type,
 		body,
@@ -56,7 +69,7 @@ export const bodyQuery = `
 		_type == "blockPortfolioArtwork" => {
 			_type,
 			portfolioArtwork-> {
-				description,
+				body,
 				images,
 				title
 			}

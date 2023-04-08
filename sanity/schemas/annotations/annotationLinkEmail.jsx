@@ -5,6 +5,7 @@ export const annotationLinkEmail = {
 	title: 'Email link',
 	name: 'annotationLinkEmail',
 	type: 'object',
+	icon: EnvelopeIcon,
 	// @ts-ignore
 	blockEditor: {
 		icon: () => <EnvelopeIcon />,

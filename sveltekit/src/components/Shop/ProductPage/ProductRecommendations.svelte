@@ -9,7 +9,7 @@
 <section class="productRecommendations">
 	<h2>Related Products</h2>
 	<ProductGridLayout>
-		{#each recommendations.slice(0, 4) as recommendation}
+		{#each recommendations.slice(0, 3) as recommendation}
 			<ProductCard
 				availableForSale={recommendation.availableForSale}
 				handle={recommendation.handle}
