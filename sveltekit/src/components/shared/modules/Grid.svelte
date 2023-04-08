@@ -66,35 +66,22 @@
 	.gridImages {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 1em;
-		justify-content: center;
-		align-items: center;
+		gap: 1.25em;
+		justify-content: space-between;
+		align-items: flex-start;
 	}
 
 	.imageWrapper {
-		max-width: calc((100% / 4) - 0.75em);
+		max-width: calc((100% / 4) - 1em);
 	}
 
 	@media (max-width: 768px) {
-		.grid {
-			padding-top: 2em;
-			padding-bottom: 1.5em;
-			margin-top: 2em;
-			margin-bottom: 2em;
-		}
-
 		.gridTitle {
 			font-size: 1.75em;
 		}
 
-		.gridImages {
-			gap: 1em;
-			justify-content: center;
-			align-items: center;
-		}
-
 		.imageWrapper {
-			max-width: calc((100% / 2) - 0.5em);
+			max-width: calc((100% / 2) - 0.75em);
 		}
 
 		.imageWrapper:last-of-type {

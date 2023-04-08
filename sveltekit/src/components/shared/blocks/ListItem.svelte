@@ -1,12 +1,6 @@
-<script>
-	export let portableText = null;
-
-	$: ({ value } = portableText);
-</script>
-
 <li><slot /></li>
 
-<style>
+<style lang="postcss">
 	li {
 		padding-left: 0.5em;
 		margin-bottom: 0.75em;

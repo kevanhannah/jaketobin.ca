@@ -6,33 +6,36 @@
 	export let recommendations;
 </script>
 
-<section class="productRecommendations">
-	<h2>Related Products</h2>
-	<ProductGridLayout>
-		{#each recommendations.slice(0, 3) as recommendation}
-			<ProductCard
-				availableForSale={recommendation.availableForSale}
-				handle={recommendation.handle}
-				src={getShopifyImageProps(recommendation.featuredImage)['src']}
-				srcset={getShopifyImageProps(recommendation.featuredImage)['srcset']}
-				title={recommendation.title} />
-		{/each}
-	</ProductGridLayout>
-</section>
+{#if recommendations.length}
+	<section class="productRecommendations">
+		<h2>Related Products</h2>
+		<ProductGridLayout>
+			{#each recommendations.slice(0, 3) as recommendation}
+				<ProductCard
+					availableForSale={recommendation.availableForSale}
+					handle={recommendation.handle}
+					src={getShopifyImageProps(recommendation.featuredImage)['src']}
+					srcset={getShopifyImageProps(recommendation.featuredImage)['srcset']}
+					title={recommendation.title} />
+			{/each}
+		</ProductGridLayout>
+	</section>
+{/if}
 
-<style>
+<style lang="postcss">
 	.productRecommendations {
 		max-width: 72em;
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		gap: 1.5em;
-		padding-top: 1.5em;
-		padding-bottom: 1.5em;
+		padding-top: 2em;
+		padding-bottom: 2em;
 		margin-top: 2em;
 		margin-bottom: 2em;
 		margin-left: auto;
 		margin-right: auto;
-		justify-content: center;
+		border-top: 1px solid var(--black);
 	}
 
 	.productRecommendations h2 {

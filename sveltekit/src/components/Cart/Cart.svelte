@@ -19,7 +19,7 @@
 	{/if}
 </div>
 
-<style>
+<style lang="postcss">
 	.cart {
 		width: 100%;
 		height: calc(100% - 90px);

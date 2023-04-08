@@ -11,7 +11,7 @@
 	<input {id} {name} {required} {type} />
 </label>
 
-<style>
+<style lang="postcss">
 	label {
 		width: 100%;
 		display: flex;

@@ -22,7 +22,7 @@
 	<CartToggle />
 </div>
 
-<style>
+<style lang="postcss">
 	.main_navigation--mobile {
 		align-items: center;
 		bottom: 0;

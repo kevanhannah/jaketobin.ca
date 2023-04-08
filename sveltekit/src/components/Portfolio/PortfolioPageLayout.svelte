@@ -17,6 +17,14 @@
 		gap: 1.5em;
 	}
 
+	.portfolioPage :global(.module:first-of-type) {
+		border-top: 0;
+	}
+
+	.portfolioPage :global(.module:last-of-type) {
+		border-bottom: 0;
+	}
+
 	.title {
 		display: inline-block;
 		margin-bottom: 0;

@@ -44,7 +44,7 @@
 </div>
 <MegaNavBackdrop />
 
-<style>
+<style lang="postcss">
 	.mega_nav {
 		background-color: var(--paperWhite);
 		left: 0;

@@ -23,7 +23,7 @@
 	<p>© 2023 Jake Tobin Garrett. All rights reserved.</p>
 </footer>
 
-<style>
+<style lang="postcss">
 	footer {
 		margin-top: 3em;
 		padding-top: 1.5em;

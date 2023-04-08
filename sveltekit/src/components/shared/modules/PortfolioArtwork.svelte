@@ -17,14 +17,14 @@
 </script>
 
 <div class="module portfolioArtwork">
-	<SanityImage image={displayImage} />
+	<SanityImage
+		image={displayImage}
+		style="object-fit: contain; object-position: top; cursor: pointer; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; cursor: default;" />
 	<div class="textSection">
-		<div>
-			<h3 class="title">{title}</h3>
-			{#if body}
-				<p>{body}</p>
-			{/if}
-		</div>
+		<h3 class="title">{title}</h3>
+		{#if body}
+			<p class="body">{body}</p>
+		{/if}
 		{#if images.length > 1}
 			<div class="gallery">
 				{#each renderedImages as image}
@@ -56,7 +56,8 @@
 	.textSection {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: center;
+		gap: 1.25em;
 	}
 
 	.title {
@@ -64,8 +65,8 @@
 		font-weight: 900;
 	}
 
-	.title:has(+ p) {
-		margin-bottom: 1em;
+	.body {
+		margin-bottom: 0;
 	}
 
 	.gallery {
@@ -87,14 +88,21 @@
 		}
 
 		.textSection {
-			flex-direction: column-reverse;
 			justify-content: flex-start;
 			gap: 1.5em;
 		}
 
 		.title {
 			font-size: 1.5em;
-			margin-bottom: 0.5em;
+			order: 2;
+		}
+
+		.body {
+			order: 3;
+		}
+
+		.gallery {
+			order: 1;
 		}
 
 		.imageSelectWrapper {

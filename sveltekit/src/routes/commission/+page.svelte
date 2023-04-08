@@ -6,19 +6,14 @@
 	$: ({ body } = pageContent);
 </script>
 
-<div class="commissionPageContent">
+<div>
 	<Body value={body} />
 </div>
 
-<style>
-	.commissionPageContent {
+<style lang="postcss">
+	div {
 		max-width: 60em;
 		margin-left: auto;
 		margin-right: auto;
-	}
-
-	.commissionPageContent :global(.module) {
-		padding-top: 2em;
-		padding-bottom: 2em;
 	}
 </style>

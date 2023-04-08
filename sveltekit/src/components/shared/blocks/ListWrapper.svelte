@@ -11,7 +11,7 @@
 	<ul><slot /></ul>
 {/if}
 
-<style>
+<style lang="postcss">
 	ol,
 	ul {
 		max-width: 48em;

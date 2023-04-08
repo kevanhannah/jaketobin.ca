@@ -31,7 +31,7 @@
 	</div>
 </header>
 
-<style>
+<style lang="postcss">
 	header {
 		position: sticky;
 		right: 0;

@@ -8,7 +8,7 @@
 	<Body value={body} />
 </section>
 
-<style>
+<style lang="postcss">
 	.editorial {
 		max-width: 60em;
 		display: flex;
@@ -19,22 +19,10 @@
 		margin-right: auto;
 	}
 
-	.editorial :global(div.callToAction) {
-		max-width: 48em;
-	}
-
-	.editorial :global(p:has(+ .module)) {
-		margin-bottom: 2em;
-	}
-
 	@media (max-width: 768px) {
 		.editorial {
 			display: flex;
 			flex-direction: column;
-		}
-
-		.editorial :global(div.callToAction) {
-			max-width: 100%;
 		}
 	}
 </style>

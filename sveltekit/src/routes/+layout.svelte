@@ -58,7 +58,7 @@
 </div>
 <Footer inert={$cartOpen || $mobileNavOpen || $portfolioOpen || $shopOpen} />
 
-<style>
+<style lang="postcss">
 	div {
 		padding-top: 3em;
 		padding-left: 3em;

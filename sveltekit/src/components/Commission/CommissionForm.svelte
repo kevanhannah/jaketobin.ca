@@ -54,15 +54,17 @@
 	</form>
 </div>
 
-<style>
+<style lang="postcss">
 	.commission_form_section {
-		width: 75%;
+		max-width: 60em;
 		display: flex;
 		flex-direction: column;
 		gap: 1.25em;
+		padding-top: 2em;
 		margin-top: 2em;
 		margin-left: auto;
 		margin-right: auto;
+		border-top: 1px solid var(--black);
 	}
 
 	.commission_form_section h3 {

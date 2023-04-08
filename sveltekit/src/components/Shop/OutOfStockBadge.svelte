@@ -1,6 +1,6 @@
 <span class="outOfStock">Out of stock</span>
 
-<style>
+<style lang="postcss">
 	.outOfStock {
 		max-width: fit-content;
 		display: inline-block;

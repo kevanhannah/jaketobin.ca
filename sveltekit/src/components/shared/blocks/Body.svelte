@@ -47,25 +47,30 @@
 </div>
 
 <style lang="postcss">
-	.body :global(.module:has(+ .module)),
-	.body :global(.module:has(+ p)),
-	.body :global(.module:has(+ h2)),
-	.body :global(.module:has(+ h3)) {
-		padding-bottom: 2em;
-	}
-
-	.body :global(.module:not(:first-of-type)) {
+	.body :global(.module) {
 		padding-top: 2em;
-	}
-
-	.body :global(.module:not(:last-of-type)) {
+		padding-bottom: 2em;
+		border-top: 1px solid var(--black);
 		border-bottom: 1px solid var(--black);
 	}
 
-	/* .body :global(.module:has(+ *:not(.module))) {
+	.body :global(.module:has(+ .module)) {
+		border-bottom: 0;
+	}
+
+	.body :global(.module:is(:first-child)) {
+		padding-top: 0;
+		border-top: 0;
+	}
+
+	.body :global(.module:is(:last-child)) {
+		padding-bottom: 0;
+		border-bottom: 0;
+	}
+
+	.body :global(.module:has(+ h2)),
+	.body :global(.module:has(+ h3)),
+	.body :global(.module:has(+ p)) {
 		margin-bottom: 2em;
 	}
-	.body :global(p:has(+ .module)) {
-		margin-bottom: 2em;
-	} */
 </style>

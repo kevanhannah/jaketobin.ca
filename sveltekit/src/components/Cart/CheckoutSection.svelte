@@ -19,7 +19,7 @@
 	<CheckoutButton checkoutUrl={$cart.checkoutUrl} />
 </div>
 
-<style>
+<style lang="postcss">
 	.checkoutSection {
 		background: var(--paperWhite);
 		flex: none;

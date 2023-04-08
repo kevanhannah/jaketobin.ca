@@ -21,7 +21,7 @@
 	<Cart />
 </aside>
 
-<style>
+<style lang="postcss">
 	.cart_drawer {
 		--drawer-width: 35em;
 		width: var(--drawer-width);

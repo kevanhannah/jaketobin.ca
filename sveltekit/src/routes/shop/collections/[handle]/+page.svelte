@@ -1,7 +1,8 @@
 <script>
+	import getShopifyImageProps from '$lib/utils/getShopifyImageProps';
 	import ProductGridLayout from '$components/Shop/ProductGridLayout.svelte';
-	import ProductGridItem from '$components/Shop/ProductGridItem.svelte';
 	import Body from '$components/shared/blocks/Body.svelte';
+	import ProductCard from '$components/shared/ProductCard.svelte';
 
 	export let data;
 	$: ({ collection, body } = data);
@@ -17,9 +18,15 @@
 	<ProductGridLayout>
 		{#if collection.products && collection.products.edges.length}
 			{#each collection.products.edges as product, index}
-				<ProductGridItem
-					loading={index <= 7 ? 'eager' : 'lazy'}
-					product={product.node} />
+				<ProductCard
+					availableForSale={product.node.availableForSale}
+					handle={product.node.handle}
+					src={getShopifyImageProps(product.node.images.edges[0].node)['src']}
+					srcset={getShopifyImageProps(product.node.images.edges[0].node)[
+						'srcset'
+					]}
+					title={product.node.title}
+					loading={index <= 6 ? 'eager' : 'lazy'} />
 			{/each}
 		{:else}
 			<p>No items have been added to this collection. Check back soon!</p>

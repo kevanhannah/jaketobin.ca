@@ -10,7 +10,7 @@
 	<Body value={body} />
 </div>
 
-<style>
+<style lang="postcss">
 	.aboutPage {
 		max-width: 60em;
 		margin-left: auto;

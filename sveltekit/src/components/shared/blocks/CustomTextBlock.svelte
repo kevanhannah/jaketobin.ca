@@ -13,7 +13,7 @@
 	<p><slot /></p>
 {/if}
 
-<style>
+<style lang="postcss">
 	h2,
 	h3,
 	p {
@@ -30,6 +30,8 @@
 		margin-bottom: 1em;
 	}
 
+	p:has(+ .module),
+	p:has(+ h2),
 	p:has(+ h3) {
 		margin-bottom: 2.25em;
 	}

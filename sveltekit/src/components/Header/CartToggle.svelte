@@ -6,7 +6,7 @@
 <button class="cart_toggle" on:click={handleCartClick}
 	>Cart <span class="cart_toggle_counter">{$cartQuantity || 0}</span></button>
 
-<style>
+<style lang="postcss">
 	.cart_toggle,
 	.cart_toggle_counter {
 		background-color: transparent;

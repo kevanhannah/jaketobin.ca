@@ -21,14 +21,14 @@
 				tabindex="0">
 				<SanityImage
 					{image}
-					style="aspect-ratio: 1; object-fit: cover; display: block" />
+					style="aspect-ratio: 1; object-fit: cover; display: block;" />
 			</div>
 		{/each}
 	</div>
 	<SanityImage
 		image={featuredImage}
 		loading="eager"
-		style="aspect-ratio: 1; object-fit: contain; cursor: pointer; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; cursor: default;" />
+		style="aspect-ratio: 1; object-fit: contain; object-position: top; cursor: pointer; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; cursor: default;" />
 </div>
 
 <style lang="postcss">

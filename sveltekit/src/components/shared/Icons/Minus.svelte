@@ -7,7 +7,7 @@
 	<path d="M1,1 L15,1" fillRule="evenodd" strokeLinecap="square" />
 </svg>
 
-<style>
+<style lang="postcss">
 	svg {
 		stroke: var(--black);
 		transition-property: stroke;

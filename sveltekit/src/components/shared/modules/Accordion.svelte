@@ -11,7 +11,7 @@
 	{/each}
 </div>
 
-<style>
+<style lang="postcss">
 	.accordion {
 		display: flex;
 		flex-direction: column;

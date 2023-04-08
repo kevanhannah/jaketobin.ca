@@ -14,7 +14,7 @@
 	</span>
 </button>
 
-<style>
+<style lang="postcss">
 	.menu_toggle {
 		appearance: none;
 		background-color: transparent;

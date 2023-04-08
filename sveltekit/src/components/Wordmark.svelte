@@ -4,7 +4,7 @@
 		fill="black" />
 </svg>
 
-<style>
+<style lang="postcss">
 	svg {
 		display: block;
 		height: 3em;
