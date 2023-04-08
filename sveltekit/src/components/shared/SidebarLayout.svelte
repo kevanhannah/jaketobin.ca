@@ -1,4 +1,6 @@
 <script>
+	import { PUBLIC_SVELTEKIT_SITE_URL } from '$env/static/public';
+
 	export let items;
 	export let slugPrefix;
 </script>
@@ -13,7 +15,8 @@
 				<ul class="sidebar_section_list">
 					{#each item.pages as page}
 						<li>
-							<a href={`../../${slugPrefix}${page.slug.current}`}
+							<a
+								href={`${PUBLIC_SVELTEKIT_SITE_URL}/${slugPrefix}${page.slug.current}`}
 								>{page.title}</a>
 						</li>
 					{/each}

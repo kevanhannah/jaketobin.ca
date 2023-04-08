@@ -1,4 +1,5 @@
 <script>
+	import { PUBLIC_SVELTEKIT_SITE_URL } from '$env/static/public';
 	import getImageProps from '$lib/utils/getImageProps';
 	import SanityImage from '$components/shared/SanityImage.svelte';
 	import LinkButton from '$components/shared/LinkButton.svelte';
@@ -13,7 +14,7 @@
 	{#if content._type === 'productWithVariant'}
 		<a
 			class="productImageLink"
-			href={`../../shop/products/${content.product.store.slug.current}`}>
+			href={`${PUBLIC_SVELTEKIT_SITE_URL}/shop/products/${content.product.store.slug.current}`}>
 			<SanityImage
 				image={getImageProps({
 					aspectRatio: content.aspectRatio ?? 1,
@@ -34,7 +35,7 @@
 			{#if content._type === 'productWithVariant'}
 				<a
 					class="productTitleLink"
-					href={`../shop/products/${content.product.store.slug.current}`}>
+					href={`${PUBLIC_SVELTEKIT_SITE_URL}/shop/products/${content.product.store.slug.current}`}>
 					<h2 class="title">{title}</h2>
 				</a>
 			{:else}
@@ -46,11 +47,11 @@
 		{/if}
 		{#if links && links[0].reference._type === 'product'}
 			<LinkButton
-				href={`../shop/products/${links[0].reference?.store?.slug?.current}`}
+				href={`${PUBLIC_SVELTEKIT_SITE_URL}/shop/products/${links[0].reference?.store?.slug?.current}`}
 				>{links[0].title}</LinkButton>
 		{:else if links && links[0].reference._type === 'collection'}
 			<LinkButton
-				href={`../shop/collections/${links[0].reference?.store?.slug?.current}`}
+				href={`${PUBLIC_SVELTEKIT_SITE_URL}/shop/collections/${links[0].reference?.store?.slug?.current}`}
 				>{links[0].title}</LinkButton>
 		{/if}
 	</div>

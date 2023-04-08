@@ -1,4 +1,5 @@
 <script>
+	import { PUBLIC_SVELTEKIT_SITE_URL } from '$env/static/public';
 	import OutOfStockBadge from '$components/Shop/OutOfStockBadge.svelte';
 
 	export let availableForSale = true;
@@ -9,7 +10,7 @@
 	export let title;
 </script>
 
-<a href={`../../shop/products/${handle}`}>
+<a href={`${PUBLIC_SVELTEKIT_SITE_URL}/shop/products/${handle}`}>
 	<img
 		class="productImage"
 		alt={title}
