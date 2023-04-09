@@ -3,18 +3,18 @@
 	import { cartQuantity } from '$lib/stores/storeContext';
 </script>
 
-<button class="cart_toggle" on:click={handleCartClick}
-	>Cart <span class="cart_toggle_counter">{$cartQuantity || 0}</span></button>
+<button class="cartToggle" on:click={handleCartClick}
+	>Cart <span class="cartToggleCounter">{$cartQuantity || 0}</span></button>
 
 <style lang="postcss">
-	.cart_toggle,
-	.cart_toggle_counter {
+	.cartToggle,
+	.cartToggleCounter {
 		background-color: transparent;
 		display: flex;
 		position: relative;
 	}
 
-	.cart_toggle {
+	.cartToggle {
 		align-items: center;
 		gap: 0.5em;
 		appearance: none;
@@ -23,7 +23,7 @@
 		font-weight: 400;
 	}
 
-	.cart_toggle_counter {
+	.cartToggleCounter {
 		border-color: var(--black);
 		border-radius: 50%;
 		border-width: 1px;
@@ -38,8 +38,8 @@
 	}
 
 	@media (max-width: 768px) {
-		.cart_toggle,
-		.cart_toggle_counter {
+		.cartToggle,
+		.cartToggleCounter {
 			font-size: 0.75em;
 		}
 	}

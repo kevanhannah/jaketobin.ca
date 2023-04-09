@@ -7,16 +7,18 @@
 
 <footer {...$$restProps}>
 	<div class="social_icons">
-		<a href="https://instagram.com/jaketobindraws">
+		<a aria-label="Instagram" href="https://instagram.com/jaketobindraws">
 			<Instagram />
 		</a>
-		<a href="https://twitter.com/jaketobin">
+		<a aria-label="Twitter" href="https://twitter.com/jaketobin">
 			<Twitter />
 		</a>
-		<a href="https://www.linkedin.com/in/jake-tobin-garrett-43a72951">
+		<a
+			aria-label="LinkedIn"
+			href="https://www.linkedin.com/in/jake-tobin-garrett-43a72951">
 			<LinkedIn />
 		</a>
-		<a href="mailto:jake@jaketobin.ca">
+		<a aria-label="Email" href="mailto:jake@jaketobin.ca">
 			<Email />
 		</a>
 	</div>

@@ -13,10 +13,10 @@
 	}
 </script>
 
-<div class="commission_form_section">
-	<h3>Request an illustration</h3>
+<div class="commissionFormSection">
+	<h2>Request an illustration</h2>
 	<form
-		class="commission_form"
+		class="commissionForm"
 		on:submit|preventDefault={handleForm}
 		action="/contact?/email">
 		<div class="form_row">
@@ -55,7 +55,7 @@
 </div>
 
 <style lang="postcss">
-	.commission_form_section {
+	.commissionFormSection {
 		max-width: 60em;
 		display: flex;
 		flex-direction: column;
@@ -67,7 +67,7 @@
 		border-top: 1px solid var(--black);
 	}
 
-	.commission_form_section h3 {
+	.commissionFormSection h3 {
 		font-family: Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 			Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		font-weight: 900;
@@ -75,7 +75,7 @@
 		margin-bottom: 0;
 	}
 
-	.commission_form {
+	.commissionForm {
 		display: flex;
 		flex-direction: column;
 		gap: 1.5em;
@@ -87,7 +87,7 @@
 	}
 
 	@media (max-width: 768px) {
-		.commission_form_section {
+		.commissionFormSection {
 			width: 100%;
 		}
 

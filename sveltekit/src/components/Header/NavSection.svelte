@@ -6,9 +6,9 @@
 
 <section>
 	{#if showHeader}
-		<h2 class="section_header">{content.title}</h2>
+		<h2 class="sectionHeader">{content.title}</h2>
 	{/if}
-	<ul class="section_menu">
+	<ul class="sectionMenu">
 		{#each content.pages as page}
 			<li>
 				<a
@@ -23,29 +23,29 @@
 </section>
 
 <style lang="postcss">
-	.section_header {
+	.sectionHeader {
 		font-size: 1em;
 		font-weight: 400;
 		line-height: 1.6;
-		color: #6c6c6c;
+		color: var(--mediumGray);
 		margin-bottom: 0.75em;
 	}
 
-	.section_menu li {
+	.sectionMenu li {
 		line-height: 1.6;
 		margin-bottom: 0.75em;
 	}
 
-	.section_menu li:last-of-type {
+	.sectionMenu li:last-of-type {
 		margin-bottom: 0;
 	}
 
-	.section_menu li a {
+	.sectionMenu li a {
 		text-decoration: none;
 	}
 
 	@media (hover: hover) {
-		.section_menu li a:hover {
+		.sectionMenu li a:hover {
 			text-decoration: underline;
 			text-underline-offset: 0.25em;
 			text-decoration-thickness: 1px;
@@ -54,7 +54,7 @@
 
 	@media (max-width: 1280px) {
 		section {
-			border-bottom: 1px solid var(--black);
+			border-bottom: 1px solid var(--lightGray);
 			padding-top: 1.75em;
 			padding-bottom: 1.75em;
 		}
@@ -63,12 +63,12 @@
 			border-bottom: none;
 		}
 
-		.section_header {
+		.sectionHeader {
 			margin-bottom: 1.5em;
 			line-height: 1.5;
 		}
 
-		.section_menu li {
+		.sectionMenu li {
 			line-height: 1.5;
 			margin-bottom: 0.75em;
 		}

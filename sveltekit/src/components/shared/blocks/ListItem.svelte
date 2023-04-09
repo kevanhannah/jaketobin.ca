@@ -1,3 +1,7 @@
+<script>
+	export let portableText;
+</script>
+
 <li><slot /></li>
 
 <style lang="postcss">

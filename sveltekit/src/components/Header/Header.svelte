@@ -12,20 +12,20 @@
 </script>
 
 <header {...$$restProps}>
-	<div class="header_outer">
-		<div class="header_inner">
-			<div class="header_content">
+	<div class="headerOuter">
+		<div class="headerInner">
+			<div class="headerContent">
 				<div class="wordmark">
-					<a class="wordmark-link" href="/">
+					<a aria-label="Link to homepage" class="wordmarkLink" href="/">
 						<Wordmark />
 					</a>
 				</div>
-				<nav class="main_navigation">
+				<nav>
 					<DesktopMainNav />
 					<MobileMainNav />
 				</nav>
 			</div>
-			<div class="header_border" />
+			<div class="headerBorder" />
 		</div>
 		<MegaNav />
 	</div>
@@ -39,19 +39,19 @@
 		z-index: 5;
 	}
 
-	.header_outer,
-	.header_inner {
+	.headerOuter,
+	.headerInner {
 		position: relative;
 	}
 
-	.header_inner {
+	.headerInner {
 		background-color: var(--paperWhite);
 		padding-left: 3em;
 		padding-right: 3em;
 		z-index: 2;
 	}
 
-	.header_content {
+	.headerContent {
 		align-items: center;
 		display: flex;
 		flex-direction: column;
@@ -66,7 +66,7 @@
 		z-index: 1;
 	}
 
-	.wordmark-link {
+	.wordmarkLink {
 		appearance: none;
 		background-color: transparent;
 		cursor: pointer;
@@ -75,7 +75,7 @@
 		text-decoration-line: none;
 	}
 
-	.header_border {
+	.headerBorder {
 		border-top-width: 1px;
 		bottom: 0;
 		left: 0;
@@ -85,7 +85,7 @@
 	}
 
 	@media (max-width: 768px) {
-		.header_inner {
+		.headerInner {
 			padding-left: 1em;
 			padding-right: 1em;
 		}

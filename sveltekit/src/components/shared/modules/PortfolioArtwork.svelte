@@ -21,7 +21,7 @@
 		image={displayImage}
 		style="object-fit: contain; object-position: top; cursor: pointer; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; cursor: default;" />
 	<div class="textSection">
-		<h3 class="title">{title}</h3>
+		<h2 class="title">{title}</h2>
 		{#if body}
 			<p class="body">{body}</p>
 		{/if}
@@ -60,11 +60,6 @@
 		gap: 1.25em;
 	}
 
-	.title {
-		font-size: 1.75em;
-		font-weight: 900;
-	}
-
 	.body {
 		margin-bottom: 0;
 	}
@@ -93,7 +88,6 @@
 		}
 
 		.title {
-			font-size: 1.5em;
 			order: 2;
 		}
 

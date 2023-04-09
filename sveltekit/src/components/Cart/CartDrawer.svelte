@@ -5,24 +5,24 @@
 
 <aside
 	aria-hidden={!$cartOpen}
-	class="cart_drawer"
+	class="cartDrawer"
 	class:open={$cartOpen}
 	inert={!$cartOpen}>
-	<div class="cart_drawer_header">
+	<div class="drawerHeader">
 		<h2>Cart</h2>
 		<button
 			aria-label="Close cart"
 			class="closeDrawer"
 			on:click={handleCartClick}
 			type="button">
-			<span class="hamburger_icon" />
+			<span class="hamburgerIcon" />
 		</button>
 	</div>
 	<Cart />
 </aside>
 
 <style lang="postcss">
-	.cart_drawer {
+	.cartDrawer {
 		--drawer-width: 35em;
 		width: var(--drawer-width);
 		position: fixed;
@@ -40,11 +40,11 @@
 		align-items: center;
 	}
 
-	.cart_drawer.open {
+	.cartDrawer.open {
 		transform: translate(calc(-1 * var(--drawer-width)));
 	}
 
-	.cart_drawer_header {
+	.drawerHeader {
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
@@ -56,7 +56,7 @@
 		padding-right: 2.5em;
 	}
 
-	.cart_drawer_header h2 {
+	.drawerHeader h2 {
 		font-size: 1.5em;
 		margin-bottom: 0;
 		line-height: 1;
@@ -74,7 +74,7 @@
 		align-items: center;
 	}
 
-	.hamburger_icon {
+	.hamburgerIcon {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -85,8 +85,8 @@
 		width: 1.5em;
 	}
 
-	.hamburger_icon:after,
-	.hamburger_icon:before {
+	.hamburgerIcon:after,
+	.hamburgerIcon:before {
 		border-top-width: 1.5px;
 		content: '';
 		display: block;
@@ -97,39 +97,39 @@
 		width: 100%;
 	}
 
-	.hamburger_icon:before {
+	.hamburgerIcon:before {
 		transform: rotate(45deg);
 	}
 
-	.hamburger_icon:after {
+	.hamburgerIcon:after {
 		transform: rotate(-45deg);
 	}
 
 	@media (hover: hover) {
 		.closeDrawer:hover {
-			color: #6c6c6c;
+			color: var(--mediumGray);
 		}
 	}
 
 	@media (max-width: 768px) {
-		.cart_drawer {
+		.cartDrawer {
 			--drawer-width: 22.5em;
 		}
 
-		.cart_drawer_header {
+		.drawerHeader {
 			padding-top: 1.5em;
 			padding-bottom: 1.5em;
 			padding-left: 0.75em;
 			padding-right: 0.75em;
 		}
 
-		.cart_drawer_header h2 {
+		.drawerHeader h2 {
 			font-size: 1.55em;
 			margin-bottom: 0;
 			line-height: 1;
 		}
 
-		.hamburger_icon {
+		.hamburgerIcon {
 			width: 2em;
 		}
 	}

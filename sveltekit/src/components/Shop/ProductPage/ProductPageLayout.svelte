@@ -21,7 +21,7 @@
 	<ProductPageImageLayout {images} />
 	<div class="productPageInformation">
 		<div class="variantInfo">
-			<h2 class="productHeader">{title}</h2>
+			<h1 class="productHeader">{title}</h1>
 			<div class="priceSection">
 				<span class="priceCurrency">CA</span>
 				<span class="priceText">
@@ -113,9 +113,9 @@
 
 	.variantButton {
 		padding: 0.25em 0.5em;
-		color: #666666;
+		color: var(--mediumGray);
 		background: none;
-		border: 1px solid #eaeaea;
+		border: 1px solid var(--lightGray);
 		border-radius: 0.5em;
 		font-size: 1em;
 		font-weight: 600;

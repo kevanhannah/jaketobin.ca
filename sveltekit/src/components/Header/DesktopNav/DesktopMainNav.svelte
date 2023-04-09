@@ -8,32 +8,32 @@
 	import CartToggle from '$components/Header/CartToggle.svelte';
 </script>
 
-<div class="main_navigation--desktop">
-	<div class="menu_left">
+<div class="mainNavigation_desktop">
+	<div class="menuLeft">
 		<ul>
 			<li>
 				<button
-					class="nav_button"
+					class="navButton"
 					class:active={$portfolioOpen}
 					on:click={handlePortfolioClick}>Portfolio</button>
 			</li>
 			<li>
 				<button
-					class="nav_button"
+					class="navButton"
 					class:active={$shopOpen}
 					on:click={handleShopClick}>Shop</button>
 			</li>
-			<li><a href="/commission" class="nav_button">Commission</a></li>
-			<li><a href="/about" class="nav_button">About</a></li>
+			<li><a href="/commission" class="navButton">Commission</a></li>
+			<li><a href="/about" class="navButton">About</a></li>
 		</ul>
 	</div>
-	<div class="menu_right">
+	<div class="menuRight">
 		<CartToggle />
 	</div>
 </div>
 
 <style lang="postcss">
-	.main_navigation--desktop {
+	.mainNavigation_desktop {
 		align-items: center;
 		bottom: 0;
 		display: flex;
@@ -44,7 +44,7 @@
 		top: 0;
 	}
 
-	.nav_button {
+	.navButton {
 		font-size: 1em;
 		font-weight: 400;
 		text-transform: uppercase;
@@ -61,30 +61,30 @@
 		text-decoration-thickness: 1px;
 	}
 
-	.nav_button:hover {
+	.navButton:hover {
 		text-decoration: underline;
 		text-underline-offset: 0.25em;
 		text-decoration-thickness: 1px;
 		opacity: 1;
 	}
 
-	.main_navigation--desktop ul {
+	.mainNavigation_desktop ul {
 		display: flex;
 	}
 
-	.menu_left,
-	.menu_right {
+	.menuLeft,
+	.menuRight {
 		align-items: center;
 		display: flex;
 	}
 
-	.menu_left ul {
+	.menuLeft ul {
 		display: flex;
 		gap: 2em;
 	}
 
 	@media (max-width: 1280px) {
-		.main_navigation--desktop {
+		.mainNavigation_desktop {
 			display: none;
 		}
 	}

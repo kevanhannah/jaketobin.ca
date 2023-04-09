@@ -7,7 +7,7 @@
 	$: ({ portfolioNavItems, shopNavItems } = $page.data);
 </script>
 
-<div class="mega_nav">
+<div class="mega_nav" inert={!$portfolioOpen && !$shopOpen}>
 	<div class="mega_item" class:is_active={$portfolioOpen}>
 		<div class="mega_item_outer">
 			<div class="mega_item_inner">
