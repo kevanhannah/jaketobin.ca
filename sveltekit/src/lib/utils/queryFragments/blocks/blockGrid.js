@@ -1,3 +1,6 @@
+import { linkExternal } from '../objects/linkExternal';
+import { linkInternal } from '../objects/linkInternal';
+
 export const blockGrid = `
 	_type == 'blockGrid' => {
 		_type,
@@ -5,7 +8,10 @@ export const blockGrid = `
 			_type == "portfolioItem" => { _type, images[0] },
 			_type == "product" => { _type, images[0], store }
 		},
-		link[0] { reference -> { slug { current }, _type }, title },
+		link[0] { 
+			${linkExternal},
+			${linkInternal},
+		 },
 		title
 	}
 `;

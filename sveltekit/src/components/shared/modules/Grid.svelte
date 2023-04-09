@@ -44,10 +44,7 @@
 		</div>
 	{/if}
 	{#if link}
-		<LinkButton
-			href={`${setSlugPrefix(link.reference._type)}${
-				link.reference.slug.current
-			}`}>{link.title}</LinkButton>
+		<LinkButton {link} />
 	{/if}
 </div>
 

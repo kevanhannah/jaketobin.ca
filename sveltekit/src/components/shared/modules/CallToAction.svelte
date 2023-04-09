@@ -44,14 +44,8 @@
 		{#if body}
 			<p>{body}</p>
 		{/if}
-		{#if links && links[0].reference._type === 'product'}
-			<LinkButton
-				href={`/shop/products/${links[0].reference?.store?.slug?.current}`}
-				>{links[0].title}</LinkButton>
-		{:else if links && links[0].reference._type === 'collection'}
-			<LinkButton
-				href={`/shop/collections/${links[0].reference?.store?.slug?.current}`}
-				>{links[0].title}</LinkButton>
+		{#if links}
+			<LinkButton link={links} />
 		{/if}
 	</div>
 </div>

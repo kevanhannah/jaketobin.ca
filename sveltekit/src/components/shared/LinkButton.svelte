@@ -1,11 +1,39 @@
 <script>
-	export let href = null;
+	export let link = null;
+	$: console.log(link);
 </script>
 
-<a {href} class="button"><slot /></a>
+{#if link}
+	{#if link._type === 'linkInternal'}
+		{#if link.reference._type === 'product'}
+			<a href={`/shop/products/${link.reference.store.slug.current}`}>
+				{link.title}
+			</a>
+		{:else if link.reference._type === 'collection'}
+			<a href={`/shop/collections/${link.reference.store.slug.current}`}>
+				{link.title}
+			</a>
+		{:else if link.reference._type === 'portfolioPage'}
+			<a href={`/portfolio/${link.reference.slug.current}`}>
+				{link.title}
+			</a>
+		{:else}
+			<a href={`/${link.reference.slug.current}`}>
+				{link.title}
+			</a>
+		{/if}
+	{:else}
+		<a href={link.url} target={link.newWindow ? '_blank' : undefined}>
+			{link.title}
+		</a>
+	{/if}
+{:else}
+	<slot />
+{/if}
 
+<!-- <a {href} class="button"><slot /></a> -->
 <style lang="postcss">
-	.button {
+	a {
 		display: inline-block;
 		color: var(--paperWhite);
 		background: var(--black);
@@ -21,7 +49,7 @@
 	}
 
 	@media (hover: hover) {
-		.button:hover {
+		a:hover {
 			opacity: 1;
 			color: var(--black);
 			background: var(--paperWhite);
@@ -30,7 +58,7 @@
 	}
 
 	@media (max-width: 768px) {
-		.button {
+		a {
 			width: 100%;
 		}
 	}

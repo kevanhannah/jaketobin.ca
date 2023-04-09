@@ -2,12 +2,13 @@
 	import { PortableText, DefaultListItem } from '@portabletext/svelte';
 	import Grid from '$components/shared/modules/Grid.svelte';
 	import CallToAction from '$components/shared/modules/CallToAction.svelte';
-	import ImageWithText from '$components/shared/modules/ImageWithText.svelte';
 	import CustomTextBlock from '$components/shared/blocks/CustomTextBlock.svelte';
 	import ListWrapper from '$components/shared/blocks/ListWrapper.svelte';
 	import ListItem from '$components/shared/blocks/ListItem.svelte';
 	import PortfolioArtwork from '$components/shared/modules/PortfolioArtwork.svelte';
 	import Publications from '$components/shared/modules/Publications.svelte';
+	import EmailLink from '$components/shared/blocks/EmailLink.svelte';
+	import ExternalLink from '$components/shared/blocks/ExternalLink.svelte';
 	import InternalLink from '$components/shared/blocks/InternalLink.svelte';
 
 	export let value;
@@ -18,7 +19,6 @@
 		components={{
 			types: {
 				blockCallToAction: CallToAction,
-				blockImageWithText: ImageWithText,
 				blockPortfolioArtwork: PortfolioArtwork,
 				blockGrid: Grid,
 				blockPortfolioGrid: Grid,
@@ -31,6 +31,8 @@
 				normal: CustomTextBlock,
 			},
 			marks: {
+				annotationLinkEmail: EmailLink,
+				annotationLinkExternal: ExternalLink,
 				annotationLinkInternal: InternalLink,
 			},
 			list: {

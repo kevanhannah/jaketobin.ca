@@ -1,3 +1,6 @@
+import { linkExternal } from '../objects/linkExternal';
+import { linkInternal } from '../objects/linkInternal';
+
 export const blockCallToAction = `
 	_type == 'blockCallToAction' => {
 		_type,
@@ -19,24 +22,9 @@ export const blockCallToAction = `
 			},
 		},
 		layout,
-		links[] {
-			_type == "linkInternal" => {
-				reference-> {
-					_type == "collection" => {
-						_type,
-						store {
-							slug
-						}
-					},
-					_type == "product" => {
-						_type,
-						store {
-							slug
-						}
-					}
-				},
-				title
-			}
+		links[0] {
+			${linkExternal},
+			${linkInternal},
 		},
 		title
 	}
