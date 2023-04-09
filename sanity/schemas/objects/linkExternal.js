@@ -18,6 +18,7 @@ export const linkExternal = {
 			name: 'url',
 			title: 'URL',
 			type: 'url',
+			description: 'Please type complete URLs with https://',
 			validation: (Rule) => Rule.required().uri({ scheme: ['http', 'https'] }),
 		},
 		// Open in a new window
