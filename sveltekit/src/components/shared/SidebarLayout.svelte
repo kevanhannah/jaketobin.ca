@@ -8,9 +8,9 @@
 		{#if item.pages}
 			<section>
 				{#if item.showTitle}
-					<h2 class="sidebar_section_header">{item.title}</h2>
+					<h2 class="sectionHeader">{item.title}</h2>
 				{/if}
-				<ul class="sidebar_section_list">
+				<ul class="sectionList">
 					{#each item.pages as page}
 						<li>
 							<a href={`/${slugPrefix}${page.slug.current}`}>{page.title}</a>
@@ -30,24 +30,24 @@
 		gap: 3em;
 	}
 
-	.sidebar_section_header {
+	.sectionHeader {
 		font-size: 1em;
-		font-weight: 400;
+		font-weight: 600;
 		line-height: 1.6;
 		color: var(--mediumGray);
 		margin-bottom: 0.75em;
 	}
 
-	.sidebar_section_list li {
+	.sectionList li {
 		line-height: 1.6;
 		margin-bottom: 0.75em;
 	}
 
-	.sidebar_section_list li:last-of-type {
+	.sectionList li:last-of-type {
 		margin-bottom: 0;
 	}
 
-	.sidebar_section_list li a {
+	.sectionList li a {
 		text-decoration: none;
 	}
 
@@ -58,7 +58,7 @@
 	}
 
 	@media (hover: hover) {
-		.sidebar_section_list li a:hover {
+		.sectionList li a:hover {
 			text-decoration: underline;
 			text-underline-offset: 0.25em;
 			text-decoration-thickness: 1px;

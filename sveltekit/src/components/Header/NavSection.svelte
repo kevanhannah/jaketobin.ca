@@ -25,7 +25,7 @@
 <style lang="postcss">
 	.sectionHeader {
 		font-size: 1em;
-		font-weight: 400;
+		font-weight: 600;
 		line-height: 1.6;
 		color: var(--mediumGray);
 		margin-bottom: 0.75em;

@@ -33,6 +33,11 @@
 							showHeader={portfolioNavItem.showTitle}
 							slugPrefix="portfolio" />
 					{/each}
+					<NavSection
+						content={{
+							pages: [{ title: 'See all', slug: { current: 'portfolio' } }],
+						}}
+						showHeader={false} />
 				</div>
 			</div>
 		</li>
