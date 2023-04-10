@@ -4,7 +4,6 @@ import singletonQuery from '$lib/utils/singletonQuery';
 
 export async function load() {
 	const { pageContent } = await client.fetch(singletonQuery('about'));
-	console.log(pageContent);
 
 	if (pageContent?.body) {
 		return {

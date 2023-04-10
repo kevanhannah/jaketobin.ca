@@ -25,9 +25,15 @@ export const modulePortfolioArtwork = {
 		prepare(selection) {
 			const { image, title } = selection;
 
+			if (!image) {
+				return {
+					title: 'Empty portfolio item (artworrk) module',
+				};
+			}
+
 			return {
-				media: image ? image[0].image : null,
-				title: title ?? 'Empty portfolio item',
+				media: image[0].image,
+				title,
 				subtitle: 'Portfolio item (Artwork)',
 			};
 		},

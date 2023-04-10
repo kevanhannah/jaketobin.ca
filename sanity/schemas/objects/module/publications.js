@@ -26,8 +26,17 @@ export const modulePublications = {
 		prepare(selection) {
 			const { publications } = selection;
 
+			if (!publications) {
+				return {
+					title: 'Empty publications module',
+				};
+			}
+
 			return {
-				subtitle: pluralize('item', publications.length, true),
+				subtitle:
+					publications.length > 0
+						? pluralize('publication', publications.length, true)
+						: 'No publications',
 				title: 'Publications',
 			};
 		},

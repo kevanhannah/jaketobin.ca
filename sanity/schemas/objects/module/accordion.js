@@ -94,6 +94,13 @@ export const moduleAccordion = {
 		},
 		prepare(selection) {
 			const { groups } = selection;
+
+			if (!groups) {
+				return {
+					title: 'Empty accordion module',
+				};
+			}
+
 			return {
 				subtitle: 'Accordion',
 				title:

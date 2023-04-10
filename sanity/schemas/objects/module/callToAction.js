@@ -83,10 +83,18 @@ export const moduleCallToAction = {
 	],
 	preview: {
 		select: {
+			content: 'content',
 			title: 'title',
 		},
 		prepare(selection) {
-			const { title } = selection;
+			const { content, title } = selection;
+
+			if (!content) {
+				return {
+					title: 'Empty call to action module',
+				};
+			}
+
 			return {
 				subtitle: 'Call to action',
 				title,

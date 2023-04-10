@@ -34,6 +34,12 @@ export const moduleImage = {
 		prepare(selection) {
 			const { fileName, image: previewImage } = selection;
 
+			if (!previewImage) {
+				return {
+					title: 'Empty image module',
+				};
+			}
+
 			return {
 				media: previewImage,
 				title: fileName,

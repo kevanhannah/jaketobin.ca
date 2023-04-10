@@ -27,6 +27,7 @@ export const moduleGrid = {
 					},
 				},
 			],
+			validation: (Rule) => Rule.required().min(1),
 		},
 		// Link
 		{
@@ -44,6 +45,13 @@ export const moduleGrid = {
 		},
 		prepare(selection) {
 			const { items, title } = selection;
+
+			if (!items) {
+				return {
+					title: 'Empty grid module',
+				};
+			}
+
 			return {
 				subtitle:
 					items.length > 0 ? pluralize('item', items.length, true) : 'No items',

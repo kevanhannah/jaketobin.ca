@@ -67,14 +67,6 @@
 		border-top: 1px solid var(--black);
 	}
 
-	.commissionFormSection h3 {
-		font-family: Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-			Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-		font-weight: 900;
-		font-size: 1.75em;
-		margin-bottom: 0;
-	}
-
 	.commissionForm {
 		display: flex;
 		flex-direction: column;
