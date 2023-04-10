@@ -7,7 +7,7 @@
 	$: ({ publications } = value);
 </script>
 
-<div class="publications">
+<div class="module publications">
 	{#each publications as publication}
 		<div class="publication">
 			{#if publication.titleLink}
@@ -26,7 +26,8 @@
 	.publications {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 1.25em;
+		column-gap: 1.25em;
+		row-gap: 3.75em;
 	}
 
 	.publication {

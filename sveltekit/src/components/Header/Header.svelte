@@ -86,8 +86,8 @@
 
 	@media (max-width: 768px) {
 		.headerInner {
-			padding-left: 1em;
-			padding-right: 1em;
+			padding-left: 0.5em;
+			padding-right: 0.5em;
 		}
 	}
 </style>

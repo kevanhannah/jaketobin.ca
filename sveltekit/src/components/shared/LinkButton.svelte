@@ -1,6 +1,5 @@
 <script>
 	export let link = null;
-	$: console.log(link);
 </script>
 
 {#if link}

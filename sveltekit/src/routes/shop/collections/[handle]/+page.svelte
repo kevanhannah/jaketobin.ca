@@ -43,6 +43,6 @@
 
 	.title {
 		border-bottom: 1px solid var(--black);
-		padding-bottom: 0.25em;
+		padding-bottom: 0.5em;
 	}
 </style>

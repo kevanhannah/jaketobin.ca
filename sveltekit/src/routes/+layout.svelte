@@ -60,17 +60,17 @@
 
 <style lang="postcss">
 	div {
-		padding-top: 3em;
-		padding-left: 3em;
-		padding-right: 3em;
-		max-width: 1600px;
+		padding-top: 1.25em;
+		padding-left: 1.25em;
+		padding-right: 1.25em;
+		max-width: 90em;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
 	@media (max-width: 768px) {
 		div {
-			padding-top: 0.75em;
+			padding-top: 0.5em;
 			padding-left: 0.5em;
 			padding-right: 0.5em;
 		}

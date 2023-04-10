@@ -27,9 +27,8 @@
 
 <style lang="postcss">
 	.collectionTitle {
-		font-family: Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-			Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-		padding-bottom: 0.25em;
+		font-family: var(--poppins);
+		padding-bottom: 0.5em;
 		margin-bottom: 0.75em;
 		border-bottom: 1px solid var(--black);
 	}

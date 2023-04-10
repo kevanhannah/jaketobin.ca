@@ -11,7 +11,7 @@
 </script>
 
 <div class="productPageImageLayout">
-	<div class="gallery">
+	<div class="gallery" class:singleImage={images.length <= 1}>
 		{#each images as image}
 			<div
 				class="imageWrapper"
@@ -21,7 +21,7 @@
 				tabindex="0">
 				<SanityImage
 					{image}
-					style="aspect-ratio: 1; object-fit: cover; display: block;" />
+					style="aspect-ratio: 1; object-fit: cover; display: block; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; cursor: default;" />
 			</div>
 		{/each}
 	</div>
@@ -62,6 +62,10 @@
 
 		.gallery {
 			flex-direction: row;
+		}
+
+		.singleImage {
+			display: none;
 		}
 
 		.imageWrapper {
