@@ -16,7 +16,7 @@ export const moduleAccordion = {
 			of: [
 				{
 					name: 'group',
-					title: 'Group',
+					title: 'Accordion',
 					type: 'object',
 					icon: StackCompactIcon,
 					fields: [
@@ -102,11 +102,11 @@ export const moduleAccordion = {
 			}
 
 			return {
-				subtitle: 'Accordion',
+				subtitle: 'Accordion group',
 				title:
 					groups.length > 0
-						? pluralize('group', groups.length, true)
-						: 'No groups',
+						? pluralize('accordion', groups.length, true)
+						: 'No accordion content',
 			};
 		},
 	},

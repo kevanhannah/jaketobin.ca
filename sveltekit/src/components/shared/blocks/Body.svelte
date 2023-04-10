@@ -1,5 +1,6 @@
 <script>
 	import { PortableText, DefaultListItem } from '@portabletext/svelte';
+	import Accordion from '$components/shared/modules/Accordion.svelte';
 	import Grid from '$components/shared/modules/Grid.svelte';
 	import CallToAction from '$components/shared/modules/CallToAction.svelte';
 	import CustomTextBlock from '$components/shared/blocks/CustomTextBlock.svelte';
@@ -18,6 +19,7 @@
 	<PortableText
 		components={{
 			types: {
+				blockAccordion: Accordion,
 				blockCallToAction: CallToAction,
 				blockPortfolioArtwork: PortfolioArtwork,
 				blockGrid: Grid,

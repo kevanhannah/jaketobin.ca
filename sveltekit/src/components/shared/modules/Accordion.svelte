@@ -5,7 +5,7 @@
 	$: ({ groups } = portableText.value);
 </script>
 
-<div class="accordion">
+<div class="accordion module">
 	{#each groups as group}
 		<AccordionGroup {group} />
 	{/each}
