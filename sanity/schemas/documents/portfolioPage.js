@@ -1,10 +1,10 @@
-import { IoDocumentOutline } from 'react-icons/io5';
+import { DocumentsIcon } from '@sanity/icons';
 
 export const portfolioPage = {
 	title: 'Portfolio Page',
 	name: 'portfolioPage',
 	type: 'document',
-	icon: IoDocumentOutline,
+	icon: DocumentsIcon,
 	groups: [
 		{ title: 'Editorial', name: 'editorial', default: true },
 		{ title: 'Page Settings', name: 'settings' },

@@ -1,10 +1,10 @@
-import { IoImageOutline } from 'react-icons/io5';
+import { ImagesIcon } from '@sanity/icons';
 
 export const portfolioItem = {
 	title: 'Portfolio Item (Artwork)',
 	name: 'portfolioItem',
 	type: 'document',
-	icon: IoImageOutline,
+	icon: ImagesIcon,
 	fields: [
 		// Title
 		{

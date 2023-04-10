@@ -1,10 +1,10 @@
-import { IoHomeOutline } from 'react-icons/io5';
+import { HomeIcon } from '@sanity/icons';
 
 export const home = {
 	name: 'home',
 	title: 'Home Page',
 	type: 'document',
-	icon: IoHomeOutline,
+	icon: HomeIcon,
 	liveEdit: false,
 	__experimental_actions: ['update', 'publish'],
 	fields: [

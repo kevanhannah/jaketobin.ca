@@ -1,7 +1,10 @@
+import { ComposeIcon } from '@sanity/icons';
+
 export const portfolioPublication = {
 	title: 'Portfolio Item (Writing)',
 	name: 'portfolioPublication',
 	type: 'document',
+	icon: ComposeIcon,
 	fields: [
 		// Title
 		{

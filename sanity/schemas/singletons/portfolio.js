@@ -1,7 +1,10 @@
+import { MasterDetailIcon } from '@sanity/icons';
+
 export const portfolio = {
 	name: 'portfolio',
 	title: 'Portfolio Landing Page',
 	type: 'document',
+	icon: MasterDetailIcon,
 	liveEdit: false,
 	__experimental_actions: ['update', 'publish'],
 	fields: [

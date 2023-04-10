@@ -1,7 +1,10 @@
+import { BillIcon } from '@sanity/icons';
+
 export const commission = {
 	name: 'commission',
 	title: 'Commission Landing Page',
 	type: 'document',
+	icon: BillIcon,
 	liveEdit: false,
 	__experimental_actions: ['update', 'publish'],
 	fields: [

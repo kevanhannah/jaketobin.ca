@@ -1,10 +1,10 @@
-import { IoCogOutline } from 'react-icons/io5';
+import { CogIcon } from '@sanity/icons';
 
 export const settings = {
 	name: 'settings',
 	title: 'Site Settings',
 	type: 'document',
-	icon: IoCogOutline,
+	icon: CogIcon,
 	liveEdit: false,
 	__experimental_actions: ['update', 'publish'],
 	groups: [
