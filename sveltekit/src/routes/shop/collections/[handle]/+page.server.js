@@ -5,11 +5,12 @@ import { bodyQuery } from '$lib/utils/queryFragments/bodyQuery.js';
 
 export async function load({ params }) {
 	const shopifyRes = await getCollection(params.handle);
-	const { body, store } = await client.fetch(
+	const { body, seo, store } = await client.fetch(
 		`*[_type == "collection" && store.gid == "${shopifyRes.body?.data?.collectionByHandle.id}"][0] {
 			body[] {
 				${bodyQuery}
 				},
+			seo,
 			store
 		}`
 	);
@@ -17,7 +18,16 @@ export async function load({ params }) {
 	if (store && shopifyRes.status === 200) {
 		const collection = shopifyRes.body?.data?.collectionByHandle;
 
-		return { collection, body: body ?? [] };
+		return {
+			collection,
+			body: body ?? [],
+			pageContent: {
+				seo: {
+					title: seo?.title || store.title,
+					...seo,
+				},
+			},
+		};
 	} else {
 		throw error(404);
 	}

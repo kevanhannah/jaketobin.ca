@@ -15,6 +15,7 @@ export const modulePortfolioArtwork = {
 				filter: '!(_id in path("drafts.**"))',
 			},
 			weak: true,
+			validation: (Rule) => Rule.required(),
 		},
 	],
 	preview: {
@@ -27,7 +28,7 @@ export const modulePortfolioArtwork = {
 
 			if (!image) {
 				return {
-					title: 'Empty portfolio item (artworrk) module',
+					title: 'Empty portfolio item (artwork) module',
 				};
 			}
 

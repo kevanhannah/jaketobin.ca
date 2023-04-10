@@ -30,7 +30,6 @@
 	<slot />
 {/if}
 
-<!-- <a {href} class="button"><slot /></a> -->
 <style lang="postcss">
 	a {
 		display: inline-block;

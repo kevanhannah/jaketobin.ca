@@ -5,13 +5,14 @@ import getImageProps from '$lib/utils/getImageProps';
 import { bodyQuery } from '$lib/utils/queryFragments/bodyQuery.js';
 
 export async function load({ params }) {
-	const { body, faqs, images, store } = await client.fetch(`
+	const { body, faqs, images, seo, store } = await client.fetch(`
     *[_type == "product" && store.isDeleted == false && store.slug.current == "${params.handle}"]| order(_updatedAt desc)[0] {
       body[] {          
         ${bodyQuery}
       },
       faqs-> { items { groups[] { body, title } } },
       images,
+      seo,
       store {
         "available": count(variants[@->store.inventory.isAvailable == true]),
         descriptionHtml,
@@ -32,6 +33,13 @@ export async function load({ params }) {
 			body,
 			faqs,
 			images: images.map((image) => getImageProps({ image: image.image })),
+			pageContent: {
+				seo: {
+					image: seo?.image || images[0].image,
+					title: seo?.title || store.title,
+					...seo,
+				},
+			},
 			recommendations: shopifyRes.body?.data?.productRecommendations,
 			store,
 		};

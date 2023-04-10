@@ -8,7 +8,6 @@ export const portfolioPage = {
 	groups: [
 		{ title: 'Editorial', name: 'editorial', default: true },
 		{ title: 'Page Settings', name: 'settings' },
-		{ title: 'SEO', name: 'seo' },
 	],
 	fields: [
 		{
@@ -37,12 +36,6 @@ export const portfolioPage = {
 			title: 'Page content',
 			type: 'page',
 			group: 'editorial',
-		},
-		{
-			title: 'SEO / Share Settings',
-			name: 'seo',
-			type: 'seo',
-			group: 'seo',
 		},
 	],
 	preview: {

@@ -7,7 +7,13 @@ export async function load() {
 
 	if (pageContent?.body) {
 		return {
-			pageContent,
+			pageContent: {
+				...pageContent,
+				seo: {
+					title: pageContent.seo?.title || 'About',
+					...pageContent.seo,
+				},
+			},
 		};
 	}
 	throw error(404);

@@ -7,7 +7,14 @@ export async function load() {
 		const collections = res.body?.data?.collections?.edges;
 
 		if (collections) {
-			return { collections };
+			return {
+				collections,
+				pageContent: {
+					seo: {
+						title: 'All products',
+					},
+				},
+			};
 		}
 		throw error(404);
 	} else {

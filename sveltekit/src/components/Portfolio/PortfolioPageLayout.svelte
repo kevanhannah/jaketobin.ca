@@ -7,7 +7,11 @@
 
 <main class="portfolioPage">
 	<h1 class="title">{title}</h1>
-	<Body value={body} />
+	{#if body}
+		<Body value={body} />
+	{:else}
+		<p>No items have been added to this page yet. Check back soon!</p>
+	{/if}
 </main>
 
 <style lang="postcss">

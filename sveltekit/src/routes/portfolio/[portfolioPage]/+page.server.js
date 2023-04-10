@@ -9,17 +9,21 @@ export async function load({ params }) {
         body[]{
           ${bodyQuery}
         },
-        seo {
-          title
-        },
+        seo,
       },
 			title
 		}`
 	);
 
-	if (pageContent?.body) {
+	if (title) {
 		return {
-			pageContent,
+			pageContent: {
+				...pageContent,
+				seo: {
+					title: pageContent.seo?.title || title,
+					...pageContent.seo,
+				},
+			},
 			title,
 		};
 	}
