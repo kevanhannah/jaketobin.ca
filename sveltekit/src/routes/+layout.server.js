@@ -2,9 +2,9 @@ import { client } from '$lib/utils/sanityClient';
 
 export async function load() {
 	const {
+		defaultMetadata,
 		portfolioNavItems,
 		portfolioSidebarItems,
-		seo,
 		shopNavItems,
 		shopSidebarItems,
 	} = await client.fetch(`
@@ -27,7 +27,7 @@ export async function load() {
         showTitle,
         title
       },
-      seo {
+      "defaultMetadata": seo {
         description,
         image,
         title
@@ -68,7 +68,7 @@ export async function load() {
   `);
 
 	return {
-		defaultMetadata: seo,
+		defaultMetadata,
 		portfolioNavItems,
 		portfolioSidebarItems,
 		shopNavItems,

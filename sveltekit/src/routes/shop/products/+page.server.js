@@ -1,5 +1,5 @@
-import { getAllCollections } from '$lib/utils/shopify';
 import { error } from '@sveltejs/kit';
+import { getAllCollections } from '$lib/utils/shopify';
 
 export async function load() {
 	const res = await getAllCollections();

@@ -1,3 +1,4 @@
+import { error } from '@sveltejs/kit';
 import { client } from '$lib/utils/sanityClient';
 import { bodyQuery } from '$lib/utils/queryFragments/bodyQuery.js';
 
@@ -16,8 +17,11 @@ export async function load({ params }) {
 		}`
 	);
 
-	return {
-		pageContent,
-		title,
-	};
+	if (pageContent?.body) {
+		return {
+			pageContent,
+			title,
+		};
+	}
+	throw error(404);
 }
