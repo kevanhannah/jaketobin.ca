@@ -19,7 +19,7 @@
 <div class="module portfolioArtwork">
 	<SanityImage
 		image={displayImage}
-		style="object-fit: contain; object-position: top; cursor: pointer; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; cursor: default;" />
+		style="object-fit: contain; object-position: top; cursor: pointer; cursor: default;" />
 	<div class="textSection">
 		<h2 class="title">{title}</h2>
 		{#if body}
