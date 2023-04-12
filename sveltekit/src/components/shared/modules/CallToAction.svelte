@@ -42,7 +42,7 @@
 			{/if}
 		{/if}
 		{#if body}
-			<p>{body}</p>
+			<p class="body" class:reverse={layout === 'right'}>{body}</p>
 		{/if}
 		{#if links}
 			<LinkButton link={links} />
@@ -78,6 +78,7 @@
 	.reverse .textSection {
 		order: -1;
 		align-items: flex-end;
+		text-align: right;
 	}
 
 	.productTitleLink {
@@ -107,6 +108,7 @@
 		.reverse .textSection {
 			order: 0;
 			align-items: flex-start;
+			text-align: left;
 		}
 	}
 
