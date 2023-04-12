@@ -26,7 +26,7 @@
 	.publications {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		column-gap: 2em;
+		column-gap: 3.75em;
 		row-gap: 3.75em;
 	}
 
