@@ -19,7 +19,7 @@
 		class="commissionForm"
 		on:submit|preventDefault={handleForm}
 		action="/contact?/email">
-		<div class="form_row">
+		<div class="formRow">
 			<TextInput
 				id="firstName"
 				label="First name"
@@ -34,7 +34,7 @@
 				type="text" />
 		</div>
 		<TextInput id="email" label="Email" name="email" required type="email" />
-		<div class="form_row">
+		<div class="formRow">
 			<TextInput
 				id="dueDate"
 				label="When do you need it?"
@@ -73,7 +73,7 @@
 		gap: 1.5em;
 	}
 
-	.form_row {
+	.formRow {
 		display: flex;
 		gap: 1.5em;
 	}
@@ -83,7 +83,7 @@
 			width: 100%;
 		}
 
-		.form_row {
+		.formRow {
 			flex-direction: column;
 		}
 	}
