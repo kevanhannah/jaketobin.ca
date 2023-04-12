@@ -39,8 +39,8 @@ export default function getImageProps({
 	}
 	const maxWidth =
 		typeof userMaxWidth === 'number' ? userMaxWidth : LARGEST_VIEWPORT;
-
 	// For all image variations, we'll use an auto format and prevent scaling it over its max dimensions
+
 	const builder = imageBuilder.image(image).fit('max').auto('format');
 	const imageDimensions = getImageDimensions(image);
 
@@ -115,7 +115,7 @@ export default function getImageProps({
 				? '100vw'
 				: sizes || `(max-width: ${maxWidth}px) 100vw, ${maxWidth}px`,
 		// Tell the browser what's the size of the image so it can calculate aspect ratios
-		width: retinaSizes[0].width,
-		height: retinaSizes[0].height,
+		width: retinaSizes.length ? retinaSizes[0].width : imageDimensions.width,
+		height: retinaSizes.length ? retinaSizes[0].height : imageDimensions.height,
 	};
 }

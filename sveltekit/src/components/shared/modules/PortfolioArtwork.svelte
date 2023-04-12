@@ -5,9 +5,9 @@
 	export let portableText;
 
 	$: ({ value } = portableText);
-	$: ({ body, images, title } = value.portfolioArtwork);
+	$: ({ body, images, title } = value?.portfolioArtwork);
 	$: renderedImages = images.map((image) =>
-		getImageProps({ image: image.image })
+		getImageProps({ image: image?.image })
 	);
 	$: displayImage = renderedImages[0];
 

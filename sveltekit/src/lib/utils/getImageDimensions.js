@@ -13,6 +13,6 @@ export function getImageDimensions(image) {
 	return {
 		width,
 		height,
-		aspectRatio: width / height,
+		aspectRatio: (width / height).toFixed(3),
 	};
 }
