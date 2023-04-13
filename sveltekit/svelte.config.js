@@ -1,9 +1,12 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-netlify';
 import preprocess from 'svelte-preprocess';
 
 const config = {
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			edge: true,
+			split: false,
+		}),
 		alias: {
 			$components: './src/components',
 		},
