@@ -70,13 +70,13 @@
 	</form>
 	{#if error}
 		<div class="message" class:alert={error}>
-			<Alert style="width: 1.5em; fill: #f56b52; margin-top: 0.5em;" />
+			<Alert style="width: 1.5em; fill: #f56b52;" />
 			<p>Error: {error}</p>
 		</div>
 	{/if}
 	{#if success}
 		<div class="message" class:success>
-			<Check style="width: 1.5em; fill: #50dca9; margin-top: 0.5em;" />
+			<Check style="width: 1.5em; fill: #50dca9;" />
 			<p>Success! You're signed up.</p>
 		</div>
 	{/if}
