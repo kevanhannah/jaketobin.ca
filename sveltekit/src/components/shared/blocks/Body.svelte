@@ -6,6 +6,7 @@
 	import CustomTextBlock from '$components/shared/blocks/CustomTextBlock.svelte';
 	import ListWrapper from '$components/shared/blocks/ListWrapper.svelte';
 	import ListItem from '$components/shared/blocks/ListItem.svelte';
+	import NewsletterSignup from '$components/shared/modules/NewsletterSignup.svelte';
 	import PortfolioArtwork from '$components/shared/modules/PortfolioArtwork.svelte';
 	import Publications from '$components/shared/modules/Publications.svelte';
 	import EmailLink from '$components/shared/blocks/EmailLink.svelte';
@@ -23,6 +24,7 @@
 				blockCallToAction: CallToAction,
 				blockPortfolioArtwork: PortfolioArtwork,
 				blockGrid: Grid,
+				blockNewsletter: NewsletterSignup,
 				blockPortfolioGrid: Grid,
 				blockPortfolioPublications: Publications,
 			},

@@ -59,6 +59,10 @@ export const body = {
 			type: 'module.grid',
 		},
 		{
+			name: 'blockNewsletter',
+			type: 'module.newsletter',
+		},
+		{
 			name: 'blockPortfolioArtwork',
 			type: 'module.portfolioArtwork',
 		},

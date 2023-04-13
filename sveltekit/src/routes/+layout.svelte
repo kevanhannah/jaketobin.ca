@@ -70,9 +70,9 @@
 
 	@media (max-width: 768px) {
 		div {
-			padding-top: 0.5em;
-			padding-left: 0.5em;
-			padding-right: 0.5em;
+			padding-top: 0.75em;
+			padding-left: 0.75em;
+			padding-right: 0.75em;
 		}
 	}
 </style>

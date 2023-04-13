@@ -1,6 +1,6 @@
 <script>
 	export let id;
-	export let label;
+	export let label = undefined;
 	export let name;
 	export let placeholder;
 	export let required;
@@ -12,7 +12,7 @@
 	{#if label}
 		{label}
 	{/if}
-	<input bind:value {id} {name} {placeholder} {style} {required} type="text" />
+	<input bind:value {id} {name} {placeholder} {style} {required} type="email" />
 </label>
 
 <style lang="postcss">
@@ -21,6 +21,9 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.75em;
+		transition-property: width;
+		transition-duration: 0.15s;
+		transition-timing-function: ease;
 	}
 
 	input {

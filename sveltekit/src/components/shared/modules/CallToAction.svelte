@@ -64,11 +64,12 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: 1em;
+		gap: 1.25em;
 	}
 
 	.title {
 		font-size: 2.25em;
+		margin-bottom: 0;
 	}
 
 	.textSection p {
@@ -85,20 +86,11 @@
 		text-decoration: none;
 	}
 
-	.title {
-		margin-bottom: 0;
-	}
-
 	@media (max-width: 768px) {
 		.callToAction {
 			max-width: 100%;
 			display: flex;
 			flex-direction: column;
-			gap: 0.75em;
-		}
-
-		.textSection {
-			gap: 0.75em;
 		}
 
 		.title {

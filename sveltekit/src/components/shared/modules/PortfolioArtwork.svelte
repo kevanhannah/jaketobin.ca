@@ -50,7 +50,7 @@
 		width: 100%;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 1.5em;
+		gap: 1.25em;
 	}
 
 	.textSection {
@@ -97,6 +97,7 @@
 
 		.gallery {
 			order: 1;
+			gap: 0.5em;
 		}
 
 		.imageSelectWrapper {

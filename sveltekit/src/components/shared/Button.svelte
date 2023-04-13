@@ -20,7 +20,9 @@
 		padding-bottom: 0.75em;
 		padding-left: 1.25em;
 		padding-right: 1.25em;
-		transition-property: border-color, background, color, transform, box-shadow;
+		white-space: nowrap;
+		transition-property: border-color, background, color, transform, box-shadow,
+			width;
 		transition-duration: 0.15s;
 		transition-timing-function: ease;
 	}

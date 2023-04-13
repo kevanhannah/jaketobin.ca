@@ -5,6 +5,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
+		"netlify": "netlify dev",
 		"preview": "vite preview",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write ."
@@ -24,6 +25,7 @@
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-prettier": "^4.2.1",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"netlify-cli": "^13.2.2",
 		"postcss": "^8.4.21",
 		"postcss-load-config": "^4.0.1",
 		"prettier-plugin-svelte": "^2.8.1",

@@ -96,8 +96,8 @@ export const moduleCallToAction = {
 			}
 
 			return {
-				subtitle: 'Call to action',
-				title,
+				subtitle: 'Call to action module',
+				title: title || 'Untitled',
 				media: BlockElementIcon,
 			};
 		},

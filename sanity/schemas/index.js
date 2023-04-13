@@ -23,6 +23,7 @@ import { moduleAccordion } from './objects/module/accordion';
 import { moduleCallToAction } from './objects/module/callToAction';
 import { moduleGrid } from './objects/module/grid';
 import { moduleImage } from './objects/module/image';
+import { moduleNewsletter } from './objects/module/newsletter';
 import { modulePortfolioArtwork } from './objects/module/portfolioArtwork';
 import { page } from './objects/page';
 import { placeholderString } from './objects/placeholderString';
@@ -70,6 +71,7 @@ export const schemaTypes = [
 	moduleCallToAction,
 	moduleGrid,
 	moduleImage,
+	moduleNewsletter,
 	modulePortfolioArtwork,
 	page,
 	placeholderString,
