@@ -11,8 +11,8 @@
 	$: ({ body, title } = value);
 	$: email = '';
 	$: syrup = '';
-	$: error = undefined;
-	$: success = false;
+	$: status = undefined;
+	$: errorMessage = '';
 	$: loading = false;
 	$: message = 'Sign up';
 
@@ -32,11 +32,13 @@
 
 		if (!res.ok) {
 			loading = false;
-			error = text.message;
+			status = 'error';
+			errorMessage = text.message;
 			message = 'Sign up';
 		} else {
 			loading = false;
-			success = true;
+			status = 'success';
+			errorMessage = '';
 			email = '';
 			message = 'Success!';
 		}
@@ -68,14 +70,14 @@
 			<Button {loading} style="height: 3em;" type="submit">{message}</Button>
 		</div>
 	</form>
-	{#if error}
-		<div class="message" class:alert={error}>
+	{#if status === 'error'}
+		<div class="message" class:alert={status === 'error'}>
 			<Alert style="width: 1.5em; fill: #f56b52;" />
-			<p>Error: {error}</p>
+			<p>Error: {errorMessage}</p>
 		</div>
 	{/if}
-	{#if success}
-		<div class="message" class:success>
+	{#if status === 'success'}
+		<div class="message" class:success={status === 'success'}>
 			<Check style="width: 1.5em; fill: #50dca9;" />
 			<p>Success! You're signed up.</p>
 		</div>

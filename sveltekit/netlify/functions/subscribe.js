@@ -1,27 +1,24 @@
 async function handler(event) {
-	// Only allow POST
-	if (event.httpMethod !== 'POST') {
-		return {
-			statusCode: 405,
-			body: 'Method not allowed',
-		};
-	}
-
 	function generateError({ statusCode, message }) {
 		return {
 			statusCode: statusCode || 500,
-			body: message,
+			body: JSON.stringify({ message }),
 		};
+	}
+
+	// Only allow POST
+	if (event.httpMethod !== 'POST') {
+		return generateError({ statusCode: 405, message: 'Method not allowed' });
 	}
 
 	try {
 		const { email, syrup } = JSON.parse(event.body);
 
 		if (syrup) {
-			return {
+			return generateError({
 				statusCode: 400,
-				body: JSON.stringify({ message: 'Cannot submit (Error 474)' }),
-			};
+				message: 'Cannot submit (Error 474)',
+			});
 		}
 
 		if (!email) {
@@ -49,10 +46,7 @@ async function handler(event) {
 		const data = await res.json();
 
 		if (!res.ok) {
-			return {
-				statusCode: data.status,
-				body: JSON.stringify({ message: data.detail }),
-			};
+			return generateError({ statusCode: data.status, message: data.detail });
 		}
 
 		return {
@@ -63,10 +57,7 @@ async function handler(event) {
 			}),
 		};
 	} catch (err) {
-		return {
-			statusCode: 500,
-			body: JSON.stringify({ message: err.message }),
-		};
+		return generateError({ statusCode: 500, message: err.message });
 	}
 }
 
