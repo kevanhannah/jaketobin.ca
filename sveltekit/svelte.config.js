@@ -3,10 +3,7 @@ import preprocess from 'svelte-preprocess';
 
 const config = {
 	kit: {
-		adapter: adapter({
-			edge: true,
-			split: false,
-		}),
+		adapter: adapter(),
 		alias: {
 			$components: './src/components',
 		},

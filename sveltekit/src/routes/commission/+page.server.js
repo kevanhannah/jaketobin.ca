@@ -18,3 +18,5 @@ export async function load() {
 	}
 	throw error(404);
 }
+
+export const prerender = true;
