@@ -1,6 +1,5 @@
 <script>
 	import getShopifyImageProps from '$lib/utils/getShopifyImageProps';
-	import ProductGridLayout from '$components/Shop/ProductGridLayout.svelte';
 	import ProductCard from '$components/shared/ProductCard.svelte';
 
 	export let recommendations;

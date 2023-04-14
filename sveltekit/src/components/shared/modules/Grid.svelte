@@ -2,7 +2,6 @@
 	import getImageProps from '$lib/utils/getImageProps';
 	import SanityImage from '$components/shared/SanityImage.svelte';
 	import LinkButton from '$components/shared/LinkButton.svelte';
-	import setSlugPrefix from '$lib/utils/setSlugPrefix';
 	import ProductCard from '../ProductCard.svelte';
 
 	export let portableText;
