@@ -17,7 +17,6 @@
 
 	async function handleSubmit() {
 		loading = true;
-		message = 'Loading';
 
 		const res = await fetch(`${PUBLIC_SERVERLESS_BASE}/subscribe`, {
 			method: 'POST',
