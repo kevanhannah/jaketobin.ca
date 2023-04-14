@@ -46,6 +46,13 @@ async function handler(event) {
 		const data = await res.json();
 
 		if (!res.ok) {
+			if (data.status === 400 && data.title === 'Member Exists') {
+				return generateError({
+					statusCode: 400,
+					message: 'This email address is already subscribed.',
+				});
+			}
+
 			return generateError({ statusCode: data.status, message: data.detail });
 		}
 
