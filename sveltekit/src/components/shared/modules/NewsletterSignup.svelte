@@ -14,7 +14,6 @@
 	$: status = undefined;
 	$: errorMessage = '';
 	$: loading = false;
-	$: message = 'Sign up';
 
 	async function handleSubmit() {
 		loading = true;
@@ -34,13 +33,11 @@
 			loading = false;
 			status = 'error';
 			errorMessage = text.message;
-			message = 'Sign up';
 		} else {
 			loading = false;
 			status = 'success';
 			errorMessage = '';
 			email = '';
-			message = 'Success!';
 		}
 	}
 </script>
@@ -67,7 +64,8 @@
 				name="email"
 				placeholder="Email address"
 				required />
-			<Button {loading} style="height: 3em;" type="submit">{message}</Button>
+			<Button {loading} style="height: 3em;" type="submit"
+				>{loading ? 'Loading' : 'Sign up'}</Button>
 		</div>
 	</form>
 	{#if status === 'error'}
