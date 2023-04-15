@@ -46,9 +46,29 @@ export const moduleCallToAction = {
 		{
 			name: 'body',
 			title: 'Body',
-			type: 'text',
-			rows: 2,
-			fieldset: 'copy',
+			type: 'array',
+			of: [
+				{
+					lists: [],
+					marks: {
+						annotations: [],
+						decorators: [
+							{
+								title: 'Italic',
+								value: 'em',
+							},
+							{
+								title: 'Strong',
+								value: 'strong',
+							},
+						],
+					},
+					// Regular styles
+					styles: [],
+					// Paragraphs
+					type: 'block',
+				},
+			],
 		},
 		// Link
 		{

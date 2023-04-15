@@ -1,4 +1,5 @@
 <script>
+	import { PortableText } from '@portabletext/svelte';
 	import getImageProps from '$lib/utils/getImageProps';
 	import SanityImage from '$components/shared/SanityImage.svelte';
 	import LinkButton from '$components/shared/LinkButton.svelte';
@@ -42,7 +43,9 @@
 			{/if}
 		{/if}
 		{#if body}
-			<p class="body" class:reverse={layout === 'right'}>{body}</p>
+			<div class="body" class:reverse={layout === 'right'}>
+				<PortableText value={body} />
+			</div>
 		{/if}
 		{#if links}
 			<LinkButton link={links} />
@@ -72,7 +75,7 @@
 		margin-bottom: 0;
 	}
 
-	.textSection p {
+	.textSection :global(p:last-of-type) {
 		margin-bottom: 0;
 	}
 
