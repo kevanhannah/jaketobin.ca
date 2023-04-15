@@ -35,5 +35,6 @@ vite.config.ts.timestamp-*
 
 # VS Code
 **/.vscode
+
 # Local Netlify folder
 .netlify

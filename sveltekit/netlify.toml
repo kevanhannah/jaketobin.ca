@@ -1,6 +1,8 @@
 [build]
-  command = "npm run build"
+  base = "sveltekit"
+  command = "pnpm run build"
   publish = "build"
+
 [[headers]]
   for = "/*"
   [headers.values]

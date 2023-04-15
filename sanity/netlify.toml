@@ -1,0 +1,9 @@
+[build]
+  base = "sanity"
+  command = "pnpm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
