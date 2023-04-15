@@ -1,5 +1,5 @@
 [build]
-  base = "studio"
+  base = "sanity"
   command = "pnpm run build"
   publish = "dist"
 
