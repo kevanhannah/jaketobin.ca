@@ -1,6 +1,6 @@
 import {
 	PUBLIC_SHOPIFY_API_ENDPOINT,
-	PUBLIC_SHOPIFY_HEADLESS_PUBLIC_TOKEN,
+	PUBLIC_SHOPIFY_STOREFRONT_API_TOKEN,
 } from '$env/static/public';
 
 export default async function shopifyFetch({ query, variables }) {
@@ -10,7 +10,7 @@ export default async function shopifyFetch({ query, variables }) {
 			headers: {
 				'Content-Type': 'application/json',
 				'X-Shopify-Storefront-Access-Token':
-					PUBLIC_SHOPIFY_HEADLESS_PUBLIC_TOKEN,
+					PUBLIC_SHOPIFY_STOREFRONT_API_TOKEN,
 			},
 			body: { query, variables } && JSON.stringify({ query, variables }),
 		});
