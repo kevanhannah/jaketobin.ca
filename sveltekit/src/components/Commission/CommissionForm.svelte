@@ -14,7 +14,6 @@
 			value: '8x10',
 		},
 	];
-
 	let frameSelect = [
 		{
 			name: 'No',
@@ -25,7 +24,6 @@
 			value: true,
 		},
 	];
-
 	let frameColorSelect = [
 		{
 			name: 'Black',
@@ -48,21 +46,26 @@
 		firstName: '',
 		framed: false,
 		get frameColor() {
-			return this.framed ? frameColorSelect[0].value : null;
+			if (this.framed) {
+				return this._frameColor ? this._frameColor : frameColorSelect[0].value;
+			} else {
+				return null;
+			}
+		},
+		set frameColor(value) {
+			return this.framed
+				? (this._frameColor = value)
+				: (this._frameColor = null);
 		},
 		lastName: '',
 		size: sizeSelect[0].value,
 	};
+	$: loading = false;
 
-	async function handleForm(event) {
-		// Creating form data
-		const data = new FormData(this); // this === form element
-		console.log(data);
-		// Sending our own fetch post action
-		// const res = await fetch(this.action, {
-		// 	method: 'POST',
-		// 	body: data,
-		// });
+	async function handleSubmit() {
+		loading = true;
+
+		console.log(commmissionInfo);
 	}
 </script>
 
@@ -70,13 +73,28 @@
 	<h2>Request an illustration</h2>
 	<form
 		class="commissionForm"
-		on:submit|preventDefault={handleForm}
-		action="/contact?/email">
+		on:submit|preventDefault={handleSubmit}
+		method="POST">
 		<div class="formRow">
-			<TextInput id="firstName" label="First name" name="firstName" required />
-			<TextInput id="lastName" label="Last name" name="lastName" required />
+			<TextInput
+				bind:value={commmissionInfo.firstName}
+				id="firstName"
+				label="First name"
+				name="firstName"
+				required />
+			<TextInput
+				bind:value={commmissionInfo.lastName}
+				id="lastName"
+				label="Last name"
+				name="lastName"
+				required />
 		</div>
-		<EmailInput id="email" label="Email" name="email" required />
+		<EmailInput
+			bind:value={commmissionInfo.email}
+			id="email"
+			label="Email"
+			name="email"
+			required />
 		<div class="formRow">
 			<SelectInput
 				bind:value={commmissionInfo.size}
@@ -86,6 +104,7 @@
 				options={sizeSelect}
 				required />
 			<TextInput
+				bind:value={commmissionInfo.dueDate}
 				id="dueDate"
 				label="When do you need it?"
 				name="dueDate"
@@ -109,6 +128,7 @@
 				required={!commmissionInfo.framed} />
 		</div>
 		<TextInput
+			bind:value={commmissionInfo.description}
 			id="description"
 			label="Briefly describe your illustration subject or idea"
 			name="description"
