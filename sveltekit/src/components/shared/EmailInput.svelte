@@ -30,6 +30,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.75em;
+		font-weight: 600;
 		transition-property: width;
 		transition-duration: 0.15s;
 		transition-timing-function: ease;
@@ -39,6 +40,7 @@
 		height: 3em;
 		padding-left: 0.75em;
 		padding-right: 0.75em;
+		font-weight: 400;
 		background: var(--paperWhite);
 		border: 1px solid var(--black);
 		border-radius: 0.5em;
