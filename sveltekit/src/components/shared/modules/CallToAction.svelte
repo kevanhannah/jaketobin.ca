@@ -81,8 +81,6 @@
 
 	.reverse .textSection {
 		order: -1;
-		align-items: flex-end;
-		text-align: right;
 	}
 
 	.productTitleLink {
@@ -102,8 +100,6 @@
 
 		.reverse .textSection {
 			order: 0;
-			align-items: flex-start;
-			text-align: left;
 		}
 	}
 
