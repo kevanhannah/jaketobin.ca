@@ -4,13 +4,15 @@
 	export let image = undefined;
 	export let loading = 'lazy';
 	export let style = undefined;
+	export let decoding = 'async';
 </script>
 
 {#if image !== undefined}
 	<img
 		alt={image.alt || ''}
 		data-loaded={loaded}
-		fetchPriority={loading === 'eager' ? 'high' : undefined}
+		{decoding}
+		fetchPriority={loading === 'eager' ? 'high' : 'auto'}
 		{...image}
 		{loading}
 		on:load={() => (loaded = true)}

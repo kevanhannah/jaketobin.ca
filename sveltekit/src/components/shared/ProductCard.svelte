@@ -1,7 +1,10 @@
 <script>
 	import OutOfStockBadge from '$components/Shop/OutOfStockBadge.svelte';
 
+	let loaded = false;
+
 	export let availableForSale = true;
+	export let decoding = 'async';
 	export let handle;
 	export let loading = 'lazy';
 	export let src;
@@ -11,9 +14,12 @@
 
 <a href={`/shop/products/${handle}`}>
 	<img
-		class="productImage"
 		alt={title}
+		class="productImage"
+		{decoding}
+		fetchPriority={loading === 'eager' ? 'high' : 'auto'}
 		{loading}
+		on:load={() => (loaded = true)}
 		sizes="(max-width: 800px) 50vw, 25vw"
 		{src}
 		{srcset} />
