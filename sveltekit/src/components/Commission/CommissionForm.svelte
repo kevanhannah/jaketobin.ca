@@ -34,8 +34,8 @@
 			value: 'White',
 		},
 		{
-			name: 'Natural Wood',
-			value: 'Wood',
+			name: 'Blonde Wood',
+			value: 'Blonde Wood',
 		},
 	];
 
@@ -60,6 +60,7 @@
 		lastName: '',
 		size: sizeSelect[0].value,
 	};
+	$: syrup = '';
 	$: loading = false;
 
 	async function handleSubmit() {
@@ -70,11 +71,18 @@
 </script>
 
 <div class="commissionFormSection">
-	<h2>Request an illustration</h2>
+	<h2 class="header">Request an illustration</h2>
 	<form
 		class="commissionForm"
 		on:submit|preventDefault={handleSubmit}
 		method="POST">
+		<div class="formRow">
+			<TextInput
+				bind:value={syrup}
+				id="syrup"
+				name="syrup"
+				style="display: none;" />
+		</div>
 		<div class="formRow">
 			<TextInput
 				bind:value={commmissionInfo.firstName}
@@ -144,12 +152,15 @@
 		max-width: 60em;
 		display: flex;
 		flex-direction: column;
-		gap: 1.25em;
 		padding-top: 2em;
 		margin-top: 2em;
 		margin-left: auto;
 		margin-right: auto;
 		border-top: 1px solid var(--black);
+	}
+
+	.header {
+		margin-bottom: 0;
 	}
 
 	.commissionForm {
@@ -166,6 +177,10 @@
 	@media (max-width: 768px) {
 		.commissionFormSection {
 			width: 100%;
+		}
+
+		.header {
+			font-size: 1.75em;
 		}
 
 		.formRow {
