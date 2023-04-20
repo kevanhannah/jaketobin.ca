@@ -1,9 +1,10 @@
 <script>
+	export let disabled = false;
 	export let id;
-	export let label;
+	export let label = undefined;
 	export let name;
-	export let placeholder;
-	export let required;
+	export let placeholder = undefined;
+	export let required = false;
 	export let style = undefined;
 	export let value = '';
 </script>
@@ -12,7 +13,15 @@
 	{#if label}
 		{label}
 	{/if}
-	<input bind:value {id} {name} {placeholder} {style} {required} type="text" />
+	<input
+		bind:value
+		{disabled}
+		{id}
+		{name}
+		{placeholder}
+		{style}
+		{required}
+		type="text" />
 </label>
 
 <style lang="postcss">
@@ -25,7 +34,9 @@
 
 	input {
 		height: 3em;
-		padding: 1em;
+		padding-left: 0.75em;
+		padding-right: 0.75em;
+		background: var(--paperWhite);
 		border: 1px solid var(--black);
 		border-radius: 0.5em;
 	}
