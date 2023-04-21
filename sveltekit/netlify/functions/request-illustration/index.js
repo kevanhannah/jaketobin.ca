@@ -1,12 +1,5 @@
 import { createEmailTemplate } from './src/createEmailTemplate';
 
-const Mailgun = require('mailgun.js');
-const mailgun = new Mailgun(FormData);
-const mg = mailgun.client({
-	username: 'api',
-	key: process.env.MAILGUN_API_KEY,
-});
-
 async function handler(event) {
 	function generateError({ statusCode, message }) {
 		return {
@@ -40,11 +33,16 @@ async function handler(event) {
 			});
 		}
 
-		const res = await mg.messages.create('mail.jaketobin.ca', {
-			from: 'jaketobin.ca <noreply@mail.jaketobin.ca>',
-			to: [process.env.COMMISSION_REQUEST_EMAIL],
-			subject: `Custom illustration request: ${commissionInfo.firstName} ${commissionInfo.lastName}`,
-			html: createEmailTemplate({
+		const formdata = new FormData();
+		formdata.append('from', process.env.MAILGUN_FROM_ADDRESS);
+		formdata.append('to', process.env.MAILGUN_TO_ADDRESS);
+		formdata.append(
+			'subject',
+			`Custom illustration request: ${commissionInfo.firstName} ${commissionInfo.lastName}`
+		);
+		formdata.append(
+			'html',
+			createEmailTemplate({
 				description,
 				dueDate,
 				email,
@@ -53,8 +51,20 @@ async function handler(event) {
 				frameColor,
 				lastName,
 				size,
-			}),
-		});
+			})
+		);
+
+		const creds = `api:${process.env.MAILGUN_API_KEY}`;
+		const res = await fetch(
+			`https://api.mailgun.net/v3/${process.env.MAILGUN_MAIL_DOMAIN}/messages`,
+			{
+				method: 'POST',
+				headers: {
+					Authorization: `Basic ${Buffer.from(creds).toString('base64')}`,
+				},
+				body: formdata,
+			}
+		);
 
 		if (res.status !== 200) {
 			return generateError({ statusCode: res.status, message: res.message });
