@@ -38,7 +38,7 @@
 		},
 	];
 
-	$: commmissionInfo = {
+	$: commissionInfo = {
 		description: '',
 		dueDate: '',
 		email: '',
@@ -60,7 +60,7 @@
 			headers: {
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify({ commmissionInfo, syrup }),
+			body: JSON.stringify({ commissionInfo, syrup }),
 		});
 
 		const text = JSON.parse(await res.text());
