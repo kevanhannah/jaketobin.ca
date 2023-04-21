@@ -152,19 +152,19 @@
 		<div style="display: flex; justify-content: flex-start">
 			<Button {loading} type="submit">{loading ? 'Loading' : 'Submit'}</Button>
 		</div>
+		{#if status === 'error'}
+			<div class="message" class:alert={status === 'error'}>
+				<Alert style="width: 1.5em; fill: #f56b52;" />
+				<p>Error: {errorMessage}</p>
+			</div>
+		{/if}
+		{#if status === 'success'}
+			<div class="message" class:success={status === 'success'}>
+				<Check style="width: 1.5em; fill: #50dca9;" />
+				<p>Request received! I will be in touch soon.</p>
+			</div>
+		{/if}
 	</form>
-	{#if status === 'error'}
-		<div class="message" class:alert={status === 'error'}>
-			<Alert style="width: 1.5em; fill: #f56b52;" />
-			<p>Error: {errorMessage}</p>
-		</div>
-	{/if}
-	{#if status === 'success'}
-		<div class="message" class:success={status === 'success'}>
-			<Check style="width: 1.5em; fill: #50dca9;" />
-			<p>Request received! I will be in touch soon</p>
-		</div>
-	{/if}
 </div>
 
 <style lang="postcss">
