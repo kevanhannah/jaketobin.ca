@@ -4,6 +4,8 @@
 	import Button from '$components/shared/Button.svelte';
 	import SelectInput from '$components/shared/SelectInput.svelte';
 	import EmailInput from '$components/shared/EmailInput.svelte';
+	import Alert from '$components/shared/Icons/Alert.svelte';
+	import Check from '$components/shared/Icons/Check.svelte';
 
 	let sizeSelect = [
 		{
@@ -148,9 +150,21 @@
 			name="description"
 			required />
 		<div style="display: flex; justify-content: flex-start">
-			<Button type="submit">Submit</Button>
+			<Button {loading} type="submit">{loading ? 'Loading' : 'Submit'}</Button>
 		</div>
 	</form>
+	{#if status === 'error'}
+		<div class="message" class:alert={status === 'error'}>
+			<Alert style="width: 1.5em; fill: #f56b52;" />
+			<p>Error: {errorMessage}</p>
+		</div>
+	{/if}
+	{#if status === 'success'}
+		<div class="message" class:success={status === 'success'}>
+			<Check style="width: 1.5em; fill: #50dca9;" />
+			<p>Request received! I will be in touch soon</p>
+		</div>
+	{/if}
 </div>
 
 <style lang="postcss">
@@ -180,8 +194,41 @@
 		gap: 1.5em;
 	}
 
+	.message {
+		width: 50%;
+		display: flex;
+		align-items: center;
+		gap: 1em;
+		border-radius: 0.5em;
+		padding-top: 1.25em;
+		padding-bottom: 1.25em;
+		padding-left: 1.25em;
+		padding-right: 1.25em;
+	}
+
+	.message p {
+		margin-bottom: 0;
+	}
+
+	.alert {
+		border: 1px solid #f56b52;
+		background: #fde2dd;
+	}
+
+	.success {
+		border: 1px solid #50dca9;
+		background: #e0f8ee;
+	}
+
+	@media (max-width: 1000px) {
+		.message {
+			width: 75%;
+		}
+	}
+
 	@media (max-width: 768px) {
-		.commissionFormSection {
+		.commissionFormSection,
+		.message {
 			width: 100%;
 		}
 
