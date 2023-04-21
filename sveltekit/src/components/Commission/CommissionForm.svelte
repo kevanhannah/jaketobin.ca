@@ -53,7 +53,6 @@
 	$: syrup = '';
 
 	async function handleSubmit() {
-		console.log(commmissionInfo);
 		loading = true;
 
 		const res = await fetch(`${PUBLIC_SERVERLESS_BASE}/request-commission`, {
