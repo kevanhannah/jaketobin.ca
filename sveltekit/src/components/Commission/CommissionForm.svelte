@@ -55,7 +55,7 @@
 	async function handleSubmit() {
 		loading = true;
 
-		const res = await fetch(`${PUBLIC_SERVERLESS_BASE}/request-commission`, {
+		const res = await fetch(`${PUBLIC_SERVERLESS_BASE}/request-illustration`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
