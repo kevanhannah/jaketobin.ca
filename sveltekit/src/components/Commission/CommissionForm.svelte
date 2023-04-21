@@ -73,7 +73,7 @@
 			loading = false;
 			status = 'success';
 			errorMessage = '';
-			commmissionInfo = {
+			commissionInfo = {
 				description: '',
 				dueDate: '',
 				email: '',
@@ -101,34 +101,34 @@
 		</div>
 		<div class="formRow">
 			<TextInput
-				bind:value={commmissionInfo.firstName}
+				bind:value={commissionInfo.firstName}
 				id="firstName"
 				label="First name"
 				name="firstName"
 				required />
 			<TextInput
-				bind:value={commmissionInfo.lastName}
+				bind:value={commissionInfo.lastName}
 				id="lastName"
 				label="Last name"
 				name="lastName"
 				required />
 		</div>
 		<EmailInput
-			bind:value={commmissionInfo.email}
+			bind:value={commissionInfo.email}
 			id="email"
 			label="Email"
 			name="email"
 			required />
 		<div class="formRow">
 			<SelectInput
-				bind:value={commmissionInfo.size}
+				bind:value={commissionInfo.size}
 				id="size"
 				label="Size"
 				name="size"
 				options={sizeSelect}
 				required />
 			<SelectInput
-				bind:value={commmissionInfo.framed}
+				bind:value={commissionInfo.framed}
 				id="framed"
 				label="Add frame?"
 				name="framed"
@@ -136,13 +136,13 @@
 				required />
 		</div>
 		<TextInput
-			bind:value={commmissionInfo.dueDate}
+			bind:value={commissionInfo.dueDate}
 			id="dueDate"
 			label="When do you need it?"
 			name="dueDate"
 			required />
 		<TextInput
-			bind:value={commmissionInfo.description}
+			bind:value={commissionInfo.description}
 			id="description"
 			label="Briefly describe your illustration subject or idea"
 			name="description"
