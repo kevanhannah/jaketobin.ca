@@ -10,10 +10,10 @@
 	$: ({ value } = portableText);
 	$: ({ body, title } = value);
 	$: email = '';
-	$: syrup = '';
-	$: status = undefined;
 	$: errorMessage = '';
 	$: loading = false;
+	$: syrup = '';
+	$: status = undefined;
 
 	async function handleSubmit() {
 		loading = true;

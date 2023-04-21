@@ -1,4 +1,5 @@
 <script>
+	import { PUBLIC_SERVERLESS_BASE } from '$env/static/public';
 	import TextInput from '$components/shared/TextInput.svelte';
 	import Button from '$components/shared/Button.svelte';
 	import SelectInput from '$components/shared/SelectInput.svelte';
@@ -13,29 +14,27 @@
 			name: '8×10',
 			value: '8x10',
 		},
+		{
+			name: '11×14',
+			value: '11x14',
+		},
+		{
+			name: 'Unsure',
+			value: 'Unsure',
+		},
 	];
 	let frameSelect = [
 		{
 			name: 'No',
-			value: false,
+			value: 'No',
+		},
+		{
+			name: 'Unsure',
+			value: 'Unsure',
 		},
 		{
 			name: 'Yes',
-			value: true,
-		},
-	];
-	let frameColorSelect = [
-		{
-			name: 'Black',
-			value: 'Black',
-		},
-		{
-			name: 'White',
-			value: 'White',
-		},
-		{
-			name: 'Blonde Wood',
-			value: 'Blonde Wood',
+			value: 'Yes',
 		},
 	];
 
@@ -44,29 +43,47 @@
 		dueDate: '',
 		email: '',
 		firstName: '',
-		framed: false,
-		get frameColor() {
-			if (this.framed) {
-				return this._frameColor ? this._frameColor : frameColorSelect[0].value;
-			} else {
-				return null;
-			}
-		},
-		set frameColor(value) {
-			return this.framed
-				? (this._frameColor = value)
-				: (this._frameColor = null);
-		},
+		framed: frameSelect[0].value,
 		lastName: '',
 		size: sizeSelect[0].value,
 	};
-	$: syrup = '';
+	$: errorMessage = '';
 	$: loading = false;
+	$: status = undefined;
+	$: syrup = '';
 
 	async function handleSubmit() {
+		console.log(commmissionInfo);
 		loading = true;
 
-		console.log(commmissionInfo);
+		const res = await fetch(`${PUBLIC_SERVERLESS_BASE}/request-commission`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ commmissionInfo, syrup }),
+		});
+
+		const text = JSON.parse(await res.text());
+
+		if (!res.ok) {
+			loading = false;
+			status = 'error';
+			errorMessage = text.message;
+		} else {
+			loading = false;
+			status = 'success';
+			errorMessage = '';
+			commmissionInfo = {
+				description: '',
+				dueDate: '',
+				email: '',
+				firstName: '',
+				framed: frameSelect[0].value,
+				lastName: '',
+				size: sizeSelect[0].value,
+			};
+		}
 	}
 </script>
 
@@ -111,14 +128,6 @@
 				name="size"
 				options={sizeSelect}
 				required />
-			<TextInput
-				bind:value={commmissionInfo.dueDate}
-				id="dueDate"
-				label="When do you need it?"
-				name="dueDate"
-				required />
-		</div>
-		<div class="formRow">
 			<SelectInput
 				bind:value={commmissionInfo.framed}
 				id="framed"
@@ -126,15 +135,13 @@
 				name="framed"
 				options={frameSelect}
 				required />
-			<SelectInput
-				bind:value={commmissionInfo.frameColor}
-				disabled={!commmissionInfo.framed}
-				id="frameColor"
-				label="Frame colour"
-				name="frameColor"
-				options={frameColorSelect}
-				required={!commmissionInfo.framed} />
 		</div>
+		<TextInput
+			bind:value={commmissionInfo.dueDate}
+			id="dueDate"
+			label="When do you need it?"
+			name="dueDate"
+			required />
 		<TextInput
 			bind:value={commmissionInfo.description}
 			id="description"
