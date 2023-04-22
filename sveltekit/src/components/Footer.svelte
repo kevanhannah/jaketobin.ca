@@ -8,18 +8,18 @@
 <footer {...$$restProps}>
 	<div class="social_icons">
 		<a aria-label="Instagram" href="https://instagram.com/jaketobindraws">
-			<Instagram />
+			<Instagram height="2.25em" width="2.25em" />
 		</a>
 		<a aria-label="Twitter" href="https://twitter.com/jaketobin">
-			<Twitter />
+			<Twitter height="2.25em" width="2.25em" />
 		</a>
 		<a
 			aria-label="LinkedIn"
 			href="https://www.linkedin.com/in/jake-tobin-garrett-43a72951">
-			<LinkedIn />
+			<LinkedIn height="2.25em" width="2.25em" />
 		</a>
 		<a aria-label="Email" href="mailto:jake@jaketobin.ca">
-			<Email />
+			<Email height="2.25em" width="2.25em" />
 		</a>
 	</div>
 	<p style="margin-bottom: 0;">
@@ -55,12 +55,12 @@
 		align-items: flex-end;
 	}
 
-	.social_icons a :global(svg) {
+	.social_icons a :global(svg g path) {
 		fill: var(--black);
 	}
 
 	@media (hover: hover) {
-		.social_icons a:hover :global(svg) {
+		.social_icons a:hover :global(svg g path) {
 			fill: var(--mediumGray);
 		}
 	}

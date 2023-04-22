@@ -3,7 +3,12 @@
 	export let style = undefined;
 </script>
 
-<svg {hovering} role="presentation" {style} viewBox="0 0 16 2">
+<svg
+	{hovering}
+	role="presentation"
+	{style}
+	viewBox="0 0 16 2"
+	xmlns="http://www.w3.org/2000/svg">
 	<path d="M1,1 L15,1" fillRule="evenodd" strokeLinecap="square" />
 </svg>
 
