@@ -19,14 +19,14 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1.5em;
-	}
 
-	.portfolioPage :global(.module:first-of-type) {
-		border-top: 0;
-	}
+		& :global(.module:first-of-type) {
+			border-top: 0;
+		}
 
-	.portfolioPage :global(.module:last-of-type) {
-		border-bottom: 0;
+		& :global(.module:last-of-type) {
+			border-bottom: 0;
+		}
 	}
 
 	.title {
@@ -34,10 +34,8 @@
 		margin-bottom: 0;
 		padding-bottom: 0.5em;
 		border-bottom: 1px solid var(--black);
-	}
 
-	@media (max-width: 768px) {
-		.title {
+		@media (max-width: 768px) {
 			font-size: 2em;
 			line-height: 1.25;
 			margin-bottom: 0.25em;

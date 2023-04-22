@@ -31,11 +31,11 @@
 		top: 0;
 		z-index: 8;
 		transition: opacity 0.15s linear;
-	}
 
-	.cart_backdrop.is_active {
-		backdrop-filter: blur(0.5em);
-		opacity: 1;
-		pointer-events: auto;
+		&.is_active {
+			backdrop-filter: blur(0.5em);
+			opacity: 1;
+			pointer-events: auto;
+		}
 	}
 </style>

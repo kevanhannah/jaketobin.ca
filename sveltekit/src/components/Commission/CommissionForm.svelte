@@ -177,10 +177,18 @@
 		margin-left: auto;
 		margin-right: auto;
 		border-top: 1px solid var(--black);
+
+		@media (max-width: 768px) {
+			width: 100%;
+		}
 	}
 
 	.header {
 		margin-bottom: 0;
+
+		@media (max-width: 768px) {
+			font-size: 1.75em;
+		}
 	}
 
 	.commissionForm {
@@ -192,6 +200,10 @@
 	.formRow {
 		display: flex;
 		gap: 1.5em;
+
+		@media (max-width: 768px) {
+			flex-direction: column;
+		}
 	}
 
 	.message {
@@ -204,10 +216,18 @@
 		padding-bottom: 1.25em;
 		padding-left: 1.25em;
 		padding-right: 1.25em;
-	}
 
-	.message p {
-		margin-bottom: 0;
+		& p {
+			margin-bottom: 0;
+		}
+
+		@media (max-width: 1000px) {
+			width: 75%;
+		}
+
+		@media (max-width: 768px) {
+			width: 100%;
+		}
 	}
 
 	.alert {
@@ -218,26 +238,5 @@
 	.success {
 		border: 1px solid #50dca9;
 		background: #e0f8ee;
-	}
-
-	@media (max-width: 1000px) {
-		.message {
-			width: 75%;
-		}
-	}
-
-	@media (max-width: 768px) {
-		.commissionFormSection,
-		.message {
-			width: 100%;
-		}
-
-		.header {
-			font-size: 1.75em;
-		}
-
-		.formRow {
-			flex-direction: column;
-		}
 	}
 </style>

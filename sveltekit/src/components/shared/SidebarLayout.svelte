@@ -28,6 +28,10 @@
 		display: flex;
 		flex-direction: column;
 		gap: 3em;
+
+		@media (max-width: 768px) {
+			display: none;
+		}
 	}
 
 	.sectionHeader {
@@ -41,27 +45,21 @@
 	.sectionList li {
 		line-height: 1.6;
 		margin-bottom: 0.75em;
-	}
 
-	.sectionList li:last-of-type {
-		margin-bottom: 0;
-	}
-
-	.sectionList li a {
-		text-decoration: none;
-	}
-
-	@media (max-width: 768px) {
-		aside {
-			display: none;
+		&:last-of-type {
+			margin-bottom: 0;
 		}
-	}
 
-	@media (hover: hover) {
-		.sectionList li a:hover {
-			text-decoration: underline;
-			text-underline-offset: 0.25em;
-			text-decoration-thickness: 1px;
+		& a {
+			text-decoration: none;
+
+			@media (hover: hover) {
+				&:hover {
+					text-decoration: underline;
+					text-underline-offset: 0.25em;
+					text-decoration-thickness: 1px;
+				}
+			}
 		}
 	}
 </style>

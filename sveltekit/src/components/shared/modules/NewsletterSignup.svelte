@@ -98,12 +98,28 @@
 	.body {
 		max-width: 60%;
 		margin-bottom: 0;
+
+		@media (max-width: 1000px) {
+			max-width: 80%;
+		}
+
+		@media (max-width: 768px) {
+			max-width: 100%;
+		}
 	}
 
 	.form {
 		width: 50%;
 		display: flex;
 		flex-direction: column;
+
+		@media (max-width: 1000px) {
+			width: 75%;
+		}
+
+		@media (max-width: 768px) {
+			width: 100%;
+		}
 	}
 
 	.formRow {
@@ -111,6 +127,11 @@
 		display: flex;
 		gap: 1.5em;
 		align-items: flex-end;
+
+		@media (max-width: 768px) {
+			flex-direction: column;
+			gap: 1.25em;
+		}
 	}
 
 	.message {
@@ -123,10 +144,18 @@
 		padding-bottom: 1.25em;
 		padding-left: 1.25em;
 		padding-right: 1.25em;
-	}
 
-	.message p {
-		margin-bottom: 0;
+		& p {
+			margin-bottom: 0;
+		}
+
+		@media (max-width: 1000px) {
+			width: 75%;
+		}
+
+		@media (max-width: 768px) {
+			width: 100%;
+		}
 	}
 
 	.alert {
@@ -137,34 +166,5 @@
 	.success {
 		border: 1px solid #50dca9;
 		background: #e0f8ee;
-	}
-
-	@media (max-width: 1000px) {
-		.title,
-		.body {
-			max-width: 80%;
-		}
-
-		.form,
-		.message {
-			width: 75%;
-		}
-	}
-
-	@media (max-width: 768px) {
-		.title,
-		.body {
-			max-width: 100%;
-		}
-
-		.form,
-		.message {
-			width: 100%;
-		}
-
-		.formRow {
-			flex-direction: column;
-			gap: 1.25em;
-		}
 	}
 </style>

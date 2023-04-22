@@ -15,7 +15,7 @@
 			class="closeDrawer"
 			on:click={handleCartClick}
 			type="button">
-			<span class="hamburgerIcon" />
+			<span class="closeIcon" />
 		</button>
 	</div>
 	<Cart />
@@ -38,6 +38,10 @@
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
+
+		@media (max-width: 768px) {
+			--drawer-width: 22.5em;
+		}
 	}
 
 	.cartDrawer.open {
@@ -54,12 +58,25 @@
 		padding-bottom: 2.75em;
 		padding-left: 2.5em;
 		padding-right: 2.5em;
-	}
 
-	.drawerHeader h2 {
-		font-size: 1.5em;
-		margin-bottom: 0;
-		line-height: 1;
+		& h2 {
+			font-size: 1.5em;
+			margin-bottom: 0;
+			line-height: 1;
+
+			@media (max-width: 768px) {
+				font-size: 1.55em;
+				margin-bottom: 0;
+				line-height: 1;
+			}
+		}
+
+		@media (max-width: 768px) {
+			padding-top: 1.5em;
+			padding-bottom: 1.5em;
+			padding-left: 0.75em;
+			padding-right: 0.75em;
+		}
 	}
 
 	.closeDrawer {
@@ -72,9 +89,15 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+
+		@media (hover: hover) {
+			&:hover {
+				color: var(--mediumGray);
+			}
+		}
 	}
 
-	.hamburgerIcon {
+	.closeIcon {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -83,53 +106,28 @@
 		margin-right: auto;
 		position: relative;
 		width: 1.5em;
-	}
 
-	.hamburgerIcon:after,
-	.hamburgerIcon:before {
-		border-top-width: 1.5px;
-		content: '';
-		display: block;
-		height: 0;
-		position: absolute;
-		top: calc(50% - 0.5px);
-		transition: opacity 0s 0.15s, transform 0.15s ease-out;
-		width: 100%;
-	}
-
-	.hamburgerIcon:before {
-		transform: rotate(45deg);
-	}
-
-	.hamburgerIcon:after {
-		transform: rotate(-45deg);
-	}
-
-	@media (hover: hover) {
-		.closeDrawer:hover {
-			color: var(--mediumGray);
-		}
-	}
-
-	@media (max-width: 768px) {
-		.cartDrawer {
-			--drawer-width: 22.5em;
+		&:before,
+		&:after {
+			border-top-width: 1.5px;
+			content: '';
+			display: block;
+			height: 0;
+			position: absolute;
+			top: calc(50% - 0.5px);
+			transition: opacity 0s 0.15s, transform 0.15s ease-out;
+			width: 100%;
 		}
 
-		.drawerHeader {
-			padding-top: 1.5em;
-			padding-bottom: 1.5em;
-			padding-left: 0.75em;
-			padding-right: 0.75em;
+		&:before {
+			transform: rotate(45deg);
 		}
 
-		.drawerHeader h2 {
-			font-size: 1.55em;
-			margin-bottom: 0;
-			line-height: 1;
+		&:after {
+			transform: rotate(-45deg);
 		}
 
-		.hamburgerIcon {
+		@media (max-width: 768px) {
 			width: 2em;
 		}
 	}

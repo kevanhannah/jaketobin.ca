@@ -67,9 +67,9 @@
 		padding-right: 0.5em;
 		user-select: none;
 		background: transparent;
-	}
 
-	.incrementButton:disabled {
-		cursor: default;
+		&:disabled {
+			cursor: default;
+		}
 	}
 </style>

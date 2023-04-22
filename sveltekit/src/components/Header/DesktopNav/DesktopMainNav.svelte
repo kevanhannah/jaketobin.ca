@@ -42,6 +42,10 @@
 		position: absolute;
 		right: 0;
 		top: 0;
+
+		@media (max-width: 1280px) {
+			display: none;
+		}
 	}
 
 	.navButton {
@@ -54,10 +58,22 @@
 		cursor: pointer;
 		font-family: inherit;
 		text-decoration-line: none;
-	}
 
-	.mainNavigation_desktop ul {
-		display: flex;
+		@media (hover: hover) {
+			&.active:not(:hover) {
+				text-decoration: underline;
+				text-underline-offset: 0.25em;
+				text-decoration-thickness: 1px;
+			}
+
+			&:hover {
+				color: var(--black);
+				text-decoration: underline;
+				text-underline-offset: 0.25em;
+				text-decoration-thickness: 1px;
+				opacity: 1;
+			}
+		}
 	}
 
 	.menuLeft,
@@ -69,27 +85,5 @@
 	.menuLeft ul {
 		display: flex;
 		gap: 2em;
-	}
-
-	@media (hover: hover) {
-		.active:not(:hover) {
-			text-decoration: underline;
-			text-underline-offset: 0.25em;
-			text-decoration-thickness: 1px;
-		}
-
-		.navButton:hover {
-			color: var(--black);
-			text-decoration: underline;
-			text-underline-offset: 0.25em;
-			text-decoration-thickness: 1px;
-			opacity: 1;
-		}
-	}
-
-	@media (max-width: 1280px) {
-		.mainNavigation_desktop {
-			display: none;
-		}
 	}
 </style>

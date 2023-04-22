@@ -14,6 +14,10 @@
 		background-color: transparent;
 		display: flex;
 		position: relative;
+
+		@media (max-width: 768px) {
+			font-size: 0.75em;
+		}
 	}
 
 	.cartToggle {
@@ -24,6 +28,14 @@
 		cursor: pointer;
 		text-transform: uppercase;
 		font-weight: 400;
+
+		@media (hover: hover) {
+			&:hover .cartToggleText {
+				text-decoration: underline;
+				text-underline-offset: 0.25em;
+				text-decoration-thickness: 1px;
+			}
+		}
 	}
 
 	.cartToggleCounter {
@@ -38,20 +50,5 @@
 		height: 1.75em;
 		justify-content: center;
 		line-height: 1;
-	}
-
-	@media (max-width: 768px) {
-		.cartToggle,
-		.cartToggleCounter {
-			font-size: 0.75em;
-		}
-	}
-
-	@media (hover: hover) {
-		.cartToggle:hover .cartToggleText {
-			text-decoration: underline;
-			text-underline-offset: 0.25em;
-			text-decoration-thickness: 1px;
-		}
 	}
 </style>

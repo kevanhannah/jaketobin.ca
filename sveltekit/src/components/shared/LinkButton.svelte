@@ -44,20 +44,23 @@
 		padding-right: 1.25em;
 		text-align: center;
 		text-decoration: none;
-	}
+		white-space: nowrap;
+		transition-property: border-color, background, color, transform, box-shadow,
+			width;
+		transition-duration: 150ms;
+		transition-timing-function: ease;
 
-	@media (hover: hover) {
-		a:hover {
-			opacity: 1;
-			color: var(--black);
-			background: var(--paperWhite);
-			cursor: pointer;
-		}
-	}
-
-	@media (max-width: 768px) {
-		a {
+		@media (max-width: 768px) {
 			width: 100%;
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				opacity: 1;
+				color: var(--black);
+				background: var(--paperWhite);
+				cursor: pointer;
+			}
 		}
 	}
 </style>

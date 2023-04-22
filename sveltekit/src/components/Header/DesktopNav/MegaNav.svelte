@@ -58,6 +58,10 @@
 		right: 0;
 		top: 100%;
 		z-index: 3;
+
+		@media (max-width: 1280px) {
+			display: none;
+		}
 	}
 
 	.mega_item {
@@ -86,11 +90,5 @@
 		background: var(--paperWhite);
 		border-bottom: 1px solid var(--black);
 		position: relative;
-	}
-
-	@media (max-width: 1280px) {
-		.mega_nav {
-			display: none;
-		}
 	}
 </style>

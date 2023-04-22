@@ -44,10 +44,10 @@
 		border: 1px solid var(--black);
 		border-radius: 0.5em;
 		appearance: none;
-	}
 
-	select:disabled {
-		background-color: var(--lightGray);
-		background-image: none;
+		&:disabled {
+			background-color: var(--lightGray);
+			background-image: none;
+		}
 	}
 </style>

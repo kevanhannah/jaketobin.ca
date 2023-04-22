@@ -52,6 +52,11 @@
 		grid-template-columns: 1fr 1fr;
 		align-items: center;
 		gap: 1.25em;
+
+		@media (max-width: 768px) {
+			display: flex;
+			flex-direction: column;
+		}
 	}
 
 	.textSection {
@@ -59,10 +64,25 @@
 		flex-direction: column;
 		justify-content: center;
 		gap: 1.25em;
+
+		@media (max-width: 768px) {
+			justify-content: flex-start;
+			gap: 1.5em;
+		}
 	}
 
 	.body {
 		margin-bottom: 0;
+
+		@media (max-width: 768px) {
+			order: 3;
+		}
+	}
+
+	.title {
+		@media (max-width: 768px) {
+			order: 2;
+		}
 	}
 
 	.gallery {
@@ -70,47 +90,27 @@
 		display: flex;
 		gap: 1em;
 		flex-wrap: wrap;
+
+		@media (max-width: 768px) {
+			order: 1;
+			gap: 0.5em;
+		}
 	}
 
 	.imageSelectWrapper {
 		max-width: calc((100% / 3) - 1em);
 		user-select: none;
-	}
 
-	@media (max-width: 768px) {
-		.portfolioArtwork {
-			display: flex;
-			flex-direction: column;
-		}
-
-		.textSection {
-			justify-content: flex-start;
-			gap: 1.5em;
-		}
-
-		.title {
-			order: 2;
-		}
-
-		.body {
-			order: 3;
-		}
-
-		.gallery {
-			order: 1;
-			gap: 0.5em;
-		}
-
-		.imageSelectWrapper {
+		@media (max-width: 768px) {
 			max-width: calc((100% / 4) - 1em);
 			user-select: none;
 		}
-	}
 
-	@media (hover: hover) {
-		.imageSelectWrapper:hover {
-			cursor: pointer;
-			opacity: 0.8;
+		@media (hover: hover) {
+			&:hover {
+				cursor: pointer;
+				opacity: 0.8;
+			}
 		}
 	}
 </style>

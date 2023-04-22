@@ -1,10 +1,10 @@
 <script>
-	let loaded = false;
+	$: loaded = false;
 
+	export let decoding = 'async';
 	export let image = undefined;
 	export let loading = 'lazy';
 	export let style = undefined;
-	export let decoding = 'async';
 </script>
 
 {#if image !== undefined}
@@ -25,8 +25,9 @@
 		height: auto;
 		display: block;
 		transition: 500ms opacity;
-	}
-	[data-loaded='false'] {
-		opacity: 0;
+
+		&[data-loaded='false'] {
+			opacity: 0;
+		}
 	}
 </style>

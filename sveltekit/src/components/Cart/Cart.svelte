@@ -32,12 +32,12 @@
 		height: 100%;
 		justify-content: center;
 		align-items: center;
-	}
 
-	.empty p {
-		margin: 0;
-		font-size: 1em;
-		font-weight: 400;
+		& p {
+			margin: 0;
+			font-size: 1em;
+			font-weight: 400;
+		}
 	}
 
 	.cartItemList {

@@ -49,6 +49,11 @@
 		padding-left: 3em;
 		padding-right: 3em;
 		z-index: 2;
+
+		@media (max-width: 768px) {
+			padding-left: 0.75em;
+			padding-right: 0.75em;
+		}
 	}
 
 	.headerContent {
@@ -73,10 +78,16 @@
 		display: block;
 		font-family: inherit;
 		text-decoration-line: none;
-	}
 
-	.wordmarkLink :global(svg) {
-		fill: var(--black);
+		& :global(svg) {
+			fill: var(--black);
+
+			@media (hover: hover) {
+				&:hover {
+					fill: var(--mediumGray);
+				}
+			}
+		}
 	}
 
 	.headerBorder {
@@ -86,18 +97,5 @@
 		position: absolute;
 		right: 0;
 		z-index: 2;
-	}
-
-	@media (max-width: 768px) {
-		.headerInner {
-			padding-left: 0.75em;
-			padding-right: 0.75em;
-		}
-	}
-
-	@media (hover: hover) {
-		.wordmarkLink:hover :global(svg) {
-			fill: var(--mediumGray);
-		}
 	}
 </style>

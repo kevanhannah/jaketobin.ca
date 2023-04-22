@@ -57,6 +57,10 @@
 
 	.gridTitle {
 		margin-bottom: 0;
+
+		@media (max-width: 768px) {
+			font-size: 1.75em;
+		}
 	}
 
 	.gridImages {
@@ -69,19 +73,13 @@
 
 	.imageWrapper {
 		max-width: calc((100% / 4) - 1em);
-	}
 
-	@media (max-width: 768px) {
-		.gridTitle {
-			font-size: 1.75em;
-		}
-
-		.imageWrapper {
+		@media (max-width: 768px) {
 			max-width: calc((100% / 2) - 0.75em);
-		}
 
-		.imageWrapper:last-of-type {
-			display: block;
+			&:last-of-type {
+				display: block;
+			}
 		}
 	}
 </style>

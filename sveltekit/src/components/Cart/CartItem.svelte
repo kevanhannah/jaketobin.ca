@@ -49,15 +49,21 @@
 		margin-bottom: 1em;
 		padding-bottom: 1em;
 		border-bottom: 1px solid var(--black);
-	}
 
-	li:first-of-type {
-		margin-top: 1em;
-	}
+		&:first-of-type {
+			margin-top: 1em;
+		}
 
-	li:last-of-type {
-		padding-bottom: 0;
-		border-bottom: none;
+		&:last-of-type {
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+
+		@media (max-width: 768px) {
+			grid-template-columns: 4fr 5fr;
+			margin-left: 0.75em;
+			margin-right: 0.75em;
+		}
 	}
 
 	.itemInfo {
@@ -90,17 +96,11 @@
 		background: transparent;
 		margin-right: 0.5em;
 		user-select: none;
-	}
 
-	.removeButton:hover {
-		color: var(--mediumGray);
-	}
-
-	@media (max-width: 768px) {
-		li {
-			grid-template-columns: 4fr 5fr;
-			margin-left: 0.75em;
-			margin-right: 0.75em;
+		@media (hover: hover) {
+			&:hover {
+				color: var(--mediumGray);
+			}
 		}
 	}
 </style>

@@ -47,20 +47,20 @@
 		transition-duration: 0.15s;
 		transition-timing-function: ease;
 		background: none;
+
+		@media (hover: hover) {
+			&:hover {
+				color: var(--mediumGray);
+			}
+		}
 	}
 
 	.accordionText {
 		display: none;
-	}
 
-	.accordionText:is(.visible) {
-		display: block;
-		padding-bottom: 0.5em;
-	}
-
-	@media (hover: hover) {
-		.accordionButton:hover {
-			color: var(--mediumGray);
+		&:is(.visible) {
+			display: block;
+			padding-bottom: 0.5em;
 		}
 	}
 </style>

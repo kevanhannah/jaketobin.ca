@@ -16,6 +16,7 @@
 	<img
 		alt={title}
 		class="productImage"
+		data-loaded={loaded}
 		{decoding}
 		fetchPriority={loading === 'eager' ? 'high' : 'auto'}
 		{loading}
@@ -39,6 +40,16 @@
 		text-align: center;
 		user-select: none;
 		text-decoration: none;
+
+		@media (hover: hover) {
+			&:hover {
+				opacity: 1;
+			}
+
+			&:hover img {
+				opacity: 0.8;
+			}
+		}
 	}
 
 	img {
@@ -46,6 +57,11 @@
 		display: block;
 		aspect-ratio: 1;
 		object-fit: cover;
+		transition: 500ms opacity ease-out;
+
+		&[data-loaded='false'] {
+			opacity: 0;
+		}
 	}
 
 	.productTitleRow {
@@ -59,15 +75,5 @@
 		font-size: 1em;
 		font-weight: 400;
 		margin-bottom: 0;
-	}
-
-	@media (hover: hover) {
-		a:hover {
-			opacity: 1;
-		}
-
-		a:hover > img {
-			opacity: 0.8;
-		}
 	}
 </style>

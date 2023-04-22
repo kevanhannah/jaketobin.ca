@@ -45,23 +45,23 @@
 		justify-content: center;
 		align-items: center;
 		gap: 1.75em;
-	}
 
-	.social_icons a {
-		display: flex;
-		width: 2.25em;
-		height: 2.25em;
-		justify-content: center;
-		align-items: flex-end;
-	}
+		& a {
+			display: flex;
+			width: 2.25em;
+			height: 2.25em;
+			justify-content: center;
+			align-items: flex-end;
 
-	.social_icons a :global(svg g path) {
-		fill: var(--black);
-	}
+			& :global(svg g path) {
+				fill: var(--black);
+			}
 
-	@media (hover: hover) {
-		.social_icons a:hover :global(svg g path) {
-			fill: var(--mediumGray);
+			@media (hover: hover) {
+				&:hover :global(svg g path) {
+					fill: var(--mediumGray);
+				}
+			}
 		}
 	}
 </style>

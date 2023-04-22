@@ -25,31 +25,31 @@
 			width;
 		transition-duration: 0.15s;
 		transition-timing-function: ease;
-	}
 
-	button:disabled {
-		background: var(--paperWhite);
-		color: var(--black);
-		border: 1px solid var(--black);
-		cursor: default;
-	}
-
-	button:not(:disabled)[loading='true'] {
-		background: var(--mediumGray);
-		border: 1px solid var(--mediumGray);
-		cursor: default;
-	}
-
-	@media (hover: hover) {
-		button:not(:disabled)[loading='false']:hover {
-			color: var(--black);
+		&:disabled {
 			background: var(--paperWhite);
-			cursor: pointer;
+			color: var(--black);
+			border: 1px solid var(--black);
+			cursor: default;
 		}
-	}
 
-	@media (max-width: 768px) {
-		button {
+		&:not(:disabled)[loading='false'] {
+			@media (hover: hover) {
+				&:hover {
+					color: var(--black);
+					background: var(--paperWhite);
+					cursor: pointer;
+				}
+			}
+		}
+
+		&:not(:disabled)[loading='true'] {
+			background: var(--mediumGray);
+			border: 1px solid var(--mediumGray);
+			cursor: default;
+		}
+
+		@media (max-width: 768px) {
 			width: 100%;
 		}
 	}

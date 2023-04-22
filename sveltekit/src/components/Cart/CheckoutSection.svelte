@@ -34,15 +34,16 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-	}
 
-	.subtotalRow h3 {
-		font-size: 1em;
-		font-weight: 600;
-	}
+		& h3 {
+			font-size: 1em;
+			font-weight: 600;
+		}
 
-	.subtotalRow p {
-		font-weight: 600;
+		& p {
+			font-weight: 600;
+			margin-bottom: 0;
+		}
 	}
 
 	.finePrint {

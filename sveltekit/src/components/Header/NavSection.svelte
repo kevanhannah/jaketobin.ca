@@ -29,26 +29,38 @@
 		line-height: 1.6;
 		color: var(--mediumGray);
 		margin-bottom: 0.75em;
+
+		@media (max-width: 1280px) {
+			margin-bottom: 1.5em;
+			line-height: 1.5;
+		}
 	}
 
-	.sectionMenu li {
-		line-height: 1.6;
-		margin-bottom: 0.75em;
-	}
+	.sectionMenu {
+		& li {
+			line-height: 1.6;
+			margin-bottom: 0.75em;
 
-	.sectionMenu li:last-of-type {
-		margin-bottom: 0;
-	}
+			&:last-of-type {
+				margin-bottom: 0;
+			}
 
-	.sectionMenu li a {
-		text-decoration: none;
-	}
+			& a {
+				text-decoration: none;
 
-	@media (hover: hover) {
-		.sectionMenu li a:hover {
-			text-decoration: underline;
-			text-underline-offset: 0.25em;
-			text-decoration-thickness: 1px;
+				@media (hover: hover) {
+					&:hover {
+						text-decoration: underline;
+						text-underline-offset: 0.25em;
+						text-decoration-thickness: 1px;
+					}
+				}
+			}
+
+			@media (max-width: 1280px) {
+				line-height: 1.5;
+				margin-bottom: 0.75em;
+			}
 		}
 	}
 
@@ -61,16 +73,6 @@
 
 		section:last-of-type {
 			border-bottom: none;
-		}
-
-		.sectionHeader {
-			margin-bottom: 1.5em;
-			line-height: 1.5;
-		}
-
-		.sectionMenu li {
-			line-height: 1.5;
-			margin-bottom: 0.75em;
 		}
 	}
 </style>

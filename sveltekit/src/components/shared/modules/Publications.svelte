@@ -28,26 +28,24 @@
 		grid-template-columns: 1fr 1fr;
 		column-gap: 3.75em;
 		row-gap: 3.75em;
+
+		& :global(p:last-of-type) {
+			margin-bottom: 0;
+		}
+
+		@media (max-width: 768px) {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	.publication {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-	}
 
-	.publication h3 {
-		font-size: 1.5em;
-		margin-bottom: 1em;
-	}
-
-	.publication :global(p:last-of-type) {
-		margin-bottom: 0;
-	}
-
-	@media (max-width: 768px) {
-		.publications {
-			grid-template-columns: 1fr;
+		& h3 {
+			font-size: 1.5em;
+			margin-bottom: 1em;
 		}
 	}
 </style>
