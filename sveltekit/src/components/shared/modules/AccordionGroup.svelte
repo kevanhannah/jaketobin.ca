@@ -1,7 +1,7 @@
 <script>
 	import { PortableText } from '@portabletext/svelte';
-	import Minus from '$components/shared/Icons/Minus.svelte';
-	import Plus from '$components/shared/Icons/Plus.svelte';
+	import Minus from '$components/shared/icons/Minus.svelte';
+	import Plus from '$components/shared/icons/Plus.svelte';
 
 	export let group;
 	$: ({ body, title } = group);

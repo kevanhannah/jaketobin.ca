@@ -49,23 +49,11 @@
 		font-weight: 400;
 		text-transform: uppercase;
 		appearance: none;
+		color: var(--black);
 		background-color: transparent;
 		cursor: pointer;
 		font-family: inherit;
 		text-decoration-line: none;
-	}
-
-	.active:not(:hover) {
-		text-decoration: underline;
-		text-underline-offset: 0.25em;
-		text-decoration-thickness: 1px;
-	}
-
-	.navButton:hover {
-		text-decoration: underline;
-		text-underline-offset: 0.25em;
-		text-decoration-thickness: 1px;
-		opacity: 1;
 	}
 
 	.mainNavigation_desktop ul {
@@ -81,6 +69,22 @@
 	.menuLeft ul {
 		display: flex;
 		gap: 2em;
+	}
+
+	@media (hover: hover) {
+		.active:not(:hover) {
+			text-decoration: underline;
+			text-underline-offset: 0.25em;
+			text-decoration-thickness: 1px;
+		}
+
+		.navButton:hover {
+			color: var(--black);
+			text-decoration: underline;
+			text-underline-offset: 0.25em;
+			text-decoration-thickness: 1px;
+			opacity: 1;
+		}
 	}
 
 	@media (max-width: 1280px) {

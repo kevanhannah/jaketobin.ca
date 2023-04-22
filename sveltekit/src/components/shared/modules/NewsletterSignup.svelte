@@ -3,8 +3,8 @@
 	import Button from '$components/shared/Button.svelte';
 	import EmailInput from '$components/shared/EmailInput.svelte';
 	import TextInput from '$components/shared/TextInput.svelte';
-	import Alert from '$components/shared/Icons/Alert.svelte';
-	import Check from '$components/shared/Icons/Check.svelte';
+	import Alert from '$components/shared/icons/Alert.svelte';
+	import Check from '$components/shared/icons/Check.svelte';
 
 	export let portableText;
 	$: ({ value } = portableText);

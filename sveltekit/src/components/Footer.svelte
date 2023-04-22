@@ -1,8 +1,8 @@
 <script>
-	import Instagram from '$components/shared/Icons/Instagram.svelte';
-	import Email from '$components/shared/Icons/Email.svelte';
-	import LinkedIn from '$components/shared/Icons/LinkedIn.svelte';
-	import Twitter from '$components/shared/Icons/Twitter.svelte';
+	import Instagram from '$components/shared/icons/Instagram.svelte';
+	import Email from '$components/shared/icons/Email.svelte';
+	import LinkedIn from '$components/shared/icons/LinkedIn.svelte';
+	import Twitter from '$components/shared/icons/Twitter.svelte';
 </script>
 
 <footer {...$$restProps}>
@@ -22,7 +22,10 @@
 			<Email />
 		</a>
 	</div>
-	<p>© 2023 Jake Tobin Garrett. All rights reserved.</p>
+	<p style="margin-bottom: 0;">
+		© 2023 Jake Tobin Garrett. All rights reserved.<br />Website by
+		<a href="https://www.twitter.com/kevanh">Kevan Hannah</a>.
+	</p>
 </footer>
 
 <style lang="postcss">
@@ -45,7 +48,20 @@
 	}
 
 	.social_icons a {
-		display: block;
-		min-width: 28px;
+		display: flex;
+		width: 2.25em;
+		height: 2.25em;
+		justify-content: center;
+		align-items: flex-end;
+	}
+
+	.social_icons a :global(svg) {
+		fill: var(--black);
+	}
+
+	@media (hover: hover) {
+		.social_icons a:hover :global(svg) {
+			fill: var(--mediumGray);
+		}
 	}
 </style>

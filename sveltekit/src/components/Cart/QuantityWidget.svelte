@@ -4,8 +4,8 @@
 		removeItemFromCart,
 		updateItemInCart,
 	} from '$lib/stores/storeContext';
-	import Minus from '$components/shared/Icons/Minus.svelte';
-	import Plus from '$components/shared/Icons/Plus.svelte';
+	import Minus from '$components/shared/icons/Minus.svelte';
+	import Plus from '$components/shared/icons/Plus.svelte';
 
 	export let quantity;
 	export let lineId;

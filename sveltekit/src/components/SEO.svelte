@@ -25,9 +25,10 @@
 	<meta name="description" content={description} />
 	<meta name="image" content={image.src} />
 	<meta name="twitter:card" content="summary_large_image" />
-	<!-- <meta name="twitter:creator" content={twitter} /> -->
+	<meta name="twitter:creator" content="@jaketobin" />
 	<meta name="twitter:description" content={description} />
 	<meta name="twitter:image" content={image.src} />
+	<meta name="twitter:site" content="@jaketobin" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:url" content={`${origin}${pathname}`} />
 	<meta property="og:description" content={description} />

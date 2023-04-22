@@ -4,8 +4,8 @@
 	import Button from '$components/shared/Button.svelte';
 	import SelectInput from '$components/shared/SelectInput.svelte';
 	import EmailInput from '$components/shared/EmailInput.svelte';
-	import Alert from '$components/shared/Icons/Alert.svelte';
-	import Check from '$components/shared/Icons/Check.svelte';
+	import Alert from '$components/shared/icons/Alert.svelte';
+	import Check from '$components/shared/icons/Check.svelte';
 
 	let sizeSelect = [
 		{
