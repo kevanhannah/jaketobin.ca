@@ -5,6 +5,10 @@
 	export let image = undefined;
 	export let loading = 'lazy';
 	export let style = undefined;
+
+	function handleLoad() {
+		loaded = true;
+	}
 </script>
 
 {#if image !== undefined}
@@ -15,7 +19,7 @@
 		fetchPriority={loading === 'eager' ? 'high' : 'auto'}
 		{...image}
 		{loading}
-		on:load={() => (loaded = true)}
+		on:load={handleLoad}
 		{style} />
 {/if}
 

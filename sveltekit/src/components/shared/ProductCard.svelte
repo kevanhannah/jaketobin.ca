@@ -1,7 +1,7 @@
 <script>
 	import OutOfStockBadge from '$components/Shop/OutOfStockBadge.svelte';
 
-	let loaded = false;
+	$: loaded = false;
 
 	export let availableForSale = true;
 	export let decoding = 'async';
@@ -10,6 +10,10 @@
 	export let src;
 	export let srcset;
 	export let title;
+
+	function handleLoad() {
+		loaded = true;
+	}
 </script>
 
 <a href={`/shop/products/${handle}`}>
@@ -20,7 +24,7 @@
 		{decoding}
 		fetchPriority={loading === 'eager' ? 'high' : 'auto'}
 		{loading}
-		on:load={() => (loaded = true)}
+		on:load={handleLoad}
 		sizes="(max-width: 800px) 50vw, 25vw"
 		{src}
 		{srcset} />
