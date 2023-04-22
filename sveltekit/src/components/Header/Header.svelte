@@ -75,6 +75,10 @@
 		text-decoration-line: none;
 	}
 
+	.wordmarkLink :global(svg) {
+		fill: var(--black);
+	}
+
 	.headerBorder {
 		border-top-width: 1px;
 		bottom: 0;
@@ -88,6 +92,12 @@
 		.headerInner {
 			padding-left: 0.75em;
 			padding-right: 0.75em;
+		}
+	}
+
+	@media (hover: hover) {
+		.wordmarkLink:hover :global(svg) {
+			fill: var(--mediumGray);
 		}
 	}
 </style>

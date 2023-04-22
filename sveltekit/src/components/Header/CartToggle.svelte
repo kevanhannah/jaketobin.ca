@@ -4,7 +4,9 @@
 </script>
 
 <button class="cartToggle" on:click={handleCartClick}
-	>Cart <span class="cartToggleCounter">{$cartQuantity || 0}</span></button>
+	><span class="cartToggleText">Cart</span><span class="cartToggleCounter"
+		>{$cartQuantity || 0}</span
+	></button>
 
 <style lang="postcss">
 	.cartToggle,
@@ -17,6 +19,7 @@
 	.cartToggle {
 		align-items: center;
 		gap: 0.5em;
+		color: var(--black);
 		appearance: none;
 		cursor: pointer;
 		text-transform: uppercase;
@@ -41,6 +44,14 @@
 		.cartToggle,
 		.cartToggleCounter {
 			font-size: 0.75em;
+		}
+	}
+
+	@media (hover: hover) {
+		.cartToggle:hover .cartToggleText {
+			text-decoration: underline;
+			text-underline-offset: 0.25em;
+			text-decoration-thickness: 1px;
 		}
 	}
 </style>
