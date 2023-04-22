@@ -66,10 +66,8 @@
 		max-width: 90em;
 		margin-left: auto;
 		margin-right: auto;
-	}
 
-	@media (max-width: 768px) {
-		div {
+		@media (max-width: 768px) {
 			padding-top: 0.75em;
 			padding-left: 0.75em;
 			padding-right: 0.75em;
