@@ -1,7 +1,15 @@
 <script>
+	import { onMount } from 'svelte';
 	import OutOfStockBadge from '$components/Shop/OutOfStockBadge.svelte';
 
+	let image;
 	$: loaded = false;
+
+	onMount(() => {
+		if (image.complete && !loaded) {
+			loaded = true;
+		}
+	});
 
 	export let availableForSale = true;
 	export let decoding = 'async';
@@ -10,21 +18,18 @@
 	export let src;
 	export let srcset;
 	export let title;
-
-	function handleLoad() {
-		loaded = true;
-	}
 </script>
 
 <a href={`/shop/products/${handle}`}>
 	<img
 		alt={title}
+		bind:this={image}
 		class="productImage"
 		data-loaded={loaded}
 		{decoding}
 		fetchPriority={loading === 'eager' ? 'high' : 'auto'}
 		{loading}
-		on:load={handleLoad}
+		on:load={() => (loaded = true)}
 		sizes="(max-width: 800px) 50vw, 25vw"
 		{src}
 		{srcset} />
