@@ -56,8 +56,9 @@
 			@media (hover: hover) {
 				&:hover {
 					text-decoration: underline;
-					text-underline-offset: 0.25em;
+					text-decoration-color: var(--mediumGray);
 					text-decoration-thickness: 1px;
+					text-underline-offset: 0.25em;
 				}
 			}
 		}

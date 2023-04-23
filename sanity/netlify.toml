@@ -4,6 +4,12 @@
   publish = "dist"
 
 [[redirects]]
+  from = "https://reliable-longma-787317.netlify.app/*"
+  to = "https://admin.jaketobin.ca"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/"
   status = 200

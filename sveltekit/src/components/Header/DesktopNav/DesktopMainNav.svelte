@@ -62,15 +62,17 @@
 		@media (hover: hover) {
 			&.active:not(:hover) {
 				text-decoration: underline;
-				text-underline-offset: 0.25em;
+				text-decoration-color: var(--black);
 				text-decoration-thickness: 1px;
+				text-underline-offset: 0.25em;
 			}
 
 			&:hover {
 				color: var(--black);
 				text-decoration: underline;
-				text-underline-offset: 0.25em;
+				text-decoration-color: var(--black);
 				text-decoration-thickness: 1px;
+				text-underline-offset: 0.25em;
 				opacity: 1;
 			}
 		}
