@@ -13,6 +13,7 @@
 				<ProductCard
 					availableForSale={recommendation.availableForSale}
 					handle={recommendation.handle}
+					loading="eager"
 					src={getShopifyImageProps(recommendation.featuredImage)['src']}
 					srcset={getShopifyImageProps(recommendation.featuredImage)['srcset']}
 					title={recommendation.title} />

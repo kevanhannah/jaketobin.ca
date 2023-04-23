@@ -7,7 +7,7 @@
 	export let images;
 	export let store;
 
-	$: ({ descriptionHtml, title, variants } = store);
+	$: ({ descriptionHtml, previewImageUrl, title, variants } = store);
 	$: activeVariant =
 		store.variants.find((variant) => variant.store.inventory.isAvailable) ??
 		store.variants[0];
@@ -18,7 +18,7 @@
 </script>
 
 <main>
-	<ProductPageImageLayout {images} />
+	<ProductPageImageLayout fallbackUrl={previewImageUrl} {images} {title} />
 	<div class="productPageInformation">
 		<div class="variantInfo">
 			<h1 class="productHeader">{title}</h1>
@@ -62,7 +62,7 @@
 	main {
 		display: grid;
 		grid-template-columns: 3fr 2fr;
-		gap: 1.25em;
+		gap: 2.5em;
 	}
 
 	.productPageInformation {

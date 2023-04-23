@@ -10,7 +10,14 @@ import { deskConfig } from './deskConfig';
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
 
 // Define the singleton document types
-const singletonTypes = new Set(['home', 'settings']);
+const singletonTypes = new Set([
+	'about',
+	'commission',
+	'home',
+	'portfolio',
+	'shop',
+	'settings',
+]);
 
 export default defineConfig({
 	name: 'default',

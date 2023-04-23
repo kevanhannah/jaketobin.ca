@@ -17,6 +17,7 @@ export async function load({ params }) {
         "available": count(variants[@->store.inventory.isAvailable == true]),
         descriptionHtml,
         gid,
+				previewImageUrl,
         slug,
         status,
         title,
@@ -32,10 +33,10 @@ export async function load({ params }) {
 		return {
 			body,
 			faqs,
-			images: images.map((image) => getImageProps({ image: image.image })),
+			images: images?.map((image) => getImageProps({ image: image?.image })),
 			pageContent: {
 				seo: {
-					image: seo?.image || images[0].image,
+					image: seo?.image || images?.[0].image,
 					title: seo?.title || store.title,
 					...seo,
 				},
