@@ -1,5 +1,14 @@
 <script>
+	import { onMount } from 'svelte';
+
+	let img;
 	$: loaded = false;
+
+	onMount(() => {
+		if (img.complete && !loaded) {
+			loaded = true;
+		}
+	});
 
 	export let decoding = 'async';
 	export let image = undefined;
@@ -14,6 +23,7 @@
 {#if image !== undefined}
 	<img
 		alt={image.alt || ''}
+		bind:this={img}
 		data-loaded={loaded}
 		{decoding}
 		fetchPriority={loading === 'eager' ? 'high' : 'auto'}
