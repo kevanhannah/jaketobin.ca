@@ -3,7 +3,8 @@
   command = "pnpm run build"
   publish = "build"
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Robots-Tag = "noindex"
+[[redirects]]
+  from = "https://subtle-elf-13a782.netlify.app/*"
+  to = "https://jaketobin.ca"
+  status = 301
+  force = true
