@@ -2,9 +2,3 @@
   base = "sveltekit"
   command = "pnpm run build"
   publish = "build"
-
-[[redirects]]
-  from = "https://subtle-elf-13a782.netlify.app/*"
-  to = "https://jaketobin.ca"
-  status = 301
-  force = true
