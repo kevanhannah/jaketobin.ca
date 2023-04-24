@@ -28,6 +28,11 @@ export async function getCartItems() {
 	try {
 		const shopifyResponse = await loadCart(get(cartId));
 
+		if (!shopifyResponse.body?.data?.cart) {
+			await useCreateCart();
+			return;
+		}
+
 		let sum = 0;
 		shopifyResponse.body?.data?.cart?.lines?.edges?.forEach((d) => {
 			sum += d.node.quantity;
