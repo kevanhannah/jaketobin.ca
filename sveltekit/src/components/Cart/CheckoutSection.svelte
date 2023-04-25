@@ -10,7 +10,7 @@
 			{new Intl.NumberFormat('en-CA', {
 				style: 'currency',
 				currency: 'CAD',
-			}).format($cart.estimatedCost.totalAmount.amount)}
+			}).format($cart.estimatedCost.subtotalAmount.amount)}
 		</p>
 	</div>
 	<p class="finePrint">

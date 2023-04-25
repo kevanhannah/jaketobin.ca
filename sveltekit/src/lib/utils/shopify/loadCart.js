@@ -7,7 +7,7 @@ export default async function loadCart(cartId) {
           cart(id: $cartId) {
             checkoutUrl
               estimatedCost {
-                totalAmount {
+                subtotalAmount {
                   amount
                 }
               }
