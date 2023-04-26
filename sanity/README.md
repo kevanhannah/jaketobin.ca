@@ -1,9 +1,4 @@
-# Sanity Clean Content Studio
+# jaketobin.ca (Sanity)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/019137eb-d504-4a7a-9e96-cec6ee5c585c/deploy-status)](https://app.netlify.com/sites/reliable-longma-787317/deploys)
 
-Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
-
-Now you can do the following things:
-
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+Content studio for jaketobin.ca. Built with Sanity.

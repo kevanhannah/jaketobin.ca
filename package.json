@@ -1,12 +1,7 @@
 {
-  "name": "jaketobin",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "name": "jaketobin.ca",
+  "description": "Monorepo for SvelkteKit and Sanity",
+  "author": "Kevan Hannah",
+  "license": "MIT",
+  "type": "module"
 }

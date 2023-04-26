@@ -1,9 +1,6 @@
 {
-  "name": "jake-tobin",
-  "private": true,
+  "name": "jaketobin.sanity",
   "version": "1.0.0",
-  "main": "package.json",
-  "license": "UNLICENSED",
   "scripts": {
     "dev": "sanity dev",
     "start": "sanity start",
