@@ -24,14 +24,14 @@
 					tabindex="0">
 					<SanityImage
 						{image}
-						style="aspect-ratio: 1; object-fit: cover; display: block; cursor: default;" />
+						style="aspect-ratio: 1; object-fit: cover; display: block;" />
 				</div>
 			{/each}
 		</div>
 		<SanityImage
 			image={featuredImage}
 			loading="eager"
-			style="aspect-ratio: 1; object-fit: contain; object-position: top; cursor: pointer; cursor: default;" />
+			style="aspect-ratio: 1; object-fit: contain; object-position: top;" />
 	{:else}
 		<div />
 		<img src={fallbackUrl} alt={title} class="fallbackImage" />
@@ -40,47 +40,34 @@
 
 <style lang="postcss">
 	.productPageImageLayout {
-		display: grid;
-		grid-template-columns: 1fr 4fr;
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: flex-end;
 		gap: 1.25em;
 	}
 
 	.gallery {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		gap: 1.25em;
 	}
 
 	.imageWrapper {
-		width: 100%;
-		cursor: pointer;
-	}
+		width: calc((100% / 4) - 0.75em);
 
-	.imageWrapper:hover {
-		opacity: 0.8;
+		@media (hover: hover) {
+			&:hover {
+				opacity: 0.8;
+				cursor: pointer;
+			}
+		}
 	}
 
 	.fallbackImage {
 		max-width: 100%;
 	}
 
-	@media (max-width: 1150px) {
-		.productPageImageLayout {
-			display: flex;
-			flex-direction: column-reverse;
-			justify-content: flex-end;
-		}
-
-		.gallery {
-			flex-direction: row;
-		}
-
-		.singleImage {
-			display: none;
-		}
-
-		.imageWrapper {
-			width: calc((100% / 4) - 0.75em);
-		}
+	.singleImage {
+		display: none;
 	}
 </style>

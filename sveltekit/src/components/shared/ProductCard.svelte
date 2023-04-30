@@ -82,7 +82,7 @@
 
 	.productTitle {
 		font-size: 1em;
-		font-weight: 400;
+		font-weight: 600;
 		margin-bottom: 0;
 	}
 </style>

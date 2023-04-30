@@ -61,8 +61,13 @@
 <style lang="postcss">
 	main {
 		display: grid;
-		grid-template-columns: 3fr 2fr;
+		grid-template-columns: repeat(2, 1fr);
 		gap: 2.5em;
+
+		@media (max-width: 768px) {
+			display: flex;
+			flex-direction: column;
+		}
 	}
 
 	.productPageInformation {
@@ -119,6 +124,7 @@
 		border-radius: 0.5em;
 		font-size: 1em;
 		font-weight: 600;
+		user-select: none;
 		transition-property: border-color, background, color, transform, box-shadow;
 		transition-duration: 0.15s;
 		transition-timing-function: ease;
@@ -143,12 +149,6 @@
 	.productDescription :global(p:last-of-type),
 	.productDescription :global(li:last-of-type) {
 		margin-bottom: 0;
-	}
-
-	@media (max-width: 1150px) {
-		main {
-			grid-template-columns: 5fr 4fr;
-		}
 	}
 
 	@media (max-width: 768px) {

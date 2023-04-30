@@ -44,6 +44,7 @@
 		padding-right: 1.25em;
 		text-align: center;
 		text-decoration: none;
+		user-select: none;
 		white-space: nowrap;
 		transition-property: border-color, background, color, transform, box-shadow,
 			width;

@@ -8,7 +8,7 @@
 		grid-template-columns: 1fr 4fr;
 		gap: 1.5em;
 
-		@media (max-width: 768px) {
+		@media (max-width: 1024px) {
 			display: flex;
 			flex-direction: column;
 		}

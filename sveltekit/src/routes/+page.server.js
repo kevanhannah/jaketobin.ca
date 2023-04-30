@@ -3,14 +3,21 @@ import { client } from '$lib/utils/sanityClient';
 import singletonQuery from '$lib/utils/singletonQuery';
 
 export async function load() {
-	const { pageContent } = await client.fetch(singletonQuery('home'));
+	try {
+		const res = await client.fetch(singletonQuery('home'));
 
-	if (pageContent?.body) {
+		if (!res) {
+			throw new Error('There was a problem loading this page');
+		}
+
+		const { pageContent } = res;
 		return {
 			pageContent,
 		};
-	} else {
-		throw error(404);
+	} catch ({ message }) {
+		throw error(404, {
+			message,
+		});
 	}
 }
 

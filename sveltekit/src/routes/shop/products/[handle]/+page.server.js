@@ -5,7 +5,9 @@ import getImageProps from '$lib/utils/getImageProps';
 import { bodyQuery } from '$lib/utils/queryFragments/bodyQuery.js';
 
 export async function load({ params }) {
-	const { body, faqs, images, seo, store } = await client.fetch(`
+	try {
+		const res = await client.fetch(
+			`
     *[_type == "product" && store.isDeleted == false && store.slug.current == "${params.handle}"]| order(_updatedAt desc)[0] {
       body[] {          
         ${bodyQuery}
@@ -26,10 +28,20 @@ export async function load({ params }) {
         }
       }
     }
-  `);
-	const shopifyRes = await getProductRecommendations(store.gid);
+  `
+		);
 
-	if (store && shopifyRes.status === 200) {
+		if (!res) {
+			throw new Error("This product doesn't seem to exist.");
+		}
+
+		const { body, faqs, images, seo, store } = res;
+		const shopifyRes = await getProductRecommendations(store.gid);
+
+		if (shopifyRes.status !== 200) {
+			throw new Error('Failed to get product data from Shopify.');
+		}
+
 		return {
 			body,
 			faqs,
@@ -37,15 +49,17 @@ export async function load({ params }) {
 			pageContent: {
 				seo: {
 					image: seo?.image || images?.[0].image,
-					title: seo?.title || store.title,
+					title: seo?.title || store?.title,
 					...seo,
 				},
 			},
 			recommendations: shopifyRes.body?.data?.productRecommendations,
 			store,
 		};
-	} else {
-		throw error(404);
+	} catch ({ message }) {
+		throw error(404, {
+			message,
+		});
 	}
 }
 

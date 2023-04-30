@@ -18,6 +18,10 @@
 
 		& h2 {
 			margin-bottom: 0;
+
+			@media (max-width: 768px) {
+				font-size: 2.5em;
+			}
 		}
 	}
 </style>

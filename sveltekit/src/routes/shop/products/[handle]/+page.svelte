@@ -7,8 +7,10 @@
 	$: ({ body, faqs, images, recommendations, store } = data);
 </script>
 
-<ProductPageLayout {faqs} {images} {store} />
-{#if body}
-	<ProductEditorial {body} />
-{/if}
-<ProductRecommendations {recommendations} />
+<div>
+	<ProductPageLayout {faqs} {images} {store} />
+	{#if body}
+		<ProductEditorial {body} />
+	{/if}
+	<ProductRecommendations {recommendations} />
+</div>

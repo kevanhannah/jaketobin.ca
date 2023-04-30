@@ -13,7 +13,11 @@
 	"dependencies": {
 		"@portabletext/svelte": "^2.0.0",
 		"@sanity/client": "^5.2.2",
-		"@sanity/image-url": "^1.0.2"
+		"@sanity/image-url": "^1.0.2",
+		"@sentry/browser": "^7.50.0",
+		"@sentry/node": "^7.50.0",
+		"@sentry/svelte": "^7.50.0",
+		"@sentry/tracing": "^7.50.0"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-netlify": "^1.0.0-next.88",
