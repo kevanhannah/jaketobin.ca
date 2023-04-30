@@ -24,7 +24,7 @@
 
 <style lang="postcss">
 	aside {
-		padding-top: 3.75em;
+		margin-top: 1em;
 		display: flex;
 		flex-direction: column;
 		gap: 3em;

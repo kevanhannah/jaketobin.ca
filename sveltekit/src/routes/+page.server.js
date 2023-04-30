@@ -9,8 +9,9 @@ export async function load() {
 		return {
 			pageContent,
 		};
+	} else {
+		throw error(404);
 	}
-	throw error(404);
 }
 
 export const prerender = true;

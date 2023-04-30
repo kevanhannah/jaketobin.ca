@@ -60,7 +60,7 @@
 
 <style lang="postcss">
 	div {
-		padding-top: 1.25em;
+		padding-top: 2.5em;
 		padding-left: 1.25em;
 		padding-right: 1.25em;
 		max-width: 90em;
