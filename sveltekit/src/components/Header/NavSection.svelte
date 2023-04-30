@@ -27,7 +27,7 @@
 		font-size: 1em;
 		font-weight: 600;
 		line-height: 1.6;
-		color: var(--mediumGray);
+		color: var(--black);
 		margin-bottom: 0.75em;
 
 		@media (max-width: 1280px) {
@@ -47,15 +47,6 @@
 
 			& a {
 				text-decoration: none;
-
-				@media (hover: hover) {
-					&:hover {
-						text-decoration: underline;
-						text-decoration-color: var(--mediumGray);
-						text-decoration-thickness: 1px;
-						text-underline-offset: 0.25em;
-					}
-				}
 			}
 
 			@media (max-width: 1280px) {

@@ -4,19 +4,29 @@ import { getCollection } from '$lib/utils/shopify';
 import { bodyQuery } from '$lib/utils/queryFragments/bodyQuery.js';
 
 export async function load({ params }) {
-	const shopifyRes = await getCollection(params.handle);
-	const { body, seo, store } = await client.fetch(
-		`*[_type == "collection" && store.gid == "${shopifyRes.body?.data?.collectionByHandle.id}"][0] {
-			body[] {
-				${bodyQuery}
-				},
-			seo,
-			store
-		}`
-	);
+	try {
+		const shopifyRes = await getCollection(params.handle);
 
-	if (store && shopifyRes.status === 200) {
+		if (shopifyRes.status !== 200) {
+			throw new Error('Failed to get collection data from Shopify.');
+		}
+
 		const collection = shopifyRes.body?.data?.collectionByHandle;
+		const res = await client.fetch(
+			`*[_type == "collection" && store.gid == "${shopifyRes.body?.data?.collectionByHandle?.id}"][0] {
+				body[] {
+					${bodyQuery}
+					},
+				seo,
+				store
+			}`
+		);
+
+		if (!res) {
+			throw new Error("This collection doesn't seem to exist.");
+		}
+
+		const { body, seo, store } = res;
 
 		return {
 			collection,
@@ -28,8 +38,10 @@ export async function load({ params }) {
 				},
 			},
 		};
-	} else {
-		throw error(404);
+	} catch ({ message }) {
+		throw error(404, {
+			message,
+		});
 	}
 }
 

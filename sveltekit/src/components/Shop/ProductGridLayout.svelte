@@ -10,7 +10,7 @@
 		row-gap: 1.75em;
 	}
 
-	@media (max-width: 1000px) {
+	@media (max-width: 1024px) {
 		div {
 			grid-template-columns: repeat(2, 1fr);
 			column-gap: 1em;

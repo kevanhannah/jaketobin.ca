@@ -60,7 +60,7 @@
 
 <style lang="postcss">
 	div {
-		padding-top: 1.25em;
+		padding-top: 2.5em;
 		padding-left: 1.25em;
 		padding-right: 1.25em;
 		max-width: 90em;
@@ -68,7 +68,6 @@
 		margin-right: auto;
 
 		@media (max-width: 768px) {
-			padding-top: 0.75em;
 			padding-left: 0.75em;
 			padding-right: 0.75em;
 		}

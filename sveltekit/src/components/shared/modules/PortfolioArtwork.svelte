@@ -19,7 +19,7 @@
 <div class="module portfolioArtwork">
 	<SanityImage
 		image={displayImage}
-		style="aspect-ratio: 1; object-fit: contain; object-position: center; cursor: pointer; cursor: default;" />
+		style="aspect-ratio: 1; object-fit: contain; object-position: center;" />
 	<div class="textSection">
 		<h2 class="title">{title}</h2>
 		{#if body}

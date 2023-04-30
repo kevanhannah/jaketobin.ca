@@ -20,6 +20,7 @@
 		padding-bottom: 0.75em;
 		padding-left: 1.25em;
 		padding-right: 1.25em;
+		user-select: none;
 		white-space: nowrap;
 		transition-property: border-color, background, color, transform, box-shadow,
 			width;

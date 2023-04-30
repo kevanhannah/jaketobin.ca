@@ -24,12 +24,12 @@
 
 <style lang="postcss">
 	aside {
-		padding-top: 3.75em;
+		margin-top: 1em;
 		display: flex;
 		flex-direction: column;
 		gap: 3em;
 
-		@media (max-width: 768px) {
+		@media (max-width: 1024px) {
 			display: none;
 		}
 	}
@@ -38,7 +38,7 @@
 		font-size: 1em;
 		font-weight: 600;
 		line-height: 1.6;
-		color: var(--mediumGray);
+		color: var(--black);
 		margin-bottom: 0.75em;
 	}
 
@@ -52,15 +52,6 @@
 
 		& a {
 			text-decoration: none;
-
-			@media (hover: hover) {
-				&:hover {
-					text-decoration: underline;
-					text-decoration-color: var(--mediumGray);
-					text-decoration-thickness: 1px;
-					text-underline-offset: 0.25em;
-				}
-			}
 		}
 	}
 </style>
