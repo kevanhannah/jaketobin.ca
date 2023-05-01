@@ -21,5 +21,3 @@ export async function load() {
 		throw error(res.status);
 	}
 }
-
-export const prerender = true;
