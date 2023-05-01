@@ -7,9 +7,6 @@ const config = {
 		alias: {
 			$components: './src/components',
 		},
-		// prerender: {
-		// 	origin: 'https://sveltekit-prerender',
-		// },
 	},
 	preprocess: [
 		preprocess({
