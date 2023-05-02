@@ -32,6 +32,10 @@
 		@media (max-width: 1024px) {
 			display: none;
 		}
+
+		& section {
+			white-space: nowrap;
+		}
 	}
 
 	.sectionHeader {

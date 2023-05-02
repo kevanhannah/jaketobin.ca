@@ -5,7 +5,7 @@
 <style lang="postcss">
 	div {
 		display: grid;
-		grid-template-columns: 1fr 4fr;
+		grid-template-columns: 1fr 7fr;
 		gap: 1.5em;
 
 		@media (max-width: 1024px) {
