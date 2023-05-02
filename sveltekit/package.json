@@ -9,10 +9,10 @@
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write ."
 	},
-    "keywords": [
-      "svelte",
-      "sveltekit"
-    ],
+	"keywords": [
+		"svelte",
+		"sveltekit"
+	],
 	"dependencies": {
 		"@portabletext/svelte": "^2.0.0",
 		"@sanity/client": "^5.2.2",
