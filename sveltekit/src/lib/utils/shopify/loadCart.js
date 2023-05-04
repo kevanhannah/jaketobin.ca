@@ -31,6 +31,7 @@ export default async function loadCart(cartId) {
                           id
                           title
                           product {
+                            handle
                             images(first: 1) {
                               edges {
                                 node {

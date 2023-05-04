@@ -66,7 +66,10 @@
 		display: block;
 		aspect-ratio: 1;
 		object-fit: cover;
-		transition: 500ms opacity ease-out;
+		opacity: 1;
+		transition-property: opacity;
+		transition-duration: 500ms;
+		transition-timing-function: eease;
 
 		&[data-loaded='false'] {
 			opacity: 0;
