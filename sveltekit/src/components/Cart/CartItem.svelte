@@ -4,16 +4,18 @@
 	import QuantityWidget from '$components/Cart/QuantityWidget.svelte';
 
 	export let item;
+	$: console.log(item);
 	$: ({ estimatedCost, id, merchandise, quantity } = item);
 </script>
 
 <li>
-	<div class="itemImage">
+	<a class="itemImage" href={`/shop/products/${merchandise.product.handle}`}>
 		<CartItemImage image={merchandise.product?.images?.edges[0].node} />
-	</div>
+	</a>
 	<div class="itemInfo">
 		<div class="itemInfo_groupText">
-			<h3>{merchandise.product.title}</h3>
+			<a class="itemTitle" href={`/shop/products/${merchandise.product.handle}`}
+				><h3>{merchandise.product.title}</h3></a>
 			{#if merchandise.title !== 'Default Title'}
 				<span class="variantTitle">{merchandise.title}</span>
 			{/if}
@@ -66,6 +68,19 @@
 		}
 	}
 
+	.itemImage {
+		opacity: 1;
+		transition-property: opacity;
+		transition-duration: 500ms;
+		transition-timing-function: ease;
+
+		@media (hover: hover) {
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
+
 	.itemInfo {
 		display: flex;
 		flex-direction: column;
@@ -76,6 +91,10 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.5em;
+	}
+
+	.itemTitle {
+		text-decoration: none;
 	}
 
 	.itemPrice,

@@ -32,7 +32,7 @@
 			let difference = currentDate - cartCreatedAt;
 			let totalDays = Math.ceil(difference / (1000 * 3600 * 24));
 			let cartIdExpired = totalDays > 6;
-			if (cartId === 'undefined' || cartId === 'null' || cartIdExpired) {
+			if (!cartId || cartIdExpired) {
 				await useCreateCart();
 			}
 			await getCartItems();

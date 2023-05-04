@@ -13,14 +13,18 @@ export const checkoutUrl = writable('');
 export const isLoading = writable(false);
 
 export async function useCreateCart() {
-	const cartRes = await createCart();
-	const shopifyCart = cartRes.body?.data?.cartCreate?.cart;
-	cart.set(shopifyCart);
-	cartId.set(shopifyCart.id);
+	try {
+		const cartRes = await createCart();
+		const shopifyCart = cartRes.body?.data?.cartCreate?.cart;
+		cart.set(shopifyCart);
+		cartId.set(shopifyCart.id);
 
-	if (browser) {
-		localStorage.setItem('cartCreatedAt', Date.now());
-		localStorage.setItem('cartId', JSON.stringify(shopifyCart.id));
+		if (browser) {
+			localStorage.setItem('cartCreatedAt', Date.now());
+			localStorage.setItem('cartId', JSON.stringify(shopifyCart.id));
+		}
+	} catch (err) {
+		console.log(err);
 	}
 }
 

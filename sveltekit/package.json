@@ -1,6 +1,6 @@
 {
 	"name": "jaketobin.sveltekit",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -23,6 +23,7 @@
 		"@sentry/tracing": "^7.50.0"
 	},
 	"devDependencies": {
+		"@sentry/vite-plugin": "^0.7.2",
 		"@sveltejs/adapter-netlify": "^2.0.6",
 		"@sveltejs/kit": "^1.15.8",
 		"autoprefixer": "^10.4.14",
