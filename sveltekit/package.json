@@ -23,6 +23,7 @@
 		"@sentry/tracing": "^7.50.0"
 	},
 	"devDependencies": {
+		"@sentry/vite-plugin": "^0.7.2",
 		"@sveltejs/adapter-netlify": "^2.0.6",
 		"@sveltejs/kit": "^1.15.8",
 		"autoprefixer": "^10.4.14",
