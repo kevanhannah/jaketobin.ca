@@ -231,12 +231,12 @@
 	}
 
 	.alert {
-		border: 1px solid #f56b52;
-		background: #fde2dd;
+		border: 1px solid var(--mediumRed);
+		background: var(--lightRed);
 	}
 
 	.success {
-		border: 1px solid #50dca9;
-		background: #e0f8ee;
+		border: 1px solid var(--mediumGreen);
+		background: var(--lightGreen);
 	}
 </style>
