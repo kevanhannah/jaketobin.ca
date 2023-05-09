@@ -72,6 +72,7 @@
 				position: absolute;
 				top: 0.75em;
 				left: 0.75em;
+				pointer-events: none;
 				z-index: 1;
 			}
 
