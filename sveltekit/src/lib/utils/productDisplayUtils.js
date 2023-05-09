@@ -6,7 +6,7 @@ export function formatDisplayPrice(priceRange) {
 		}).format(priceRange.minVariantPrice.amount);
 	}
 
-	return `From ${new Intl.NumberFormat('en-CA', {
+	return `Starting at ${new Intl.NumberFormat('en-CA', {
 		style: 'currency',
 		currency: priceRange.minVariantPrice.currencyCode,
 	}).format(priceRange.minVariantPrice.amount)}`;
