@@ -11,7 +11,7 @@ export default async function loadCart(cartId) {
                   amount
                 }
               }
-              lines(first: 100) {
+              lines(first: 100, reverse: true) {
                 edges {
                   node {
                     id
@@ -28,6 +28,10 @@ export default async function loadCart(cartId) {
                     }
                     merchandise {
                       ... on ProductVariant {
+                          compareAtPriceV2 {
+                            amount
+                            currencyCode
+                          }
                           id
                           title
                           product {

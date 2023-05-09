@@ -33,23 +33,23 @@ export default async function getProduct(handle) {
           }
           edges {
             node {
-              id
-              title
-              sku
               availableForSale
-              requiresShipping
-              selectedOptions {
-                name
-                value
-              }
-              priceV2 {
-                amount
-                currencyCode
-              }
               compareAtPriceV2 {
                 amount
                 currencyCode
               }
+              id
+              priceV2 {
+                amount
+                currencyCode
+              }
+              requiresShipping
+              sku
+              selectedOptions {
+                name
+                value
+              }
+              title
             }
           }
         }

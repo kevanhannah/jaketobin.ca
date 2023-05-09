@@ -30,6 +30,7 @@
 				{#each renderedImages as image}
 					<div
 						class="imageSelectWrapper"
+						class:selected={image.src === displayImage.src}
 						on:click={changeImage(image)}
 						on:keypress={changeImage(image)}
 						role="button"
@@ -86,30 +87,54 @@
 	}
 
 	.gallery {
+		--columns: 3;
 		width: 100%;
-		display: flex;
-		gap: 1em;
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-columns: repeat(var(--columns), 1fr);
+		gap: 1.25em;
 
 		@media (max-width: 768px) {
+			--columns: 4;
 			order: 1;
-			gap: 0.5em;
 		}
 	}
 
 	.imageSelectWrapper {
-		max-width: calc((100% / 3) - 1em);
+		position: relative;
+		border-width: 1px;
+		border-style: solid;
+		border-color: transparent;
+		border-radius: 2px;
+		transition-property: border-color;
+		transition-duration: 250ms;
+		transition-timing-function: ease-in-out;
 		user-select: none;
 
-		@media (max-width: 768px) {
-			max-width: calc((100% / 4) - 1em);
-			user-select: none;
+		&.selected {
+			border-color: var(--black);
+		}
+
+		&:before {
+			content: '';
+			display: block;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: rgba(255, 255, 255, 0);
+			transition-property: background-color;
+			transition-duration: 250ms;
+			transition-timing-function: ease-in-out;
 		}
 
 		@media (hover: hover) {
 			&:hover {
 				cursor: pointer;
-				opacity: 0.8;
+
+				&:before {
+					background-color: rgba(255, 255, 255, 0.15);
+				}
 			}
 		}
 	}

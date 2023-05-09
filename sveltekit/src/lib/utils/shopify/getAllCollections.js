@@ -10,16 +10,20 @@ export default async function getAllCollections() {
             products(first: 100, sortKey: COLLECTION_DEFAULT) {
               edges {
                 node {
-                  id
-                  handle
                   availableForSale
-                  title
-                  descriptionHtml
-                  options {
-                    id
-                    name
-                    values
+                  compareAtPriceRange {
+                    minVariantPrice {
+                      amount
+                      currencyCode
+                    }
+                    maxVariantPrice {
+                      amount
+                      currencyCode
+                    }
                   }
+                  descriptionHtml
+                  handle
+                  id
                   images(first: 1) {
                     edges {
                       node {
@@ -52,6 +56,22 @@ export default async function getAllCollections() {
                       }
                     }
                   }
+                  options {
+                    id
+                    name
+                    values
+                  }
+                  priceRange {
+                    minVariantPrice {
+                      amount
+                      currencyCode
+                    }
+                    maxVariantPrice {
+                      amount
+                      currencyCode
+                    }
+                  }
+                  title
                 }
               }
             }

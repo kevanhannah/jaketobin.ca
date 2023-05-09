@@ -21,7 +21,7 @@ export async function load() {
 			collections,
 			pageContent: {
 				seo: {
-					title: 'All products',
+					title: 'All collections',
 				},
 			},
 		};

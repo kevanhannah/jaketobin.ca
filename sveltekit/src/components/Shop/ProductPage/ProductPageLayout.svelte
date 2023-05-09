@@ -18,13 +18,28 @@
 </script>
 
 <main>
-	<ProductPageImageLayout fallbackUrl={previewImageUrl} {images} {title} />
+	<ProductPageImageLayout
+		fallbackUrl={previewImageUrl}
+		{images}
+		onSale={activeVariant.store.compareAtPrice !== 0}
+		soldOut={!activeVariant.store.inventory.isAvailable}
+		{title} />
 	<div class="productPageInformation">
 		<div class="variantInfo">
 			<h1 class="productHeader">{title}</h1>
 			<div class="priceSection">
 				<span class="priceCurrency">CA</span>
-				<span class="priceText">
+				{#if activeVariant.store.compareAtPrice !== 0}
+					<span class="priceText comparePrice">
+						{new Intl.NumberFormat('en-CA', {
+							style: 'currency',
+							currency: 'CAD',
+						}).format(activeVariant.store.compareAtPrice)}
+					</span>
+				{/if}
+				<span
+					class="priceText"
+					class:sale={activeVariant.store.compareAtPrice !== 0}>
 					{new Intl.NumberFormat('en-CA', {
 						style: 'currency',
 						currency: 'CAD',
@@ -100,6 +115,15 @@
 	.priceText {
 		font-size: 1.25em;
 		font-weight: 400;
+
+		&.sale {
+			color: var(--darkRed);
+		}
+	}
+
+	.comparePrice {
+		color: var(--mediumGray);
+		text-decoration: line-through;
 	}
 
 	.variantsList {

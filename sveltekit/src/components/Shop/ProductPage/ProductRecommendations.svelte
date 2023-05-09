@@ -11,8 +11,8 @@
 		<div class="recommendationLayout">
 			{#each recommendations.slice(0, 4) as recommendation}
 				<ProductCard
-					availableForSale={recommendation.availableForSale}
 					handle={recommendation.handle}
+					soldOut={!recommendation.availableForSale}
 					src={getShopifyImageProps(recommendation.featuredImage)['src']}
 					srcset={getShopifyImageProps(recommendation.featuredImage)['srcset']}
 					title={recommendation.title} />

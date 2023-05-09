@@ -1,23 +1,33 @@
-import { error } from '@sveltejs/kit';
 import { getAllCollections } from '$lib/utils/shopify';
+import { error } from '@sveltejs/kit';
 
 export async function load() {
-	const res = await getAllCollections();
-	if (res.status === 200) {
-		const collections = res.body?.data?.collections?.edges;
+	try {
+		const res = await getAllCollections();
 
-		if (collections) {
-			return {
-				collections,
-				pageContent: {
-					seo: {
-						title: 'All products',
-					},
-				},
-			};
+		if (res.status !== 200) {
+			throw new Error('Failed to get collection data from Shopify.');
 		}
-		throw error(404);
-	} else {
-		throw error(res.status);
+
+		const collections = res.body?.data?.collections?.edges;
+		collections.forEach((collection) => [
+			(collection.node.products.edges = collection.node.products.edges.slice(
+				0,
+				3
+			)),
+		]);
+
+		return {
+			collections,
+			pageContent: {
+				seo: {
+					title: 'All products',
+				},
+			},
+		};
+	} catch ({ message }) {
+		throw error(404, {
+			message,
+		});
 	}
 }
