@@ -4,7 +4,6 @@
 	import QuantityWidget from '$components/Cart/QuantityWidget.svelte';
 
 	export let item;
-	$: console.log(item);
 	$: ({ estimatedCost, id, merchandise, quantity } = item);
 </script>
 
@@ -19,14 +18,20 @@
 			{#if merchandise.title !== 'Default Title'}
 				<span class="variantTitle">{merchandise.title}</span>
 			{/if}
-			<span class="itemPrice">
-				{`${estimatedCost.totalAmount.currencyCode} ${new Intl.NumberFormat(
-					'en-CA',
-					{
+			<div class="price">
+				{#if merchandise.compareAtPriceV2}
+					<span class="itemPrice comparePrice">
+						{new Intl.NumberFormat('en-CA', {
+							style: 'currency',
+							currency: merchandise.compareAtPriceV2.currencyCode,
+						}).format(merchandise.compareAtPriceV2.amount)}</span>
+				{/if}
+				<span class="itemPrice" class:sale={merchandise.compareAtPriceV2}>
+					{new Intl.NumberFormat('en-CA', {
 						style: 'currency',
 						currency: estimatedCost.totalAmount.currencyCode,
-					}
-				).format(estimatedCost.totalAmount.amount)}`}</span>
+					}).format(estimatedCost.totalAmount.amount)}</span>
+			</div>
 		</div>
 		<div class="quantityRow">
 			<QuantityWidget lineId={id} {quantity} variantId={merchandise.id} />
@@ -69,14 +74,27 @@
 	}
 
 	.itemImage {
-		opacity: 1;
-		transition-property: opacity;
-		transition-duration: 500ms;
-		transition-timing-function: ease;
+		position: relative;
+
+		&:before {
+			content: '';
+			display: block;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: rgba(255, 255, 255, 0);
+			transition-property: background-color;
+			transition-duration: 250ms;
+			transition-timing-function: ease-in-out;
+		}
 
 		@media (hover: hover) {
 			&:hover {
-				opacity: 0.8;
+				&:before {
+					background-color: rgba(255, 255, 255, 0.15);
+				}
 			}
 		}
 	}
@@ -97,9 +115,25 @@
 		text-decoration: none;
 	}
 
+	.comparePrice {
+		color: var(--mediumGray);
+		text-decoration: line-through;
+	}
+
 	.itemPrice,
 	.variantTitle {
 		font-size: 0.75em;
+	}
+
+	.itemPrice {
+		font-weight: 600;
+
+		&.sale {
+			color: var(--darkRed);
+		}
+	}
+
+	.variantTitle {
 		font-weight: 400;
 	}
 

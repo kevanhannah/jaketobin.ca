@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import OutOfStockBadge from '$components/Shop/OutOfStockBadge.svelte';
+	import Badge from '$components/shared/Badge.svelte';
 
 	let image;
 	$: loaded = false;
@@ -11,33 +11,48 @@
 		}
 	});
 
-	export let availableForSale = true;
 	export let decoding = 'async';
 	export let handle;
 	export let loading = 'lazy';
+	export let onSale = false;
+	export let price = '';
+	export let soldOut = false;
 	export let src;
 	export let srcset;
 	export let title;
 </script>
 
 <a href={`/shop/products/${handle}`}>
-	<img
-		alt={title}
-		bind:this={image}
-		class="productImage"
-		data-loaded={loaded}
-		{decoding}
-		fetchPriority={loading === 'eager' ? 'high' : 'auto'}
-		{loading}
-		on:load={() => (loaded = true)}
-		sizes="(max-width: 800px) 50vw, 25vw"
-		{src}
-		{srcset} />
-	<div class="productTitleRow">
-		{#if !availableForSale}
-			<OutOfStockBadge />
+	<div class="imageWrapper_outer">
+		{#if onSale || soldOut}
+			<div class="badges">
+				{#if soldOut}
+					<Badge reverse>Sold out</Badge>
+				{:else if onSale}
+					<Badge>On sale</Badge>
+				{/if}
+			</div>
 		{/if}
+		<div class="imageWrapper_inner">
+			<img
+				alt={title}
+				bind:this={image}
+				class="productImage"
+				data-loaded={loaded}
+				{decoding}
+				fetchPriority={loading === 'eager' ? 'high' : 'auto'}
+				{loading}
+				on:load={() => (loaded = true)}
+				sizes="(max-width: 800px) 50vw, 25vw"
+				{src}
+				{srcset} />
+		</div>
+	</div>
+	<div class="productInfo">
 		<p class="productTitle">{title}</p>
+		{#if price}
+			<p class="productPrice">{price}</p>
+		{/if}
 	</div>
 </a>
 
@@ -50,33 +65,54 @@
 		user-select: none;
 		text-decoration: none;
 
+		& .imageWrapper_outer {
+			position: relative;
+
+			& .badges {
+				position: absolute;
+				top: 0.75em;
+				left: 0.75em;
+				z-index: 1;
+			}
+
+			& .imageWrapper_inner {
+				&:before {
+					content: '';
+					display: block;
+					height: 100%;
+					width: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					background-color: rgba(255, 255, 255, 0);
+					transition-property: background-color;
+					transition-duration: 250ms;
+					transition-timing-function: ease-in-out;
+				}
+
+				& img {
+					width: 100%;
+					display: block;
+					aspect-ratio: 1;
+					object-fit: cover;
+
+					&[data-loaded='false'] {
+						opacity: 0;
+					}
+				}
+			}
+		}
+
 		@media (hover: hover) {
-			&:hover {
-				opacity: 1;
-			}
-
-			&:hover img {
-				opacity: 0.8;
+			&:hover .imageWrapper_outer .imageWrapper_inner {
+				&:before {
+					background-color: rgba(255, 255, 255, 0.15);
+				}
 			}
 		}
 	}
 
-	img {
-		width: 100%;
-		display: block;
-		aspect-ratio: 1;
-		object-fit: cover;
-		opacity: 1;
-		transition-property: opacity;
-		transition-duration: 500ms;
-		transition-timing-function: eease;
-
-		&[data-loaded='false'] {
-			opacity: 0;
-		}
-	}
-
-	.productTitleRow {
+	.productInfo {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -84,8 +120,12 @@
 	}
 
 	.productTitle {
-		font-size: 1em;
 		font-weight: 600;
+	}
+
+	.productPrice,
+	.productTitle {
+		font-size: 1em;
 		margin-bottom: 0;
 	}
 </style>

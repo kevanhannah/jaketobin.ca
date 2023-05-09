@@ -24,8 +24,8 @@
 		white-space: nowrap;
 		transition-property: border-color, background, color, transform, box-shadow,
 			width;
-		transition-duration: 0.15s;
-		transition-timing-function: ease;
+		transition-duration: 250ms;
+		transition-timing-function: ease-in-out;
 
 		&:disabled {
 			background: var(--paperWhite);

@@ -3,6 +3,10 @@
 	import ProductGridLayout from '$components/Shop/ProductGridLayout.svelte';
 	import Body from '$components/shared/blocks/Body.svelte';
 	import ProductCard from '$components/shared/ProductCard.svelte';
+	import {
+		determineOnSale,
+		formatDisplayPrice,
+	} from '$lib/utils/productDisplayUtils';
 
 	export let data;
 	$: ({ collection, body } = data);
@@ -19,12 +23,14 @@
 		{#if collection.products && collection.products.edges.length}
 			{#each collection.products.edges as product, index}
 				<ProductCard
-					availableForSale={product.node.availableForSale}
 					handle={product.node.handle}
+					onSale={determineOnSale(product.node.compareAtPriceRange)}
+					soldOut={!product.node.availableForSale}
 					src={getShopifyImageProps(product.node.images.edges[0].node)['src']}
 					srcset={getShopifyImageProps(product.node.images.edges[0].node)[
 						'srcset'
 					]}
+					price={formatDisplayPrice(product.node.priceRange)}
 					title={product.node.title}
 					loading={index <= 6 ? 'eager' : 'lazy'} />
 			{/each}

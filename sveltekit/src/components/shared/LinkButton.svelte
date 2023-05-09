@@ -48,8 +48,8 @@
 		white-space: nowrap;
 		transition-property: border-color, background, color, transform, box-shadow,
 			width;
-		transition-duration: 150ms;
-		transition-timing-function: ease;
+		transition-duration: 250ms;
+		transition-timing-function: ease-in-out;
 
 		@media (max-width: 768px) {
 			width: 100%;

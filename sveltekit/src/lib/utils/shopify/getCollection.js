@@ -12,10 +12,18 @@ export default async function getCollection(handle) {
             edges {
               node {
                 availableForSale
+                compareAtPriceRange {
+                  minVariantPrice {
+                    amount
+                    currencyCode
+                  }
+                  maxVariantPrice {
+                    amount
+                    currencyCode
+                  }
+                }
                 handle
                 id
-                publishedAt
-                title
                 images(first: 1) {
                   edges {
                     node {
@@ -48,6 +56,18 @@ export default async function getCollection(handle) {
                     }
                   }
                 }
+                priceRange {
+                  minVariantPrice {
+                    amount
+                    currencyCode
+                  }
+                  maxVariantPrice {
+                    amount
+                    currencyCode
+                  }
+                }
+                publishedAt
+                title
               }
             }
           }
