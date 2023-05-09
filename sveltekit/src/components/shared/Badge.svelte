@@ -22,6 +22,7 @@
 		padding-bottom: 0.25em;
 		padding-left: 0.5em;
 		padding-right: 0.5em;
+		cursor: pointer;
 		white-space: nowrap;
 		user-select: none;
 
