@@ -31,7 +31,7 @@
 		margin-left: auto;
 		margin-right: auto;
 		position: relative;
-		width: 2em;
+		width: 1.5em;
 	}
 
 	.hamburger:before,

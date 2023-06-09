@@ -7,6 +7,7 @@
 		determineOnSale,
 		formatDisplayPrice,
 	} from '$lib/utils/productDisplayUtils';
+	import DummyCard from '$components/shared/DummyCard.svelte';
 
 	export let data;
 	$: ({ collection, body } = data);
@@ -22,17 +23,26 @@
 	<ProductGridLayout>
 		{#if collection.products && collection.products.edges.length}
 			{#each collection.products.edges as product, index}
-				<ProductCard
-					handle={product.node.handle}
-					onSale={determineOnSale(product.node.compareAtPriceRange)}
-					soldOut={!product.node.availableForSale}
-					src={getShopifyImageProps(product.node.images.edges[0].node)['src']}
-					srcset={getShopifyImageProps(product.node.images.edges[0].node)[
-						'srcset'
-					]}
-					price={formatDisplayPrice(product.node.priceRange)}
-					title={product.node.title}
-					loading={index <= 6 ? 'eager' : 'lazy'} />
+				{#if product.node.images.edges.length}
+					<ProductCard
+						handle={product.node.handle}
+						onSale={determineOnSale(product.node.compareAtPriceRange)}
+						soldOut={!product.node.availableForSale}
+						src={getShopifyImageProps(product.node.images.edges[0].node)['src']}
+						srcset={getShopifyImageProps(product.node.images.edges[0].node)[
+							'srcset'
+						]}
+						price={formatDisplayPrice(product.node.priceRange)}
+						title={product.node.title}
+						loading={index <= 6 ? 'eager' : 'lazy'} />
+				{:else}
+					<DummyCard
+						handle={product.node.handle}
+						onSale={determineOnSale(product.node.compareAtPriceRange)}
+						soldOut={!product.node.availableForSale}
+						price={formatDisplayPrice(product.node.priceRange)}
+						title={product.node.title} />
+				{/if}
 			{/each}
 		{:else}
 			<p>No items have been added to this collection. Check back soon!</p>
