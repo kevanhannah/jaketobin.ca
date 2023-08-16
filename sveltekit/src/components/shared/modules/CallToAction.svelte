@@ -26,7 +26,7 @@
 		<SanityImage
 			image={getImageProps({
 				aspectRatio: content.aspectRatio ?? 1,
-				image: content.image,
+				image: content.image ?? undefined,
 			})}
 			style="object-fit: cover;" />
 	{/if}

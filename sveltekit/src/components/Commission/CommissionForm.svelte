@@ -103,12 +103,14 @@
 		</div>
 		<div class="formRow">
 			<TextInput
+				autocomplete="given-name"
 				bind:value={commissionInfo.firstName}
 				id="firstName"
 				label="First name"
 				name="firstName"
 				required />
 			<TextInput
+				autocomplete="family-name"
 				bind:value={commissionInfo.lastName}
 				id="lastName"
 				label="Last name"

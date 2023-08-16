@@ -1,4 +1,5 @@
 <script>
+	export let autocomplete = undefined;
 	export let disabled = false;
 	export let id;
 	export let label = undefined;
@@ -14,6 +15,7 @@
 		{label}
 	{/if}
 	<input
+		{autocomplete}
 		bind:value
 		{disabled}
 		{id}
