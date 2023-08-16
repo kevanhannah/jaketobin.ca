@@ -23,8 +23,8 @@
 		"@sentry/tracing": "^7.50.0"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-netlify": "^2.0.6",
-		"@sveltejs/kit": "^1.15.8",
+		"@sveltejs/adapter-netlify": "^2.0.8",
+		"@sveltejs/kit": "^1.22.6",
 		"autoprefixer": "^10.4.14",
 		"eslint": "^8.37.0",
 		"eslint-config-prettier": "^8.8.0",
