@@ -4,14 +4,18 @@ module.exports = {
 		es2021: true,
 		node: true,
 	},
-	extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+	extends: [
+		'eslint:recommended',
+		'plugin:prettier/recommended',
+		'plugin:svelte/recommended',
+	],
 	overrides: [
 		{
 			files: ['*.svelte'],
-			processor: 'svelte3/svelte3',
+			parser: 'svelte-eslint-parser',
 		},
 	],
-	plugins: ['svelte3', 'prettier'],
+	plugins: ['prettier'],
 	parserOptions: {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
