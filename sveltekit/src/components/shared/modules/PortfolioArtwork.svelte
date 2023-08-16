@@ -105,13 +105,15 @@
 		border-style: solid;
 		border-color: transparent;
 		border-radius: 2px;
-		transition-property: border-color;
-		transition-duration: 250ms;
+		box-shadow: 0;
+		transition-property: border-color, box-shadow;
+		transition-duration: 50ms;
 		transition-timing-function: ease-in-out;
 		user-select: none;
 
 		&.selected {
 			border-color: var(--black);
+			box-shadow: 0 0 8px 2px var(--mediumGray);
 		}
 
 		&:before {
