@@ -27,6 +27,7 @@
 			</div>
 		</div>
 		<div
+			aria-hidden="true"
 			class="mobileMenuBackdrop"
 			class:is_active={$mobileNavOpen}
 			on:click={closeAllNav}
