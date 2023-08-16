@@ -17,10 +17,10 @@
 		"@portabletext/svelte": "^2.0.0",
 		"@sanity/client": "^5.2.2",
 		"@sanity/image-url": "^1.0.2",
-		"@sentry/browser": "^7.50.0",
-		"@sentry/node": "^7.50.0",
-		"@sentry/svelte": "^7.50.0",
-		"@sentry/tracing": "^7.50.0"
+		"@sentry/browser": "^7.64.0",
+		"@sentry/node": "^7.64.0",
+		"@sentry/svelte": "^7.64.0",
+		"@sentry/tracing": "^7.64.0"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-netlify": "^2.0.8",
@@ -29,14 +29,14 @@
 		"eslint": "^8.37.0",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-prettier": "^4.2.1",
-		"eslint-plugin-svelte3": "^4.0.0",
+		"eslint-plugin-svelte": "^2.32.4",
 		"netlify-cli": "^14.2.1",
 		"postcss": "^8.4.21",
 		"postcss-load-config": "^4.0.1",
 		"postcss-nesting": "^11.2.2",
 		"prettier-plugin-svelte": "^2.10.1",
 		"svelte": "^4.0.0",
-		"svelte-preprocess": "^5.0.3",
+		"svelte-preprocess": "^5.0.4",
 		"vite": "^4.3.2"
 	},
 	"type": "module"
