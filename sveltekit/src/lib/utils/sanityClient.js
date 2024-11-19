@@ -10,7 +10,7 @@ export const client = createClient({
 	projectId: PUBLIC_SANITY_PROJECT_ID,
 	dataset: PUBLIC_SANITY_DATASET,
 	apiVersion: PUBLIC_SANITY_API_VERSION,
-	useCdn: false,
+	useCdn: true,
 });
 
 export const imageBuilder = imageUrlBuilder(client);
