@@ -4,12 +4,15 @@
 	import QuantityWidget from '$components/Cart/QuantityWidget.svelte';
 
 	export let item;
+	console.log(item);
 	$: ({ estimatedCost, id, merchandise, quantity } = item);
 </script>
 
 <li>
 	<a class="itemImage" href={`/shop/products/${merchandise.product.handle}`}>
-		<CartItemImage image={merchandise.product?.images?.edges[0].node} />
+		{#if merchandise.product.images.edges.length}
+			<CartItemImage image={merchandise.product?.images?.edges[0].node} />
+		{/if}
 	</a>
 	<div class="itemInfo">
 		<div class="itemInfo_groupText">
