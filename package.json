@@ -3,5 +3,6 @@
   "description": "Monorepo for SvelkteKit and Sanity",
   "author": "Kevan Hannah",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "packageManager": "pnpm@10.13.1"
 }
