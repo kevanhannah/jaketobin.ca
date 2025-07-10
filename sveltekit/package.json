@@ -20,7 +20,8 @@
 		"@sentry/browser": "^7.64.0",
 		"@sentry/node": "^7.64.0",
 		"@sentry/svelte": "^7.64.0",
-		"@sentry/tracing": "^7.64.0"
+		"@sentry/tracing": "^7.64.0",
+		"vite": "^4.3.2"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-netlify": "^2.0.8",
@@ -36,8 +37,7 @@
 		"postcss-nesting": "^11.2.2",
 		"prettier-plugin-svelte": "^2.10.1",
 		"svelte": "^4.0.0",
-		"svelte-preprocess": "^5.0.4",
-		"vite": "^4.3.2"
+		"svelte-preprocess": "^5.0.4"
 	},
 	"type": "module"
 }
