@@ -2,7 +2,6 @@
 	"name": "jaketobin.sveltekit",
 	"version": "1.2.0",
 	"scripts": {
-		"install": "pnpm install",
 		"dev": "vite dev",
 		"build": "vite build",
 		"netlify": "netlify dev",
