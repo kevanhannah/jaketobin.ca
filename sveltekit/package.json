@@ -1,6 +1,7 @@
 {
 	"name": "jaketobin.sveltekit",
 	"version": "1.2.0",
+	"packageManager": "pnpm@9.13.2",
 	"scripts": {
 		"install": "pnpm install",
 		"dev": "vite dev",
