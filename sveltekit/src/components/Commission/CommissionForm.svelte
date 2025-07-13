@@ -39,6 +39,20 @@
 			value: 'Yes',
 		},
 	];
+	let styleSelect = [
+		{
+			name: 'Standard',
+			value: 'Standard',
+		},
+		{
+			name: 'Full colour',
+			value: 'Full colour',
+		},
+		{
+			name: 'Unsure',
+			value: 'Unsure',
+		},
+	];
 
 	$: commissionInfo = {
 		description: '',
@@ -48,6 +62,7 @@
 		framed: frameSelect[0].value,
 		lastName: '',
 		size: sizeSelect[0].value,
+		style: styleSelect[0].value,
 	};
 	$: errorMessage = '';
 	$: loading = false;
@@ -83,6 +98,7 @@
 				framed: frameSelect[0].value,
 				lastName: '',
 				size: sizeSelect[0].value,
+				style: styleSelect[0].value,
 			};
 		}
 	}
@@ -139,6 +155,13 @@
 				options={frameSelect}
 				required />
 		</div>
+		<SelectInput
+			bind:value={commissionInfo.style}
+			id="style"
+			label="Style"
+			name="style"
+			options={styleSelect}
+			required />
 		<TextInput
 			bind:value={commissionInfo.dueDate}
 			id="dueDate"

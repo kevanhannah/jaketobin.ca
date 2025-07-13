@@ -3,6 +3,8 @@
 	import Email from '$components/shared/icons/Email.svelte';
 	import LinkedIn from '$components/shared/icons/LinkedIn.svelte';
 	import Twitter from '$components/shared/icons/Twitter.svelte';
+
+	export let currentYear = new Date().getFullYear();
 </script>
 
 <footer {...$$restProps}>
@@ -23,8 +25,8 @@
 		</a>
 	</div>
 	<p style="margin-bottom: 0;">
-		© 2023 Jake Tobin Garrett. All rights reserved.<br />Website by
-		<a href="https://www.twitter.com/kevanh">Kevan Hannah</a>.
+		© {currentYear} Jake Tobin. All rights reserved.<br />Website by
+		<a href="https://www.linkedin.com/in/kevanhannah/">Kevan Hannah</a>.
 	</p>
 </footer>
 
