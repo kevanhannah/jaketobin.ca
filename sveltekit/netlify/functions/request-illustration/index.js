@@ -21,6 +21,7 @@ async function handler(event) {
 			email = '',
 			dueDate = '',
 			size = '',
+			style = '',
 			framed = false,
 			frameColor = undefined,
 			description = '',
@@ -51,6 +52,7 @@ async function handler(event) {
 				frameColor,
 				lastName,
 				size,
+				style,
 			})
 		);
 
